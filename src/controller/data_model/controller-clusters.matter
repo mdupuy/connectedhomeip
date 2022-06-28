@@ -30,7 +30,7 @@ client cluster Identify = 3 {
   }
 
   attribute int16u identifyTime = 0;
-  readonly attribute enum8 identifyType = 1;
+  readonly attribute IdentifyIdentifyType identifyType = 1;
   readonly attribute command_id generatedCommandList[] = 65528;
   readonly attribute command_id acceptedCommandList[] = 65529;
   readonly attribute attrib_id attributeList[] = 65531;
@@ -285,8 +285,20 @@ client cluster OnOff = 6 {
 }
 
 client cluster OnOffSwitchConfiguration = 7 {
-  readonly attribute enum8 switchType = 0;
-  attribute enum8 switchActions = 16;
+  enum SwitchActions : ENUM8 {
+    kOn = 0;
+    kOff = 1;
+    kToggle = 2;
+  }
+
+  enum SwitchType : ENUM8 {
+    kToggle = 0;
+    kMomentary = 1;
+    kMultiFunction = 2;
+  }
+
+  readonly attribute SwitchType switchType = 0;
+  attribute SwitchActions switchActions = 16;
   readonly attribute command_id generatedCommandList[] = 65528;
   readonly attribute command_id acceptedCommandList[] = 65529;
   readonly attribute attrib_id attributeList[] = 65531;
@@ -923,26 +935,26 @@ client cluster PowerSource = 47 {
     kSafetyTimeout = 10;
   }
 
-  enum BatChargeLevel : ENUM8 {
-    kOk = 0;
-    kWarning = 1;
-    kCritical = 2;
-  }
-
-  enum BatChargeState : ENUM8 {
-    kUnknown = 0;
-    kIsCharging = 1;
-    kIsAtFullCharge = 2;
-    kIsNotCharging = 3;
-  }
-
   enum BatFaultType : ENUM8 {
     kUnspecfied = 0;
     kOverTemp = 1;
     kUnderTemp = 2;
   }
 
-  enum BatReplaceability : ENUM8 {
+  enum BatteryChargeLevel : ENUM8 {
+    kOk = 0;
+    kWarning = 1;
+    kCritical = 2;
+  }
+
+  enum BatteryChargeState : ENUM8 {
+    kUnknown = 0;
+    kIsCharging = 1;
+    kIsAtFullCharge = 2;
+    kIsNotCharging = 3;
+  }
+
+  enum BatteryReplaceability : ENUM8 {
     kUnspecified = 0;
     kNotReplaceable = 1;
     kUserReplaceable = 2;
@@ -979,7 +991,7 @@ client cluster PowerSource = 47 {
   readonly attribute char_string<60> description = 2;
   readonly attribute int32u wiredAssessedInputVoltage = 3;
   readonly attribute int16u wiredAssessedInputFrequency = 4;
-  readonly attribute enum8 wiredCurrentType = 5;
+  readonly attribute WiredCurrentType wiredCurrentType = 5;
   readonly attribute int32u wiredAssessedCurrent = 6;
   readonly attribute int32u wiredNominalVoltage = 7;
   readonly attribute int32u wiredMaximumCurrent = 8;
@@ -988,9 +1000,9 @@ client cluster PowerSource = 47 {
   readonly attribute int32u batteryVoltage = 11;
   readonly attribute int8u batteryPercentRemaining = 12;
   readonly attribute int32u batteryTimeRemaining = 13;
-  readonly attribute enum8 batteryChargeLevel = 14;
+  readonly attribute BatteryChargeLevel batteryChargeLevel = 14;
   readonly attribute boolean batteryReplacementNeeded = 15;
-  readonly attribute enum8 batteryReplaceability = 16;
+  readonly attribute BatteryReplaceability batteryReplaceability = 16;
   readonly attribute boolean batteryPresent = 17;
   readonly attribute ENUM8 activeBatteryFaults[] = 18;
   readonly attribute char_string<60> batteryReplacementDescription = 19;
@@ -1000,7 +1012,7 @@ client cluster PowerSource = 47 {
   readonly attribute int32u batteryApprovedChemistry = 23;
   readonly attribute int32u batteryCapacity = 24;
   readonly attribute int8u batteryQuantity = 25;
-  readonly attribute enum8 batteryChargeState = 26;
+  readonly attribute BatteryChargeState batteryChargeState = 26;
   readonly attribute int32u batteryTimeToFullCharge = 27;
   readonly attribute boolean batteryFunctionalWhileCharging = 28;
   readonly attribute int32u batteryChargingCurrent = 29;
@@ -1336,7 +1348,7 @@ client cluster GeneralDiagnostics = 51 {
   readonly attribute int16u rebootCount = 1;
   readonly attribute int64u upTime = 2;
   readonly attribute int32u totalOperationalHours = 3;
-  readonly attribute enum8 bootReasons = 4;
+  readonly attribute BootReasonType bootReasons = 4;
   readonly attribute ENUM8 activeHardwareFaults[] = 5;
   readonly attribute ENUM8 activeRadioFaults[] = 6;
   readonly attribute ENUM8 activeNetworkFaults[] = 7;

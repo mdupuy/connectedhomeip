@@ -714,6 +714,8 @@ function getPythonFieldDefault(type, options)
 function isWeaklyTypedEnum(label)
 {
   return [
+    "Enum8",
+    "Enum16",
     "AttributeWritePermission",
     "BarrierControlBarrierPosition",
     "BarrierControlMovingState",

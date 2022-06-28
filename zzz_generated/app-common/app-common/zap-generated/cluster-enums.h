@@ -19,17 +19,34 @@
 
 #pragma once
 
-#include <stdint.h>
-
 #include <app-common/zap-generated/enums.h>
+#include <lib/core/CHIPError.h>
+#include <stdint.h>
 
 namespace chip {
 namespace app {
 namespace Clusters {
 
-namespace PowerConfiguration {} // namespace PowerConfiguration
+namespace PowerConfiguration {
 
-namespace DeviceTemperatureConfiguration {} // namespace DeviceTemperatureConfiguration
+// Enum for BatterySize
+enum class BatterySize : uint8_t
+{
+    kNoBattery = 0x00,
+    kBuiltIn   = 0x01,
+    kOther     = 0x02,
+    kAa        = 0x03,
+    kAaa       = 0x04,
+    kC         = 0x05,
+    kD         = 0x06,
+    kUnknown   = 0xFF,
+};
+CHIP_ERROR CheckBatterySize(BatterySize val);
+
+} // namespace PowerConfiguration
+
+namespace DeviceTemperatureConfiguration {
+} // namespace DeviceTemperatureConfiguration
 
 namespace Identify {
 
@@ -46,6 +63,8 @@ enum class IdentifyEffectIdentifier : uint8_t
     kFinishEffect  = 0xFE,
     kStopEffect    = 0xFF,
 };
+CHIP_ERROR CheckIdentifyEffectIdentifier(IdentifyEffectIdentifier val);
+
 #else // CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
 using IdentifyEffectIdentifier        = EmberAfIdentifyEffectIdentifier;
 #endif
@@ -58,6 +77,8 @@ enum class IdentifyEffectVariant : uint8_t
 {
     kDefault = 0x00,
 };
+CHIP_ERROR CheckIdentifyEffectVariant(IdentifyEffectVariant val);
+
 #else // CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
 using IdentifyEffectVariant           = EmberAfIdentifyEffectVariant;
 #endif
@@ -75,12 +96,15 @@ enum class IdentifyIdentifyType : uint8_t
     kDisplay      = 0x04,
     kActuator     = 0x05,
 };
+CHIP_ERROR CheckIdentifyIdentifyType(IdentifyIdentifyType val);
+
 #else // CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
 using IdentifyIdentifyType            = EmberAfIdentifyIdentifyType;
 #endif
 } // namespace Identify
 
-namespace Groups {} // namespace Groups
+namespace Groups {
+} // namespace Groups
 
 namespace Scenes {
 
@@ -103,6 +127,8 @@ enum class OnOffDelayedAllOffEffectVariant : uint8_t
     kNoFade                                               = 0x01,
     k50PercentDimDownIn0p8SecondsThenFadeToOffIn12Seconds = 0x02,
 };
+CHIP_ERROR CheckOnOffDelayedAllOffEffectVariant(OnOffDelayedAllOffEffectVariant val);
+
 #else // CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
 using OnOffDelayedAllOffEffectVariant = EmberAfOnOffDelayedAllOffEffectVariant;
 #endif
@@ -115,6 +141,8 @@ enum class OnOffDyingLightEffectVariant : uint8_t
 {
     k20PercenterDimUpIn0p5SecondsThenFadeToOffIn1Second = 0x00,
 };
+CHIP_ERROR CheckOnOffDyingLightEffectVariant(OnOffDyingLightEffectVariant val);
+
 #else // CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
 using OnOffDyingLightEffectVariant    = EmberAfOnOffDyingLightEffectVariant;
 #endif
@@ -128,6 +156,8 @@ enum class OnOffEffectIdentifier : uint8_t
     kDelayedAllOff = 0x00,
     kDyingLight    = 0x01,
 };
+CHIP_ERROR CheckOnOffEffectIdentifier(OnOffEffectIdentifier val);
+
 #else // CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
 using OnOffEffectIdentifier           = EmberAfOnOffEffectIdentifier;
 #endif
@@ -139,6 +169,7 @@ enum class OnOffStartUpOnOff : uint8_t
     kOn                  = 0x01,
     kTogglePreviousOnOff = 0x02,
 };
+CHIP_ERROR CheckOnOffStartUpOnOff(OnOffStartUpOnOff val);
 
 // Bitmap for OnOffControl
 enum class OnOffControl : uint8_t
@@ -159,7 +190,27 @@ enum class SceneFeatures : uint32_t
 };
 } // namespace OnOff
 
-namespace OnOffSwitchConfiguration {} // namespace OnOffSwitchConfiguration
+namespace OnOffSwitchConfiguration {
+
+// Enum for SwitchActions
+enum class SwitchActions : uint8_t
+{
+    kOn     = 0x00,
+    kOff    = 0x01,
+    kToggle = 0x02,
+};
+CHIP_ERROR CheckSwitchActions(SwitchActions val);
+
+// Enum for SwitchType
+enum class SwitchType : uint8_t
+{
+    kToggle        = 0x00,
+    kMomentary     = 0x01,
+    kMultiFunction = 0x02,
+};
+CHIP_ERROR CheckSwitchType(SwitchType val);
+
+} // namespace OnOffSwitchConfiguration
 
 namespace LevelControl {
 
@@ -172,6 +223,8 @@ enum class MoveMode : uint8_t
     kUp   = 0x00,
     kDown = 0x01,
 };
+CHIP_ERROR CheckMoveMode(MoveMode val);
+
 #else // CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
 using MoveMode                        = EmberAfMoveMode;
 #endif
@@ -185,6 +238,8 @@ enum class StepMode : uint8_t
     kUp   = 0x00,
     kDown = 0x01,
 };
+CHIP_ERROR CheckStepMode(StepMode val);
+
 #else // CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
 using StepMode                        = EmberAfStepMode;
 #endif
@@ -198,13 +253,17 @@ enum class LevelControlFeature : uint32_t
 };
 } // namespace LevelControl
 
-namespace Alarms {} // namespace Alarms
+namespace Alarms {
+} // namespace Alarms
 
-namespace Time {} // namespace Time
+namespace Time {
+} // namespace Time
 
-namespace BinaryInputBasic {} // namespace BinaryInputBasic
+namespace BinaryInputBasic {
+} // namespace BinaryInputBasic
 
-namespace PowerProfile {} // namespace PowerProfile
+namespace PowerProfile {
+} // namespace PowerProfile
 
 namespace ApplianceControl {
 
@@ -227,6 +286,7 @@ enum class ApplianceStatus : uint8_t
     kSupercooling             = 0x0E,
     kSuperheating             = 0x0F,
 };
+CHIP_ERROR CheckApplianceStatus(ApplianceStatus val);
 
 // Enum for CommandIdentification
 enum class CommandIdentification : uint8_t
@@ -243,6 +303,7 @@ enum class CommandIdentification : uint8_t
     kEnableEnergyControl  = 0x0A,
     kDisableEnergyControl = 0x0B,
 };
+CHIP_ERROR CheckCommandIdentification(CommandIdentification val);
 
 // Enum for WarningEvent
 enum class WarningEvent : uint8_t
@@ -253,6 +314,7 @@ enum class WarningEvent : uint8_t
     kWarning4OverallPowerBackBelowThePowerThresholdLevel                               = 0x03,
     kWarning5OverallPowerWillBePotentiallyAboveAvailablePowerLevelIfTheApplianceStarts = 0x04,
 };
+CHIP_ERROR CheckWarningEvent(WarningEvent val);
 
 // Bitmap for RemoteEnableFlagsAndDeviceStatus2
 enum class RemoteEnableFlagsAndDeviceStatus2 : uint8_t
@@ -262,11 +324,14 @@ enum class RemoteEnableFlagsAndDeviceStatus2 : uint8_t
 };
 } // namespace ApplianceControl
 
-namespace PulseWidthModulation {} // namespace PulseWidthModulation
+namespace PulseWidthModulation {
+} // namespace PulseWidthModulation
 
-namespace Descriptor {} // namespace Descriptor
+namespace Descriptor {
+} // namespace Descriptor
 
-namespace Binding {} // namespace Binding
+namespace Binding {
+} // namespace Binding
 
 namespace AccessControl {
 
@@ -277,6 +342,7 @@ enum class AuthMode : uint8_t
     kCase  = 0x02,
     kGroup = 0x03,
 };
+CHIP_ERROR CheckAuthMode(AuthMode val);
 
 // Enum for ChangeTypeEnum
 enum class ChangeTypeEnum : uint8_t
@@ -285,6 +351,7 @@ enum class ChangeTypeEnum : uint8_t
     kAdded   = 0x01,
     kRemoved = 0x02,
 };
+CHIP_ERROR CheckChangeTypeEnum(ChangeTypeEnum val);
 
 // Enum for Privilege
 enum class Privilege : uint8_t
@@ -295,9 +362,12 @@ enum class Privilege : uint8_t
     kManage     = 0x04,
     kAdminister = 0x05,
 };
+CHIP_ERROR CheckPrivilege(Privilege val);
+
 } // namespace AccessControl
 
-namespace PollControl {} // namespace PollControl
+namespace PollControl {
+} // namespace PollControl
 
 namespace BridgedActions {
 
@@ -307,6 +377,7 @@ enum class ActionErrorEnum : uint8_t
     kUnknown     = 0x00,
     kInterrupted = 0x01,
 };
+CHIP_ERROR CheckActionErrorEnum(ActionErrorEnum val);
 
 // Enum for ActionStateEnum
 enum class ActionStateEnum : uint8_t
@@ -316,6 +387,7 @@ enum class ActionStateEnum : uint8_t
     kPaused   = 0x02,
     kDisabled = 0x03,
 };
+CHIP_ERROR CheckActionStateEnum(ActionStateEnum val);
 
 // Enum for ActionTypeEnum
 enum class ActionTypeEnum : uint8_t
@@ -328,6 +400,7 @@ enum class ActionTypeEnum : uint8_t
     kNotification = 0x05,
     kAlarm        = 0x06,
 };
+CHIP_ERROR CheckActionTypeEnum(ActionTypeEnum val);
 
 // Enum for EndpointListTypeEnum
 enum class EndpointListTypeEnum : uint8_t
@@ -336,6 +409,7 @@ enum class EndpointListTypeEnum : uint8_t
     kRoom  = 0x01,
     kZone  = 0x02,
 };
+CHIP_ERROR CheckEndpointListTypeEnum(EndpointListTypeEnum val);
 
 // Bitmap for CommandBits
 enum class CommandBits : uint16_t
@@ -355,7 +429,8 @@ enum class CommandBits : uint16_t
 };
 } // namespace BridgedActions
 
-namespace Basic {} // namespace Basic
+namespace Basic {
+} // namespace Basic
 
 namespace OtaSoftwareUpdateProvider {
 
@@ -366,6 +441,7 @@ enum class OTAApplyUpdateAction : uint8_t
     kAwaitNextAction = 0x01,
     kDiscontinue     = 0x02,
 };
+CHIP_ERROR CheckOTAApplyUpdateAction(OTAApplyUpdateAction val);
 
 // Enum for OTADownloadProtocol
 enum class OTADownloadProtocol : uint8_t
@@ -375,6 +451,7 @@ enum class OTADownloadProtocol : uint8_t
     kHttps           = 0x02,
     kVendorSpecific  = 0x03,
 };
+CHIP_ERROR CheckOTADownloadProtocol(OTADownloadProtocol val);
 
 // Enum for OTAQueryStatus
 enum class OTAQueryStatus : uint8_t
@@ -384,6 +461,8 @@ enum class OTAQueryStatus : uint8_t
     kNotAvailable                 = 0x02,
     kDownloadProtocolNotSupported = 0x03,
 };
+CHIP_ERROR CheckOTAQueryStatus(OTAQueryStatus val);
+
 } // namespace OtaSoftwareUpdateProvider
 
 namespace OtaSoftwareUpdateRequestor {
@@ -395,6 +474,7 @@ enum class OTAAnnouncementReason : uint8_t
     kUpdateAvailable       = 0x01,
     kUrgentUpdateAvailable = 0x02,
 };
+CHIP_ERROR CheckOTAAnnouncementReason(OTAAnnouncementReason val);
 
 // Enum for OTAChangeReasonEnum
 enum class OTAChangeReasonEnum : uint8_t
@@ -405,6 +485,7 @@ enum class OTAChangeReasonEnum : uint8_t
     kTimeOut         = 0x03,
     kDelayByProvider = 0x04,
 };
+CHIP_ERROR CheckOTAChangeReasonEnum(OTAChangeReasonEnum val);
 
 // Enum for OTAUpdateStateEnum
 enum class OTAUpdateStateEnum : uint8_t
@@ -419,9 +500,12 @@ enum class OTAUpdateStateEnum : uint8_t
     kRollingBack          = 0x07,
     kDelayedOnUserConsent = 0x08,
 };
+CHIP_ERROR CheckOTAUpdateStateEnum(OTAUpdateStateEnum val);
+
 } // namespace OtaSoftwareUpdateRequestor
 
-namespace LocalizationConfiguration {} // namespace LocalizationConfiguration
+namespace LocalizationConfiguration {
+} // namespace LocalizationConfiguration
 
 namespace TimeFormatLocalization {
 
@@ -441,6 +525,7 @@ enum class CalendarType : uint8_t
     kPersian   = 0x0A,
     kTaiwanese = 0x0B,
 };
+CHIP_ERROR CheckCalendarType(CalendarType val);
 
 // Enum for HourFormat
 enum class HourFormat : uint8_t
@@ -448,6 +533,8 @@ enum class HourFormat : uint8_t
     k12hr = 0x00,
     k24hr = 0x01,
 };
+CHIP_ERROR CheckHourFormat(HourFormat val);
+
 } // namespace TimeFormatLocalization
 
 namespace UnitLocalization {
@@ -459,6 +546,7 @@ enum class TempUnit : uint8_t
     kCelsius    = 0x01,
     kKelvin     = 0x02,
 };
+CHIP_ERROR CheckTempUnit(TempUnit val);
 
 // Bitmap for UnitLocalizationFeature
 enum class UnitLocalizationFeature : uint32_t
@@ -467,7 +555,8 @@ enum class UnitLocalizationFeature : uint32_t
 };
 } // namespace UnitLocalization
 
-namespace PowerSourceConfiguration {} // namespace PowerSourceConfiguration
+namespace PowerSourceConfiguration {
+} // namespace PowerSourceConfiguration
 
 namespace PowerSource {
 
@@ -486,23 +575,7 @@ enum class BatChargeFaultType : uint8_t
     kChargerUnderVoltage = 0x09,
     kSafetyTimeout       = 0x0A,
 };
-
-// Enum for BatChargeLevel
-enum class BatChargeLevel : uint8_t
-{
-    kOk       = 0x00,
-    kWarning  = 0x01,
-    kCritical = 0x02,
-};
-
-// Enum for BatChargeState
-enum class BatChargeState : uint8_t
-{
-    kUnknown        = 0x00,
-    kIsCharging     = 0x01,
-    kIsAtFullCharge = 0x02,
-    kIsNotCharging  = 0x03,
-};
+CHIP_ERROR CheckBatChargeFaultType(BatChargeFaultType val);
 
 // Enum for BatFaultType
 enum class BatFaultType : uint8_t
@@ -511,15 +584,36 @@ enum class BatFaultType : uint8_t
     kOverTemp   = 0x01,
     kUnderTemp  = 0x02,
 };
+CHIP_ERROR CheckBatFaultType(BatFaultType val);
 
-// Enum for BatReplaceability
-enum class BatReplaceability : uint8_t
+// Enum for BatteryChargeLevel
+enum class BatteryChargeLevel : uint8_t
+{
+    kOk       = 0x00,
+    kWarning  = 0x01,
+    kCritical = 0x02,
+};
+CHIP_ERROR CheckBatteryChargeLevel(BatteryChargeLevel val);
+
+// Enum for BatteryChargeState
+enum class BatteryChargeState : uint8_t
+{
+    kUnknown        = 0x00,
+    kIsCharging     = 0x01,
+    kIsAtFullCharge = 0x02,
+    kIsNotCharging  = 0x03,
+};
+CHIP_ERROR CheckBatteryChargeState(BatteryChargeState val);
+
+// Enum for BatteryReplaceability
+enum class BatteryReplaceability : uint8_t
 {
     kUnspecified        = 0x00,
     kNotReplaceable     = 0x01,
     kUserReplaceable    = 0x02,
     kFactoryReplaceable = 0x03,
 };
+CHIP_ERROR CheckBatteryReplaceability(BatteryReplaceability val);
 
 // Enum for PowerSourceStatus
 enum class PowerSourceStatus : uint8_t
@@ -529,6 +623,7 @@ enum class PowerSourceStatus : uint8_t
     kStandby     = 0x02,
     kUnavailable = 0x03,
 };
+CHIP_ERROR CheckPowerSourceStatus(PowerSourceStatus val);
 
 // Enum for WiredCurrentType
 enum class WiredCurrentType : uint8_t
@@ -536,6 +631,7 @@ enum class WiredCurrentType : uint8_t
     kAc = 0x00,
     kDc = 0x01,
 };
+CHIP_ERROR CheckWiredCurrentType(WiredCurrentType val);
 
 // Enum for WiredFaultType
 enum class WiredFaultType : uint8_t
@@ -544,6 +640,7 @@ enum class WiredFaultType : uint8_t
     kOverVoltage  = 0x01,
     kUnderVoltage = 0x02,
 };
+CHIP_ERROR CheckWiredFaultType(WiredFaultType val);
 
 // Bitmap for PowerSourceFeature
 enum class PowerSourceFeature : uint32_t
@@ -566,6 +663,7 @@ enum class CommissioningError : uint8_t
     kNoFailSafe            = 0x03,
     kBusyWithOtherAdmin    = 0x04,
 };
+CHIP_ERROR CheckCommissioningError(CommissioningError val);
 
 // Enum for RegulatoryLocationType
 enum class RegulatoryLocationType : uint8_t
@@ -574,6 +672,8 @@ enum class RegulatoryLocationType : uint8_t
     kOutdoor       = 0x01,
     kIndoorOutdoor = 0x02,
 };
+CHIP_ERROR CheckRegulatoryLocationType(RegulatoryLocationType val);
+
 } // namespace GeneralCommissioning
 
 namespace NetworkCommissioning {
@@ -595,6 +695,7 @@ enum class NetworkCommissioningStatus : uint8_t
     kIPBindFailed           = 0x0B,
     kUnknownError           = 0x0C,
 };
+CHIP_ERROR CheckNetworkCommissioningStatus(NetworkCommissioningStatus val);
 
 // Enum for WiFiBand
 enum class WiFiBand : uint8_t
@@ -605,6 +706,7 @@ enum class WiFiBand : uint8_t
     k6g   = 0x03,
     k60g  = 0x04,
 };
+CHIP_ERROR CheckWiFiBand(WiFiBand val);
 
 // Bitmap for NetworkCommissioningFeature
 enum class NetworkCommissioningFeature : uint32_t
@@ -634,6 +736,7 @@ enum class LogsIntent : uint8_t
     kNetworkDiag    = 0x01,
     kCrashLogs      = 0x02,
 };
+CHIP_ERROR CheckLogsIntent(LogsIntent val);
 
 // Enum for LogsStatus
 enum class LogsStatus : uint8_t
@@ -644,6 +747,7 @@ enum class LogsStatus : uint8_t
     kBusy      = 0x03,
     kDenied    = 0x04,
 };
+CHIP_ERROR CheckLogsStatus(LogsStatus val);
 
 // Enum for LogsTransferProtocol
 enum class LogsTransferProtocol : uint8_t
@@ -651,6 +755,8 @@ enum class LogsTransferProtocol : uint8_t
     kResponsePayload = 0x00,
     kBdx             = 0x01,
 };
+CHIP_ERROR CheckLogsTransferProtocol(LogsTransferProtocol val);
+
 } // namespace DiagnosticLogs
 
 namespace GeneralDiagnostics {
@@ -666,6 +772,7 @@ enum class BootReasonType : uint8_t
     kSoftwareUpdateCompleted = 0x05,
     kSoftwareReset           = 0x06,
 };
+CHIP_ERROR CheckBootReasonType(BootReasonType val);
 
 // Need to convert consumers to using the new enum classes, so we
 // don't just have casts all over.
@@ -685,6 +792,8 @@ enum class HardwareFaultType : uint8_t
     kNonVolatileMemoryError = 0x09,
     kTamperDetected         = 0x0A,
 };
+CHIP_ERROR CheckHardwareFaultType(HardwareFaultType val);
+
 #else // CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
 using HardwareFaultType               = EmberAfHardwareFaultType;
 #endif
@@ -701,6 +810,8 @@ enum class InterfaceType : uint8_t
     kCellular    = 0x03,
     kThread      = 0x04,
 };
+CHIP_ERROR CheckInterfaceType(InterfaceType val);
+
 #else // CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
 using InterfaceType                   = EmberAfInterfaceType;
 #endif
@@ -716,6 +827,8 @@ enum class NetworkFaultType : uint8_t
     kNetworkJammed    = 0x02,
     kConnectionFailed = 0x03,
 };
+CHIP_ERROR CheckNetworkFaultType(NetworkFaultType val);
+
 #else // CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
 using NetworkFaultType                = EmberAfNetworkFaultType;
 #endif
@@ -734,6 +847,8 @@ enum class RadioFaultType : uint8_t
     kBLEFault      = 0x05,
     kEthernetFault = 0x06,
 };
+CHIP_ERROR CheckRadioFaultType(RadioFaultType val);
+
 #else // CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
 using RadioFaultType                  = EmberAfRadioFaultType;
 #endif
@@ -758,6 +873,7 @@ enum class NetworkFault : uint8_t
     kHardwareFailure = 0x02,
     kNetworkJammed   = 0x03,
 };
+CHIP_ERROR CheckNetworkFault(NetworkFault val);
 
 // Need to convert consumers to using the new enum classes, so we
 // don't just have casts all over.
@@ -773,6 +889,8 @@ enum class RoutingRole : uint8_t
     kRouter          = 0x05,
     kLeader          = 0x06,
 };
+CHIP_ERROR CheckRoutingRole(RoutingRole val);
+
 #else // CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
 using RoutingRole                     = EmberAfRoutingRole;
 #endif
@@ -783,6 +901,7 @@ enum class ThreadConnectionStatus : uint8_t
     kConnected    = 0x00,
     kNotConnected = 0x01,
 };
+CHIP_ERROR CheckThreadConnectionStatus(ThreadConnectionStatus val);
 
 // Bitmap for ThreadNetworkDiagnosticsFeature
 enum class ThreadNetworkDiagnosticsFeature : uint32_t
@@ -804,6 +923,7 @@ enum class AssociationFailureCause : uint8_t
     kAuthenticationFailed = 0x02,
     kSsidNotFound         = 0x03,
 };
+CHIP_ERROR CheckAssociationFailureCause(AssociationFailureCause val);
 
 // Need to convert consumers to using the new enum classes, so we
 // don't just have casts all over.
@@ -818,6 +938,8 @@ enum class SecurityType : uint8_t
     kWpa2        = 0x04,
     kWpa3        = 0x05,
 };
+CHIP_ERROR CheckSecurityType(SecurityType val);
+
 #else // CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
 using SecurityType                    = EmberAfSecurityType;
 #endif
@@ -828,6 +950,7 @@ enum class WiFiConnectionStatus : uint8_t
     kConnected    = 0x00,
     kNotConnected = 0x01,
 };
+CHIP_ERROR CheckWiFiConnectionStatus(WiFiConnectionStatus val);
 
 // Need to convert consumers to using the new enum classes, so we
 // don't just have casts all over.
@@ -842,6 +965,8 @@ enum class WiFiVersionType : uint8_t
     k80211ac = 0x04,
     k80211ax = 0x05,
 };
+CHIP_ERROR CheckWiFiVersionType(WiFiVersionType val);
+
 #else // CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
 using WiFiVersionType                 = EmberAfWiFiVersionType;
 #endif
@@ -866,16 +991,21 @@ enum class PHYRateType : uint8_t
     k200g  = 0x08,
     k400g  = 0x09,
 };
+CHIP_ERROR CheckPHYRateType(PHYRateType val);
+
 #else // CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
 using PHYRateType                     = EmberAfPHYRateType;
 #endif
 } // namespace EthernetNetworkDiagnostics
 
-namespace TimeSynchronization {} // namespace TimeSynchronization
+namespace TimeSynchronization {
+} // namespace TimeSynchronization
 
-namespace BridgedDeviceBasic {} // namespace BridgedDeviceBasic
+namespace BridgedDeviceBasic {
+} // namespace BridgedDeviceBasic
 
-namespace Switch {} // namespace Switch
+namespace Switch {
+} // namespace Switch
 
 namespace AdministratorCommissioning {
 
@@ -886,6 +1016,7 @@ enum class CommissioningWindowStatus : uint8_t
     kEnhancedWindowOpen = 0x01,
     kBasicWindowOpen    = 0x02,
 };
+CHIP_ERROR CheckCommissioningWindowStatus(CommissioningWindowStatus val);
 
 // Need to convert consumers to using the new enum classes, so we
 // don't just have casts all over.
@@ -897,6 +1028,8 @@ enum class StatusCode : uint8_t
     kPAKEParameterError = 0x02,
     kWindowNotOpen      = 0x03,
 };
+CHIP_ERROR CheckStatusCode(StatusCode val);
+
 #else // CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
 using StatusCode                      = EmberAfStatusCode;
 #endif
@@ -919,6 +1052,8 @@ enum class OperationalCertStatus : uint8_t
     kLabelConflict         = 0x0A,
     kInvalidFabricIndex    = 0x0B,
 };
+CHIP_ERROR CheckOperationalCertStatus(OperationalCertStatus val);
+
 } // namespace OperationalCredentials
 
 namespace GroupKeyManagement {
@@ -929,19 +1064,27 @@ enum class GroupKeySecurityPolicy : uint8_t
     kTrustFirst   = 0x00,
     kCacheAndSync = 0x01,
 };
+CHIP_ERROR CheckGroupKeySecurityPolicy(GroupKeySecurityPolicy val);
+
 } // namespace GroupKeyManagement
 
-namespace FixedLabel {} // namespace FixedLabel
+namespace FixedLabel {
+} // namespace FixedLabel
 
-namespace UserLabel {} // namespace UserLabel
+namespace UserLabel {
+} // namespace UserLabel
 
-namespace ProxyConfiguration {} // namespace ProxyConfiguration
+namespace ProxyConfiguration {
+} // namespace ProxyConfiguration
 
-namespace ProxyDiscovery {} // namespace ProxyDiscovery
+namespace ProxyDiscovery {
+} // namespace ProxyDiscovery
 
-namespace ProxyValid {} // namespace ProxyValid
+namespace ProxyValid {
+} // namespace ProxyValid
 
-namespace BooleanState {} // namespace BooleanState
+namespace BooleanState {
+} // namespace BooleanState
 
 namespace ModeSelect {
 
@@ -952,7 +1095,8 @@ enum class ModeSelectFeature : uint32_t
 };
 } // namespace ModeSelect
 
-namespace ShadeConfiguration {} // namespace ShadeConfiguration
+namespace ShadeConfiguration {
+} // namespace ShadeConfiguration
 
 namespace DoorLock {
 
@@ -968,6 +1112,7 @@ enum class DlAlarmCode : uint8_t
     kDoorAjar                = 0x07,
     kForcedUser              = 0x08,
 };
+CHIP_ERROR CheckDlAlarmCode(DlAlarmCode val);
 
 // Enum for DlCredentialRule
 enum class DlCredentialRule : uint8_t
@@ -976,6 +1121,7 @@ enum class DlCredentialRule : uint8_t
     kDouble = 0x01,
     kTri    = 0x02,
 };
+CHIP_ERROR CheckDlCredentialRule(DlCredentialRule val);
 
 // Enum for DlCredentialType
 enum class DlCredentialType : uint8_t
@@ -987,6 +1133,7 @@ enum class DlCredentialType : uint8_t
     kFingerVein     = 0x04,
     kFace           = 0x05,
 };
+CHIP_ERROR CheckDlCredentialType(DlCredentialType val);
 
 // Enum for DlDataOperationType
 enum class DlDataOperationType : uint8_t
@@ -995,6 +1142,7 @@ enum class DlDataOperationType : uint8_t
     kClear  = 0x01,
     kModify = 0x02,
 };
+CHIP_ERROR CheckDlDataOperationType(DlDataOperationType val);
 
 // Enum for DlDoorState
 enum class DlDoorState : uint8_t
@@ -1006,6 +1154,7 @@ enum class DlDoorState : uint8_t
     kDoorUnspecifiedError = 0x04,
     kDoorAjar             = 0x05,
 };
+CHIP_ERROR CheckDlDoorState(DlDoorState val);
 
 // Enum for DlLockDataType
 enum class DlLockDataType : uint8_t
@@ -1020,6 +1169,7 @@ enum class DlLockDataType : uint8_t
     kRfid            = 0x07,
     kFingerprint     = 0x08,
 };
+CHIP_ERROR CheckDlLockDataType(DlLockDataType val);
 
 // Enum for DlLockOperationType
 enum class DlLockOperationType : uint8_t
@@ -1029,6 +1179,7 @@ enum class DlLockOperationType : uint8_t
     kNonAccessUserEvent = 0x02,
     kForcedUserEvent    = 0x03,
 };
+CHIP_ERROR CheckDlLockOperationType(DlLockOperationType val);
 
 // Enum for DlLockState
 enum class DlLockState : uint8_t
@@ -1037,6 +1188,7 @@ enum class DlLockState : uint8_t
     kLocked         = 0x01,
     kUnlocked       = 0x02,
 };
+CHIP_ERROR CheckDlLockState(DlLockState val);
 
 // Enum for DlLockType
 enum class DlLockType : uint8_t
@@ -1053,6 +1205,7 @@ enum class DlLockType : uint8_t
     kDeadLatch          = 0x09,
     kDoorFurniture      = 0x0A,
 };
+CHIP_ERROR CheckDlLockType(DlLockType val);
 
 // Enum for DlOperatingMode
 enum class DlOperatingMode : uint8_t
@@ -1063,6 +1216,7 @@ enum class DlOperatingMode : uint8_t
     kNoRemoteLockUnlock = 0x03,
     kPassage            = 0x04,
 };
+CHIP_ERROR CheckDlOperatingMode(DlOperatingMode val);
 
 // Enum for DlOperationError
 enum class DlOperationError : uint8_t
@@ -1073,6 +1227,7 @@ enum class DlOperationError : uint8_t
     kRestricted          = 0x03,
     kInsufficientBattery = 0x04,
 };
+CHIP_ERROR CheckDlOperationError(DlOperationError val);
 
 // Enum for DlOperationSource
 enum class DlOperationSource : uint8_t
@@ -1088,6 +1243,7 @@ enum class DlOperationSource : uint8_t
     kRfid              = 0x08,
     kBiometric         = 0x09,
 };
+CHIP_ERROR CheckDlOperationSource(DlOperationSource val);
 
 // Enum for DlStatus
 enum class DlStatus : uint8_t
@@ -1100,6 +1256,7 @@ enum class DlStatus : uint8_t
     kResourceExhausted = 0x89,
     kNotFound          = 0x8B,
 };
+CHIP_ERROR CheckDlStatus(DlStatus val);
 
 // Enum for DlUserStatus
 enum class DlUserStatus : uint8_t
@@ -1108,6 +1265,7 @@ enum class DlUserStatus : uint8_t
     kOccupiedEnabled  = 0x01,
     kOccupiedDisabled = 0x03,
 };
+CHIP_ERROR CheckDlUserStatus(DlUserStatus val);
 
 // Enum for DlUserType
 enum class DlUserType : uint8_t
@@ -1123,6 +1281,7 @@ enum class DlUserType : uint8_t
     kScheduleRestrictedUser = 0x08,
     kRemoteOnlyUser         = 0x09,
 };
+CHIP_ERROR CheckDlUserType(DlUserType val);
 
 // Enum for DoorLockOperationEventCode
 enum class DoorLockOperationEventCode : uint8_t
@@ -1143,6 +1302,7 @@ enum class DoorLockOperationEventCode : uint8_t
     kManualLock            = 0x0D,
     kManualUnlock          = 0x0E,
 };
+CHIP_ERROR CheckDoorLockOperationEventCode(DoorLockOperationEventCode val);
 
 // Enum for DoorLockProgrammingEventCode
 enum class DoorLockProgrammingEventCode : uint8_t
@@ -1155,6 +1315,7 @@ enum class DoorLockProgrammingEventCode : uint8_t
     kIdAdded              = 0x05,
     kIdDeleted            = 0x06,
 };
+CHIP_ERROR CheckDoorLockProgrammingEventCode(DoorLockProgrammingEventCode val);
 
 // Enum for DoorLockSetPinOrIdStatus
 enum class DoorLockSetPinOrIdStatus : uint8_t
@@ -1164,6 +1325,7 @@ enum class DoorLockSetPinOrIdStatus : uint8_t
     kMemoryFull         = 0x02,
     kDuplicateCodeError = 0x03,
 };
+CHIP_ERROR CheckDoorLockSetPinOrIdStatus(DoorLockSetPinOrIdStatus val);
 
 // Enum for DoorLockUserStatus
 enum class DoorLockUserStatus : uint8_t
@@ -1173,6 +1335,7 @@ enum class DoorLockUserStatus : uint8_t
     kOccupiedDisabled = 0x03,
     kNotSupported     = 0xFF,
 };
+CHIP_ERROR CheckDoorLockUserStatus(DoorLockUserStatus val);
 
 // Enum for DoorLockUserType
 enum class DoorLockUserType : uint8_t
@@ -1184,6 +1347,7 @@ enum class DoorLockUserType : uint8_t
     kNonAccessUser       = 0x04,
     kNotSupported        = 0xFF,
 };
+CHIP_ERROR CheckDoorLockUserType(DoorLockUserType val);
 
 // Bitmap for DlCredentialRuleMask
 enum class DlCredentialRuleMask : uint8_t
@@ -1385,6 +1549,7 @@ enum class EndProductType : uint8_t
     kSlidingShutter            = 0x17,
     kUnknown                   = 0xFF,
 };
+CHIP_ERROR CheckEndProductType(EndProductType val);
 
 // Enum for Type
 enum class Type : uint8_t
@@ -1401,6 +1566,7 @@ enum class Type : uint8_t
     kProjectorScreen           = 0x09,
     kUnknown                   = 0xFF,
 };
+CHIP_ERROR CheckType(Type val);
 
 // Bitmap for ConfigStatus
 enum class ConfigStatus : uint8_t
@@ -1459,7 +1625,8 @@ enum class SafetyStatus : uint16_t
 };
 } // namespace WindowCovering
 
-namespace BarrierControl {} // namespace BarrierControl
+namespace BarrierControl {
+} // namespace BarrierControl
 
 namespace PumpConfigurationAndControl {
 
@@ -1473,6 +1640,7 @@ enum class PumpControlMode : uint8_t
     kConstantTemperature  = 0x05,
     kAutomatic            = 0x07,
 };
+CHIP_ERROR CheckPumpControlMode(PumpControlMode val);
 
 // Enum for PumpOperationMode
 enum class PumpOperationMode : uint8_t
@@ -1482,6 +1650,7 @@ enum class PumpOperationMode : uint8_t
     kMaximum = 0x02,
     kLocal   = 0x03,
 };
+CHIP_ERROR CheckPumpOperationMode(PumpOperationMode val);
 
 // Bitmap for PumpStatus
 enum class PumpStatus : uint16_t
@@ -1510,6 +1679,8 @@ enum class SetpointAdjustMode : uint8_t
     kCoolSetpoint         = 0x01,
     kHeatAndCoolSetpoints = 0x02,
 };
+CHIP_ERROR CheckSetpointAdjustMode(SetpointAdjustMode val);
+
 #else // CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
 using SetpointAdjustMode              = EmberAfSetpointAdjustMode;
 #endif
@@ -1524,6 +1695,7 @@ enum class ThermostatControlSequence : uint8_t
     kCoolingAndHeating           = 0x04,
     kCoolingAndHeatingWithReheat = 0x05,
 };
+CHIP_ERROR CheckThermostatControlSequence(ThermostatControlSequence val);
 
 // Enum for ThermostatRunningMode
 enum class ThermostatRunningMode : uint8_t
@@ -1532,6 +1704,7 @@ enum class ThermostatRunningMode : uint8_t
     kCool = 0x03,
     kHeat = 0x04,
 };
+CHIP_ERROR CheckThermostatRunningMode(ThermostatRunningMode val);
 
 // Enum for ThermostatSystemMode
 enum class ThermostatSystemMode : uint8_t
@@ -1544,6 +1717,7 @@ enum class ThermostatSystemMode : uint8_t
     kPrecooling       = 0x06,
     kFanOnly          = 0x07,
 };
+CHIP_ERROR CheckThermostatSystemMode(ThermostatSystemMode val);
 
 // Bitmap for DayOfWeek
 enum class DayOfWeek : uint8_t
@@ -1589,6 +1763,7 @@ enum class FanModeSequenceType : uint8_t
     kOffOnAuto         = 0x04,
     kOffOn             = 0x05,
 };
+CHIP_ERROR CheckFanModeSequenceType(FanModeSequenceType val);
 
 // Enum for FanModeType
 enum class FanModeType : uint8_t
@@ -1601,6 +1776,7 @@ enum class FanModeType : uint8_t
     kAuto   = 0x05,
     kSmart  = 0x06,
 };
+CHIP_ERROR CheckFanModeType(FanModeType val);
 
 // Bitmap for FanControlFeature
 enum class FanControlFeature : uint32_t
@@ -1634,9 +1810,11 @@ enum class WindSupportMask : uint8_t
 };
 } // namespace FanControl
 
-namespace DehumidificationControl {} // namespace DehumidificationControl
+namespace DehumidificationControl {
+} // namespace DehumidificationControl
 
-namespace ThermostatUserInterfaceConfiguration {} // namespace ThermostatUserInterfaceConfiguration
+namespace ThermostatUserInterfaceConfiguration {
+} // namespace ThermostatUserInterfaceConfiguration
 
 namespace ColorControl {
 
@@ -1650,6 +1828,8 @@ enum class ColorLoopAction : uint8_t
     kActivateFromColorLoopStartEnhancedHue = 0x01,
     kActivateFromEnhancedCurrentHue        = 0x02,
 };
+CHIP_ERROR CheckColorLoopAction(ColorLoopAction val);
+
 #else // CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
 using ColorLoopAction                 = EmberAfColorLoopAction;
 #endif
@@ -1663,6 +1843,8 @@ enum class ColorLoopDirection : uint8_t
     kDecrementHue = 0x00,
     kIncrementHue = 0x01,
 };
+CHIP_ERROR CheckColorLoopDirection(ColorLoopDirection val);
+
 #else // CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
 using ColorLoopDirection              = EmberAfColorLoopDirection;
 #endif
@@ -1677,6 +1859,8 @@ enum class ColorMode : uint8_t
     kCurrentXAndCurrentY            = 0x01,
     kColorTemperature               = 0x02,
 };
+CHIP_ERROR CheckColorMode(ColorMode val);
+
 #else // CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
 using ColorMode                       = EmberAfColorMode;
 #endif
@@ -1692,6 +1876,8 @@ enum class HueDirection : uint8_t
     kUp               = 0x02,
     kDown             = 0x03,
 };
+CHIP_ERROR CheckHueDirection(HueDirection val);
+
 #else // CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
 using HueDirection                    = EmberAfHueDirection;
 #endif
@@ -1706,6 +1892,8 @@ enum class HueMoveMode : uint8_t
     kUp   = 0x01,
     kDown = 0x03,
 };
+CHIP_ERROR CheckHueMoveMode(HueMoveMode val);
+
 #else // CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
 using HueMoveMode                     = EmberAfHueMoveMode;
 #endif
@@ -1719,6 +1907,8 @@ enum class HueStepMode : uint8_t
     kUp   = 0x01,
     kDown = 0x03,
 };
+CHIP_ERROR CheckHueStepMode(HueStepMode val);
+
 #else // CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
 using HueStepMode                     = EmberAfHueStepMode;
 #endif
@@ -1733,6 +1923,8 @@ enum class SaturationMoveMode : uint8_t
     kUp   = 0x01,
     kDown = 0x03,
 };
+CHIP_ERROR CheckSaturationMoveMode(SaturationMoveMode val);
+
 #else // CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
 using SaturationMoveMode              = EmberAfSaturationMoveMode;
 #endif
@@ -1746,6 +1938,8 @@ enum class SaturationStepMode : uint8_t
     kUp   = 0x01,
     kDown = 0x03,
 };
+CHIP_ERROR CheckSaturationStepMode(SaturationStepMode val);
+
 #else // CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
 using SaturationStepMode              = EmberAfSaturationStepMode;
 #endif
@@ -1780,7 +1974,8 @@ enum class ColorLoopUpdateFlags : uint8_t
 };
 } // namespace ColorControl
 
-namespace BallastConfiguration {} // namespace BallastConfiguration
+namespace BallastConfiguration {
+} // namespace BallastConfiguration
 
 namespace IlluminanceMeasurement {
 
@@ -1790,9 +1985,12 @@ enum class LightSensorType : uint8_t
     kPhotodiode = 0x00,
     kCmos       = 0x01,
 };
+CHIP_ERROR CheckLightSensorType(LightSensorType val);
+
 } // namespace IlluminanceMeasurement
 
-namespace TemperatureMeasurement {} // namespace TemperatureMeasurement
+namespace TemperatureMeasurement {
+} // namespace TemperatureMeasurement
 
 namespace PressureMeasurement {
 
@@ -1803,73 +2001,107 @@ enum class PressureFeature : uint32_t
 };
 } // namespace PressureMeasurement
 
-namespace FlowMeasurement {} // namespace FlowMeasurement
+namespace FlowMeasurement {
+} // namespace FlowMeasurement
 
-namespace RelativeHumidityMeasurement {} // namespace RelativeHumidityMeasurement
+namespace RelativeHumidityMeasurement {
+} // namespace RelativeHumidityMeasurement
 
-namespace OccupancySensing {} // namespace OccupancySensing
+namespace OccupancySensing {
+} // namespace OccupancySensing
 
-namespace CarbonMonoxideConcentrationMeasurement {} // namespace CarbonMonoxideConcentrationMeasurement
+namespace CarbonMonoxideConcentrationMeasurement {
+} // namespace CarbonMonoxideConcentrationMeasurement
 
-namespace CarbonDioxideConcentrationMeasurement {} // namespace CarbonDioxideConcentrationMeasurement
+namespace CarbonDioxideConcentrationMeasurement {
+} // namespace CarbonDioxideConcentrationMeasurement
 
-namespace EthyleneConcentrationMeasurement {} // namespace EthyleneConcentrationMeasurement
+namespace EthyleneConcentrationMeasurement {
+} // namespace EthyleneConcentrationMeasurement
 
-namespace EthyleneOxideConcentrationMeasurement {} // namespace EthyleneOxideConcentrationMeasurement
+namespace EthyleneOxideConcentrationMeasurement {
+} // namespace EthyleneOxideConcentrationMeasurement
 
-namespace HydrogenConcentrationMeasurement {} // namespace HydrogenConcentrationMeasurement
+namespace HydrogenConcentrationMeasurement {
+} // namespace HydrogenConcentrationMeasurement
 
-namespace HydrogenSulphideConcentrationMeasurement {} // namespace HydrogenSulphideConcentrationMeasurement
+namespace HydrogenSulphideConcentrationMeasurement {
+} // namespace HydrogenSulphideConcentrationMeasurement
 
-namespace NitricOxideConcentrationMeasurement {} // namespace NitricOxideConcentrationMeasurement
+namespace NitricOxideConcentrationMeasurement {
+} // namespace NitricOxideConcentrationMeasurement
 
-namespace NitrogenDioxideConcentrationMeasurement {} // namespace NitrogenDioxideConcentrationMeasurement
+namespace NitrogenDioxideConcentrationMeasurement {
+} // namespace NitrogenDioxideConcentrationMeasurement
 
-namespace OxygenConcentrationMeasurement {} // namespace OxygenConcentrationMeasurement
+namespace OxygenConcentrationMeasurement {
+} // namespace OxygenConcentrationMeasurement
 
-namespace OzoneConcentrationMeasurement {} // namespace OzoneConcentrationMeasurement
+namespace OzoneConcentrationMeasurement {
+} // namespace OzoneConcentrationMeasurement
 
-namespace SulfurDioxideConcentrationMeasurement {} // namespace SulfurDioxideConcentrationMeasurement
+namespace SulfurDioxideConcentrationMeasurement {
+} // namespace SulfurDioxideConcentrationMeasurement
 
-namespace DissolvedOxygenConcentrationMeasurement {} // namespace DissolvedOxygenConcentrationMeasurement
+namespace DissolvedOxygenConcentrationMeasurement {
+} // namespace DissolvedOxygenConcentrationMeasurement
 
-namespace BromateConcentrationMeasurement {} // namespace BromateConcentrationMeasurement
+namespace BromateConcentrationMeasurement {
+} // namespace BromateConcentrationMeasurement
 
-namespace ChloraminesConcentrationMeasurement {} // namespace ChloraminesConcentrationMeasurement
+namespace ChloraminesConcentrationMeasurement {
+} // namespace ChloraminesConcentrationMeasurement
 
-namespace ChlorineConcentrationMeasurement {} // namespace ChlorineConcentrationMeasurement
+namespace ChlorineConcentrationMeasurement {
+} // namespace ChlorineConcentrationMeasurement
 
-namespace FecalColiformAndEColiConcentrationMeasurement {} // namespace FecalColiformAndEColiConcentrationMeasurement
+namespace FecalColiformAndEColiConcentrationMeasurement {
+} // namespace FecalColiformAndEColiConcentrationMeasurement
 
-namespace FluorideConcentrationMeasurement {} // namespace FluorideConcentrationMeasurement
+namespace FluorideConcentrationMeasurement {
+} // namespace FluorideConcentrationMeasurement
 
-namespace HaloaceticAcidsConcentrationMeasurement {} // namespace HaloaceticAcidsConcentrationMeasurement
+namespace HaloaceticAcidsConcentrationMeasurement {
+} // namespace HaloaceticAcidsConcentrationMeasurement
 
-namespace TotalTrihalomethanesConcentrationMeasurement {} // namespace TotalTrihalomethanesConcentrationMeasurement
+namespace TotalTrihalomethanesConcentrationMeasurement {
+} // namespace TotalTrihalomethanesConcentrationMeasurement
 
-namespace TotalColiformBacteriaConcentrationMeasurement {} // namespace TotalColiformBacteriaConcentrationMeasurement
+namespace TotalColiformBacteriaConcentrationMeasurement {
+} // namespace TotalColiformBacteriaConcentrationMeasurement
 
-namespace TurbidityConcentrationMeasurement {} // namespace TurbidityConcentrationMeasurement
+namespace TurbidityConcentrationMeasurement {
+} // namespace TurbidityConcentrationMeasurement
 
-namespace CopperConcentrationMeasurement {} // namespace CopperConcentrationMeasurement
+namespace CopperConcentrationMeasurement {
+} // namespace CopperConcentrationMeasurement
 
-namespace LeadConcentrationMeasurement {} // namespace LeadConcentrationMeasurement
+namespace LeadConcentrationMeasurement {
+} // namespace LeadConcentrationMeasurement
 
-namespace ManganeseConcentrationMeasurement {} // namespace ManganeseConcentrationMeasurement
+namespace ManganeseConcentrationMeasurement {
+} // namespace ManganeseConcentrationMeasurement
 
-namespace SulfateConcentrationMeasurement {} // namespace SulfateConcentrationMeasurement
+namespace SulfateConcentrationMeasurement {
+} // namespace SulfateConcentrationMeasurement
 
-namespace BromodichloromethaneConcentrationMeasurement {} // namespace BromodichloromethaneConcentrationMeasurement
+namespace BromodichloromethaneConcentrationMeasurement {
+} // namespace BromodichloromethaneConcentrationMeasurement
 
-namespace BromoformConcentrationMeasurement {} // namespace BromoformConcentrationMeasurement
+namespace BromoformConcentrationMeasurement {
+} // namespace BromoformConcentrationMeasurement
 
-namespace ChlorodibromomethaneConcentrationMeasurement {} // namespace ChlorodibromomethaneConcentrationMeasurement
+namespace ChlorodibromomethaneConcentrationMeasurement {
+} // namespace ChlorodibromomethaneConcentrationMeasurement
 
-namespace ChloroformConcentrationMeasurement {} // namespace ChloroformConcentrationMeasurement
+namespace ChloroformConcentrationMeasurement {
+} // namespace ChloroformConcentrationMeasurement
 
-namespace SodiumConcentrationMeasurement {} // namespace SodiumConcentrationMeasurement
+namespace SodiumConcentrationMeasurement {
+} // namespace SodiumConcentrationMeasurement
 
-namespace WakeOnLan {} // namespace WakeOnLan
+namespace WakeOnLan {
+} // namespace WakeOnLan
 
 namespace Channel {
 
@@ -1880,12 +2112,14 @@ enum class ChannelStatusEnum : uint8_t
     kMultipleMatches = 0x01,
     kNoMatches       = 0x02,
 };
+CHIP_ERROR CheckChannelStatusEnum(ChannelStatusEnum val);
 
 // Enum for LineupInfoTypeEnum
 enum class LineupInfoTypeEnum : uint8_t
 {
     kMso = 0x00,
 };
+CHIP_ERROR CheckLineupInfoTypeEnum(LineupInfoTypeEnum val);
 
 // Bitmap for ChannelFeature
 enum class ChannelFeature : uint32_t
@@ -1904,6 +2138,8 @@ enum class TargetNavigatorStatusEnum : uint8_t
     kTargetNotFound = 0x01,
     kNotAllowed     = 0x02,
 };
+CHIP_ERROR CheckTargetNavigatorStatusEnum(TargetNavigatorStatusEnum val);
+
 } // namespace TargetNavigator
 
 namespace MediaPlayback {
@@ -1918,6 +2154,7 @@ enum class MediaPlaybackStatusEnum : uint8_t
     kSpeedOutOfRange        = 0x04,
     kSeekOutOfRange         = 0x05,
 };
+CHIP_ERROR CheckMediaPlaybackStatusEnum(MediaPlaybackStatusEnum val);
 
 // Enum for PlaybackStateEnum
 enum class PlaybackStateEnum : uint8_t
@@ -1927,6 +2164,8 @@ enum class PlaybackStateEnum : uint8_t
     kNotPlaying = 0x02,
     kBuffering  = 0x03,
 };
+CHIP_ERROR CheckPlaybackStateEnum(PlaybackStateEnum val);
+
 } // namespace MediaPlayback
 
 namespace MediaInput {
@@ -1947,6 +2186,7 @@ enum class InputTypeEnum : uint8_t
     kUsb       = 0x0A,
     kOther     = 0x0B,
 };
+CHIP_ERROR CheckInputTypeEnum(InputTypeEnum val);
 
 // Bitmap for MediaInputFeature
 enum class MediaInputFeature : uint32_t
@@ -1955,7 +2195,8 @@ enum class MediaInputFeature : uint32_t
 };
 } // namespace MediaInput
 
-namespace LowPower {} // namespace LowPower
+namespace LowPower {
+} // namespace LowPower
 
 namespace KeypadInput {
 
@@ -2049,6 +2290,7 @@ enum class CecKeyCode : uint8_t
     kF5                        = 0x75,
     kData                      = 0x76,
 };
+CHIP_ERROR CheckCecKeyCode(CecKeyCode val);
 
 // Enum for KeypadInputStatusEnum
 enum class KeypadInputStatusEnum : uint8_t
@@ -2057,6 +2299,7 @@ enum class KeypadInputStatusEnum : uint8_t
     kUnsupportedKey           = 0x01,
     kInvalidKeyInCurrentState = 0x02,
 };
+CHIP_ERROR CheckKeypadInputStatusEnum(KeypadInputStatusEnum val);
 
 // Bitmap for KeypadInputFeature
 enum class KeypadInputFeature : uint32_t
@@ -2076,6 +2319,7 @@ enum class ContentLaunchStatusEnum : uint8_t
     kUrlNotAvailable = 0x01,
     kAuthFailed      = 0x02,
 };
+CHIP_ERROR CheckContentLaunchStatusEnum(ContentLaunchStatusEnum val);
 
 // Enum for MetricTypeEnum
 enum class MetricTypeEnum : uint8_t
@@ -2083,6 +2327,7 @@ enum class MetricTypeEnum : uint8_t
     kPixels     = 0x00,
     kPercentage = 0x01,
 };
+CHIP_ERROR CheckMetricTypeEnum(MetricTypeEnum val);
 
 // Enum for ParameterEnum
 enum class ParameterEnum : uint8_t
@@ -2101,6 +2346,7 @@ enum class ParameterEnum : uint8_t
     kSportsTeam = 0x0B,
     kType       = 0x0C,
 };
+CHIP_ERROR CheckParameterEnum(ParameterEnum val);
 
 // Bitmap for ContentLauncherFeature
 enum class ContentLauncherFeature : uint32_t
@@ -2129,6 +2375,7 @@ enum class OutputTypeEnum : uint8_t
     kInternal  = 0x04,
     kOther     = 0x05,
 };
+CHIP_ERROR CheckOutputTypeEnum(OutputTypeEnum val);
 
 // Bitmap for AudioOutputFeature
 enum class AudioOutputFeature : uint32_t
@@ -2146,6 +2393,7 @@ enum class ApplicationLauncherStatusEnum : uint8_t
     kAppNotAvailable = 0x01,
     kSystemBusy      = 0x02,
 };
+CHIP_ERROR CheckApplicationLauncherStatusEnum(ApplicationLauncherStatusEnum val);
 
 // Bitmap for ApplicationLauncherFeature
 enum class ApplicationLauncherFeature : uint32_t
@@ -2164,9 +2412,12 @@ enum class ApplicationStatusEnum : uint8_t
     kActiveHidden          = 0x02,
     kActiveVisibleNotFocus = 0x03,
 };
+CHIP_ERROR CheckApplicationStatusEnum(ApplicationStatusEnum val);
+
 } // namespace ApplicationBasic
 
-namespace AccountLogin {} // namespace AccountLogin
+namespace AccountLogin {
+} // namespace AccountLogin
 
 namespace Messaging {
 
@@ -2255,6 +2506,7 @@ enum class EventId : uint8_t
     kManufacturerSpecificH              = 0xE7,
     kManufacturerSpecificI              = 0xE8,
 };
+CHIP_ERROR CheckEventId(EventId val);
 
 // Enum for MessagingControlConfirmation
 enum class MessagingControlConfirmation : uint8_t
@@ -2262,6 +2514,7 @@ enum class MessagingControlConfirmation : uint8_t
     kNotRequired = 0x00,
     kRequired    = 0x80,
 };
+CHIP_ERROR CheckMessagingControlConfirmation(MessagingControlConfirmation val);
 
 // Enum for MessagingControlEnhancedConfirmation
 enum class MessagingControlEnhancedConfirmation : uint8_t
@@ -2269,6 +2522,7 @@ enum class MessagingControlEnhancedConfirmation : uint8_t
     kNotRequired = 0x00,
     kRequired    = 0x20,
 };
+CHIP_ERROR CheckMessagingControlEnhancedConfirmation(MessagingControlEnhancedConfirmation val);
 
 // Enum for MessagingControlImportance
 enum class MessagingControlImportance : uint8_t
@@ -2278,6 +2532,7 @@ enum class MessagingControlImportance : uint8_t
     kHigh     = 0x08,
     kCritical = 0x0C,
 };
+CHIP_ERROR CheckMessagingControlImportance(MessagingControlImportance val);
 
 // Enum for MessagingControlTransmission
 enum class MessagingControlTransmission : uint8_t
@@ -2287,6 +2542,7 @@ enum class MessagingControlTransmission : uint8_t
     kAnonymous          = 0x02,
     kReserved           = 0x03,
 };
+CHIP_ERROR CheckMessagingControlTransmission(MessagingControlTransmission val);
 
 // Bitmap for MessagingConfirmationControl
 enum class MessagingConfirmationControl : uint8_t
@@ -2311,9 +2567,11 @@ enum class MessagingExtendedControlMask : uint8_t
 };
 } // namespace Messaging
 
-namespace ApplianceIdentification {} // namespace ApplianceIdentification
+namespace ApplianceIdentification {
+} // namespace ApplianceIdentification
 
-namespace MeterIdentification {} // namespace MeterIdentification
+namespace MeterIdentification {
+} // namespace MeterIdentification
 
 namespace ApplianceEventsAndAlert {
 
@@ -2326,6 +2584,7 @@ enum class EventIdentification : uint8_t
     kSwitchingOff       = 0x06,
     kWrongData          = 0x07,
 };
+CHIP_ERROR CheckEventIdentification(EventIdentification val);
 
 // Bitmap for AlertCount
 enum class AlertCount : uint8_t
@@ -2343,9 +2602,11 @@ enum class AlertStructure : uint32_t
 };
 } // namespace ApplianceEventsAndAlert
 
-namespace ApplianceStatistics {} // namespace ApplianceStatistics
+namespace ApplianceStatistics {
+} // namespace ApplianceStatistics
 
-namespace ElectricalMeasurement {} // namespace ElectricalMeasurement
+namespace ElectricalMeasurement {
+} // namespace ElectricalMeasurement
 
 namespace TestCluster {
 
@@ -2357,6 +2618,7 @@ enum class SimpleEnum : uint8_t
     kValueB      = 0x02,
     kValueC      = 0x03,
 };
+CHIP_ERROR CheckSimpleEnum(SimpleEnum val);
 
 // Bitmap for Bitmap16MaskMap
 enum class Bitmap16MaskMap : uint16_t

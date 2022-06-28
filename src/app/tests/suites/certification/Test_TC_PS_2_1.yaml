@@ -151,7 +151,7 @@ tests:
           constraints:
               type: uint32
 
-    - label: "Test Harness Client reads BatChargeLevel from Server DUT"
+    - label: "Test Harness Client reads BatteryChargeLevel from Server DUT"
       command: "readAttribute"
       attribute: "BatteryChargeLevel"
       response:
@@ -168,7 +168,7 @@ tests:
           constraints:
               type: bool
 
-    - label: "Test Harness Client reads BatReplaceability from Server DUT"
+    - label: "Test Harness Client reads BatteryReplaceability from Server DUT"
       PICS: PICS_SKIP_SAMPLE_APP
       command: "readAttribute"
       attribute: "BatteryReplaceability"
@@ -259,7 +259,7 @@ tests:
           constraints:
               type: uint8
 
-    - label: "Test Harness Client reads BatChargeState from Server DUT"
+    - label: "Test Harness Client reads BatteryChargeState from Server DUT"
       PICS: PICS_SKIP_SAMPLE_APP
       command: "readAttribute"
       attribute: "BatteryChargeState"

@@ -10100,8 +10100,9 @@ void registerClusterPowerConfiguration(Commands & commands, CredentialIssuerComm
         make_unique<WriteAttribute<uint16_t>>(Id, "mains-voltage-dwell-trip", 0, UINT16_MAX, Attributes::MainsVoltageDwellTrip::Id,
                                               credsIssuerConfig), //
         make_unique<WriteAttribute<chip::CharSpan>>(Id, "battery-manufacturer", Attributes::BatteryManufacturer::Id,
-                                                    credsIssuerConfig),                                                         //
-        make_unique<WriteAttribute<uint8_t>>(Id, "battery-size", 0, UINT8_MAX, Attributes::BatterySize::Id, credsIssuerConfig), //
+                                                    credsIssuerConfig), //
+        make_unique<WriteAttribute<chip::app::Clusters::PowerConfiguration::BatterySize>>(
+            Id, "battery-size", 0, UINT8_MAX, Attributes::BatterySize::Id, credsIssuerConfig), //
         make_unique<WriteAttribute<uint16_t>>(Id, "battery-ahr-rating", 0, UINT16_MAX, Attributes::BatteryAhrRating::Id,
                                               credsIssuerConfig), //
         make_unique<WriteAttribute<uint8_t>>(Id, "battery-quantity", 0, UINT8_MAX, Attributes::BatteryQuantity::Id,
@@ -10127,8 +10128,9 @@ void registerClusterPowerConfiguration(Commands & commands, CredentialIssuerComm
         make_unique<WriteAttribute<uint8_t>>(Id, "battery-percentage-threshold3", 0, UINT8_MAX,
                                              Attributes::BatteryPercentageThreshold3::Id, credsIssuerConfig), //
         make_unique<WriteAttribute<chip::CharSpan>>(Id, "battery2manufacturer", Attributes::Battery2Manufacturer::Id,
-                                                    credsIssuerConfig),                                                          //
-        make_unique<WriteAttribute<uint8_t>>(Id, "battery2size", 0, UINT8_MAX, Attributes::Battery2Size::Id, credsIssuerConfig), //
+                                                    credsIssuerConfig), //
+        make_unique<WriteAttribute<chip::app::Clusters::PowerConfiguration::BatterySize>>(
+            Id, "battery2size", 0, UINT8_MAX, Attributes::Battery2Size::Id, credsIssuerConfig), //
         make_unique<WriteAttribute<uint16_t>>(Id, "battery2ahr-rating", 0, UINT16_MAX, Attributes::Battery2AhrRating::Id,
                                               credsIssuerConfig), //
         make_unique<WriteAttribute<uint8_t>>(Id, "battery2quantity", 0, UINT8_MAX, Attributes::Battery2Quantity::Id,
@@ -10154,8 +10156,9 @@ void registerClusterPowerConfiguration(Commands & commands, CredentialIssuerComm
         make_unique<WriteAttribute<uint8_t>>(Id, "battery2percentage-threshold3", 0, UINT8_MAX,
                                              Attributes::Battery2PercentageThreshold3::Id, credsIssuerConfig), //
         make_unique<WriteAttribute<chip::CharSpan>>(Id, "battery3manufacturer", Attributes::Battery3Manufacturer::Id,
-                                                    credsIssuerConfig),                                                          //
-        make_unique<WriteAttribute<uint8_t>>(Id, "battery3size", 0, UINT8_MAX, Attributes::Battery3Size::Id, credsIssuerConfig), //
+                                                    credsIssuerConfig), //
+        make_unique<WriteAttribute<chip::app::Clusters::PowerConfiguration::BatterySize>>(
+            Id, "battery3size", 0, UINT8_MAX, Attributes::Battery3Size::Id, credsIssuerConfig), //
         make_unique<WriteAttribute<uint16_t>>(Id, "battery3ahr-rating", 0, UINT16_MAX, Attributes::Battery3AhrRating::Id,
                                               credsIssuerConfig), //
         make_unique<WriteAttribute<uint8_t>>(Id, "battery3quantity", 0, UINT8_MAX, Attributes::Battery3Quantity::Id,
@@ -10574,8 +10577,8 @@ void registerClusterOnOffSwitchConfiguration(Commands & commands, CredentialIssu
         make_unique<ReadAttribute>(Id, "feature-map", Attributes::FeatureMap::Id, credsIssuerConfig),                      //
         make_unique<ReadAttribute>(Id, "cluster-revision", Attributes::ClusterRevision::Id, credsIssuerConfig),            //
         make_unique<WriteAttribute<>>(Id, credsIssuerConfig),                                                              //
-        make_unique<WriteAttribute<uint8_t>>(Id, "switch-actions", 0, UINT8_MAX, Attributes::SwitchActions::Id,
-                                             credsIssuerConfig),                                                                //
+        make_unique<WriteAttribute<chip::app::Clusters::OnOffSwitchConfiguration::SwitchActions>>(
+            Id, "switch-actions", 0, UINT8_MAX, Attributes::SwitchActions::Id, credsIssuerConfig),                              //
         make_unique<SubscribeAttribute>(Id, credsIssuerConfig),                                                                 //
         make_unique<SubscribeAttribute>(Id, "switch-type", Attributes::SwitchType::Id, credsIssuerConfig),                      //
         make_unique<SubscribeAttribute>(Id, "switch-actions", Attributes::SwitchActions::Id, credsIssuerConfig),                //

@@ -20,6 +20,8 @@ static_library("cluster-objects") {
   sources = [
     "${chip_root}/zzz_generated/app-common/app-common/zap-generated/cluster-objects.cpp",
     "${chip_root}/zzz_generated/app-common/app-common/zap-generated/cluster-objects.h",
+    "${chip_root}/zzz_generated/app-common/app-common/zap-generated/cluster-enums.cpp",
+    "${chip_root}/zzz_generated/app-common/app-common/zap-generated/cluster-enums.h",
   ]
 
   public_deps = [

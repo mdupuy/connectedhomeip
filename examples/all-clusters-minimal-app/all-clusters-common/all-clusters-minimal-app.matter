@@ -30,7 +30,7 @@ server cluster Identify = 3 {
   }
 
   attribute int16u identifyTime = 0;
-  readonly attribute enum8 identifyType = 1;
+  readonly attribute IdentifyIdentifyType identifyType = 1;
   readonly attribute bitmap32 featureMap = 65532;
   readonly attribute int16u clusterRevision = 65533;
 
@@ -722,26 +722,26 @@ server cluster PowerSource = 47 {
     kSafetyTimeout = 10;
   }
 
-  enum BatChargeLevel : ENUM8 {
-    kOk = 0;
-    kWarning = 1;
-    kCritical = 2;
-  }
-
-  enum BatChargeState : ENUM8 {
-    kUnknown = 0;
-    kIsCharging = 1;
-    kIsAtFullCharge = 2;
-    kIsNotCharging = 3;
-  }
-
   enum BatFaultType : ENUM8 {
     kUnspecfied = 0;
     kOverTemp = 1;
     kUnderTemp = 2;
   }
 
-  enum BatReplaceability : ENUM8 {
+  enum BatteryChargeLevel : ENUM8 {
+    kOk = 0;
+    kWarning = 1;
+    kCritical = 2;
+  }
+
+  enum BatteryChargeState : ENUM8 {
+    kUnknown = 0;
+    kIsCharging = 1;
+    kIsAtFullCharge = 2;
+    kIsNotCharging = 3;
+  }
+
+  enum BatteryReplaceability : ENUM8 {
     kUnspecified = 0;
     kNotReplaceable = 1;
     kUserReplaceable = 2;

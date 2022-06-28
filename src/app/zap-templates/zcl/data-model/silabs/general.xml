@@ -107,7 +107,7 @@ limitations under the License.
     <attribute side="server" code="0x0020" define="BATTERY_VOLTAGE" type="INT8U" min="0x00" max="0xFF" writable="false" optional="true">battery voltage</attribute>
     <attribute side="server" code="0x0021" define="BATTERY_PERCENTAGE_REMAINING" type="INT8U" min="0x00" max="0xFF" writable="false" reportable="true" default="0x00" optional="true" introducedIn="ha-1.2-05-3520-29">battery percentage remaining</attribute>
     <attribute side="server" code="0x0030" define="BATTERY_MANUFACTURER" type="CHAR_STRING" length="16" writable="true" default="" optional="true">battery manufacturer</attribute>
-    <attribute side="server" code="0x0031" define="BATTERY_SIZE" type="ENUM8" min="0x00" max="0xFF" writable="true" default="0xFF" optional="true">battery size</attribute>
+    <attribute side="server" code="0x0031" define="BATTERY_SIZE" type="BatterySize" min="0x00" max="0xFF" writable="true" default="0xFF" optional="true">battery size</attribute>
     <attribute side="server" code="0x0032" define="BATTERY_AHR_RATING" type="INT16U" min="0x0000" max="0xFFFF" writable="true" optional="true">battery ahr rating</attribute>
     <attribute side="server" code="0x0033" define="BATTERY_QUANTITY" type="INT8U" min="0x00" max="0xFF" writable="true" optional="true">battery quantity</attribute>
     <attribute side="server" code="0x0034" define="BATTERY_RATED_VOLTAGE" type="INT8U" min="0x00" max="0xFF" writable="true" optional="true">battery rated voltage</attribute>
@@ -124,7 +124,7 @@ limitations under the License.
     <attribute side="server" code="0x0040" define="BATTERY_2_VOLTAGE" type="INT8U" min="0x00" max="0xFF" writable="false" optional="true" introducedIn="ha-1.2-05-3520-29">battery 2 voltage</attribute>
     <attribute side="server" code="0x0041" define="BATTERY_2_PERCENTAGE_REMAINING" type="INT8U" min="0x00" max="0xFF" writable="false" default="0x00" optional="true" introducedIn="ha-1.2-05-3520-29">battery 2 percentage remaining</attribute>
     <attribute side="server" code="0x0050" define="BATTERY_2_MANUFACTURER" type="CHAR_STRING" length="16" writable="true" default="" optional="true" introducedIn="ha-1.2-05-3520-29">battery 2 manufacturer</attribute>
-    <attribute side="server" code="0x0051" define="BATTERY_2_SIZE" type="ENUM8" min="0x00" max="0xFF" writable="true" default="0xFF" optional="true" introducedIn="ha-1.2-05-3520-29">battery 2 size</attribute>
+    <attribute side="server" code="0x0051" define="BATTERY_2_SIZE" type="BatterySize" min="0x00" max="0xFF" writable="true" default="0xFF" optional="true" introducedIn="ha-1.2-05-3520-29">battery 2 size</attribute>
     <attribute side="server" code="0x0052" define="BATTERY_2_AHR_RATING" type="INT16U" min="0x0000" max="0xFFFF" writable="true" optional="true" introducedIn="ha-1.2-05-3520-29">battery 2 ahr rating</attribute>
     <attribute side="server" code="0x0053" define="BATTERY_2_QUANTITY" type="INT8U" min="0x00" max="0xFF" writable="true" optional="true" introducedIn="ha-1.2-05-3520-29">battery 2 quantity</attribute>
     <attribute side="server" code="0x0054" define="BATTERY_2_RATED_VOLTAGE" type="INT8U" min="0x00" max="0xFF" writable="true" optional="true" introducedIn="ha-1.2-05-3520-29">battery 2 rated voltage</attribute>
@@ -141,7 +141,7 @@ limitations under the License.
     <attribute side="server" code="0x0060" define="BATTERY_3_VOLTAGE" type="INT8U" min="0x00" max="0xFF" writable="false" optional="true" introducedIn="ha-1.2-05-3520-29">battery 3 voltage</attribute>
     <attribute side="server" code="0x0061" define="BATTERY_3_PERCENTAGE_REMAINING" type="INT8U" min="0x00" max="0xFF" writable="false" default="0x00" optional="true" introducedIn="ha-1.2-05-3520-29">battery 3 percentage remaining</attribute>
     <attribute side="server" code="0x0070" define="BATTERY_3_MANUFACTURER" type="CHAR_STRING" length="16" writable="true" default="" optional="true" introducedIn="ha-1.2-05-3520-29">battery 3 manufacturer</attribute>
-    <attribute side="server" code="0x0071" define="BATTERY_3_SIZE" type="ENUM8" min="0x00" max="0xFF" writable="true" default="0xFF" optional="true" introducedIn="ha-1.2-05-3520-29">battery 3 size</attribute>
+    <attribute side="server" code="0x0071" define="BATTERY_3_SIZE" type="BatterySize" min="0x00" max="0xFF" writable="true" default="0xFF" optional="true" introducedIn="ha-1.2-05-3520-29">battery 3 size</attribute>
     <attribute side="server" code="0x0072" define="BATTERY_3_AHR_RATING" type="INT16U" min="0x0000" max="0xFFFF" writable="true" optional="true" introducedIn="ha-1.2-05-3520-29">battery 3 ahr rating</attribute>
     <attribute side="server" code="0x0073" define="BATTERY_3_QUANTITY" type="INT8U" min="0x00" max="0xFF" writable="true" optional="true" introducedIn="ha-1.2-05-3520-29">battery 3 quantity</attribute>
     <attribute side="server" code="0x0074" define="BATTERY_3_RATED_VOLTAGE" type="INT8U" min="0x00" max="0xFF" writable="true" optional="true" introducedIn="ha-1.2-05-3520-29">battery 3 rated voltage</attribute>
@@ -264,8 +264,8 @@ limitations under the License.
     <define>ON_OFF_SWITCH_CONFIG_CLUSTER</define>
     <client tick="false" init="false">true</client>
     <server tick="false" init="false">true</server>
-    <attribute side="server" code="0x0000" define="SWITCH_TYPE" type="ENUM8" min="0x00" max="0x01" writable="false" optional="false">switch type</attribute>
-    <attribute side="server" code="0x0010" define="SWITCH_ACTIONS" type="ENUM8" min="0x00" max="0x02" writable="true" default="0x00" optional="false">switch actions</attribute>
+    <attribute side="server" code="0x0000" define="SWITCH_TYPE" type="SwitchType" min="0x00" max="0x01" writable="false" optional="false">switch type</attribute>
+    <attribute side="server" code="0x0010" define="SWITCH_ACTIONS" type="SwitchActions" min="0x00" max="0x02" writable="true" default="0x00" optional="false">switch actions</attribute>
   </cluster>
   <cluster>
     <name>Level Control</name>

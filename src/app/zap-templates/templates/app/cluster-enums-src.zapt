@@ -1,9 +1,5 @@
 {{> header}}
 
-#pragma once
-
-#include <stdint.h>
-
 #include <app-common/zap-generated/cluster-enums.h>
 
 namespace chip {
@@ -28,10 +24,9 @@ CHIP_ERROR Check{{asType label}}({{asType label}} val)
     {{/zcl_enum_items}}
         return CHIP_NO_ERROR;
     default:
-        return CHIP_ERROR_UNKNOWN_ENUM;
+        return CHIP_ERROR_UNKNOWN_ENUM_VALUE;
     }
-};
-
+}
 {{#if (isWeaklyTypedEnum label)}}
 #endif
 {{/if}}

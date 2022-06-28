@@ -49,7 +49,7 @@ class PowerConfiguration(Cluster):
                 ClusterObjectFieldDescriptor(Label="batteryVoltage", Tag=0x00000020, Type=typing.Optional[uint]),
                 ClusterObjectFieldDescriptor(Label="batteryPercentageRemaining", Tag=0x00000021, Type=typing.Optional[uint]),
                 ClusterObjectFieldDescriptor(Label="batteryManufacturer", Tag=0x00000030, Type=typing.Optional[str]),
-                ClusterObjectFieldDescriptor(Label="batterySize", Tag=0x00000031, Type=typing.Optional[uint]),
+                ClusterObjectFieldDescriptor(Label="batterySize", Tag=0x00000031, Type=typing.Optional[PowerConfiguration.Enums.BatterySize]),
                 ClusterObjectFieldDescriptor(Label="batteryAhrRating", Tag=0x00000032, Type=typing.Optional[uint]),
                 ClusterObjectFieldDescriptor(Label="batteryQuantity", Tag=0x00000033, Type=typing.Optional[uint]),
                 ClusterObjectFieldDescriptor(Label="batteryRatedVoltage", Tag=0x00000034, Type=typing.Optional[uint]),
@@ -66,7 +66,7 @@ class PowerConfiguration(Cluster):
                 ClusterObjectFieldDescriptor(Label="battery2Voltage", Tag=0x00000040, Type=typing.Optional[uint]),
                 ClusterObjectFieldDescriptor(Label="battery2PercentageRemaining", Tag=0x00000041, Type=typing.Optional[uint]),
                 ClusterObjectFieldDescriptor(Label="battery2Manufacturer", Tag=0x00000050, Type=typing.Optional[str]),
-                ClusterObjectFieldDescriptor(Label="battery2Size", Tag=0x00000051, Type=typing.Optional[uint]),
+                ClusterObjectFieldDescriptor(Label="battery2Size", Tag=0x00000051, Type=typing.Optional[PowerConfiguration.Enums.BatterySize]),
                 ClusterObjectFieldDescriptor(Label="battery2AhrRating", Tag=0x00000052, Type=typing.Optional[uint]),
                 ClusterObjectFieldDescriptor(Label="battery2Quantity", Tag=0x00000053, Type=typing.Optional[uint]),
                 ClusterObjectFieldDescriptor(Label="battery2RatedVoltage", Tag=0x00000054, Type=typing.Optional[uint]),
@@ -83,7 +83,7 @@ class PowerConfiguration(Cluster):
                 ClusterObjectFieldDescriptor(Label="battery3Voltage", Tag=0x00000060, Type=typing.Optional[uint]),
                 ClusterObjectFieldDescriptor(Label="battery3PercentageRemaining", Tag=0x00000061, Type=typing.Optional[uint]),
                 ClusterObjectFieldDescriptor(Label="battery3Manufacturer", Tag=0x00000070, Type=typing.Optional[str]),
-                ClusterObjectFieldDescriptor(Label="battery3Size", Tag=0x00000071, Type=typing.Optional[uint]),
+                ClusterObjectFieldDescriptor(Label="battery3Size", Tag=0x00000071, Type=typing.Optional[PowerConfiguration.Enums.BatterySize]),
                 ClusterObjectFieldDescriptor(Label="battery3AhrRating", Tag=0x00000072, Type=typing.Optional[uint]),
                 ClusterObjectFieldDescriptor(Label="battery3Quantity", Tag=0x00000073, Type=typing.Optional[uint]),
                 ClusterObjectFieldDescriptor(Label="battery3RatedVoltage", Tag=0x00000074, Type=typing.Optional[uint]),
@@ -113,7 +113,7 @@ class PowerConfiguration(Cluster):
     batteryVoltage: 'typing.Optional[uint]' = None
     batteryPercentageRemaining: 'typing.Optional[uint]' = None
     batteryManufacturer: 'typing.Optional[str]' = None
-    batterySize: 'typing.Optional[uint]' = None
+    batterySize: 'typing.Optional[PowerConfiguration.Enums.BatterySize]' = None
     batteryAhrRating: 'typing.Optional[uint]' = None
     batteryQuantity: 'typing.Optional[uint]' = None
     batteryRatedVoltage: 'typing.Optional[uint]' = None
@@ -130,7 +130,7 @@ class PowerConfiguration(Cluster):
     battery2Voltage: 'typing.Optional[uint]' = None
     battery2PercentageRemaining: 'typing.Optional[uint]' = None
     battery2Manufacturer: 'typing.Optional[str]' = None
-    battery2Size: 'typing.Optional[uint]' = None
+    battery2Size: 'typing.Optional[PowerConfiguration.Enums.BatterySize]' = None
     battery2AhrRating: 'typing.Optional[uint]' = None
     battery2Quantity: 'typing.Optional[uint]' = None
     battery2RatedVoltage: 'typing.Optional[uint]' = None
@@ -147,7 +147,7 @@ class PowerConfiguration(Cluster):
     battery3Voltage: 'typing.Optional[uint]' = None
     battery3PercentageRemaining: 'typing.Optional[uint]' = None
     battery3Manufacturer: 'typing.Optional[str]' = None
-    battery3Size: 'typing.Optional[uint]' = None
+    battery3Size: 'typing.Optional[PowerConfiguration.Enums.BatterySize]' = None
     battery3AhrRating: 'typing.Optional[uint]' = None
     battery3Quantity: 'typing.Optional[uint]' = None
     battery3RatedVoltage: 'typing.Optional[uint]' = None
@@ -166,6 +166,17 @@ class PowerConfiguration(Cluster):
     attributeList: 'typing.List[uint]' = None
     featureMap: 'uint' = None
     clusterRevision: 'uint' = None
+
+    class Enums:
+        class BatterySize(IntEnum):
+            kNoBattery = 0x00
+            kBuiltIn = 0x01
+            kOther = 0x02
+            kAa = 0x03
+            kAaa = 0x04
+            kC = 0x05
+            kD = 0x06
+            kUnknown = 0xFF
 
 
 
@@ -327,9 +338,9 @@ class PowerConfiguration(Cluster):
 
             @ChipUtility.classproperty
             def attribute_type(cls) -> ClusterObjectFieldDescriptor:
-                return ClusterObjectFieldDescriptor(Type=typing.Optional[uint])
+                return ClusterObjectFieldDescriptor(Type=typing.Optional[PowerConfiguration.Enums.BatterySize])
 
-            value: 'typing.Optional[uint]' = None
+            value: 'typing.Optional[PowerConfiguration.Enums.BatterySize]' = None
 
         @dataclass
         class BatteryAhrRating(ClusterAttributeDescriptor):
@@ -599,9 +610,9 @@ class PowerConfiguration(Cluster):
 
             @ChipUtility.classproperty
             def attribute_type(cls) -> ClusterObjectFieldDescriptor:
-                return ClusterObjectFieldDescriptor(Type=typing.Optional[uint])
+                return ClusterObjectFieldDescriptor(Type=typing.Optional[PowerConfiguration.Enums.BatterySize])
 
-            value: 'typing.Optional[uint]' = None
+            value: 'typing.Optional[PowerConfiguration.Enums.BatterySize]' = None
 
         @dataclass
         class Battery2AhrRating(ClusterAttributeDescriptor):
@@ -871,9 +882,9 @@ class PowerConfiguration(Cluster):
 
             @ChipUtility.classproperty
             def attribute_type(cls) -> ClusterObjectFieldDescriptor:
-                return ClusterObjectFieldDescriptor(Type=typing.Optional[uint])
+                return ClusterObjectFieldDescriptor(Type=typing.Optional[PowerConfiguration.Enums.BatterySize])
 
-            value: 'typing.Optional[uint]' = None
+            value: 'typing.Optional[PowerConfiguration.Enums.BatterySize]' = None
 
         @dataclass
         class Battery3AhrRating(ClusterAttributeDescriptor):
@@ -1443,7 +1454,7 @@ class Identify(Cluster):
         return ClusterObjectDescriptor(
             Fields = [
                 ClusterObjectFieldDescriptor(Label="identifyTime", Tag=0x00000000, Type=uint),
-                ClusterObjectFieldDescriptor(Label="identifyType", Tag=0x00000001, Type=uint),
+                ClusterObjectFieldDescriptor(Label="identifyType", Tag=0x00000001, Type=Identify.Enums.IdentifyIdentifyType),
                 ClusterObjectFieldDescriptor(Label="generatedCommandList", Tag=0x0000FFF8, Type=typing.List[uint]),
                 ClusterObjectFieldDescriptor(Label="acceptedCommandList", Tag=0x0000FFF9, Type=typing.List[uint]),
                 ClusterObjectFieldDescriptor(Label="attributeList", Tag=0x0000FFFB, Type=typing.List[uint]),
@@ -1452,7 +1463,7 @@ class Identify(Cluster):
             ])
 
     identifyTime: 'uint' = None
-    identifyType: 'uint' = None
+    identifyType: 'Identify.Enums.IdentifyIdentifyType' = None
     generatedCommandList: 'typing.List[uint]' = None
     acceptedCommandList: 'typing.List[uint]' = None
     attributeList: 'typing.List[uint]' = None
@@ -1544,9 +1555,9 @@ class Identify(Cluster):
 
             @ChipUtility.classproperty
             def attribute_type(cls) -> ClusterObjectFieldDescriptor:
-                return ClusterObjectFieldDescriptor(Type=uint)
+                return ClusterObjectFieldDescriptor(Type=Identify.Enums.IdentifyIdentifyType)
 
-            value: 'uint' = 0
+            value: 'Identify.Enums.IdentifyIdentifyType' = 0
 
         @dataclass
         class GeneratedCommandList(ClusterAttributeDescriptor):
@@ -2843,8 +2854,8 @@ class OnOffSwitchConfiguration(Cluster):
     def descriptor(cls) -> ClusterObjectDescriptor:
         return ClusterObjectDescriptor(
             Fields = [
-                ClusterObjectFieldDescriptor(Label="switchType", Tag=0x00000000, Type=uint),
-                ClusterObjectFieldDescriptor(Label="switchActions", Tag=0x00000010, Type=uint),
+                ClusterObjectFieldDescriptor(Label="switchType", Tag=0x00000000, Type=OnOffSwitchConfiguration.Enums.SwitchType),
+                ClusterObjectFieldDescriptor(Label="switchActions", Tag=0x00000010, Type=OnOffSwitchConfiguration.Enums.SwitchActions),
                 ClusterObjectFieldDescriptor(Label="generatedCommandList", Tag=0x0000FFF8, Type=typing.List[uint]),
                 ClusterObjectFieldDescriptor(Label="acceptedCommandList", Tag=0x0000FFF9, Type=typing.List[uint]),
                 ClusterObjectFieldDescriptor(Label="attributeList", Tag=0x0000FFFB, Type=typing.List[uint]),
@@ -2852,13 +2863,24 @@ class OnOffSwitchConfiguration(Cluster):
                 ClusterObjectFieldDescriptor(Label="clusterRevision", Tag=0x0000FFFD, Type=uint),
             ])
 
-    switchType: 'uint' = None
-    switchActions: 'uint' = None
+    switchType: 'OnOffSwitchConfiguration.Enums.SwitchType' = None
+    switchActions: 'OnOffSwitchConfiguration.Enums.SwitchActions' = None
     generatedCommandList: 'typing.List[uint]' = None
     acceptedCommandList: 'typing.List[uint]' = None
     attributeList: 'typing.List[uint]' = None
     featureMap: 'uint' = None
     clusterRevision: 'uint' = None
+
+    class Enums:
+        class SwitchActions(IntEnum):
+            kOn = 0x00
+            kOff = 0x01
+            kToggle = 0x02
+
+        class SwitchType(IntEnum):
+            kToggle = 0x00
+            kMomentary = 0x01
+            kMultiFunction = 0x02
 
 
 
@@ -2876,9 +2898,9 @@ class OnOffSwitchConfiguration(Cluster):
 
             @ChipUtility.classproperty
             def attribute_type(cls) -> ClusterObjectFieldDescriptor:
-                return ClusterObjectFieldDescriptor(Type=uint)
+                return ClusterObjectFieldDescriptor(Type=OnOffSwitchConfiguration.Enums.SwitchType)
 
-            value: 'uint' = 0
+            value: 'OnOffSwitchConfiguration.Enums.SwitchType' = 0
 
         @dataclass
         class SwitchActions(ClusterAttributeDescriptor):
@@ -2892,9 +2914,9 @@ class OnOffSwitchConfiguration(Cluster):
 
             @ChipUtility.classproperty
             def attribute_type(cls) -> ClusterObjectFieldDescriptor:
-                return ClusterObjectFieldDescriptor(Type=uint)
+                return ClusterObjectFieldDescriptor(Type=OnOffSwitchConfiguration.Enums.SwitchActions)
 
-            value: 'uint' = 0
+            value: 'OnOffSwitchConfiguration.Enums.SwitchActions' = 0
 
         @dataclass
         class GeneratedCommandList(ClusterAttributeDescriptor):
@@ -8509,7 +8531,7 @@ class PowerSource(Cluster):
                 ClusterObjectFieldDescriptor(Label="description", Tag=0x00000002, Type=str),
                 ClusterObjectFieldDescriptor(Label="wiredAssessedInputVoltage", Tag=0x00000003, Type=typing.Optional[uint]),
                 ClusterObjectFieldDescriptor(Label="wiredAssessedInputFrequency", Tag=0x00000004, Type=typing.Optional[uint]),
-                ClusterObjectFieldDescriptor(Label="wiredCurrentType", Tag=0x00000005, Type=typing.Optional[uint]),
+                ClusterObjectFieldDescriptor(Label="wiredCurrentType", Tag=0x00000005, Type=typing.Optional[PowerSource.Enums.WiredCurrentType]),
                 ClusterObjectFieldDescriptor(Label="wiredAssessedCurrent", Tag=0x00000006, Type=typing.Optional[uint]),
                 ClusterObjectFieldDescriptor(Label="wiredNominalVoltage", Tag=0x00000007, Type=typing.Optional[uint]),
                 ClusterObjectFieldDescriptor(Label="wiredMaximumCurrent", Tag=0x00000008, Type=typing.Optional[uint]),
@@ -8518,9 +8540,9 @@ class PowerSource(Cluster):
                 ClusterObjectFieldDescriptor(Label="batteryVoltage", Tag=0x0000000B, Type=typing.Optional[uint]),
                 ClusterObjectFieldDescriptor(Label="batteryPercentRemaining", Tag=0x0000000C, Type=typing.Optional[uint]),
                 ClusterObjectFieldDescriptor(Label="batteryTimeRemaining", Tag=0x0000000D, Type=typing.Optional[uint]),
-                ClusterObjectFieldDescriptor(Label="batteryChargeLevel", Tag=0x0000000E, Type=typing.Optional[uint]),
+                ClusterObjectFieldDescriptor(Label="batteryChargeLevel", Tag=0x0000000E, Type=typing.Optional[PowerSource.Enums.BatteryChargeLevel]),
                 ClusterObjectFieldDescriptor(Label="batteryReplacementNeeded", Tag=0x0000000F, Type=typing.Optional[bool]),
-                ClusterObjectFieldDescriptor(Label="batteryReplaceability", Tag=0x00000010, Type=typing.Optional[uint]),
+                ClusterObjectFieldDescriptor(Label="batteryReplaceability", Tag=0x00000010, Type=typing.Optional[PowerSource.Enums.BatteryReplaceability]),
                 ClusterObjectFieldDescriptor(Label="batteryPresent", Tag=0x00000011, Type=typing.Optional[bool]),
                 ClusterObjectFieldDescriptor(Label="activeBatteryFaults", Tag=0x00000012, Type=typing.Optional[typing.List[uint]]),
                 ClusterObjectFieldDescriptor(Label="batteryReplacementDescription", Tag=0x00000013, Type=typing.Optional[str]),
@@ -8530,7 +8552,7 @@ class PowerSource(Cluster):
                 ClusterObjectFieldDescriptor(Label="batteryApprovedChemistry", Tag=0x00000017, Type=typing.Optional[uint]),
                 ClusterObjectFieldDescriptor(Label="batteryCapacity", Tag=0x00000018, Type=typing.Optional[uint]),
                 ClusterObjectFieldDescriptor(Label="batteryQuantity", Tag=0x00000019, Type=typing.Optional[uint]),
-                ClusterObjectFieldDescriptor(Label="batteryChargeState", Tag=0x0000001A, Type=typing.Optional[uint]),
+                ClusterObjectFieldDescriptor(Label="batteryChargeState", Tag=0x0000001A, Type=typing.Optional[PowerSource.Enums.BatteryChargeState]),
                 ClusterObjectFieldDescriptor(Label="batteryTimeToFullCharge", Tag=0x0000001B, Type=typing.Optional[uint]),
                 ClusterObjectFieldDescriptor(Label="batteryFunctionalWhileCharging", Tag=0x0000001C, Type=typing.Optional[bool]),
                 ClusterObjectFieldDescriptor(Label="batteryChargingCurrent", Tag=0x0000001D, Type=typing.Optional[uint]),
@@ -8547,7 +8569,7 @@ class PowerSource(Cluster):
     description: 'str' = None
     wiredAssessedInputVoltage: 'typing.Optional[uint]' = None
     wiredAssessedInputFrequency: 'typing.Optional[uint]' = None
-    wiredCurrentType: 'typing.Optional[uint]' = None
+    wiredCurrentType: 'typing.Optional[PowerSource.Enums.WiredCurrentType]' = None
     wiredAssessedCurrent: 'typing.Optional[uint]' = None
     wiredNominalVoltage: 'typing.Optional[uint]' = None
     wiredMaximumCurrent: 'typing.Optional[uint]' = None
@@ -8556,9 +8578,9 @@ class PowerSource(Cluster):
     batteryVoltage: 'typing.Optional[uint]' = None
     batteryPercentRemaining: 'typing.Optional[uint]' = None
     batteryTimeRemaining: 'typing.Optional[uint]' = None
-    batteryChargeLevel: 'typing.Optional[uint]' = None
+    batteryChargeLevel: 'typing.Optional[PowerSource.Enums.BatteryChargeLevel]' = None
     batteryReplacementNeeded: 'typing.Optional[bool]' = None
-    batteryReplaceability: 'typing.Optional[uint]' = None
+    batteryReplaceability: 'typing.Optional[PowerSource.Enums.BatteryReplaceability]' = None
     batteryPresent: 'typing.Optional[bool]' = None
     activeBatteryFaults: 'typing.Optional[typing.List[uint]]' = None
     batteryReplacementDescription: 'typing.Optional[str]' = None
@@ -8568,7 +8590,7 @@ class PowerSource(Cluster):
     batteryApprovedChemistry: 'typing.Optional[uint]' = None
     batteryCapacity: 'typing.Optional[uint]' = None
     batteryQuantity: 'typing.Optional[uint]' = None
-    batteryChargeState: 'typing.Optional[uint]' = None
+    batteryChargeState: 'typing.Optional[PowerSource.Enums.BatteryChargeState]' = None
     batteryTimeToFullCharge: 'typing.Optional[uint]' = None
     batteryFunctionalWhileCharging: 'typing.Optional[bool]' = None
     batteryChargingCurrent: 'typing.Optional[uint]' = None
@@ -8593,23 +8615,23 @@ class PowerSource(Cluster):
             kChargerUnderVoltage = 0x09
             kSafetyTimeout = 0x0A
 
-        class BatChargeLevel(IntEnum):
-            kOk = 0x00
-            kWarning = 0x01
-            kCritical = 0x02
-
-        class BatChargeState(IntEnum):
-            kUnknown = 0x00
-            kIsCharging = 0x01
-            kIsAtFullCharge = 0x02
-            kIsNotCharging = 0x03
-
         class BatFaultType(IntEnum):
             kUnspecfied = 0x00
             kOverTemp = 0x01
             kUnderTemp = 0x02
 
-        class BatReplaceability(IntEnum):
+        class BatteryChargeLevel(IntEnum):
+            kOk = 0x00
+            kWarning = 0x01
+            kCritical = 0x02
+
+        class BatteryChargeState(IntEnum):
+            kUnknown = 0x00
+            kIsCharging = 0x01
+            kIsAtFullCharge = 0x02
+            kIsNotCharging = 0x03
+
+        class BatteryReplaceability(IntEnum):
             kUnspecified = 0x00
             kNotReplaceable = 0x01
             kUserReplaceable = 0x02
@@ -8767,9 +8789,9 @@ class PowerSource(Cluster):
 
             @ChipUtility.classproperty
             def attribute_type(cls) -> ClusterObjectFieldDescriptor:
-                return ClusterObjectFieldDescriptor(Type=typing.Optional[uint])
+                return ClusterObjectFieldDescriptor(Type=typing.Optional[PowerSource.Enums.WiredCurrentType])
 
-            value: 'typing.Optional[uint]' = None
+            value: 'typing.Optional[PowerSource.Enums.WiredCurrentType]' = None
 
         @dataclass
         class WiredAssessedCurrent(ClusterAttributeDescriptor):
@@ -8911,9 +8933,9 @@ class PowerSource(Cluster):
 
             @ChipUtility.classproperty
             def attribute_type(cls) -> ClusterObjectFieldDescriptor:
-                return ClusterObjectFieldDescriptor(Type=typing.Optional[uint])
+                return ClusterObjectFieldDescriptor(Type=typing.Optional[PowerSource.Enums.BatteryChargeLevel])
 
-            value: 'typing.Optional[uint]' = None
+            value: 'typing.Optional[PowerSource.Enums.BatteryChargeLevel]' = None
 
         @dataclass
         class BatteryReplacementNeeded(ClusterAttributeDescriptor):
@@ -8943,9 +8965,9 @@ class PowerSource(Cluster):
 
             @ChipUtility.classproperty
             def attribute_type(cls) -> ClusterObjectFieldDescriptor:
-                return ClusterObjectFieldDescriptor(Type=typing.Optional[uint])
+                return ClusterObjectFieldDescriptor(Type=typing.Optional[PowerSource.Enums.BatteryReplaceability])
 
-            value: 'typing.Optional[uint]' = None
+            value: 'typing.Optional[PowerSource.Enums.BatteryReplaceability]' = None
 
         @dataclass
         class BatteryPresent(ClusterAttributeDescriptor):
@@ -9103,9 +9125,9 @@ class PowerSource(Cluster):
 
             @ChipUtility.classproperty
             def attribute_type(cls) -> ClusterObjectFieldDescriptor:
-                return ClusterObjectFieldDescriptor(Type=typing.Optional[uint])
+                return ClusterObjectFieldDescriptor(Type=typing.Optional[PowerSource.Enums.BatteryChargeState])
 
-            value: 'typing.Optional[uint]' = None
+            value: 'typing.Optional[PowerSource.Enums.BatteryChargeState]' = None
 
         @dataclass
         class BatteryTimeToFullCharge(ClusterAttributeDescriptor):
@@ -10257,7 +10279,7 @@ class GeneralDiagnostics(Cluster):
                 ClusterObjectFieldDescriptor(Label="rebootCount", Tag=0x00000001, Type=uint),
                 ClusterObjectFieldDescriptor(Label="upTime", Tag=0x00000002, Type=typing.Optional[uint]),
                 ClusterObjectFieldDescriptor(Label="totalOperationalHours", Tag=0x00000003, Type=typing.Optional[uint]),
-                ClusterObjectFieldDescriptor(Label="bootReasons", Tag=0x00000004, Type=typing.Optional[uint]),
+                ClusterObjectFieldDescriptor(Label="bootReasons", Tag=0x00000004, Type=typing.Optional[GeneralDiagnostics.Enums.BootReasonType]),
                 ClusterObjectFieldDescriptor(Label="activeHardwareFaults", Tag=0x00000005, Type=typing.Optional[typing.List[uint]]),
                 ClusterObjectFieldDescriptor(Label="activeRadioFaults", Tag=0x00000006, Type=typing.Optional[typing.List[uint]]),
                 ClusterObjectFieldDescriptor(Label="activeNetworkFaults", Tag=0x00000007, Type=typing.Optional[typing.List[uint]]),
@@ -10273,7 +10295,7 @@ class GeneralDiagnostics(Cluster):
     rebootCount: 'uint' = None
     upTime: 'typing.Optional[uint]' = None
     totalOperationalHours: 'typing.Optional[uint]' = None
-    bootReasons: 'typing.Optional[uint]' = None
+    bootReasons: 'typing.Optional[GeneralDiagnostics.Enums.BootReasonType]' = None
     activeHardwareFaults: 'typing.Optional[typing.List[uint]]' = None
     activeRadioFaults: 'typing.Optional[typing.List[uint]]' = None
     activeNetworkFaults: 'typing.Optional[typing.List[uint]]' = None
@@ -10454,9 +10476,9 @@ class GeneralDiagnostics(Cluster):
 
             @ChipUtility.classproperty
             def attribute_type(cls) -> ClusterObjectFieldDescriptor:
-                return ClusterObjectFieldDescriptor(Type=typing.Optional[uint])
+                return ClusterObjectFieldDescriptor(Type=typing.Optional[GeneralDiagnostics.Enums.BootReasonType])
 
-            value: 'typing.Optional[uint]' = None
+            value: 'typing.Optional[GeneralDiagnostics.Enums.BootReasonType]' = None
 
         @dataclass
         class ActiveHardwareFaults(ClusterAttributeDescriptor):

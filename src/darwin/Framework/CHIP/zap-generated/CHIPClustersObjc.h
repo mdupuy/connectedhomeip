@@ -21166,6 +21166,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+typedef NS_ENUM(uint8_t, CHIPPowerConfigurationBatterySize) {
+    CHIPPowerConfigurationBatterySizeNoBattery = 0x00,
+    CHIPPowerConfigurationBatterySizeBuiltIn = 0x01,
+    CHIPPowerConfigurationBatterySizeOther = 0x02,
+    CHIPPowerConfigurationBatterySizeAA = 0x03,
+    CHIPPowerConfigurationBatterySizeAAA = 0x04,
+    CHIPPowerConfigurationBatterySizeC = 0x05,
+    CHIPPowerConfigurationBatterySizeD = 0x06,
+    CHIPPowerConfigurationBatterySizeUnknown = 0xFF,
+};
+
 typedef NS_ENUM(uint8_t, CHIPIdentifyEffectIdentifier) {
     CHIPIdentifyEffectIdentifierBlink = 0x00,
     CHIPIdentifyEffectIdentifierBreathe = 0x01,
@@ -21223,6 +21234,18 @@ typedef NS_OPTIONS(uint32_t, CHIPOnOffFeature) {
 
 typedef NS_OPTIONS(uint32_t, CHIPOnOffSceneFeatures) {
     CHIPOnOffSceneFeaturesSceneNames = 0x1,
+};
+
+typedef NS_ENUM(uint8_t, CHIPOnOffSwitchConfigurationSwitchActions) {
+    CHIPOnOffSwitchConfigurationSwitchActionsOn = 0x00,
+    CHIPOnOffSwitchConfigurationSwitchActionsOff = 0x01,
+    CHIPOnOffSwitchConfigurationSwitchActionsToggle = 0x02,
+};
+
+typedef NS_ENUM(uint8_t, CHIPOnOffSwitchConfigurationSwitchType) {
+    CHIPOnOffSwitchConfigurationSwitchTypeToggle = 0x00,
+    CHIPOnOffSwitchConfigurationSwitchTypeMomentary = 0x01,
+    CHIPOnOffSwitchConfigurationSwitchTypeMultiFunction = 0x02,
 };
 
 typedef NS_ENUM(uint8_t, CHIPLevelControlMoveMode) {
@@ -21439,30 +21462,30 @@ typedef NS_ENUM(uint8_t, CHIPPowerSourceBatChargeFaultType) {
     CHIPPowerSourceBatChargeFaultTypeSafetyTimeout = 0x0A,
 };
 
-typedef NS_ENUM(uint8_t, CHIPPowerSourceBatChargeLevel) {
-    CHIPPowerSourceBatChargeLevelOk = 0x00,
-    CHIPPowerSourceBatChargeLevelWarning = 0x01,
-    CHIPPowerSourceBatChargeLevelCritical = 0x02,
-};
-
-typedef NS_ENUM(uint8_t, CHIPPowerSourceBatChargeState) {
-    CHIPPowerSourceBatChargeStateUnknown = 0x00,
-    CHIPPowerSourceBatChargeStateIsCharging = 0x01,
-    CHIPPowerSourceBatChargeStateIsAtFullCharge = 0x02,
-    CHIPPowerSourceBatChargeStateIsNotCharging = 0x03,
-};
-
 typedef NS_ENUM(uint8_t, CHIPPowerSourceBatFaultType) {
     CHIPPowerSourceBatFaultTypeUnspecfied = 0x00,
     CHIPPowerSourceBatFaultTypeOverTemp = 0x01,
     CHIPPowerSourceBatFaultTypeUnderTemp = 0x02,
 };
 
-typedef NS_ENUM(uint8_t, CHIPPowerSourceBatReplaceability) {
-    CHIPPowerSourceBatReplaceabilityUnspecified = 0x00,
-    CHIPPowerSourceBatReplaceabilityNotReplaceable = 0x01,
-    CHIPPowerSourceBatReplaceabilityUserReplaceable = 0x02,
-    CHIPPowerSourceBatReplaceabilityFactoryReplaceable = 0x03,
+typedef NS_ENUM(uint8_t, CHIPPowerSourceBatteryChargeLevel) {
+    CHIPPowerSourceBatteryChargeLevelOk = 0x00,
+    CHIPPowerSourceBatteryChargeLevelWarning = 0x01,
+    CHIPPowerSourceBatteryChargeLevelCritical = 0x02,
+};
+
+typedef NS_ENUM(uint8_t, CHIPPowerSourceBatteryChargeState) {
+    CHIPPowerSourceBatteryChargeStateUnknown = 0x00,
+    CHIPPowerSourceBatteryChargeStateIsCharging = 0x01,
+    CHIPPowerSourceBatteryChargeStateIsAtFullCharge = 0x02,
+    CHIPPowerSourceBatteryChargeStateIsNotCharging = 0x03,
+};
+
+typedef NS_ENUM(uint8_t, CHIPPowerSourceBatteryReplaceability) {
+    CHIPPowerSourceBatteryReplaceabilityUnspecified = 0x00,
+    CHIPPowerSourceBatteryReplaceabilityNotReplaceable = 0x01,
+    CHIPPowerSourceBatteryReplaceabilityUserReplaceable = 0x02,
+    CHIPPowerSourceBatteryReplaceabilityFactoryReplaceable = 0x03,
 };
 
 typedef NS_ENUM(uint8_t, CHIPPowerSourceStatus) {

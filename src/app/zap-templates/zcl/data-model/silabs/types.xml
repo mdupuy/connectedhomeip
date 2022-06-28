@@ -113,6 +113,7 @@ limitations under the License.
     <item name="Unknown" value="0xff"/>
   </enum>
   <enum name="BatterySize" type="ENUM8">
+    <cluster code="0x0001"/>
     <item name="NoBattery" value="0x0"/>
     <item name="BuiltIn" value="0x1"/>
     <item name="Other" value="0x2"/>
@@ -123,11 +124,13 @@ limitations under the License.
     <item name="Unknown" value="0xff"/>
   </enum>
   <enum name="SwitchType" type="ENUM8">
+    <cluster code="0x0007"/>
     <item name="Toggle" value="0x00"/>
     <item name="Momentary" value="0x01"/>
     <item name="MultiFunction" value="0x02" introducedIn="ha-1.2-05-3520-29"/>
   </enum>
   <enum name="SwitchActions" type="ENUM8">
+    <cluster code="0x0007"/>
     <item name="On" value="0x0"/>
     <item name="Off" value="0x1"/>
     <item name="Toggle" value="0x2"/>

@@ -1,5 +1,6 @@
 {{> header}}
 
+#include <app-common/zap-generated/cluster-enums.h>
 #include <app-common/zap-generated/cluster-objects.h>
 
 namespace chip {
@@ -58,11 +59,29 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader &reader) {
         {
             {{#zcl_command_arguments}}
             case to_underlying(Fields::k{{asUpperCamelCase label}}):
-#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
                 {{#if_is_enum type}}
-                ReturnErrorOnFailure(Check{{type}}({{asLowerCamelCase label}}));
-                {{/if_is_enum}}
+                {{#unless isArray}}
+                {{#if (isWeaklyTypedEnum (asUpperCamelCase type))}}
+// Need to convert consumers to using the new enum classes, so we
+// don't just have casts all over.
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+                {{/if}}
+                {{#if isNullable}}
+                VerifyOrReturnError(!{{asLowerCamelCase label}}.IsNull(), CHIP_NO_ERROR);
+                ReturnErrorOnFailure(Check{{asUpperCamelCase type}}({{asLowerCamelCase label}}.Value()));
+                {{else}}
+                {{#if isOptional}}
+                VerifyOrReturnError({{asLowerCamelCase label}}.HasValue(), CHIP_NO_ERROR);
+                ReturnErrorOnFailure(Check{{asUpperCamelCase type}}({{asLowerCamelCase label}}.Value()));
+                {{else}}
+                ReturnErrorOnFailure(Check{{asUpperCamelCase type}}({{asLowerCamelCase label}}));
+                {{/if}}
+                {{/if}}
+                {{#if (isWeaklyTypedEnum (asUpperCamelCase type))}}
 #endif
+                {{/if}}
+                {{/unless}}
+                {{/if_is_enum}}
                 ReturnErrorOnFailure(DataModel::Decode(reader, {{asLowerCamelCase label}}));
                 break;
                 {{/zcl_command_arguments}}
@@ -85,11 +104,24 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader &reader, const Concret
     {
 {{#zcl_attributes_server}}
     case Attributes::{{asUpperCamelCase label}}::TypeInfo::GetAttributeId():
-#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
         {{#if_is_enum type}}
-        ReturnErrorOnFailure(Check{{type}}({{asLowerCamelCase label}}));
-        {{/if_is_enum}}
+        {{#unless isArray}}
+        {{#if (isWeaklyTypedEnum (asUpperCamelCase type))}}
+// Need to convert consumers to using the new enum classes, so we
+// don't just have casts all over.
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        {{/if}}
+        {{#if isNullable}}
+        VerifyOrReturnError(!{{asLowerCamelCase label}}.IsNull(), CHIP_NO_ERROR);
+        ReturnErrorOnFailure(Check{{asUpperCamelCase type}}({{asLowerCamelCase label}}.Value()));
+        {{else}}
+        ReturnErrorOnFailure(Check{{asUpperCamelCase type}}({{asLowerCamelCase label}}));
+        {{/if}}
+        {{#if (isWeaklyTypedEnum (asUpperCamelCase type))}}
 #endif
+        {{/if}}
+        {{/unless}}
+        {{/if_is_enum}}
         ReturnErrorOnFailure(DataModel::Decode(reader, {{asLowerCamelCase label}}));
         break;
 {{/zcl_attributes_server}}

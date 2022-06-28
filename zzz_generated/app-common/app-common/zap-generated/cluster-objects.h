@@ -250,9 +250,9 @@ struct TypeInfo
 namespace BatterySize {
 struct TypeInfo
 {
-    using Type             = uint8_t;
-    using DecodableType    = uint8_t;
-    using DecodableArgType = uint8_t;
+    using Type             = chip::app::Clusters::PowerConfiguration::BatterySize;
+    using DecodableType    = chip::app::Clusters::PowerConfiguration::BatterySize;
+    using DecodableArgType = chip::app::Clusters::PowerConfiguration::BatterySize;
 
     static constexpr ClusterId GetClusterId() { return Clusters::PowerConfiguration::Id; }
     static constexpr AttributeId GetAttributeId() { return Attributes::BatterySize::Id; }
@@ -455,9 +455,9 @@ struct TypeInfo
 namespace Battery2Size {
 struct TypeInfo
 {
-    using Type             = uint8_t;
-    using DecodableType    = uint8_t;
-    using DecodableArgType = uint8_t;
+    using Type             = chip::app::Clusters::PowerConfiguration::BatterySize;
+    using DecodableType    = chip::app::Clusters::PowerConfiguration::BatterySize;
+    using DecodableArgType = chip::app::Clusters::PowerConfiguration::BatterySize;
 
     static constexpr ClusterId GetClusterId() { return Clusters::PowerConfiguration::Id; }
     static constexpr AttributeId GetAttributeId() { return Attributes::Battery2Size::Id; }
@@ -660,9 +660,9 @@ struct TypeInfo
 namespace Battery3Size {
 struct TypeInfo
 {
-    using Type             = uint8_t;
-    using DecodableType    = uint8_t;
-    using DecodableArgType = uint8_t;
+    using Type             = chip::app::Clusters::PowerConfiguration::BatterySize;
+    using DecodableType    = chip::app::Clusters::PowerConfiguration::BatterySize;
+    using DecodableArgType = chip::app::Clusters::PowerConfiguration::BatterySize;
 
     static constexpr ClusterId GetClusterId() { return Clusters::PowerConfiguration::Id; }
     static constexpr AttributeId GetAttributeId() { return Attributes::Battery3Size::Id; }
@@ -873,7 +873,8 @@ struct TypeInfo
         Attributes::BatteryVoltage::TypeInfo::DecodableType batteryVoltage                         = static_cast<uint8_t>(0);
         Attributes::BatteryPercentageRemaining::TypeInfo::DecodableType batteryPercentageRemaining = static_cast<uint8_t>(0);
         Attributes::BatteryManufacturer::TypeInfo::DecodableType batteryManufacturer;
-        Attributes::BatterySize::TypeInfo::DecodableType batterySize                                     = static_cast<uint8_t>(0);
+        Attributes::BatterySize::TypeInfo::DecodableType batterySize =
+            static_cast<chip::app::Clusters::PowerConfiguration::BatterySize>(0);
         Attributes::BatteryAhrRating::TypeInfo::DecodableType batteryAhrRating                           = static_cast<uint16_t>(0);
         Attributes::BatteryQuantity::TypeInfo::DecodableType batteryQuantity                             = static_cast<uint8_t>(0);
         Attributes::BatteryRatedVoltage::TypeInfo::DecodableType batteryRatedVoltage                     = static_cast<uint8_t>(0);
@@ -890,7 +891,8 @@ struct TypeInfo
         Attributes::Battery2Voltage::TypeInfo::DecodableType battery2Voltage                             = static_cast<uint8_t>(0);
         Attributes::Battery2PercentageRemaining::TypeInfo::DecodableType battery2PercentageRemaining     = static_cast<uint8_t>(0);
         Attributes::Battery2Manufacturer::TypeInfo::DecodableType battery2Manufacturer;
-        Attributes::Battery2Size::TypeInfo::DecodableType battery2Size                               = static_cast<uint8_t>(0);
+        Attributes::Battery2Size::TypeInfo::DecodableType battery2Size =
+            static_cast<chip::app::Clusters::PowerConfiguration::BatterySize>(0);
         Attributes::Battery2AhrRating::TypeInfo::DecodableType battery2AhrRating                     = static_cast<uint16_t>(0);
         Attributes::Battery2Quantity::TypeInfo::DecodableType battery2Quantity                       = static_cast<uint8_t>(0);
         Attributes::Battery2RatedVoltage::TypeInfo::DecodableType battery2RatedVoltage               = static_cast<uint8_t>(0);
@@ -908,7 +910,8 @@ struct TypeInfo
         Attributes::Battery3Voltage::TypeInfo::DecodableType battery3Voltage                           = static_cast<uint8_t>(0);
         Attributes::Battery3PercentageRemaining::TypeInfo::DecodableType battery3PercentageRemaining   = static_cast<uint8_t>(0);
         Attributes::Battery3Manufacturer::TypeInfo::DecodableType battery3Manufacturer;
-        Attributes::Battery3Size::TypeInfo::DecodableType battery3Size                               = static_cast<uint8_t>(0);
+        Attributes::Battery3Size::TypeInfo::DecodableType battery3Size =
+            static_cast<chip::app::Clusters::PowerConfiguration::BatterySize>(0);
         Attributes::Battery3AhrRating::TypeInfo::DecodableType battery3AhrRating                     = static_cast<uint16_t>(0);
         Attributes::Battery3Quantity::TypeInfo::DecodableType battery3Quantity                       = static_cast<uint8_t>(0);
         Attributes::Battery3RatedVoltage::TypeInfo::DecodableType battery3RatedVoltage               = static_cast<uint8_t>(0);
@@ -1205,9 +1208,9 @@ struct TypeInfo
 namespace IdentifyType {
 struct TypeInfo
 {
-    using Type             = uint8_t;
-    using DecodableType    = uint8_t;
-    using DecodableArgType = uint8_t;
+    using Type             = chip::app::Clusters::Identify::IdentifyIdentifyType;
+    using DecodableType    = chip::app::Clusters::Identify::IdentifyIdentifyType;
+    using DecodableArgType = chip::app::Clusters::Identify::IdentifyIdentifyType;
 
     static constexpr ClusterId GetClusterId() { return Clusters::Identify::Id; }
     static constexpr AttributeId GetAttributeId() { return Attributes::IdentifyType::Id; }
@@ -1254,7 +1257,8 @@ struct TypeInfo
         CHIP_ERROR Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path);
 
         Attributes::IdentifyTime::TypeInfo::DecodableType identifyTime = static_cast<uint16_t>(0);
-        Attributes::IdentifyType::TypeInfo::DecodableType identifyType = static_cast<uint8_t>(0);
+        Attributes::IdentifyType::TypeInfo::DecodableType identifyType =
+            static_cast<chip::app::Clusters::Identify::IdentifyIdentifyType>(0);
         Attributes::GeneratedCommandList::TypeInfo::DecodableType generatedCommandList;
         Attributes::AcceptedCommandList::TypeInfo::DecodableType acceptedCommandList;
         Attributes::AttributeList::TypeInfo::DecodableType attributeList;
@@ -3100,9 +3104,9 @@ namespace Attributes {
 namespace SwitchType {
 struct TypeInfo
 {
-    using Type             = uint8_t;
-    using DecodableType    = uint8_t;
-    using DecodableArgType = uint8_t;
+    using Type             = chip::app::Clusters::OnOffSwitchConfiguration::SwitchType;
+    using DecodableType    = chip::app::Clusters::OnOffSwitchConfiguration::SwitchType;
+    using DecodableArgType = chip::app::Clusters::OnOffSwitchConfiguration::SwitchType;
 
     static constexpr ClusterId GetClusterId() { return Clusters::OnOffSwitchConfiguration::Id; }
     static constexpr AttributeId GetAttributeId() { return Attributes::SwitchType::Id; }
@@ -3112,9 +3116,9 @@ struct TypeInfo
 namespace SwitchActions {
 struct TypeInfo
 {
-    using Type             = uint8_t;
-    using DecodableType    = uint8_t;
-    using DecodableArgType = uint8_t;
+    using Type             = chip::app::Clusters::OnOffSwitchConfiguration::SwitchActions;
+    using DecodableType    = chip::app::Clusters::OnOffSwitchConfiguration::SwitchActions;
+    using DecodableArgType = chip::app::Clusters::OnOffSwitchConfiguration::SwitchActions;
 
     static constexpr ClusterId GetClusterId() { return Clusters::OnOffSwitchConfiguration::Id; }
     static constexpr AttributeId GetAttributeId() { return Attributes::SwitchActions::Id; }
@@ -3160,8 +3164,10 @@ struct TypeInfo
 
         CHIP_ERROR Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path);
 
-        Attributes::SwitchType::TypeInfo::DecodableType switchType       = static_cast<uint8_t>(0);
-        Attributes::SwitchActions::TypeInfo::DecodableType switchActions = static_cast<uint8_t>(0);
+        Attributes::SwitchType::TypeInfo::DecodableType switchType =
+            static_cast<chip::app::Clusters::OnOffSwitchConfiguration::SwitchType>(0);
+        Attributes::SwitchActions::TypeInfo::DecodableType switchActions =
+            static_cast<chip::app::Clusters::OnOffSwitchConfiguration::SwitchActions>(0);
         Attributes::GeneratedCommandList::TypeInfo::DecodableType generatedCommandList;
         Attributes::AcceptedCommandList::TypeInfo::DecodableType acceptedCommandList;
         Attributes::AttributeList::TypeInfo::DecodableType attributeList;
@@ -9200,9 +9206,9 @@ struct TypeInfo
 namespace WiredCurrentType {
 struct TypeInfo
 {
-    using Type             = uint8_t;
-    using DecodableType    = uint8_t;
-    using DecodableArgType = uint8_t;
+    using Type             = chip::app::Clusters::PowerSource::WiredCurrentType;
+    using DecodableType    = chip::app::Clusters::PowerSource::WiredCurrentType;
+    using DecodableArgType = chip::app::Clusters::PowerSource::WiredCurrentType;
 
     static constexpr ClusterId GetClusterId() { return Clusters::PowerSource::Id; }
     static constexpr AttributeId GetAttributeId() { return Attributes::WiredCurrentType::Id; }
@@ -9308,9 +9314,9 @@ struct TypeInfo
 namespace BatteryChargeLevel {
 struct TypeInfo
 {
-    using Type             = uint8_t;
-    using DecodableType    = uint8_t;
-    using DecodableArgType = uint8_t;
+    using Type             = chip::app::Clusters::PowerSource::BatteryChargeLevel;
+    using DecodableType    = chip::app::Clusters::PowerSource::BatteryChargeLevel;
+    using DecodableArgType = chip::app::Clusters::PowerSource::BatteryChargeLevel;
 
     static constexpr ClusterId GetClusterId() { return Clusters::PowerSource::Id; }
     static constexpr AttributeId GetAttributeId() { return Attributes::BatteryChargeLevel::Id; }
@@ -9332,9 +9338,9 @@ struct TypeInfo
 namespace BatteryReplaceability {
 struct TypeInfo
 {
-    using Type             = uint8_t;
-    using DecodableType    = uint8_t;
-    using DecodableArgType = uint8_t;
+    using Type             = chip::app::Clusters::PowerSource::BatteryReplaceability;
+    using DecodableType    = chip::app::Clusters::PowerSource::BatteryReplaceability;
+    using DecodableArgType = chip::app::Clusters::PowerSource::BatteryReplaceability;
 
     static constexpr ClusterId GetClusterId() { return Clusters::PowerSource::Id; }
     static constexpr AttributeId GetAttributeId() { return Attributes::BatteryReplaceability::Id; }
@@ -9455,9 +9461,9 @@ struct TypeInfo
 namespace BatteryChargeState {
 struct TypeInfo
 {
-    using Type             = uint8_t;
-    using DecodableType    = uint8_t;
-    using DecodableArgType = uint8_t;
+    using Type             = chip::app::Clusters::PowerSource::BatteryChargeState;
+    using DecodableType    = chip::app::Clusters::PowerSource::BatteryChargeState;
+    using DecodableArgType = chip::app::Clusters::PowerSource::BatteryChargeState;
 
     static constexpr ClusterId GetClusterId() { return Clusters::PowerSource::Id; }
     static constexpr AttributeId GetAttributeId() { return Attributes::BatteryChargeState::Id; }
@@ -9556,19 +9562,22 @@ struct TypeInfo
         Attributes::Description::TypeInfo::DecodableType description;
         Attributes::WiredAssessedInputVoltage::TypeInfo::DecodableType wiredAssessedInputVoltage     = static_cast<uint32_t>(0);
         Attributes::WiredAssessedInputFrequency::TypeInfo::DecodableType wiredAssessedInputFrequency = static_cast<uint16_t>(0);
-        Attributes::WiredCurrentType::TypeInfo::DecodableType wiredCurrentType                       = static_cast<uint8_t>(0);
-        Attributes::WiredAssessedCurrent::TypeInfo::DecodableType wiredAssessedCurrent               = static_cast<uint32_t>(0);
-        Attributes::WiredNominalVoltage::TypeInfo::DecodableType wiredNominalVoltage                 = static_cast<uint32_t>(0);
-        Attributes::WiredMaximumCurrent::TypeInfo::DecodableType wiredMaximumCurrent                 = static_cast<uint32_t>(0);
-        Attributes::WiredPresent::TypeInfo::DecodableType wiredPresent                               = static_cast<bool>(0);
+        Attributes::WiredCurrentType::TypeInfo::DecodableType wiredCurrentType =
+            static_cast<chip::app::Clusters::PowerSource::WiredCurrentType>(0);
+        Attributes::WiredAssessedCurrent::TypeInfo::DecodableType wiredAssessedCurrent = static_cast<uint32_t>(0);
+        Attributes::WiredNominalVoltage::TypeInfo::DecodableType wiredNominalVoltage   = static_cast<uint32_t>(0);
+        Attributes::WiredMaximumCurrent::TypeInfo::DecodableType wiredMaximumCurrent   = static_cast<uint32_t>(0);
+        Attributes::WiredPresent::TypeInfo::DecodableType wiredPresent                 = static_cast<bool>(0);
         Attributes::ActiveWiredFaults::TypeInfo::DecodableType activeWiredFaults;
-        Attributes::BatteryVoltage::TypeInfo::DecodableType batteryVoltage                     = static_cast<uint32_t>(0);
-        Attributes::BatteryPercentRemaining::TypeInfo::DecodableType batteryPercentRemaining   = static_cast<uint8_t>(0);
-        Attributes::BatteryTimeRemaining::TypeInfo::DecodableType batteryTimeRemaining         = static_cast<uint32_t>(0);
-        Attributes::BatteryChargeLevel::TypeInfo::DecodableType batteryChargeLevel             = static_cast<uint8_t>(0);
+        Attributes::BatteryVoltage::TypeInfo::DecodableType batteryVoltage                   = static_cast<uint32_t>(0);
+        Attributes::BatteryPercentRemaining::TypeInfo::DecodableType batteryPercentRemaining = static_cast<uint8_t>(0);
+        Attributes::BatteryTimeRemaining::TypeInfo::DecodableType batteryTimeRemaining       = static_cast<uint32_t>(0);
+        Attributes::BatteryChargeLevel::TypeInfo::DecodableType batteryChargeLevel =
+            static_cast<chip::app::Clusters::PowerSource::BatteryChargeLevel>(0);
         Attributes::BatteryReplacementNeeded::TypeInfo::DecodableType batteryReplacementNeeded = static_cast<bool>(0);
-        Attributes::BatteryReplaceability::TypeInfo::DecodableType batteryReplaceability       = static_cast<uint8_t>(0);
-        Attributes::BatteryPresent::TypeInfo::DecodableType batteryPresent                     = static_cast<bool>(0);
+        Attributes::BatteryReplaceability::TypeInfo::DecodableType batteryReplaceability =
+            static_cast<chip::app::Clusters::PowerSource::BatteryReplaceability>(0);
+        Attributes::BatteryPresent::TypeInfo::DecodableType batteryPresent = static_cast<bool>(0);
         Attributes::ActiveBatteryFaults::TypeInfo::DecodableType activeBatteryFaults;
         Attributes::BatteryReplacementDescription::TypeInfo::DecodableType batteryReplacementDescription;
         Attributes::BatteryCommonDesignation::TypeInfo::DecodableType batteryCommonDesignation = static_cast<uint32_t>(0);
@@ -9577,8 +9586,9 @@ struct TypeInfo
         Attributes::BatteryApprovedChemistry::TypeInfo::DecodableType batteryApprovedChemistry = static_cast<uint32_t>(0);
         Attributes::BatteryCapacity::TypeInfo::DecodableType batteryCapacity                   = static_cast<uint32_t>(0);
         Attributes::BatteryQuantity::TypeInfo::DecodableType batteryQuantity                   = static_cast<uint8_t>(0);
-        Attributes::BatteryChargeState::TypeInfo::DecodableType batteryChargeState             = static_cast<uint8_t>(0);
-        Attributes::BatteryTimeToFullCharge::TypeInfo::DecodableType batteryTimeToFullCharge   = static_cast<uint32_t>(0);
+        Attributes::BatteryChargeState::TypeInfo::DecodableType batteryChargeState =
+            static_cast<chip::app::Clusters::PowerSource::BatteryChargeState>(0);
+        Attributes::BatteryTimeToFullCharge::TypeInfo::DecodableType batteryTimeToFullCharge = static_cast<uint32_t>(0);
         Attributes::BatteryFunctionalWhileCharging::TypeInfo::DecodableType batteryFunctionalWhileCharging = static_cast<bool>(0);
         Attributes::BatteryChargingCurrent::TypeInfo::DecodableType batteryChargingCurrent = static_cast<uint32_t>(0);
         Attributes::ActiveBatteryChargeFaults::TypeInfo::DecodableType activeBatteryChargeFaults;
@@ -10920,9 +10930,9 @@ struct TypeInfo
 namespace BootReasons {
 struct TypeInfo
 {
-    using Type             = uint8_t;
-    using DecodableType    = uint8_t;
-    using DecodableArgType = uint8_t;
+    using Type             = chip::app::Clusters::GeneralDiagnostics::BootReasonType;
+    using DecodableType    = chip::app::Clusters::GeneralDiagnostics::BootReasonType;
+    using DecodableArgType = chip::app::Clusters::GeneralDiagnostics::BootReasonType;
 
     static constexpr ClusterId GetClusterId() { return Clusters::GeneralDiagnostics::Id; }
     static constexpr AttributeId GetAttributeId() { return Attributes::BootReasons::Id; }
@@ -11020,7 +11030,8 @@ struct TypeInfo
         Attributes::RebootCount::TypeInfo::DecodableType rebootCount                     = static_cast<uint16_t>(0);
         Attributes::UpTime::TypeInfo::DecodableType upTime                               = static_cast<uint64_t>(0);
         Attributes::TotalOperationalHours::TypeInfo::DecodableType totalOperationalHours = static_cast<uint32_t>(0);
-        Attributes::BootReasons::TypeInfo::DecodableType bootReasons                     = static_cast<uint8_t>(0);
+        Attributes::BootReasons::TypeInfo::DecodableType bootReasons =
+            static_cast<chip::app::Clusters::GeneralDiagnostics::BootReasonType>(0);
         Attributes::ActiveHardwareFaults::TypeInfo::DecodableType activeHardwareFaults;
         Attributes::ActiveRadioFaults::TypeInfo::DecodableType activeRadioFaults;
         Attributes::ActiveNetworkFaults::TypeInfo::DecodableType activeNetworkFaults;

@@ -36,7 +36,7 @@ limitations under the License.
     <attribute side="server" code="0x0002" define="POWER_SOURCE_DESCRIPTION" type="CHAR_STRING" length="60" writable="false">Description</attribute>
     <attribute side="server" code="0x0003" define="POWER_SOURCE_WIRED_ASSESSED_INPUT_VOLTAGE" type="INT32U" min="0x00000000" max="0xFFFFFFFF" writable="false" optional="true">WiredAssessedInputVoltage</attribute>
     <attribute side="server" code="0x0004" define="POWER_SOURCE_WIRED_ASSESSED_INPUT_FREQUENCY" type="INT16U" min="0x0000" max="0xFFFF" writable="false" optional="true">WiredAssessedInputFrequency</attribute>
-    <attribute side="server" code="0x0005" define="POWER_SOURCE_WIRED_CURRENT_TYPE" type="ENUM8" min="0x00" max="0x01" writable="false" optional="true">WiredCurrentType</attribute>
+    <attribute side="server" code="0x0005" define="POWER_SOURCE_WIRED_CURRENT_TYPE" type="WiredCurrentType" min="0x00" max="0x01" writable="false" optional="true">WiredCurrentType</attribute>
     <attribute side="server" code="0x0006" define="POWER_SOURCE_WIRED_ASSESSED_CURRENT" type="INT32U" min="0x00000000" max="0xFFFFFFFF" writable="false" optional="true">WiredAssessedCurrent</attribute>
     <attribute side="server" code="0x0007" define="POWER_SOURCE_WIRED_NOMINAL_VOLTAGE" type="INT32U" min="0x00000000" max="0xFFFFFFFF" writable="false" optional="true">WiredNominalVoltage</attribute>
     <attribute side="server" code="0x0008" define="POWER_SOURCE_WIRED_MAXIMUM_CURRENT" type="INT32U" min="0x00000000" max="0xFFFFFFFF" writable="false" optional="true">WiredMaximumCurrent</attribute>
@@ -45,9 +45,9 @@ limitations under the License.
     <attribute side="server" code="0x000B" define="POWER_SOURCE_BAT_VOLTAGE" type="INT32U" min="0x00000000" max="0xFFFFFFFF" writable="false" optional="true">BatteryVoltage</attribute>
     <attribute side="server" code="0x000C" define="POWER_SOURCE_BAT_PERCENT_REMAINING" type="INT8U" min="0x00" max="0xC8" writable="false" optional="true">BatteryPercentRemaining</attribute>
     <attribute side="server" code="0x000D" define="POWER_SOURCE_BAT_TIME_REMAINING" type="INT32U" min="0x00000000" max="0xFFFFFFFF" writable="false" optional="true">BatteryTimeRemaining</attribute>
-    <attribute side="server" code="0x000E" define="POWER_SOURCE_BAT_CHARGE_LEVEL" type="ENUM8" min="0x00" max="0x02" writable="false" optional="true">BatteryChargeLevel</attribute>
+    <attribute side="server" code="0x000E" define="POWER_SOURCE_BAT_CHARGE_LEVEL" type="BatteryChargeLevel" min="0x00" max="0x02" writable="false" optional="true">BatteryChargeLevel</attribute>
     <attribute side="server" code="0x000F" define="POWER_SOURCE_BAT_REPLACEMENT_NEEDED" type="BOOLEAN" writable="false" optional="true">BatteryReplacementNeeded</attribute>
-    <attribute side="server" code="0x0010" define="POWER_SOURCE_BAT_REPLACEABILITY" type="ENUM8" min="0x00" max="0x03" writable="false" optional="true">BatteryReplaceability</attribute>
+    <attribute side="server" code="0x0010" define="POWER_SOURCE_BAT_REPLACEABILITY" type="BatteryReplaceability" min="0x00" max="0x03" writable="false" optional="true">BatteryReplaceability</attribute>
     <attribute side="server" code="0x0011" define="POWER_SOURCE_BAT_PRESENT" type="BOOLEAN" writable="false" optional="true">BatteryPresent</attribute>
     <attribute side="server" code="0x0012" define="POWER_SOURCE_ACTIVE_BAT_FAULTS" type="ARRAY" entryType="ENUM8" length="8" writable="false" optional="true">ActiveBatteryFaults</attribute>
     <attribute side="server" code="0x0013" define="POWER_SOURCE_BAT_REPLACEMENT_DESCRIPTION" type="CHAR_STRING" length="60" writable="false" optional="true">BatteryReplacementDescription</attribute>
@@ -57,7 +57,7 @@ limitations under the License.
     <attribute side="server" code="0x0017" define="POWER_SOURCE_BAT_APPROVED_CHEMISTRY" type="INT32U" min="0x00000000" max="0xFFFFFFFF" writable="false" optional="true">BatteryApprovedChemistry</attribute>
     <attribute side="server" code="0x0018" define="POWER_SOURCE_BAT_CAPACITY" type="INT32U" min="0x00000000" max="0xFFFFFFFF" writable="false" optional="true">BatteryCapacity</attribute>
     <attribute side="server" code="0x0019" define="POWER_SOURCE_BAT_QUANTITY" type="INT8U" min="0x00" max="0xC8" writable="false" optional="true">BatteryQuantity</attribute>
-    <attribute side="server" code="0x001A" define="POWER_SOURCE_BAT_CHARGE_STATE" type="ENUM8" min="0x00" max="0x03" writable="false" optional="true">BatteryChargeState</attribute>
+    <attribute side="server" code="0x001A" define="POWER_SOURCE_BAT_CHARGE_STATE" type="BatteryChargeState" min="0x00" max="0x03" writable="false" optional="true">BatteryChargeState</attribute>
     <attribute side="server" code="0x001B" define="POWER_SOURCE_BAT_TIME_TO_FULL_CHARGE" type="INT32U" min="0x00000000" max="0xFFFFFFFF" writable="false" optional="true">BatteryTimeToFullCharge</attribute>
     <attribute side="server" code="0x001C" define="POWER_SOURCE_BAT_FUNCTIONAL_WHILE_CHARGING" type="BOOLEAN" writable="false" optional="true">BatteryFunctionalWhileCharging</attribute>
     <attribute side="server" code="0x001D" define="POWER_SOURCE_BAT_CHARGING_CURRENT" type="INT32U" min="0x00000000" max="0xFFFFFFFF" writable="false" optional="true">BatteryChargingCurrent</attribute>
@@ -133,14 +133,14 @@ limitations under the License.
     <item name="DC" value="0x01"/>
   </enum>
 
-  <enum name="BatChargeLevel" type="ENUM8">
+  <enum name="BatteryChargeLevel" type="ENUM8">
     <cluster code="0x002F"/>
     <item name="Ok" value="0x00"/>
     <item name="Warning" value="0x01"/>
     <item name="Critical" value="0x02"/>
   </enum>
 
-  <enum name="BatReplaceability" type="ENUM8">
+  <enum name="BatteryReplaceability" type="ENUM8">
     <cluster code="0x002F"/>
     <item name="Unspecified" value="0x00"/>
     <item name="NotReplaceable" value="0x01"/>
@@ -148,7 +148,7 @@ limitations under the License.
     <item name="FactoryReplaceable" value="0x03"/>
   </enum>
 
-  <enum name="BatChargeState" type="ENUM8">
+  <enum name="BatteryChargeState" type="ENUM8">
     <cluster code="0x002F"/>
     <item name="Unknown" value="0x00"/>
     <item name="IsCharging" value="0x01"/>

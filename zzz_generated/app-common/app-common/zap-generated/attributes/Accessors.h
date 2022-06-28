@@ -82,8 +82,8 @@ EmberAfStatus Set(chip::EndpointId endpoint, chip::CharSpan value);
 } // namespace BatteryManufacturer
 
 namespace BatterySize {
-EmberAfStatus Get(chip::EndpointId endpoint, uint8_t * value); // enum8
-EmberAfStatus Set(chip::EndpointId endpoint, uint8_t value);
+EmberAfStatus Get(chip::EndpointId endpoint, chip::app::Clusters::PowerConfiguration::BatterySize * value); // BatterySize
+EmberAfStatus Set(chip::EndpointId endpoint, chip::app::Clusters::PowerConfiguration::BatterySize value);
 } // namespace BatterySize
 
 namespace BatteryAhrRating {
@@ -167,8 +167,8 @@ EmberAfStatus Set(chip::EndpointId endpoint, chip::CharSpan value);
 } // namespace Battery2Manufacturer
 
 namespace Battery2Size {
-EmberAfStatus Get(chip::EndpointId endpoint, uint8_t * value); // enum8
-EmberAfStatus Set(chip::EndpointId endpoint, uint8_t value);
+EmberAfStatus Get(chip::EndpointId endpoint, chip::app::Clusters::PowerConfiguration::BatterySize * value); // BatterySize
+EmberAfStatus Set(chip::EndpointId endpoint, chip::app::Clusters::PowerConfiguration::BatterySize value);
 } // namespace Battery2Size
 
 namespace Battery2AhrRating {
@@ -252,8 +252,8 @@ EmberAfStatus Set(chip::EndpointId endpoint, chip::CharSpan value);
 } // namespace Battery3Manufacturer
 
 namespace Battery3Size {
-EmberAfStatus Get(chip::EndpointId endpoint, uint8_t * value); // enum8
-EmberAfStatus Set(chip::EndpointId endpoint, uint8_t value);
+EmberAfStatus Get(chip::EndpointId endpoint, chip::app::Clusters::PowerConfiguration::BatterySize * value); // BatterySize
+EmberAfStatus Set(chip::EndpointId endpoint, chip::app::Clusters::PowerConfiguration::BatterySize value);
 } // namespace Battery3Size
 
 namespace Battery3AhrRating {
@@ -404,8 +404,8 @@ EmberAfStatus Set(chip::EndpointId endpoint, uint16_t value);
 } // namespace IdentifyTime
 
 namespace IdentifyType {
-EmberAfStatus Get(chip::EndpointId endpoint, uint8_t * value); // enum8
-EmberAfStatus Set(chip::EndpointId endpoint, uint8_t value);
+EmberAfStatus Get(chip::EndpointId endpoint, chip::app::Clusters::Identify::IdentifyIdentifyType * value); // IdentifyIdentifyType
+EmberAfStatus Set(chip::EndpointId endpoint, chip::app::Clusters::Identify::IdentifyIdentifyType value);
 } // namespace IdentifyType
 
 namespace FeatureMap {
@@ -539,13 +539,13 @@ namespace OnOffSwitchConfiguration {
 namespace Attributes {
 
 namespace SwitchType {
-EmberAfStatus Get(chip::EndpointId endpoint, uint8_t * value); // enum8
-EmberAfStatus Set(chip::EndpointId endpoint, uint8_t value);
+EmberAfStatus Get(chip::EndpointId endpoint, chip::app::Clusters::OnOffSwitchConfiguration::SwitchType * value); // SwitchType
+EmberAfStatus Set(chip::EndpointId endpoint, chip::app::Clusters::OnOffSwitchConfiguration::SwitchType value);
 } // namespace SwitchType
 
 namespace SwitchActions {
-EmberAfStatus Get(chip::EndpointId endpoint, uint8_t * value); // enum8
-EmberAfStatus Set(chip::EndpointId endpoint, uint8_t value);
+EmberAfStatus Get(chip::EndpointId endpoint, chip::app::Clusters::OnOffSwitchConfiguration::SwitchActions * value); // SwitchActions
+EmberAfStatus Set(chip::EndpointId endpoint, chip::app::Clusters::OnOffSwitchConfiguration::SwitchActions value);
 } // namespace SwitchActions
 
 namespace FeatureMap {
@@ -1302,8 +1302,8 @@ EmberAfStatus Set(chip::EndpointId endpoint, uint16_t value);
 } // namespace WiredAssessedInputFrequency
 
 namespace WiredCurrentType {
-EmberAfStatus Get(chip::EndpointId endpoint, uint8_t * value); // enum8
-EmberAfStatus Set(chip::EndpointId endpoint, uint8_t value);
+EmberAfStatus Get(chip::EndpointId endpoint, chip::app::Clusters::PowerSource::WiredCurrentType * value); // WiredCurrentType
+EmberAfStatus Set(chip::EndpointId endpoint, chip::app::Clusters::PowerSource::WiredCurrentType value);
 } // namespace WiredCurrentType
 
 namespace WiredAssessedCurrent {
@@ -1342,8 +1342,8 @@ EmberAfStatus Set(chip::EndpointId endpoint, uint32_t value);
 } // namespace BatteryTimeRemaining
 
 namespace BatteryChargeLevel {
-EmberAfStatus Get(chip::EndpointId endpoint, uint8_t * value); // enum8
-EmberAfStatus Set(chip::EndpointId endpoint, uint8_t value);
+EmberAfStatus Get(chip::EndpointId endpoint, chip::app::Clusters::PowerSource::BatteryChargeLevel * value); // BatteryChargeLevel
+EmberAfStatus Set(chip::EndpointId endpoint, chip::app::Clusters::PowerSource::BatteryChargeLevel value);
 } // namespace BatteryChargeLevel
 
 namespace BatteryReplacementNeeded {
@@ -1352,8 +1352,9 @@ EmberAfStatus Set(chip::EndpointId endpoint, bool value);
 } // namespace BatteryReplacementNeeded
 
 namespace BatteryReplaceability {
-EmberAfStatus Get(chip::EndpointId endpoint, uint8_t * value); // enum8
-EmberAfStatus Set(chip::EndpointId endpoint, uint8_t value);
+EmberAfStatus Get(chip::EndpointId endpoint,
+                  chip::app::Clusters::PowerSource::BatteryReplaceability * value); // BatteryReplaceability
+EmberAfStatus Set(chip::EndpointId endpoint, chip::app::Clusters::PowerSource::BatteryReplaceability value);
 } // namespace BatteryReplaceability
 
 namespace BatteryPresent {
@@ -1397,8 +1398,8 @@ EmberAfStatus Set(chip::EndpointId endpoint, uint8_t value);
 } // namespace BatteryQuantity
 
 namespace BatteryChargeState {
-EmberAfStatus Get(chip::EndpointId endpoint, uint8_t * value); // enum8
-EmberAfStatus Set(chip::EndpointId endpoint, uint8_t value);
+EmberAfStatus Get(chip::EndpointId endpoint, chip::app::Clusters::PowerSource::BatteryChargeState * value); // BatteryChargeState
+EmberAfStatus Set(chip::EndpointId endpoint, chip::app::Clusters::PowerSource::BatteryChargeState value);
 } // namespace BatteryChargeState
 
 namespace BatteryTimeToFullCharge {
@@ -1563,8 +1564,8 @@ EmberAfStatus Set(chip::EndpointId endpoint, uint32_t value);
 } // namespace TotalOperationalHours
 
 namespace BootReasons {
-EmberAfStatus Get(chip::EndpointId endpoint, uint8_t * value); // enum8
-EmberAfStatus Set(chip::EndpointId endpoint, uint8_t value);
+EmberAfStatus Get(chip::EndpointId endpoint, chip::app::Clusters::GeneralDiagnostics::BootReasonType * value); // BootReasonType
+EmberAfStatus Set(chip::EndpointId endpoint, chip::app::Clusters::GeneralDiagnostics::BootReasonType value);
 } // namespace BootReasons
 
 namespace TestEventTriggersEnabled {

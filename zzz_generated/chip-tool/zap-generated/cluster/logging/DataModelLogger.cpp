@@ -4196,7 +4196,7 @@ CHIP_ERROR DataModelLogger::LogAttribute(const chip::app::ConcreteDataAttributeP
             return DataModelLogger::LogValue("identify time", 1, value);
         }
         case Identify::Attributes::IdentifyType::Id: {
-            uint8_t value;
+            chip::app::Clusters::Identify::IdentifyIdentifyType value;
             ReturnErrorOnFailure(chip::app::DataModel::Decode(*data, value));
             return DataModelLogger::LogValue("identify type", 1, value);
         }
@@ -4385,12 +4385,12 @@ CHIP_ERROR DataModelLogger::LogAttribute(const chip::app::ConcreteDataAttributeP
         switch (path.mAttributeId)
         {
         case OnOffSwitchConfiguration::Attributes::SwitchType::Id: {
-            uint8_t value;
+            chip::app::Clusters::OnOffSwitchConfiguration::SwitchType value;
             ReturnErrorOnFailure(chip::app::DataModel::Decode(*data, value));
             return DataModelLogger::LogValue("switch type", 1, value);
         }
         case OnOffSwitchConfiguration::Attributes::SwitchActions::Id: {
-            uint8_t value;
+            chip::app::Clusters::OnOffSwitchConfiguration::SwitchActions value;
             ReturnErrorOnFailure(chip::app::DataModel::Decode(*data, value));
             return DataModelLogger::LogValue("switch actions", 1, value);
         }
@@ -5193,7 +5193,7 @@ CHIP_ERROR DataModelLogger::LogAttribute(const chip::app::ConcreteDataAttributeP
             return DataModelLogger::LogValue("WiredAssessedInputFrequency", 1, value);
         }
         case PowerSource::Attributes::WiredCurrentType::Id: {
-            uint8_t value;
+            chip::app::Clusters::PowerSource::WiredCurrentType value;
             ReturnErrorOnFailure(chip::app::DataModel::Decode(*data, value));
             return DataModelLogger::LogValue("WiredCurrentType", 1, value);
         }
@@ -5238,7 +5238,7 @@ CHIP_ERROR DataModelLogger::LogAttribute(const chip::app::ConcreteDataAttributeP
             return DataModelLogger::LogValue("BatteryTimeRemaining", 1, value);
         }
         case PowerSource::Attributes::BatteryChargeLevel::Id: {
-            uint8_t value;
+            chip::app::Clusters::PowerSource::BatteryChargeLevel value;
             ReturnErrorOnFailure(chip::app::DataModel::Decode(*data, value));
             return DataModelLogger::LogValue("BatteryChargeLevel", 1, value);
         }
@@ -5248,7 +5248,7 @@ CHIP_ERROR DataModelLogger::LogAttribute(const chip::app::ConcreteDataAttributeP
             return DataModelLogger::LogValue("BatteryReplacementNeeded", 1, value);
         }
         case PowerSource::Attributes::BatteryReplaceability::Id: {
-            uint8_t value;
+            chip::app::Clusters::PowerSource::BatteryReplaceability value;
             ReturnErrorOnFailure(chip::app::DataModel::Decode(*data, value));
             return DataModelLogger::LogValue("BatteryReplaceability", 1, value);
         }
@@ -5298,7 +5298,7 @@ CHIP_ERROR DataModelLogger::LogAttribute(const chip::app::ConcreteDataAttributeP
             return DataModelLogger::LogValue("BatteryQuantity", 1, value);
         }
         case PowerSource::Attributes::BatteryChargeState::Id: {
-            uint8_t value;
+            chip::app::Clusters::PowerSource::BatteryChargeState value;
             ReturnErrorOnFailure(chip::app::DataModel::Decode(*data, value));
             return DataModelLogger::LogValue("BatteryChargeState", 1, value);
         }
@@ -5535,7 +5535,7 @@ CHIP_ERROR DataModelLogger::LogAttribute(const chip::app::ConcreteDataAttributeP
             return DataModelLogger::LogValue("TotalOperationalHours", 1, value);
         }
         case GeneralDiagnostics::Attributes::BootReasons::Id: {
-            uint8_t value;
+            chip::app::Clusters::GeneralDiagnostics::BootReasonType value;
             ReturnErrorOnFailure(chip::app::DataModel::Decode(*data, value));
             return DataModelLogger::LogValue("BootReasons", 1, value);
         }
