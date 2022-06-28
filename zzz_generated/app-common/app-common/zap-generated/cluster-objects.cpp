@@ -75,8 +75,7 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
 
 namespace PowerConfiguration {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -84,189 +83,316 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MainsVoltage::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, mainsVoltage));
         break;
     case Attributes::MainsFrequency::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, mainsFrequency));
         break;
     case Attributes::MainsAlarmMask::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, mainsAlarmMask));
         break;
     case Attributes::MainsVoltageMinThreshold::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, mainsVoltageMinThreshold));
         break;
     case Attributes::MainsVoltageMaxThreshold::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, mainsVoltageMaxThreshold));
         break;
     case Attributes::MainsVoltageDwellTrip::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, mainsVoltageDwellTrip));
         break;
     case Attributes::BatteryVoltage::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, batteryVoltage));
         break;
     case Attributes::BatteryPercentageRemaining::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, batteryPercentageRemaining));
         break;
     case Attributes::BatteryManufacturer::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, batteryManufacturer));
         break;
     case Attributes::BatterySize::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(batterySize));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, batterySize));
         break;
     case Attributes::BatteryAhrRating::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, batteryAhrRating));
         break;
     case Attributes::BatteryQuantity::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, batteryQuantity));
         break;
     case Attributes::BatteryRatedVoltage::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, batteryRatedVoltage));
         break;
     case Attributes::BatteryAlarmMask::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, batteryAlarmMask));
         break;
     case Attributes::BatteryVoltageMinThreshold::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, batteryVoltageMinThreshold));
         break;
     case Attributes::BatteryVoltageThreshold1::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, batteryVoltageThreshold1));
         break;
     case Attributes::BatteryVoltageThreshold2::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, batteryVoltageThreshold2));
         break;
     case Attributes::BatteryVoltageThreshold3::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, batteryVoltageThreshold3));
         break;
     case Attributes::BatteryPercentageMinThreshold::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, batteryPercentageMinThreshold));
         break;
     case Attributes::BatteryPercentageThreshold1::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, batteryPercentageThreshold1));
         break;
     case Attributes::BatteryPercentageThreshold2::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, batteryPercentageThreshold2));
         break;
     case Attributes::BatteryPercentageThreshold3::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, batteryPercentageThreshold3));
         break;
     case Attributes::BatteryAlarmState::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, batteryAlarmState));
         break;
     case Attributes::Battery2Voltage::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, battery2Voltage));
         break;
     case Attributes::Battery2PercentageRemaining::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, battery2PercentageRemaining));
         break;
     case Attributes::Battery2Manufacturer::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, battery2Manufacturer));
         break;
     case Attributes::Battery2Size::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(battery2Size));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, battery2Size));
         break;
     case Attributes::Battery2AhrRating::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, battery2AhrRating));
         break;
     case Attributes::Battery2Quantity::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, battery2Quantity));
         break;
     case Attributes::Battery2RatedVoltage::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, battery2RatedVoltage));
         break;
     case Attributes::Battery2AlarmMask::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, battery2AlarmMask));
         break;
     case Attributes::Battery2VoltageMinThreshold::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, battery2VoltageMinThreshold));
         break;
     case Attributes::Battery2VoltageThreshold1::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, battery2VoltageThreshold1));
         break;
     case Attributes::Battery2VoltageThreshold2::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, battery2VoltageThreshold2));
         break;
     case Attributes::Battery2VoltageThreshold3::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, battery2VoltageThreshold3));
         break;
     case Attributes::Battery2PercentageMinThreshold::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, battery2PercentageMinThreshold));
         break;
     case Attributes::Battery2PercentageThreshold1::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, battery2PercentageThreshold1));
         break;
     case Attributes::Battery2PercentageThreshold2::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, battery2PercentageThreshold2));
         break;
     case Attributes::Battery2PercentageThreshold3::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, battery2PercentageThreshold3));
         break;
     case Attributes::Battery2AlarmState::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, battery2AlarmState));
         break;
     case Attributes::Battery3Voltage::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, battery3Voltage));
         break;
     case Attributes::Battery3PercentageRemaining::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, battery3PercentageRemaining));
         break;
     case Attributes::Battery3Manufacturer::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, battery3Manufacturer));
         break;
     case Attributes::Battery3Size::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(battery3Size));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, battery3Size));
         break;
     case Attributes::Battery3AhrRating::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, battery3AhrRating));
         break;
     case Attributes::Battery3Quantity::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, battery3Quantity));
         break;
     case Attributes::Battery3RatedVoltage::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, battery3RatedVoltage));
         break;
     case Attributes::Battery3AlarmMask::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, battery3AlarmMask));
         break;
     case Attributes::Battery3VoltageMinThreshold::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, battery3VoltageMinThreshold));
         break;
     case Attributes::Battery3VoltageThreshold1::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, battery3VoltageThreshold1));
         break;
     case Attributes::Battery3VoltageThreshold2::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, battery3VoltageThreshold2));
         break;
     case Attributes::Battery3VoltageThreshold3::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, battery3VoltageThreshold3));
         break;
     case Attributes::Battery3PercentageMinThreshold::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, battery3PercentageMinThreshold));
         break;
     case Attributes::Battery3PercentageThreshold1::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, battery3PercentageThreshold1));
         break;
     case Attributes::Battery3PercentageThreshold2::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, battery3PercentageThreshold2));
         break;
     case Attributes::Battery3PercentageThreshold3::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, battery3PercentageThreshold3));
         break;
     case Attributes::Battery3AlarmState::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, battery3AlarmState));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -277,14 +403,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace PowerConfiguration
 namespace DeviceTemperatureConfiguration {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -292,45 +416,73 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::CurrentTemperature::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, currentTemperature));
         break;
     case Attributes::MinTempExperienced::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minTempExperienced));
         break;
     case Attributes::MaxTempExperienced::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxTempExperienced));
         break;
     case Attributes::OverTempTotalDwell::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, overTempTotalDwell));
         break;
     case Attributes::DeviceTempAlarmMask::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, deviceTempAlarmMask));
         break;
     case Attributes::LowTempThreshold::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, lowTempThreshold));
         break;
     case Attributes::HighTempThreshold::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, highTempThreshold));
         break;
     case Attributes::LowTempDwellTripPoint::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, lowTempDwellTripPoint));
         break;
     case Attributes::HighTempDwellTripPoint::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, highTempDwellTripPoint));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -341,8 +493,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace DeviceTemperatureConfiguration
 namespace Identify {
@@ -373,6 +524,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kIdentifyTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, identifyTime));
             break;
         default:
@@ -411,9 +564,15 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kEffectIdentifier):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckIdentifyEffectIdentifier(effectIdentifier));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, effectIdentifier));
             break;
         case to_underlying(Fields::kEffectVariant):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckIdentifyEffectVariant(effectVariant));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, effectVariant));
             break;
         default:
@@ -434,24 +593,39 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::IdentifyTime::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, identifyTime));
         break;
     case Attributes::IdentifyType::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(identifyType));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, identifyType));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -462,8 +636,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace Identify
 namespace Groups {
@@ -495,9 +668,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kGroupId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupId));
             break;
         case to_underlying(Fields::kGroupName):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupName));
             break;
         default:
@@ -536,9 +713,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kStatus):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, status));
             break;
         case to_underlying(Fields::kGroupId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupId));
             break;
         default:
@@ -576,6 +757,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kGroupId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupId));
             break;
         default:
@@ -615,12 +798,18 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kStatus):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, status));
             break;
         case to_underlying(Fields::kGroupId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupId));
             break;
         case to_underlying(Fields::kGroupName):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupName));
             break;
         default:
@@ -658,6 +847,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kGroupList):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupList));
             break;
         default:
@@ -696,9 +887,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kCapacity):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, capacity));
             break;
         case to_underlying(Fields::kGroupList):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupList));
             break;
         default:
@@ -736,6 +931,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kGroupId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupId));
             break;
         default:
@@ -774,9 +971,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kStatus):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, status));
             break;
         case to_underlying(Fields::kGroupId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupId));
             break;
         default:
@@ -848,9 +1049,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kGroupId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupId));
             break;
         case to_underlying(Fields::kGroupName):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupName));
             break;
         default:
@@ -871,21 +1076,33 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::NameSupport::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, nameSupport));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -896,8 +1113,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace Groups
 namespace Scenes {
@@ -1024,18 +1240,28 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kGroupId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupId));
             break;
         case to_underlying(Fields::kSceneId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, sceneId));
             break;
         case to_underlying(Fields::kTransitionTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, transitionTime));
             break;
         case to_underlying(Fields::kSceneName):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, sceneName));
             break;
         case to_underlying(Fields::kExtensionFieldSets):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, extensionFieldSets));
             break;
         default:
@@ -1075,12 +1301,18 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kStatus):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, status));
             break;
         case to_underlying(Fields::kGroupId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupId));
             break;
         case to_underlying(Fields::kSceneId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, sceneId));
             break;
         default:
@@ -1119,9 +1351,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kGroupId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupId));
             break;
         case to_underlying(Fields::kSceneId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, sceneId));
             break;
         default:
@@ -1165,21 +1401,33 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kStatus):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, status));
             break;
         case to_underlying(Fields::kGroupId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupId));
             break;
         case to_underlying(Fields::kSceneId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, sceneId));
             break;
         case to_underlying(Fields::kTransitionTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, transitionTime));
             break;
         case to_underlying(Fields::kSceneName):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, sceneName));
             break;
         case to_underlying(Fields::kExtensionFieldSets):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, extensionFieldSets));
             break;
         default:
@@ -1218,9 +1466,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kGroupId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupId));
             break;
         case to_underlying(Fields::kSceneId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, sceneId));
             break;
         default:
@@ -1260,12 +1512,18 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kStatus):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, status));
             break;
         case to_underlying(Fields::kGroupId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupId));
             break;
         case to_underlying(Fields::kSceneId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, sceneId));
             break;
         default:
@@ -1303,6 +1561,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kGroupId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupId));
             break;
         default:
@@ -1341,9 +1601,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kStatus):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, status));
             break;
         case to_underlying(Fields::kGroupId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupId));
             break;
         default:
@@ -1382,9 +1646,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kGroupId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupId));
             break;
         case to_underlying(Fields::kSceneId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, sceneId));
             break;
         default:
@@ -1424,12 +1692,18 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kStatus):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, status));
             break;
         case to_underlying(Fields::kGroupId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupId));
             break;
         case to_underlying(Fields::kSceneId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, sceneId));
             break;
         default:
@@ -1469,12 +1743,18 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kGroupId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupId));
             break;
         case to_underlying(Fields::kSceneId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, sceneId));
             break;
         case to_underlying(Fields::kTransitionTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, transitionTime));
             break;
         default:
@@ -1512,6 +1792,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kGroupId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupId));
             break;
         default:
@@ -1552,15 +1834,23 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kStatus):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, status));
             break;
         case to_underlying(Fields::kCapacity):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, capacity));
             break;
         case to_underlying(Fields::kGroupId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupId));
             break;
         case to_underlying(Fields::kSceneList):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, sceneList));
             break;
         default:
@@ -1603,18 +1893,28 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kGroupId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupId));
             break;
         case to_underlying(Fields::kSceneId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, sceneId));
             break;
         case to_underlying(Fields::kTransitionTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, transitionTime));
             break;
         case to_underlying(Fields::kSceneName):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, sceneName));
             break;
         case to_underlying(Fields::kExtensionFieldSets):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, extensionFieldSets));
             break;
         default:
@@ -1654,12 +1954,18 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kStatus):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, status));
             break;
         case to_underlying(Fields::kGroupId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupId));
             break;
         case to_underlying(Fields::kSceneId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, sceneId));
             break;
         default:
@@ -1698,9 +2004,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kGroupId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupId));
             break;
         case to_underlying(Fields::kSceneId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, sceneId));
             break;
         default:
@@ -1744,21 +2054,33 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kStatus):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, status));
             break;
         case to_underlying(Fields::kGroupId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupId));
             break;
         case to_underlying(Fields::kSceneId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, sceneId));
             break;
         case to_underlying(Fields::kTransitionTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, transitionTime));
             break;
         case to_underlying(Fields::kSceneName):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, sceneName));
             break;
         case to_underlying(Fields::kExtensionFieldSets):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, extensionFieldSets));
             break;
         default:
@@ -1800,18 +2122,28 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kMode):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, mode));
             break;
         case to_underlying(Fields::kGroupIdFrom):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupIdFrom));
             break;
         case to_underlying(Fields::kSceneIdFrom):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, sceneIdFrom));
             break;
         case to_underlying(Fields::kGroupIdTo):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupIdTo));
             break;
         case to_underlying(Fields::kSceneIdTo):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, sceneIdTo));
             break;
         default:
@@ -1851,12 +2183,18 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kStatus):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, status));
             break;
         case to_underlying(Fields::kGroupIdFrom):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupIdFrom));
             break;
         case to_underlying(Fields::kSceneIdFrom):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, sceneIdFrom));
             break;
         default:
@@ -1877,36 +2215,58 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::SceneCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, sceneCount));
         break;
     case Attributes::CurrentScene::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, currentScene));
         break;
     case Attributes::CurrentGroup::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, currentGroup));
         break;
     case Attributes::SceneValid::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, sceneValid));
         break;
     case Attributes::NameSupport::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, nameSupport));
         break;
     case Attributes::LastConfiguredBy::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, lastConfiguredBy));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -1917,8 +2277,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace Scenes
 namespace OnOff {
@@ -2049,9 +2408,15 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kEffectId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckOnOffEffectIdentifier(effectId));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, effectId));
             break;
         case to_underlying(Fields::kEffectVariant):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckOnOffDelayedAllOffEffectVariant(effectVariant));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, effectVariant));
             break;
         default:
@@ -2124,12 +2489,18 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kOnOffControl):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, onOffControl));
             break;
         case to_underlying(Fields::kOnTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, onTime));
             break;
         case to_underlying(Fields::kOffWaitTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, offWaitTime));
             break;
         default:
@@ -2150,33 +2521,54 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::OnOff::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, onOff));
         break;
     case Attributes::GlobalSceneControl::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, globalSceneControl));
         break;
     case Attributes::OnTime::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, onTime));
         break;
     case Attributes::OffWaitTime::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, offWaitTime));
         break;
     case Attributes::StartUpOnOff::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(CheckOnOffStartUpOnOff(startUpOnOff));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, startUpOnOff));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -2187,14 +2579,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace OnOff
 namespace OnOffSwitchConfiguration {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -2202,24 +2592,40 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::SwitchType::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(switchType));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, switchType));
         break;
     case Attributes::SwitchActions::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(switchActions));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, switchActions));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -2230,8 +2636,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace OnOffSwitchConfiguration
 namespace LevelControl {
@@ -2265,15 +2670,23 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kLevel):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, level));
             break;
         case to_underlying(Fields::kTransitionTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, transitionTime));
             break;
         case to_underlying(Fields::kOptionMask):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionMask));
             break;
         case to_underlying(Fields::kOptionOverride):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionOverride));
             break;
         default:
@@ -2314,15 +2727,24 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kMoveMode):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckMoveMode(moveMode));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, moveMode));
             break;
         case to_underlying(Fields::kRate):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, rate));
             break;
         case to_underlying(Fields::kOptionMask):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionMask));
             break;
         case to_underlying(Fields::kOptionOverride):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionOverride));
             break;
         default:
@@ -2364,18 +2786,29 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kStepMode):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckStepMode(stepMode));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, stepMode));
             break;
         case to_underlying(Fields::kStepSize):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, stepSize));
             break;
         case to_underlying(Fields::kTransitionTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, transitionTime));
             break;
         case to_underlying(Fields::kOptionMask):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionMask));
             break;
         case to_underlying(Fields::kOptionOverride):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionOverride));
             break;
         default:
@@ -2414,9 +2847,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kOptionMask):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionMask));
             break;
         case to_underlying(Fields::kOptionOverride):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionOverride));
             break;
         default:
@@ -2455,9 +2892,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kLevel):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, level));
             break;
         case to_underlying(Fields::kTransitionTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, transitionTime));
             break;
         default:
@@ -2496,9 +2937,14 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kMoveMode):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckMoveMode(moveMode));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, moveMode));
             break;
         case to_underlying(Fields::kRate):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, rate));
             break;
         default:
@@ -2538,12 +2984,19 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kStepMode):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckStepMode(stepMode));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, stepMode));
             break;
         case to_underlying(Fields::kStepSize):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, stepSize));
             break;
         case to_underlying(Fields::kTransitionTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, transitionTime));
             break;
         default:
@@ -2614,6 +3067,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kFrequency):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, frequency));
             break;
         default:
@@ -2634,60 +3089,98 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::CurrentLevel::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, currentLevel));
         break;
     case Attributes::RemainingTime::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, remainingTime));
         break;
     case Attributes::MinLevel::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minLevel));
         break;
     case Attributes::MaxLevel::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxLevel));
         break;
     case Attributes::CurrentFrequency::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, currentFrequency));
         break;
     case Attributes::MinFrequency::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minFrequency));
         break;
     case Attributes::MaxFrequency::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxFrequency));
         break;
     case Attributes::Options::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, options));
         break;
     case Attributes::OnOffTransitionTime::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, onOffTransitionTime));
         break;
     case Attributes::OnLevel::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, onLevel));
         break;
     case Attributes::OnTransitionTime::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, onTransitionTime));
         break;
     case Attributes::OffTransitionTime::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, offTransitionTime));
         break;
     case Attributes::DefaultMoveRate::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, defaultMoveRate));
         break;
     case Attributes::StartUpCurrentLevel::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, startUpCurrentLevel));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -2698,8 +3191,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace LevelControl
 namespace Alarms {
@@ -2731,9 +3223,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kAlarmCode):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, alarmCode));
             break;
         case to_underlying(Fields::kClusterId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, clusterId));
             break;
         default:
@@ -2772,9 +3268,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kAlarmCode):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, alarmCode));
             break;
         case to_underlying(Fields::kClusterId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, clusterId));
             break;
         default:
@@ -2848,15 +3348,23 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kStatus):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, status));
             break;
         case to_underlying(Fields::kAlarmCode):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, alarmCode));
             break;
         case to_underlying(Fields::kClusterId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, clusterId));
             break;
         case to_underlying(Fields::kTimeStamp):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, timeStamp));
             break;
         default:
@@ -2943,21 +3451,33 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::AlarmCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, alarmCount));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -2968,14 +3488,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace Alarms
 namespace Time {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -2983,48 +3501,78 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::Time::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, time));
         break;
     case Attributes::TimeStatus::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, timeStatus));
         break;
     case Attributes::TimeZone::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, timeZone));
         break;
     case Attributes::DstStart::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, dstStart));
         break;
     case Attributes::DstEnd::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, dstEnd));
         break;
     case Attributes::DstShift::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, dstShift));
         break;
     case Attributes::StandardTime::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, standardTime));
         break;
     case Attributes::LocalTime::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, localTime));
         break;
     case Attributes::LastSetTime::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, lastSetTime));
         break;
     case Attributes::ValidUntilTime::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, validUntilTime));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -3035,14 +3583,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace Time
 namespace BinaryInputBasic {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -3050,45 +3596,75 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::ActiveText::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, activeText));
         break;
     case Attributes::Description::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, description));
         break;
     case Attributes::InactiveText::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, inactiveText));
         break;
     case Attributes::OutOfService::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, outOfService));
         break;
     case Attributes::Polarity::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(polarity));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, polarity));
         break;
     case Attributes::PresentValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, presentValue));
         break;
     case Attributes::Reliability::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(reliability));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, reliability));
         break;
     case Attributes::StatusFlags::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, statusFlags));
         break;
     case Attributes::ApplicationType::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, applicationType));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -3099,8 +3675,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace BinaryInputBasic
 namespace PowerProfile {
@@ -3291,6 +3866,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kPowerProfileId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, powerProfileId));
             break;
         default:
@@ -3332,15 +3909,23 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kTotalProfileNum):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, totalProfileNum));
             break;
         case to_underlying(Fields::kPowerProfileId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, powerProfileId));
             break;
         case to_underlying(Fields::kNumOfTransferredPhases):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, numOfTransferredPhases));
             break;
         case to_underlying(Fields::kTransferredPhases):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, transferredPhases));
             break;
         default:
@@ -3415,15 +4000,23 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kTotalProfileNum):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, totalProfileNum));
             break;
         case to_underlying(Fields::kPowerProfileId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, powerProfileId));
             break;
         case to_underlying(Fields::kNumOfTransferredPhases):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, numOfTransferredPhases));
             break;
         case to_underlying(Fields::kTransferredPhases):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, transferredPhases));
             break;
         default:
@@ -3465,15 +4058,23 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kPowerProfileId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, powerProfileId));
             break;
         case to_underlying(Fields::kCurrency):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, currency));
             break;
         case to_underlying(Fields::kPrice):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, price));
             break;
         case to_underlying(Fields::kPriceTrailingDigit):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, priceTrailingDigit));
             break;
         default:
@@ -3513,9 +4114,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kPowerProfileCount):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, powerProfileCount));
             break;
         case to_underlying(Fields::kPowerProfileRecords):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, powerProfileRecords));
             break;
         default:
@@ -3556,12 +4161,18 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kCurrency):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, currency));
             break;
         case to_underlying(Fields::kPrice):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, price));
             break;
         case to_underlying(Fields::kPriceTrailingDigit):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, priceTrailingDigit));
             break;
         default:
@@ -3599,6 +4210,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kPowerProfileId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, powerProfileId));
             break;
         default:
@@ -3639,12 +4252,18 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kPowerProfileId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, powerProfileId));
             break;
         case to_underlying(Fields::kNumOfScheduledPhases):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, numOfScheduledPhases));
             break;
         case to_underlying(Fields::kScheduledPhases):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, scheduledPhases));
             break;
         default:
@@ -3684,9 +4303,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kPowerProfileCount):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, powerProfileCount));
             break;
         case to_underlying(Fields::kPowerProfileRecords):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, powerProfileRecords));
             break;
         default:
@@ -3727,12 +4350,18 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kPowerProfileId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, powerProfileId));
             break;
         case to_underlying(Fields::kNumOfScheduledPhases):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, numOfScheduledPhases));
             break;
         case to_underlying(Fields::kScheduledPhases):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, scheduledPhases));
             break;
         default:
@@ -3803,6 +4432,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kPowerProfileId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, powerProfileId));
             break;
         default:
@@ -3840,6 +4471,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kPowerProfileId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, powerProfileId));
             break;
         default:
@@ -3877,6 +4510,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kPowerProfileId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, powerProfileId));
             break;
         default:
@@ -3917,12 +4552,18 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kPowerProfileId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, powerProfileId));
             break;
         case to_underlying(Fields::kNumOfScheduledPhases):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, numOfScheduledPhases));
             break;
         case to_underlying(Fields::kScheduledPhases):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, scheduledPhases));
             break;
         default:
@@ -3964,15 +4605,23 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kPowerProfileId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, powerProfileId));
             break;
         case to_underlying(Fields::kCurrency):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, currency));
             break;
         case to_underlying(Fields::kPrice):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, price));
             break;
         case to_underlying(Fields::kPriceTrailingDigit):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, priceTrailingDigit));
             break;
         default:
@@ -4013,12 +4662,18 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kPowerProfileId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, powerProfileId));
             break;
         case to_underlying(Fields::kNumOfScheduledPhases):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, numOfScheduledPhases));
             break;
         case to_underlying(Fields::kScheduledPhases):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, scheduledPhases));
             break;
         default:
@@ -4058,12 +4713,18 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kPowerProfileId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, powerProfileId));
             break;
         case to_underlying(Fields::kStartAfter):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, startAfter));
             break;
         case to_underlying(Fields::kStopBefore):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, stopBefore));
             break;
         default:
@@ -4103,12 +4764,18 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kPowerProfileId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, powerProfileId));
             break;
         case to_underlying(Fields::kStartAfter):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, startAfter));
             break;
         case to_underlying(Fields::kStopBefore):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, stopBefore));
             break;
         default:
@@ -4149,12 +4816,18 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kOptions):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, options));
             break;
         case to_underlying(Fields::kPowerProfileId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, powerProfileId));
             break;
         case to_underlying(Fields::kPowerProfileStartTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, powerProfileStartTime));
             break;
         default:
@@ -4175,33 +4848,53 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::TotalProfileNum::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, totalProfileNum));
         break;
     case Attributes::MultipleScheduling::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, multipleScheduling));
         break;
     case Attributes::EnergyFormatting::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, energyFormatting));
         break;
     case Attributes::EnergyRemote::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, energyRemote));
         break;
     case Attributes::ScheduleMode::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, scheduleMode));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -4212,8 +4905,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace PowerProfile
 namespace ApplianceControl {
@@ -4244,6 +4936,9 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kCommandId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckCommandIdentification(commandId));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, commandId));
             break;
         default:
@@ -4284,12 +4979,20 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kApplianceStatus):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckApplianceStatus(applianceStatus));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, applianceStatus));
             break;
         case to_underlying(Fields::kRemoteEnableFlagsAndDeviceStatus2):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, remoteEnableFlagsAndDeviceStatus2));
             break;
         case to_underlying(Fields::kApplianceStatus2):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckApplianceStatus(applianceStatus2));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, applianceStatus2));
             break;
         default:
@@ -4363,12 +5066,20 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kApplianceStatus):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckApplianceStatus(applianceStatus));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, applianceStatus));
             break;
         case to_underlying(Fields::kRemoteEnableFlagsAndDeviceStatus2):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, remoteEnableFlagsAndDeviceStatus2));
             break;
         case to_underlying(Fields::kApplianceStatus2):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckApplianceStatus(applianceStatus2));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, applianceStatus2));
             break;
         default:
@@ -4408,12 +5119,18 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kFunctionId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, functionId));
             break;
         case to_underlying(Fields::kFunctionDataType):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, functionDataType));
             break;
         case to_underlying(Fields::kFunctionData):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, functionData));
             break;
         default:
@@ -4517,6 +5234,9 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kWarningEvent):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckWarningEvent(warningEvent));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, warningEvent));
             break;
         default:
@@ -4537,27 +5257,43 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::StartTime::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, startTime));
         break;
     case Attributes::FinishTime::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, finishTime));
         break;
     case Attributes::RemainingTime::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, remainingTime));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -4568,14 +5304,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace ApplianceControl
 namespace PulseWidthModulation {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -4583,18 +5317,28 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -4605,8 +5349,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace PulseWidthModulation
 namespace Descriptor {
@@ -4657,8 +5400,7 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
 } // namespace DeviceType
 } // namespace Structs
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -4666,30 +5408,48 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::DeviceList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, deviceList));
         break;
     case Attributes::ServerList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, serverList));
         break;
     case Attributes::ClientList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clientList));
         break;
     case Attributes::PartsList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, partsList));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -4700,8 +5460,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace Descriptor
 namespace Binding {
@@ -4777,8 +5536,7 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
 } // namespace TargetStruct
 } // namespace Structs
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -4786,21 +5544,33 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::Binding::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, binding));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -4811,8 +5581,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace Binding
 namespace AccessControl {
@@ -5010,8 +5779,7 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
 } // namespace ExtensionEntry
 } // namespace Structs
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -5019,33 +5787,53 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::Acl::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acl));
         break;
     case Attributes::Extension::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, extension));
         break;
     case Attributes::SubjectsPerAccessControlEntry::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, subjectsPerAccessControlEntry));
         break;
     case Attributes::TargetsPerAccessControlEntry::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, targetsPerAccessControlEntry));
         break;
     case Attributes::AccessControlEntriesPerFabric::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, accessControlEntriesPerFabric));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -5230,9 +6018,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kStartFastPolling):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, startFastPolling));
             break;
         case to_underlying(Fields::kFastPollTimeout):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, fastPollTimeout));
             break;
         default:
@@ -5304,6 +6096,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kNewLongPollInterval):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, newLongPollInterval));
             break;
         default:
@@ -5342,6 +6136,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kNewShortPollInterval):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, newShortPollInterval));
             break;
         default:
@@ -5362,39 +6158,63 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::CheckInInterval::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, checkInInterval));
         break;
     case Attributes::LongPollInterval::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, longPollInterval));
         break;
     case Attributes::ShortPollInterval::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, shortPollInterval));
         break;
     case Attributes::FastPollTimeout::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, fastPollTimeout));
         break;
     case Attributes::CheckInIntervalMin::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, checkInIntervalMin));
         break;
     case Attributes::LongPollIntervalMin::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, longPollIntervalMin));
         break;
     case Attributes::FastPollTimeoutMax::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, fastPollTimeoutMax));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -5405,8 +6225,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace PollControl
 namespace BridgedActions {
@@ -5552,9 +6371,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kActionID):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, actionID));
             break;
         case to_underlying(Fields::kInvokeID):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, invokeID));
             break;
         default:
@@ -5594,12 +6417,18 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kActionID):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, actionID));
             break;
         case to_underlying(Fields::kInvokeID):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, invokeID));
             break;
         case to_underlying(Fields::kTransitionTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, transitionTime));
             break;
         default:
@@ -5638,9 +6467,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kActionID):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, actionID));
             break;
         case to_underlying(Fields::kInvokeID):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, invokeID));
             break;
         default:
@@ -5680,12 +6513,18 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kActionID):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, actionID));
             break;
         case to_underlying(Fields::kInvokeID):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, invokeID));
             break;
         case to_underlying(Fields::kDuration):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, duration));
             break;
         default:
@@ -5724,9 +6563,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kActionID):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, actionID));
             break;
         case to_underlying(Fields::kInvokeID):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, invokeID));
             break;
         default:
@@ -5765,9 +6608,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kActionID):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, actionID));
             break;
         case to_underlying(Fields::kInvokeID):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, invokeID));
             break;
         default:
@@ -5807,12 +6654,18 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kActionID):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, actionID));
             break;
         case to_underlying(Fields::kInvokeID):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, invokeID));
             break;
         case to_underlying(Fields::kDuration):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, duration));
             break;
         default:
@@ -5851,9 +6704,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kActionID):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, actionID));
             break;
         case to_underlying(Fields::kInvokeID):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, invokeID));
             break;
         default:
@@ -5892,9 +6749,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kActionID):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, actionID));
             break;
         case to_underlying(Fields::kInvokeID):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, invokeID));
             break;
         default:
@@ -5934,12 +6795,18 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kActionID):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, actionID));
             break;
         case to_underlying(Fields::kInvokeID):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, invokeID));
             break;
         case to_underlying(Fields::kDuration):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, duration));
             break;
         default:
@@ -5978,9 +6845,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kActionID):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, actionID));
             break;
         case to_underlying(Fields::kInvokeID):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, invokeID));
             break;
         default:
@@ -6020,12 +6891,18 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kActionID):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, actionID));
             break;
         case to_underlying(Fields::kInvokeID):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, invokeID));
             break;
         case to_underlying(Fields::kDuration):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, duration));
             break;
         default:
@@ -6046,27 +6923,43 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::ActionList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, actionList));
         break;
     case Attributes::EndpointList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, endpointList));
         break;
     case Attributes::SetupUrl::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, setupUrl));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -6267,78 +7160,128 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::DataModelRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, dataModelRevision));
         break;
     case Attributes::VendorName::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, vendorName));
         break;
     case Attributes::VendorID::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, vendorID));
         break;
     case Attributes::ProductName::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, productName));
         break;
     case Attributes::ProductID::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, productID));
         break;
     case Attributes::NodeLabel::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, nodeLabel));
         break;
     case Attributes::Location::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, location));
         break;
     case Attributes::HardwareVersion::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, hardwareVersion));
         break;
     case Attributes::HardwareVersionString::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, hardwareVersionString));
         break;
     case Attributes::SoftwareVersion::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, softwareVersion));
         break;
     case Attributes::SoftwareVersionString::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, softwareVersionString));
         break;
     case Attributes::ManufacturingDate::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, manufacturingDate));
         break;
     case Attributes::PartNumber::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, partNumber));
         break;
     case Attributes::ProductURL::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, productURL));
         break;
     case Attributes::ProductLabel::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, productLabel));
         break;
     case Attributes::SerialNumber::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, serialNumber));
         break;
     case Attributes::LocalConfigDisabled::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, localConfigDisabled));
         break;
     case Attributes::Reachable::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, reachable));
         break;
     case Attributes::UniqueID::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, uniqueID));
         break;
     case Attributes::CapabilityMinima::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, capabilityMinima));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -6531,27 +7474,44 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kVendorId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, vendorId));
             break;
         case to_underlying(Fields::kProductId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, productId));
             break;
         case to_underlying(Fields::kSoftwareVersion):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, softwareVersion));
             break;
         case to_underlying(Fields::kProtocolsSupported):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckOTADownloadProtocol(protocolsSupported));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, protocolsSupported));
             break;
         case to_underlying(Fields::kHardwareVersion):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, hardwareVersion));
             break;
         case to_underlying(Fields::kLocation):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, location));
             break;
         case to_underlying(Fields::kRequestorCanConsent):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, requestorCanConsent));
             break;
         case to_underlying(Fields::kMetadataForProvider):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, metadataForProvider));
             break;
         default:
@@ -6598,27 +7558,44 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kStatus):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckOTAQueryStatus(status));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, status));
             break;
         case to_underlying(Fields::kDelayedActionTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, delayedActionTime));
             break;
         case to_underlying(Fields::kImageURI):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, imageURI));
             break;
         case to_underlying(Fields::kSoftwareVersion):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, softwareVersion));
             break;
         case to_underlying(Fields::kSoftwareVersionString):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, softwareVersionString));
             break;
         case to_underlying(Fields::kUpdateToken):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, updateToken));
             break;
         case to_underlying(Fields::kUserConsentNeeded):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, userConsentNeeded));
             break;
         case to_underlying(Fields::kMetadataForRequestor):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, metadataForRequestor));
             break;
         default:
@@ -6657,9 +7634,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kUpdateToken):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, updateToken));
             break;
         case to_underlying(Fields::kNewVersion):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, newVersion));
             break;
         default:
@@ -6698,9 +7679,14 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kAction):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckOTAApplyUpdateAction(action));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, action));
             break;
         case to_underlying(Fields::kDelayedActionTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, delayedActionTime));
             break;
         default:
@@ -6739,9 +7725,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kUpdateToken):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, updateToken));
             break;
         case to_underlying(Fields::kSoftwareVersion):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, softwareVersion));
             break;
         default:
@@ -6762,18 +7752,28 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -6784,8 +7784,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace OtaSoftwareUpdateProvider
 namespace OtaSoftwareUpdateRequestor {
@@ -6884,18 +7883,29 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kProviderNodeId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, providerNodeId));
             break;
         case to_underlying(Fields::kVendorId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, vendorId));
             break;
         case to_underlying(Fields::kAnnouncementReason):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckOTAAnnouncementReason(announcementReason));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, announcementReason));
             break;
         case to_underlying(Fields::kMetadataForNode):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, metadataForNode));
             break;
         case to_underlying(Fields::kEndpoint):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, endpoint));
             break;
         default:
@@ -6916,30 +7926,49 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::DefaultOtaProviders::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, defaultOtaProviders));
         break;
     case Attributes::UpdatePossible::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, updatePossible));
         break;
     case Attributes::UpdateState::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(CheckOTAUpdateStateEnum(updateState));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, updateState));
         break;
     case Attributes::UpdateStateProgress::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, updateStateProgress));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -7096,8 +8125,7 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
 } // namespace OtaSoftwareUpdateRequestor
 namespace LocalizationConfiguration {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -7105,24 +8133,38 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::ActiveLocale::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, activeLocale));
         break;
     case Attributes::SupportedLocales::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, supportedLocales));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -7133,14 +8175,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace LocalizationConfiguration
 namespace TimeFormatLocalization {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -7148,27 +8188,45 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::HourFormat::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(CheckHourFormat(hourFormat));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, hourFormat));
         break;
     case Attributes::ActiveCalendarType::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(CheckCalendarType(activeCalendarType));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, activeCalendarType));
         break;
     case Attributes::SupportedCalendarTypes::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, supportedCalendarTypes));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -7179,14 +8237,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace TimeFormatLocalization
 namespace UnitLocalization {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -7194,21 +8250,34 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::TemperatureUnit::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(CheckTempUnit(temperatureUnit));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, temperatureUnit));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -7219,14 +8288,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace UnitLocalization
 namespace PowerSourceConfiguration {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -7234,21 +8301,33 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::Sources::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, sources));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -7259,8 +8338,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace PowerSourceConfiguration
 namespace PowerSource {
@@ -7399,8 +8477,7 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
 } // namespace WiredFaultChangeType
 } // namespace Structs
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -7408,111 +8485,188 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::Status::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(status));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, status));
         break;
     case Attributes::Order::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, order));
         break;
     case Attributes::Description::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, description));
         break;
     case Attributes::WiredAssessedInputVoltage::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, wiredAssessedInputVoltage));
         break;
     case Attributes::WiredAssessedInputFrequency::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, wiredAssessedInputFrequency));
         break;
     case Attributes::WiredCurrentType::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(wiredCurrentType));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, wiredCurrentType));
         break;
     case Attributes::WiredAssessedCurrent::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, wiredAssessedCurrent));
         break;
     case Attributes::WiredNominalVoltage::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, wiredNominalVoltage));
         break;
     case Attributes::WiredMaximumCurrent::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, wiredMaximumCurrent));
         break;
     case Attributes::WiredPresent::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, wiredPresent));
         break;
     case Attributes::ActiveWiredFaults::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, activeWiredFaults));
         break;
     case Attributes::BatteryVoltage::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, batteryVoltage));
         break;
     case Attributes::BatteryPercentRemaining::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, batteryPercentRemaining));
         break;
     case Attributes::BatteryTimeRemaining::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, batteryTimeRemaining));
         break;
     case Attributes::BatteryChargeLevel::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(batteryChargeLevel));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, batteryChargeLevel));
         break;
     case Attributes::BatteryReplacementNeeded::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, batteryReplacementNeeded));
         break;
     case Attributes::BatteryReplaceability::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(batteryReplaceability));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, batteryReplaceability));
         break;
     case Attributes::BatteryPresent::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, batteryPresent));
         break;
     case Attributes::ActiveBatteryFaults::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, activeBatteryFaults));
         break;
     case Attributes::BatteryReplacementDescription::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, batteryReplacementDescription));
         break;
     case Attributes::BatteryCommonDesignation::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, batteryCommonDesignation));
         break;
     case Attributes::BatteryANSIDesignation::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, batteryANSIDesignation));
         break;
     case Attributes::BatteryIECDesignation::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, batteryIECDesignation));
         break;
     case Attributes::BatteryApprovedChemistry::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, batteryApprovedChemistry));
         break;
     case Attributes::BatteryCapacity::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, batteryCapacity));
         break;
     case Attributes::BatteryQuantity::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, batteryQuantity));
         break;
     case Attributes::BatteryChargeState::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(batteryChargeState));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, batteryChargeState));
         break;
     case Attributes::BatteryTimeToFullCharge::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, batteryTimeToFullCharge));
         break;
     case Attributes::BatteryFunctionalWhileCharging::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, batteryFunctionalWhileCharging));
         break;
     case Attributes::BatteryChargingCurrent::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, batteryChargingCurrent));
         break;
     case Attributes::ActiveBatteryChargeFaults::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, activeBatteryChargeFaults));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -7523,8 +8677,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace PowerSource
 namespace GeneralCommissioning {
@@ -7605,9 +8758,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kExpiryLengthSeconds):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, expiryLengthSeconds));
             break;
         case to_underlying(Fields::kBreadcrumb):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, breadcrumb));
             break;
         default:
@@ -7646,9 +8803,14 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kErrorCode):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckCommissioningError(errorCode));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, errorCode));
             break;
         case to_underlying(Fields::kDebugText):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, debugText));
             break;
         default:
@@ -7689,12 +8851,19 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kNewRegulatoryConfig):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckRegulatoryLocationType(newRegulatoryConfig));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, newRegulatoryConfig));
             break;
         case to_underlying(Fields::kCountryCode):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, countryCode));
             break;
         case to_underlying(Fields::kBreadcrumb):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, breadcrumb));
             break;
         default:
@@ -7733,9 +8902,14 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kErrorCode):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckCommissioningError(errorCode));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, errorCode));
             break;
         case to_underlying(Fields::kDebugText):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, debugText));
             break;
         default:
@@ -7807,9 +8981,14 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kErrorCode):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckCommissioningError(errorCode));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, errorCode));
             break;
         case to_underlying(Fields::kDebugText):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, debugText));
             break;
         default:
@@ -7830,33 +9009,55 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::Breadcrumb::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, breadcrumb));
         break;
     case Attributes::BasicCommissioningInfo::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, basicCommissioningInfo));
         break;
     case Attributes::RegulatoryConfig::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(CheckRegulatoryLocationType(regulatoryConfig));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, regulatoryConfig));
         break;
     case Attributes::LocationCapability::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(CheckRegulatoryLocationType(locationCapability));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, locationCapability));
         break;
     case Attributes::SupportsConcurrentConnection::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, supportsConcurrentConnection));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -7867,8 +9068,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace GeneralCommissioning
 namespace NetworkCommissioning {
@@ -8074,9 +9274,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kSsid):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, ssid));
             break;
         case to_underlying(Fields::kBreadcrumb):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, breadcrumb));
             break;
         default:
@@ -8117,15 +9321,24 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kNetworkingStatus):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckNetworkCommissioningStatus(networkingStatus));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, networkingStatus));
             break;
         case to_underlying(Fields::kDebugText):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, debugText));
             break;
         case to_underlying(Fields::kWiFiScanResults):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, wiFiScanResults));
             break;
         case to_underlying(Fields::kThreadScanResults):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, threadScanResults));
             break;
         default:
@@ -8165,12 +9378,18 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kSsid):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, ssid));
             break;
         case to_underlying(Fields::kCredentials):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, credentials));
             break;
         case to_underlying(Fields::kBreadcrumb):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, breadcrumb));
             break;
         default:
@@ -8210,9 +9429,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kOperationalDataset):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, operationalDataset));
             break;
         case to_underlying(Fields::kBreadcrumb):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, breadcrumb));
             break;
         default:
@@ -8251,9 +9474,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kNetworkID):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, networkID));
             break;
         case to_underlying(Fields::kBreadcrumb):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, breadcrumb));
             break;
         default:
@@ -8293,12 +9520,19 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kNetworkingStatus):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckNetworkCommissioningStatus(networkingStatus));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, networkingStatus));
             break;
         case to_underlying(Fields::kDebugText):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, debugText));
             break;
         case to_underlying(Fields::kNetworkIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, networkIndex));
             break;
         default:
@@ -8337,9 +9571,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kNetworkID):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, networkID));
             break;
         case to_underlying(Fields::kBreadcrumb):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, breadcrumb));
             break;
         default:
@@ -8379,12 +9617,19 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kNetworkingStatus):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckNetworkCommissioningStatus(networkingStatus));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, networkingStatus));
             break;
         case to_underlying(Fields::kDebugText):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, debugText));
             break;
         case to_underlying(Fields::kErrorValue):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, errorValue));
             break;
         default:
@@ -8424,12 +9669,18 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kNetworkID):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, networkID));
             break;
         case to_underlying(Fields::kNetworkIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, networkIndex));
             break;
         case to_underlying(Fields::kBreadcrumb):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, breadcrumb));
             break;
         default:
@@ -8450,42 +9701,69 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MaxNetworks::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxNetworks));
         break;
     case Attributes::Networks::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, networks));
         break;
     case Attributes::ScanMaxTimeSeconds::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, scanMaxTimeSeconds));
         break;
     case Attributes::ConnectMaxTimeSeconds::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, connectMaxTimeSeconds));
         break;
     case Attributes::InterfaceEnabled::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, interfaceEnabled));
         break;
     case Attributes::LastNetworkingStatus::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(CheckNetworkCommissioningStatus(lastNetworkingStatus));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, lastNetworkingStatus));
         break;
     case Attributes::LastNetworkID::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, lastNetworkID));
         break;
     case Attributes::LastConnectErrorValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, lastConnectErrorValue));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -8496,8 +9774,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace NetworkCommissioning
 namespace DiagnosticLogs {
@@ -8531,12 +9808,20 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kIntent):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckLogsIntent(intent));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, intent));
             break;
         case to_underlying(Fields::kRequestedProtocol):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckLogsTransferProtocol(requestedProtocol));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, requestedProtocol));
             break;
         case to_underlying(Fields::kTransferFileDesignator):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, transferFileDesignator));
             break;
         default:
@@ -8577,15 +9862,24 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kStatus):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckLogsStatus(status));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, status));
             break;
         case to_underlying(Fields::kContent):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, content));
             break;
         case to_underlying(Fields::kTimeStamp):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, timeStamp));
             break;
         case to_underlying(Fields::kTimeSinceBoot):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, timeSinceBoot));
             break;
         default:
@@ -8606,18 +9900,28 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -8628,8 +9932,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace DiagnosticLogs
 namespace GeneralDiagnostics {
@@ -8733,9 +10036,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kEnableKey):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, enableKey));
             break;
         case to_underlying(Fields::kEventTrigger):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, eventTrigger));
             break;
         default:
@@ -8756,45 +10063,74 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::NetworkInterfaces::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, networkInterfaces));
         break;
     case Attributes::RebootCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rebootCount));
         break;
     case Attributes::UpTime::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, upTime));
         break;
     case Attributes::TotalOperationalHours::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, totalOperationalHours));
         break;
     case Attributes::BootReasons::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(bootReasons));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, bootReasons));
         break;
     case Attributes::ActiveHardwareFaults::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, activeHardwareFaults));
         break;
     case Attributes::ActiveRadioFaults::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, activeRadioFaults));
         break;
     case Attributes::ActiveNetworkFaults::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, activeNetworkFaults));
         break;
     case Attributes::TestEventTriggersEnabled::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, testEventTriggersEnabled));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -9071,30 +10407,48 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::ThreadMetrics::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, threadMetrics));
         break;
     case Attributes::CurrentHeapFree::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, currentHeapFree));
         break;
     case Attributes::CurrentHeapUsed::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, currentHeapUsed));
         break;
     case Attributes::CurrentHeapHighWatermark::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, currentHeapHighWatermark));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -9503,207 +10857,344 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::Channel::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, channel));
         break;
     case Attributes::RoutingRole::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(CheckRoutingRole(routingRole));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, routingRole));
         break;
     case Attributes::NetworkName::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, networkName));
         break;
     case Attributes::PanId::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, panId));
         break;
     case Attributes::ExtendedPanId::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, extendedPanId));
         break;
     case Attributes::MeshLocalPrefix::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, meshLocalPrefix));
         break;
     case Attributes::OverrunCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, overrunCount));
         break;
     case Attributes::NeighborTableList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, neighborTableList));
         break;
     case Attributes::RouteTableList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, routeTableList));
         break;
     case Attributes::PartitionId::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, partitionId));
         break;
     case Attributes::Weighting::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, weighting));
         break;
     case Attributes::DataVersion::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, dataVersion));
         break;
     case Attributes::StableDataVersion::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, stableDataVersion));
         break;
     case Attributes::LeaderRouterId::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, leaderRouterId));
         break;
     case Attributes::DetachedRoleCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, detachedRoleCount));
         break;
     case Attributes::ChildRoleCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, childRoleCount));
         break;
     case Attributes::RouterRoleCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, routerRoleCount));
         break;
     case Attributes::LeaderRoleCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, leaderRoleCount));
         break;
     case Attributes::AttachAttemptCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attachAttemptCount));
         break;
     case Attributes::PartitionIdChangeCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, partitionIdChangeCount));
         break;
     case Attributes::BetterPartitionAttachAttemptCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, betterPartitionAttachAttemptCount));
         break;
     case Attributes::ParentChangeCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, parentChangeCount));
         break;
     case Attributes::TxTotalCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, txTotalCount));
         break;
     case Attributes::TxUnicastCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, txUnicastCount));
         break;
     case Attributes::TxBroadcastCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, txBroadcastCount));
         break;
     case Attributes::TxAckRequestedCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, txAckRequestedCount));
         break;
     case Attributes::TxAckedCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, txAckedCount));
         break;
     case Attributes::TxNoAckRequestedCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, txNoAckRequestedCount));
         break;
     case Attributes::TxDataCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, txDataCount));
         break;
     case Attributes::TxDataPollCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, txDataPollCount));
         break;
     case Attributes::TxBeaconCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, txBeaconCount));
         break;
     case Attributes::TxBeaconRequestCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, txBeaconRequestCount));
         break;
     case Attributes::TxOtherCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, txOtherCount));
         break;
     case Attributes::TxRetryCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, txRetryCount));
         break;
     case Attributes::TxDirectMaxRetryExpiryCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, txDirectMaxRetryExpiryCount));
         break;
     case Attributes::TxIndirectMaxRetryExpiryCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, txIndirectMaxRetryExpiryCount));
         break;
     case Attributes::TxErrCcaCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, txErrCcaCount));
         break;
     case Attributes::TxErrAbortCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, txErrAbortCount));
         break;
     case Attributes::TxErrBusyChannelCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, txErrBusyChannelCount));
         break;
     case Attributes::RxTotalCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rxTotalCount));
         break;
     case Attributes::RxUnicastCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rxUnicastCount));
         break;
     case Attributes::RxBroadcastCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rxBroadcastCount));
         break;
     case Attributes::RxDataCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rxDataCount));
         break;
     case Attributes::RxDataPollCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rxDataPollCount));
         break;
     case Attributes::RxBeaconCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rxBeaconCount));
         break;
     case Attributes::RxBeaconRequestCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rxBeaconRequestCount));
         break;
     case Attributes::RxOtherCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rxOtherCount));
         break;
     case Attributes::RxAddressFilteredCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rxAddressFilteredCount));
         break;
     case Attributes::RxDestAddrFilteredCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rxDestAddrFilteredCount));
         break;
     case Attributes::RxDuplicatedCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rxDuplicatedCount));
         break;
     case Attributes::RxErrNoFrameCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rxErrNoFrameCount));
         break;
     case Attributes::RxErrUnknownNeighborCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rxErrUnknownNeighborCount));
         break;
     case Attributes::RxErrInvalidSrcAddrCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rxErrInvalidSrcAddrCount));
         break;
     case Attributes::RxErrSecCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rxErrSecCount));
         break;
     case Attributes::RxErrFcsCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rxErrFcsCount));
         break;
     case Attributes::RxErrOtherCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rxErrOtherCount));
         break;
     case Attributes::ActiveTimestamp::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, activeTimestamp));
         break;
     case Attributes::PendingTimestamp::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, pendingTimestamp));
         break;
     case Attributes::Delay::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, delay));
         break;
     case Attributes::SecurityPolicy::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, securityPolicy));
         break;
     case Attributes::ChannelMask::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, channelMask));
         break;
     case Attributes::OperationalDatasetComponents::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, operationalDatasetComponents));
         break;
     case Attributes::ActiveNetworkFaultsList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, activeNetworkFaultsList));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -9799,57 +11290,95 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::Bssid::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, bssid));
         break;
     case Attributes::SecurityType::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(CheckSecurityType(securityType));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, securityType));
         break;
     case Attributes::WiFiVersion::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(CheckWiFiVersionType(wiFiVersion));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, wiFiVersion));
         break;
     case Attributes::ChannelNumber::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, channelNumber));
         break;
     case Attributes::Rssi::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rssi));
         break;
     case Attributes::BeaconLostCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, beaconLostCount));
         break;
     case Attributes::BeaconRxCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, beaconRxCount));
         break;
     case Attributes::PacketMulticastRxCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, packetMulticastRxCount));
         break;
     case Attributes::PacketMulticastTxCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, packetMulticastTxCount));
         break;
     case Attributes::PacketUnicastRxCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, packetUnicastRxCount));
         break;
     case Attributes::PacketUnicastTxCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, packetUnicastTxCount));
         break;
     case Attributes::CurrentMaxRate::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, currentMaxRate));
         break;
     case Attributes::OverrunCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, overrunCount));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -10024,45 +11553,74 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::PHYRate::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(CheckPHYRateType(PHYRate));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, PHYRate));
         break;
     case Attributes::FullDuplex::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, fullDuplex));
         break;
     case Attributes::PacketRxCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, packetRxCount));
         break;
     case Attributes::PacketTxCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, packetTxCount));
         break;
     case Attributes::TxErrCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, txErrCount));
         break;
     case Attributes::CollisionCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, collisionCount));
         break;
     case Attributes::OverrunCount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, overrunCount));
         break;
     case Attributes::CarrierDetect::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, carrierDetect));
         break;
     case Attributes::TimeSinceReset::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, timeSinceReset));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -10073,14 +11631,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace EthernetNetworkDiagnostics
 namespace TimeSynchronization {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -10088,18 +11644,28 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -10110,14 +11676,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace TimeSynchronization
 namespace BridgedDeviceBasic {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -10125,63 +11689,103 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::VendorName::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, vendorName));
         break;
     case Attributes::VendorID::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, vendorID));
         break;
     case Attributes::ProductName::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, productName));
         break;
     case Attributes::NodeLabel::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, nodeLabel));
         break;
     case Attributes::HardwareVersion::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, hardwareVersion));
         break;
     case Attributes::HardwareVersionString::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, hardwareVersionString));
         break;
     case Attributes::SoftwareVersion::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, softwareVersion));
         break;
     case Attributes::SoftwareVersionString::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, softwareVersionString));
         break;
     case Attributes::ManufacturingDate::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, manufacturingDate));
         break;
     case Attributes::PartNumber::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, partNumber));
         break;
     case Attributes::ProductURL::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, productURL));
         break;
     case Attributes::ProductLabel::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, productLabel));
         break;
     case Attributes::SerialNumber::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, serialNumber));
         break;
     case Attributes::Reachable::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, reachable));
         break;
     case Attributes::UniqueID::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, uniqueID));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -10338,8 +11942,7 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
 } // namespace BridgedDeviceBasic
 namespace Switch {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -10347,27 +11950,43 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::NumberOfPositions::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, numberOfPositions));
         break;
     case Attributes::CurrentPosition::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, currentPosition));
         break;
     case Attributes::MultiPressMax::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, multiPressMax));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -10684,18 +12303,28 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kCommissioningTimeout):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, commissioningTimeout));
             break;
         case to_underlying(Fields::kPAKEVerifier):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, PAKEVerifier));
             break;
         case to_underlying(Fields::kDiscriminator):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, discriminator));
             break;
         case to_underlying(Fields::kIterations):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, iterations));
             break;
         case to_underlying(Fields::kSalt):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, salt));
             break;
         default:
@@ -10734,6 +12363,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kCommissioningTimeout):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, commissioningTimeout));
             break;
         default:
@@ -10787,27 +12418,43 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::WindowStatus::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, windowStatus));
         break;
     case Attributes::AdminFabricIndex::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, adminFabricIndex));
         break;
     case Attributes::AdminVendorId::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, adminVendorId));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -10818,8 +12465,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace AdministratorCommissioning
 namespace OperationalCredentials {
@@ -10993,6 +12639,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kAttestationNonce):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, attestationNonce));
             break;
         default:
@@ -11032,9 +12680,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kAttestationElements):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, attestationElements));
             break;
         case to_underlying(Fields::kSignature):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, signature));
             break;
         default:
@@ -11072,6 +12724,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kCertificateType):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, certificateType));
             break;
         default:
@@ -11109,6 +12763,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kCertificate):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, certificate));
             break;
         default:
@@ -11147,9 +12803,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kCSRNonce):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, CSRNonce));
             break;
         case to_underlying(Fields::kIsForUpdateNOC):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, isForUpdateNOC));
             break;
         default:
@@ -11189,9 +12849,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kNOCSRElements):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, NOCSRElements));
             break;
         case to_underlying(Fields::kAttestationSignature):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, attestationSignature));
             break;
         default:
@@ -11233,18 +12897,28 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kNOCValue):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, NOCValue));
             break;
         case to_underlying(Fields::kICACValue):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, ICACValue));
             break;
         case to_underlying(Fields::kIPKValue):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, IPKValue));
             break;
         case to_underlying(Fields::kCaseAdminSubject):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, caseAdminSubject));
             break;
         case to_underlying(Fields::kAdminVendorId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, adminVendorId));
             break;
         default:
@@ -11283,9 +12957,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kNOCValue):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, NOCValue));
             break;
         case to_underlying(Fields::kICACValue):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, ICACValue));
             break;
         default:
@@ -11325,12 +13003,19 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kStatusCode):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckOperationalCertStatus(statusCode));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, statusCode));
             break;
         case to_underlying(Fields::kFabricIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, fabricIndex));
             break;
         case to_underlying(Fields::kDebugText):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, debugText));
             break;
         default:
@@ -11368,6 +13053,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kLabel):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, label));
             break;
         default:
@@ -11405,6 +13092,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kFabricIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, fabricIndex));
             break;
         default:
@@ -11442,6 +13131,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kRootCertificate):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, rootCertificate));
             break;
         default:
@@ -11462,36 +13153,58 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::NOCs::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, NOCs));
         break;
     case Attributes::Fabrics::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, fabrics));
         break;
     case Attributes::SupportedFabrics::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, supportedFabrics));
         break;
     case Attributes::CommissionedFabrics::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, commissionedFabrics));
         break;
     case Attributes::TrustedRootCertificates::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, trustedRootCertificates));
         break;
     case Attributes::CurrentFabricIndex::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, currentFabricIndex));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -11502,8 +13215,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace OperationalCredentials
 namespace GroupKeyManagement {
@@ -11731,6 +13443,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kGroupKeySet):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupKeySet));
             break;
         default:
@@ -11768,6 +13482,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kGroupKeySetID):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupKeySetID));
             break;
         default:
@@ -11805,6 +13521,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kGroupKeySet):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupKeySet));
             break;
         default:
@@ -11842,6 +13560,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kGroupKeySetID):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupKeySetID));
             break;
         default:
@@ -11879,6 +13599,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kGroupKeySetIDs):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupKeySetIDs));
             break;
         default:
@@ -11916,6 +13638,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kGroupKeySetIDs):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, groupKeySetIDs));
             break;
         default:
@@ -11936,30 +13660,48 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::GroupKeyMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, groupKeyMap));
         break;
     case Attributes::GroupTable::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, groupTable));
         break;
     case Attributes::MaxGroupsPerFabric::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxGroupsPerFabric));
         break;
     case Attributes::MaxGroupKeysPerFabric::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxGroupKeysPerFabric));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -11970,16 +13712,13 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace GroupKeyManagement
 namespace FixedLabel {
-namespace Structs {
-} // namespace Structs
+namespace Structs {} // namespace Structs
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -11987,21 +13726,33 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::LabelList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, labelList));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -12012,16 +13763,13 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace FixedLabel
 namespace UserLabel {
-namespace Structs {
-} // namespace Structs
+namespace Structs {} // namespace Structs
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -12029,21 +13777,33 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::LabelList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, labelList));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -12054,14 +13814,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace UserLabel
 namespace ProxyConfiguration {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -12069,18 +13827,28 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -12091,14 +13859,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace ProxyConfiguration
 namespace ProxyDiscovery {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -12106,18 +13872,28 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -12128,14 +13904,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace ProxyDiscovery
 namespace ProxyValid {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -12143,18 +13917,28 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -12165,14 +13949,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace ProxyValid
 namespace BooleanState {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -12180,21 +13962,33 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::StateValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, stateValue));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -12368,6 +14162,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kNewMode):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, newMode));
             break;
         default:
@@ -12388,36 +14184,59 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::Description::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, description));
         break;
     case Attributes::StandardNamespace::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum16(standardNamespace));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, standardNamespace));
         break;
     case Attributes::SupportedModes::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, supportedModes));
         break;
     case Attributes::CurrentMode::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, currentMode));
         break;
     case Attributes::StartUpMode::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, startUpMode));
         break;
     case Attributes::OnMode::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, onMode));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -12428,14 +14247,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace ModeSelect
 namespace ShadeConfiguration {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -12443,33 +14260,54 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::PhysicalClosedLimit::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, physicalClosedLimit));
         break;
     case Attributes::MotorStepSize::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, motorStepSize));
         break;
     case Attributes::Status::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, status));
         break;
     case Attributes::ClosedLimit::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, closedLimit));
         break;
     case Attributes::Mode::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(mode));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, mode));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -12480,8 +14318,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace ShadeConfiguration
 namespace DoorLock {
@@ -12558,6 +14395,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kPinCode):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, pinCode));
             break;
         default:
@@ -12595,6 +14434,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kPinCode):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, pinCode));
             break;
         default:
@@ -12633,9 +14474,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kTimeout):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, timeout));
             break;
         case to_underlying(Fields::kPinCode):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, pinCode));
             break;
         default:
@@ -12679,24 +14524,38 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kWeekDayIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, weekDayIndex));
             break;
         case to_underlying(Fields::kUserIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, userIndex));
             break;
         case to_underlying(Fields::kDaysMask):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, daysMask));
             break;
         case to_underlying(Fields::kStartHour):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, startHour));
             break;
         case to_underlying(Fields::kStartMinute):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, startMinute));
             break;
         case to_underlying(Fields::kEndHour):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, endHour));
             break;
         case to_underlying(Fields::kEndMinute):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, endMinute));
             break;
         default:
@@ -12735,9 +14594,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kWeekDayIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, weekDayIndex));
             break;
         case to_underlying(Fields::kUserIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, userIndex));
             break;
         default:
@@ -12782,27 +14645,44 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kWeekDayIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, weekDayIndex));
             break;
         case to_underlying(Fields::kUserIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, userIndex));
             break;
         case to_underlying(Fields::kStatus):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckDlStatus(status));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, status));
             break;
         case to_underlying(Fields::kDaysMask):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, daysMask));
             break;
         case to_underlying(Fields::kStartHour):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, startHour));
             break;
         case to_underlying(Fields::kStartMinute):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, startMinute));
             break;
         case to_underlying(Fields::kEndHour):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, endHour));
             break;
         case to_underlying(Fields::kEndMinute):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, endMinute));
             break;
         default:
@@ -12841,9 +14721,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kWeekDayIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, weekDayIndex));
             break;
         case to_underlying(Fields::kUserIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, userIndex));
             break;
         default:
@@ -12884,15 +14768,23 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kYearDayIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, yearDayIndex));
             break;
         case to_underlying(Fields::kUserIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, userIndex));
             break;
         case to_underlying(Fields::kLocalStartTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, localStartTime));
             break;
         case to_underlying(Fields::kLocalEndTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, localEndTime));
             break;
         default:
@@ -12931,9 +14823,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kYearDayIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, yearDayIndex));
             break;
         case to_underlying(Fields::kUserIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, userIndex));
             break;
         default:
@@ -12975,18 +14871,29 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kYearDayIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, yearDayIndex));
             break;
         case to_underlying(Fields::kUserIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, userIndex));
             break;
         case to_underlying(Fields::kStatus):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckDlStatus(status));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, status));
             break;
         case to_underlying(Fields::kLocalStartTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, localStartTime));
             break;
         case to_underlying(Fields::kLocalEndTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, localEndTime));
             break;
         default:
@@ -13025,9 +14932,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kYearDayIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, yearDayIndex));
             break;
         case to_underlying(Fields::kUserIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, userIndex));
             break;
         default:
@@ -13068,15 +14979,24 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kHolidayIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, holidayIndex));
             break;
         case to_underlying(Fields::kLocalStartTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, localStartTime));
             break;
         case to_underlying(Fields::kLocalEndTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, localEndTime));
             break;
         case to_underlying(Fields::kOperatingMode):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckDlOperatingMode(operatingMode));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, operatingMode));
             break;
         default:
@@ -13114,6 +15034,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kHolidayIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, holidayIndex));
             break;
         default:
@@ -13155,18 +15077,30 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kHolidayIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, holidayIndex));
             break;
         case to_underlying(Fields::kStatus):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckDlStatus(status));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, status));
             break;
         case to_underlying(Fields::kLocalStartTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, localStartTime));
             break;
         case to_underlying(Fields::kLocalEndTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, localEndTime));
             break;
         case to_underlying(Fields::kOperatingMode):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckDlOperatingMode(operatingMode));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, operatingMode));
             break;
         default:
@@ -13204,6 +15138,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kHolidayIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, holidayIndex));
             break;
         default:
@@ -13247,24 +15183,42 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kOperationType):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckDlDataOperationType(operationType));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, operationType));
             break;
         case to_underlying(Fields::kUserIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, userIndex));
             break;
         case to_underlying(Fields::kUserName):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, userName));
             break;
         case to_underlying(Fields::kUserUniqueId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, userUniqueId));
             break;
         case to_underlying(Fields::kUserStatus):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckDlUserStatus(userStatus));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, userStatus));
             break;
         case to_underlying(Fields::kUserType):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckDlUserType(userType));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, userType));
             break;
         case to_underlying(Fields::kCredentialRule):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckDlCredentialRule(credentialRule));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, credentialRule));
             break;
         default:
@@ -13302,6 +15256,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kUserIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, userIndex));
             break;
         default:
@@ -13350,33 +15306,56 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kUserIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, userIndex));
             break;
         case to_underlying(Fields::kUserName):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, userName));
             break;
         case to_underlying(Fields::kUserUniqueId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, userUniqueId));
             break;
         case to_underlying(Fields::kUserStatus):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckDlUserStatus(userStatus));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, userStatus));
             break;
         case to_underlying(Fields::kUserType):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckDlUserType(userType));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, userType));
             break;
         case to_underlying(Fields::kCredentialRule):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckDlCredentialRule(credentialRule));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, credentialRule));
             break;
         case to_underlying(Fields::kCredentials):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, credentials));
             break;
         case to_underlying(Fields::kCreatorFabricIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, creatorFabricIndex));
             break;
         case to_underlying(Fields::kLastModifiedFabricIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, lastModifiedFabricIndex));
             break;
         case to_underlying(Fields::kNextUserIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, nextUserIndex));
             break;
         default:
@@ -13414,6 +15393,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kUserIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, userIndex));
             break;
         default:
@@ -13456,21 +15437,36 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kOperationType):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckDlDataOperationType(operationType));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, operationType));
             break;
         case to_underlying(Fields::kCredential):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, credential));
             break;
         case to_underlying(Fields::kCredentialData):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, credentialData));
             break;
         case to_underlying(Fields::kUserIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, userIndex));
             break;
         case to_underlying(Fields::kUserStatus):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckDlUserStatus(userStatus));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, userStatus));
             break;
         case to_underlying(Fields::kUserType):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckDlUserType(userType));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, userType));
             break;
         default:
@@ -13511,12 +15507,19 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kStatus):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckDlStatus(status));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, status));
             break;
         case to_underlying(Fields::kUserIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, userIndex));
             break;
         case to_underlying(Fields::kNextCredentialIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, nextCredentialIndex));
             break;
         default:
@@ -13554,6 +15557,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kCredential):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, credential));
             break;
         default:
@@ -13598,18 +15603,28 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kCredentialExists):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, credentialExists));
             break;
         case to_underlying(Fields::kUserIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, userIndex));
             break;
         case to_underlying(Fields::kCreatorFabricIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, creatorFabricIndex));
             break;
         case to_underlying(Fields::kLastModifiedFabricIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, lastModifiedFabricIndex));
             break;
         case to_underlying(Fields::kNextCredentialIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, nextCredentialIndex));
             break;
         default:
@@ -13647,6 +15662,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kCredential):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, credential));
             break;
         default:
@@ -13667,126 +15684,212 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::LockState::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(CheckDlLockState(lockState));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, lockState));
         break;
     case Attributes::LockType::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(CheckDlLockType(lockType));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, lockType));
         break;
     case Attributes::ActuatorEnabled::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, actuatorEnabled));
         break;
     case Attributes::DoorState::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(CheckDlDoorState(doorState));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, doorState));
         break;
     case Attributes::DoorOpenEvents::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, doorOpenEvents));
         break;
     case Attributes::DoorClosedEvents::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, doorClosedEvents));
         break;
     case Attributes::OpenPeriod::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, openPeriod));
         break;
     case Attributes::NumberOfTotalUsersSupported::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, numberOfTotalUsersSupported));
         break;
     case Attributes::NumberOfPINUsersSupported::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, numberOfPINUsersSupported));
         break;
     case Attributes::NumberOfRFIDUsersSupported::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, numberOfRFIDUsersSupported));
         break;
     case Attributes::NumberOfWeekDaySchedulesSupportedPerUser::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, numberOfWeekDaySchedulesSupportedPerUser));
         break;
     case Attributes::NumberOfYearDaySchedulesSupportedPerUser::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, numberOfYearDaySchedulesSupportedPerUser));
         break;
     case Attributes::NumberOfHolidaySchedulesSupported::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, numberOfHolidaySchedulesSupported));
         break;
     case Attributes::MaxPINCodeLength::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxPINCodeLength));
         break;
     case Attributes::MinPINCodeLength::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minPINCodeLength));
         break;
     case Attributes::MaxRFIDCodeLength::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxRFIDCodeLength));
         break;
     case Attributes::MinRFIDCodeLength::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minRFIDCodeLength));
         break;
     case Attributes::CredentialRulesSupport::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, credentialRulesSupport));
         break;
     case Attributes::NumberOfCredentialsSupportedPerUser::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, numberOfCredentialsSupportedPerUser));
         break;
     case Attributes::Language::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, language));
         break;
     case Attributes::LEDSettings::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, LEDSettings));
         break;
     case Attributes::AutoRelockTime::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, autoRelockTime));
         break;
     case Attributes::SoundVolume::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, soundVolume));
         break;
     case Attributes::OperatingMode::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(CheckDlOperatingMode(operatingMode));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, operatingMode));
         break;
     case Attributes::SupportedOperatingModes::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, supportedOperatingModes));
         break;
     case Attributes::DefaultConfigurationRegister::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, defaultConfigurationRegister));
         break;
     case Attributes::EnableLocalProgramming::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, enableLocalProgramming));
         break;
     case Attributes::EnableOneTouchLocking::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, enableOneTouchLocking));
         break;
     case Attributes::EnableInsideStatusLED::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, enableInsideStatusLED));
         break;
     case Attributes::EnablePrivacyModeButton::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, enablePrivacyModeButton));
         break;
     case Attributes::LocalProgrammingFeatures::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, localProgrammingFeatures));
         break;
     case Attributes::WrongCodeEntryLimit::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, wrongCodeEntryLimit));
         break;
     case Attributes::UserCodeTemporaryDisableTime::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, userCodeTemporaryDisableTime));
         break;
     case Attributes::SendPINOverTheAir::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, sendPINOverTheAir));
         break;
     case Attributes::RequirePINforRemoteOperation::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, requirePINforRemoteOperation));
         break;
     case Attributes::ExpiringUserTimeout::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, expiringUserTimeout));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -14181,6 +16284,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kLiftValue):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, liftValue));
             break;
         default:
@@ -14219,6 +16324,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kLiftPercent100thsValue):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, liftPercent100thsValue));
             break;
         default:
@@ -14256,6 +16363,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kTiltValue):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, tiltValue));
             break;
         default:
@@ -14294,6 +16403,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kTiltPercent100thsValue):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, tiltPercent100thsValue));
             break;
         default:
@@ -14314,84 +16425,140 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::Type::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(CheckType(type));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, type));
         break;
     case Attributes::PhysicalClosedLimitLift::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, physicalClosedLimitLift));
         break;
     case Attributes::PhysicalClosedLimitTilt::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, physicalClosedLimitTilt));
         break;
     case Attributes::CurrentPositionLift::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, currentPositionLift));
         break;
     case Attributes::CurrentPositionTilt::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, currentPositionTilt));
         break;
     case Attributes::NumberOfActuationsLift::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, numberOfActuationsLift));
         break;
     case Attributes::NumberOfActuationsTilt::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, numberOfActuationsTilt));
         break;
     case Attributes::ConfigStatus::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, configStatus));
         break;
     case Attributes::CurrentPositionLiftPercentage::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, currentPositionLiftPercentage));
         break;
     case Attributes::CurrentPositionTiltPercentage::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, currentPositionTiltPercentage));
         break;
     case Attributes::OperationalStatus::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, operationalStatus));
         break;
     case Attributes::TargetPositionLiftPercent100ths::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, targetPositionLiftPercent100ths));
         break;
     case Attributes::TargetPositionTiltPercent100ths::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, targetPositionTiltPercent100ths));
         break;
     case Attributes::EndProductType::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(CheckEndProductType(endProductType));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, endProductType));
         break;
     case Attributes::CurrentPositionLiftPercent100ths::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, currentPositionLiftPercent100ths));
         break;
     case Attributes::CurrentPositionTiltPercent100ths::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, currentPositionTiltPercent100ths));
         break;
     case Attributes::InstalledOpenLimitLift::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, installedOpenLimitLift));
         break;
     case Attributes::InstalledClosedLimitLift::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, installedClosedLimitLift));
         break;
     case Attributes::InstalledOpenLimitTilt::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, installedOpenLimitTilt));
         break;
     case Attributes::InstalledClosedLimitTilt::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, installedClosedLimitTilt));
         break;
     case Attributes::Mode::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, mode));
         break;
     case Attributes::SafetyStatus::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, safetyStatus));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -14402,8 +16569,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace WindowCovering
 namespace BarrierControl {
@@ -14434,6 +16600,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kPercentOpen):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, percentOpen));
             break;
         default:
@@ -14487,48 +16655,79 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::BarrierMovingState::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(barrierMovingState));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, barrierMovingState));
         break;
     case Attributes::BarrierSafetyStatus::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, barrierSafetyStatus));
         break;
     case Attributes::BarrierCapabilities::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, barrierCapabilities));
         break;
     case Attributes::BarrierOpenEvents::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, barrierOpenEvents));
         break;
     case Attributes::BarrierCloseEvents::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, barrierCloseEvents));
         break;
     case Attributes::BarrierCommandOpenEvents::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, barrierCommandOpenEvents));
         break;
     case Attributes::BarrierCommandCloseEvents::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, barrierCommandCloseEvents));
         break;
     case Attributes::BarrierOpenPeriod::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, barrierOpenPeriod));
         break;
     case Attributes::BarrierClosePeriod::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, barrierClosePeriod));
         break;
     case Attributes::BarrierPosition::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, barrierPosition));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -14539,14 +16738,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace BarrierControl
 namespace PumpConfigurationAndControl {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -14554,87 +16751,147 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MaxPressure::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxPressure));
         break;
     case Attributes::MaxSpeed::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxSpeed));
         break;
     case Attributes::MaxFlow::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxFlow));
         break;
     case Attributes::MinConstPressure::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minConstPressure));
         break;
     case Attributes::MaxConstPressure::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxConstPressure));
         break;
     case Attributes::MinCompPressure::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minCompPressure));
         break;
     case Attributes::MaxCompPressure::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxCompPressure));
         break;
     case Attributes::MinConstSpeed::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minConstSpeed));
         break;
     case Attributes::MaxConstSpeed::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxConstSpeed));
         break;
     case Attributes::MinConstFlow::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minConstFlow));
         break;
     case Attributes::MaxConstFlow::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxConstFlow));
         break;
     case Attributes::MinConstTemp::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minConstTemp));
         break;
     case Attributes::MaxConstTemp::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxConstTemp));
         break;
     case Attributes::PumpStatus::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, pumpStatus));
         break;
     case Attributes::EffectiveOperationMode::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(CheckPumpOperationMode(effectiveOperationMode));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, effectiveOperationMode));
         break;
     case Attributes::EffectiveControlMode::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(CheckPumpControlMode(effectiveControlMode));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, effectiveControlMode));
         break;
     case Attributes::Capacity::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, capacity));
         break;
     case Attributes::Speed::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, speed));
         break;
     case Attributes::LifetimeRunningHours::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, lifetimeRunningHours));
         break;
     case Attributes::Power::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, power));
         break;
     case Attributes::LifetimeEnergyConsumed::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, lifetimeEnergyConsumed));
         break;
     case Attributes::OperationMode::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(CheckPumpOperationMode(operationMode));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, operationMode));
         break;
     case Attributes::ControlMode::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(CheckPumpControlMode(controlMode));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, controlMode));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -15289,9 +17546,14 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kMode):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckSetpointAdjustMode(mode));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, mode));
             break;
         case to_underlying(Fields::kAmount):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, amount));
             break;
         default:
@@ -15334,15 +17596,23 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kNumberOfTransitionsForSequence):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, numberOfTransitionsForSequence));
             break;
         case to_underlying(Fields::kDayOfWeekForSequence):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, dayOfWeekForSequence));
             break;
         case to_underlying(Fields::kModeForSequence):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, modeForSequence));
             break;
         case to_underlying(Fields::kTransitions):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, transitions));
             break;
         default:
@@ -15385,15 +17655,23 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kNumberOfTransitionsForSequence):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, numberOfTransitionsForSequence));
             break;
         case to_underlying(Fields::kDayOfWeekForSequence):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, dayOfWeekForSequence));
             break;
         case to_underlying(Fields::kModeForSequence):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, modeForSequence));
             break;
         case to_underlying(Fields::kTransitions):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, transitions));
             break;
         default:
@@ -15432,9 +17710,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kDaysToReturn):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, daysToReturn));
             break;
         case to_underlying(Fields::kModeToReturn):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, modeToReturn));
             break;
         default:
@@ -15488,165 +17770,284 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::LocalTemperature::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, localTemperature));
         break;
     case Attributes::OutdoorTemperature::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, outdoorTemperature));
         break;
     case Attributes::Occupancy::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, occupancy));
         break;
     case Attributes::AbsMinHeatSetpointLimit::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, absMinHeatSetpointLimit));
         break;
     case Attributes::AbsMaxHeatSetpointLimit::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, absMaxHeatSetpointLimit));
         break;
     case Attributes::AbsMinCoolSetpointLimit::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, absMinCoolSetpointLimit));
         break;
     case Attributes::AbsMaxCoolSetpointLimit::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, absMaxCoolSetpointLimit));
         break;
     case Attributes::PICoolingDemand::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, PICoolingDemand));
         break;
     case Attributes::PIHeatingDemand::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, PIHeatingDemand));
         break;
     case Attributes::HVACSystemTypeConfiguration::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, HVACSystemTypeConfiguration));
         break;
     case Attributes::LocalTemperatureCalibration::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, localTemperatureCalibration));
         break;
     case Attributes::OccupiedCoolingSetpoint::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, occupiedCoolingSetpoint));
         break;
     case Attributes::OccupiedHeatingSetpoint::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, occupiedHeatingSetpoint));
         break;
     case Attributes::UnoccupiedCoolingSetpoint::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, unoccupiedCoolingSetpoint));
         break;
     case Attributes::UnoccupiedHeatingSetpoint::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, unoccupiedHeatingSetpoint));
         break;
     case Attributes::MinHeatSetpointLimit::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minHeatSetpointLimit));
         break;
     case Attributes::MaxHeatSetpointLimit::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxHeatSetpointLimit));
         break;
     case Attributes::MinCoolSetpointLimit::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minCoolSetpointLimit));
         break;
     case Attributes::MaxCoolSetpointLimit::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxCoolSetpointLimit));
         break;
     case Attributes::MinSetpointDeadBand::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minSetpointDeadBand));
         break;
     case Attributes::RemoteSensing::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, remoteSensing));
         break;
     case Attributes::ControlSequenceOfOperation::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(CheckThermostatControlSequence(controlSequenceOfOperation));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, controlSequenceOfOperation));
         break;
     case Attributes::SystemMode::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(systemMode));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, systemMode));
         break;
     case Attributes::ThermostatRunningMode::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(thermostatRunningMode));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, thermostatRunningMode));
         break;
     case Attributes::StartOfWeek::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(startOfWeek));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, startOfWeek));
         break;
     case Attributes::NumberOfWeeklyTransitions::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, numberOfWeeklyTransitions));
         break;
     case Attributes::NumberOfDailyTransitions::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, numberOfDailyTransitions));
         break;
     case Attributes::TemperatureSetpointHold::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(temperatureSetpointHold));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, temperatureSetpointHold));
         break;
     case Attributes::TemperatureSetpointHoldDuration::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, temperatureSetpointHoldDuration));
         break;
     case Attributes::ThermostatProgrammingOperationMode::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, thermostatProgrammingOperationMode));
         break;
     case Attributes::ThermostatRunningState::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, thermostatRunningState));
         break;
     case Attributes::SetpointChangeSource::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(setpointChangeSource));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, setpointChangeSource));
         break;
     case Attributes::SetpointChangeAmount::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, setpointChangeAmount));
         break;
     case Attributes::SetpointChangeSourceTimestamp::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, setpointChangeSourceTimestamp));
         break;
     case Attributes::OccupiedSetback::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, occupiedSetback));
         break;
     case Attributes::OccupiedSetbackMin::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, occupiedSetbackMin));
         break;
     case Attributes::OccupiedSetbackMax::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, occupiedSetbackMax));
         break;
     case Attributes::UnoccupiedSetback::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, unoccupiedSetback));
         break;
     case Attributes::UnoccupiedSetbackMin::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, unoccupiedSetbackMin));
         break;
     case Attributes::UnoccupiedSetbackMax::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, unoccupiedSetbackMax));
         break;
     case Attributes::EmergencyHeatDelta::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, emergencyHeatDelta));
         break;
     case Attributes::ACType::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(ACType));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, ACType));
         break;
     case Attributes::ACCapacity::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, ACCapacity));
         break;
     case Attributes::ACRefrigerantType::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(ACRefrigerantType));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, ACRefrigerantType));
         break;
     case Attributes::ACCompressorType::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(ACCompressorType));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, ACCompressorType));
         break;
     case Attributes::ACErrorCode::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, ACErrorCode));
         break;
     case Attributes::ACLouverPosition::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(ACLouverPosition));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, ACLouverPosition));
         break;
     case Attributes::ACCoilTemperature::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, ACCoilTemperature));
         break;
     case Attributes::ACCapacityformat::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(ACCapacityformat));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, ACCapacityformat));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -15657,14 +18058,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace Thermostat
 namespace FanControl {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -15672,51 +18071,85 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::FanMode::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(CheckFanModeType(fanMode));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, fanMode));
         break;
     case Attributes::FanModeSequence::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(CheckFanModeSequenceType(fanModeSequence));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, fanModeSequence));
         break;
     case Attributes::PercentSetting::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, percentSetting));
         break;
     case Attributes::PercentCurrent::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, percentCurrent));
         break;
     case Attributes::SpeedMax::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, speedMax));
         break;
     case Attributes::SpeedSetting::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, speedSetting));
         break;
     case Attributes::SpeedCurrent::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, speedCurrent));
         break;
     case Attributes::RockSupport::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rockSupport));
         break;
     case Attributes::RockSetting::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rockSetting));
         break;
     case Attributes::WindSupport::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, windSupport));
         break;
     case Attributes::WindSetting::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, windSetting));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -15727,14 +18160,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace FanControl
 namespace DehumidificationControl {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -15742,42 +18173,71 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::RelativeHumidity::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, relativeHumidity));
         break;
     case Attributes::DehumidificationCooling::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, dehumidificationCooling));
         break;
     case Attributes::RhDehumidificationSetpoint::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rhDehumidificationSetpoint));
         break;
     case Attributes::RelativeHumidityMode::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(relativeHumidityMode));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, relativeHumidityMode));
         break;
     case Attributes::DehumidificationLockout::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(dehumidificationLockout));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, dehumidificationLockout));
         break;
     case Attributes::DehumidificationHysteresis::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, dehumidificationHysteresis));
         break;
     case Attributes::DehumidificationMaxCool::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, dehumidificationMaxCool));
         break;
     case Attributes::RelativeHumidityDisplay::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(relativeHumidityDisplay));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, relativeHumidityDisplay));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -15788,14 +18248,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace DehumidificationControl
 namespace ThermostatUserInterfaceConfiguration {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -15803,27 +18261,46 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::TemperatureDisplayMode::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(temperatureDisplayMode));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, temperatureDisplayMode));
         break;
     case Attributes::KeypadLockout::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(keypadLockout));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, keypadLockout));
         break;
     case Attributes::ScheduleProgrammingVisibility::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(scheduleProgrammingVisibility));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, scheduleProgrammingVisibility));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -15834,8 +18311,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace ThermostatUserInterfaceConfiguration
 namespace ColorControl {
@@ -15870,18 +18346,29 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kHue):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, hue));
             break;
         case to_underlying(Fields::kDirection):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckHueDirection(direction));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, direction));
             break;
         case to_underlying(Fields::kTransitionTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, transitionTime));
             break;
         case to_underlying(Fields::kOptionsMask):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsMask));
             break;
         case to_underlying(Fields::kOptionsOverride):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsOverride));
             break;
         default:
@@ -15922,15 +18409,24 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kMoveMode):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckHueMoveMode(moveMode));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, moveMode));
             break;
         case to_underlying(Fields::kRate):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, rate));
             break;
         case to_underlying(Fields::kOptionsMask):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsMask));
             break;
         case to_underlying(Fields::kOptionsOverride):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsOverride));
             break;
         default:
@@ -15972,18 +18468,29 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kStepMode):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckHueStepMode(stepMode));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, stepMode));
             break;
         case to_underlying(Fields::kStepSize):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, stepSize));
             break;
         case to_underlying(Fields::kTransitionTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, transitionTime));
             break;
         case to_underlying(Fields::kOptionsMask):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsMask));
             break;
         case to_underlying(Fields::kOptionsOverride):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsOverride));
             break;
         default:
@@ -16024,15 +18531,23 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kSaturation):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, saturation));
             break;
         case to_underlying(Fields::kTransitionTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, transitionTime));
             break;
         case to_underlying(Fields::kOptionsMask):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsMask));
             break;
         case to_underlying(Fields::kOptionsOverride):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsOverride));
             break;
         default:
@@ -16073,15 +18588,24 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kMoveMode):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckSaturationMoveMode(moveMode));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, moveMode));
             break;
         case to_underlying(Fields::kRate):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, rate));
             break;
         case to_underlying(Fields::kOptionsMask):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsMask));
             break;
         case to_underlying(Fields::kOptionsOverride):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsOverride));
             break;
         default:
@@ -16123,18 +18647,29 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kStepMode):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckSaturationStepMode(stepMode));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, stepMode));
             break;
         case to_underlying(Fields::kStepSize):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, stepSize));
             break;
         case to_underlying(Fields::kTransitionTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, transitionTime));
             break;
         case to_underlying(Fields::kOptionsMask):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsMask));
             break;
         case to_underlying(Fields::kOptionsOverride):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsOverride));
             break;
         default:
@@ -16176,18 +18711,28 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kHue):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, hue));
             break;
         case to_underlying(Fields::kSaturation):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, saturation));
             break;
         case to_underlying(Fields::kTransitionTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, transitionTime));
             break;
         case to_underlying(Fields::kOptionsMask):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsMask));
             break;
         case to_underlying(Fields::kOptionsOverride):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsOverride));
             break;
         default:
@@ -16229,18 +18774,28 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kColorX):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, colorX));
             break;
         case to_underlying(Fields::kColorY):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, colorY));
             break;
         case to_underlying(Fields::kTransitionTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, transitionTime));
             break;
         case to_underlying(Fields::kOptionsMask):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsMask));
             break;
         case to_underlying(Fields::kOptionsOverride):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsOverride));
             break;
         default:
@@ -16281,15 +18836,23 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kRateX):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, rateX));
             break;
         case to_underlying(Fields::kRateY):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, rateY));
             break;
         case to_underlying(Fields::kOptionsMask):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsMask));
             break;
         case to_underlying(Fields::kOptionsOverride):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsOverride));
             break;
         default:
@@ -16331,18 +18894,28 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kStepX):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, stepX));
             break;
         case to_underlying(Fields::kStepY):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, stepY));
             break;
         case to_underlying(Fields::kTransitionTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, transitionTime));
             break;
         case to_underlying(Fields::kOptionsMask):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsMask));
             break;
         case to_underlying(Fields::kOptionsOverride):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsOverride));
             break;
         default:
@@ -16383,15 +18956,23 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kColorTemperature):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, colorTemperature));
             break;
         case to_underlying(Fields::kTransitionTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, transitionTime));
             break;
         case to_underlying(Fields::kOptionsMask):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsMask));
             break;
         case to_underlying(Fields::kOptionsOverride):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsOverride));
             break;
         default:
@@ -16433,18 +19014,29 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kEnhancedHue):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, enhancedHue));
             break;
         case to_underlying(Fields::kDirection):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckHueDirection(direction));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, direction));
             break;
         case to_underlying(Fields::kTransitionTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, transitionTime));
             break;
         case to_underlying(Fields::kOptionsMask):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsMask));
             break;
         case to_underlying(Fields::kOptionsOverride):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsOverride));
             break;
         default:
@@ -16485,15 +19077,24 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kMoveMode):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckHueMoveMode(moveMode));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, moveMode));
             break;
         case to_underlying(Fields::kRate):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, rate));
             break;
         case to_underlying(Fields::kOptionsMask):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsMask));
             break;
         case to_underlying(Fields::kOptionsOverride):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsOverride));
             break;
         default:
@@ -16535,18 +19136,29 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kStepMode):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckHueStepMode(stepMode));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, stepMode));
             break;
         case to_underlying(Fields::kStepSize):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, stepSize));
             break;
         case to_underlying(Fields::kTransitionTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, transitionTime));
             break;
         case to_underlying(Fields::kOptionsMask):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsMask));
             break;
         case to_underlying(Fields::kOptionsOverride):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsOverride));
             break;
         default:
@@ -16588,18 +19200,28 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kEnhancedHue):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, enhancedHue));
             break;
         case to_underlying(Fields::kSaturation):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, saturation));
             break;
         case to_underlying(Fields::kTransitionTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, transitionTime));
             break;
         case to_underlying(Fields::kOptionsMask):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsMask));
             break;
         case to_underlying(Fields::kOptionsOverride):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsOverride));
             break;
         default:
@@ -16643,24 +19265,40 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kUpdateFlags):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, updateFlags));
             break;
         case to_underlying(Fields::kAction):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckColorLoopAction(action));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, action));
             break;
         case to_underlying(Fields::kDirection):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckColorLoopDirection(direction));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, direction));
             break;
         case to_underlying(Fields::kTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, time));
             break;
         case to_underlying(Fields::kStartHue):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, startHue));
             break;
         case to_underlying(Fields::kOptionsMask):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsMask));
             break;
         case to_underlying(Fields::kOptionsOverride):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsOverride));
             break;
         default:
@@ -16699,9 +19337,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kOptionsMask):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsMask));
             break;
         case to_underlying(Fields::kOptionsOverride):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsOverride));
             break;
         default:
@@ -16746,21 +19388,34 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kMoveMode):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckHueMoveMode(moveMode));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, moveMode));
             break;
         case to_underlying(Fields::kRate):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, rate));
             break;
         case to_underlying(Fields::kColorTemperatureMinimumMireds):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, colorTemperatureMinimumMireds));
             break;
         case to_underlying(Fields::kColorTemperatureMaximumMireds):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, colorTemperatureMaximumMireds));
             break;
         case to_underlying(Fields::kOptionsMask):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsMask));
             break;
         case to_underlying(Fields::kOptionsOverride):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsOverride));
             break;
         default:
@@ -16806,24 +19461,39 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kStepMode):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckHueStepMode(stepMode));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, stepMode));
             break;
         case to_underlying(Fields::kStepSize):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, stepSize));
             break;
         case to_underlying(Fields::kTransitionTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, transitionTime));
             break;
         case to_underlying(Fields::kColorTemperatureMinimumMireds):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, colorTemperatureMinimumMireds));
             break;
         case to_underlying(Fields::kColorTemperatureMaximumMireds):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, colorTemperatureMaximumMireds));
             break;
         case to_underlying(Fields::kOptionsMask):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsMask));
             break;
         case to_underlying(Fields::kOptionsOverride):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionsOverride));
             break;
         default:
@@ -16844,174 +19514,291 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::CurrentHue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, currentHue));
         break;
     case Attributes::CurrentSaturation::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, currentSaturation));
         break;
     case Attributes::RemainingTime::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, remainingTime));
         break;
     case Attributes::CurrentX::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, currentX));
         break;
     case Attributes::CurrentY::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, currentY));
         break;
     case Attributes::DriftCompensation::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(driftCompensation));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, driftCompensation));
         break;
     case Attributes::CompensationText::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, compensationText));
         break;
     case Attributes::ColorTemperature::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, colorTemperature));
         break;
     case Attributes::ColorMode::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(colorMode));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, colorMode));
         break;
     case Attributes::Options::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, options));
         break;
     case Attributes::NumberOfPrimaries::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, numberOfPrimaries));
         break;
     case Attributes::Primary1X::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, primary1X));
         break;
     case Attributes::Primary1Y::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, primary1Y));
         break;
     case Attributes::Primary1Intensity::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, primary1Intensity));
         break;
     case Attributes::Primary2X::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, primary2X));
         break;
     case Attributes::Primary2Y::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, primary2Y));
         break;
     case Attributes::Primary2Intensity::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, primary2Intensity));
         break;
     case Attributes::Primary3X::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, primary3X));
         break;
     case Attributes::Primary3Y::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, primary3Y));
         break;
     case Attributes::Primary3Intensity::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, primary3Intensity));
         break;
     case Attributes::Primary4X::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, primary4X));
         break;
     case Attributes::Primary4Y::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, primary4Y));
         break;
     case Attributes::Primary4Intensity::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, primary4Intensity));
         break;
     case Attributes::Primary5X::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, primary5X));
         break;
     case Attributes::Primary5Y::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, primary5Y));
         break;
     case Attributes::Primary5Intensity::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, primary5Intensity));
         break;
     case Attributes::Primary6X::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, primary6X));
         break;
     case Attributes::Primary6Y::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, primary6Y));
         break;
     case Attributes::Primary6Intensity::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, primary6Intensity));
         break;
     case Attributes::WhitePointX::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, whitePointX));
         break;
     case Attributes::WhitePointY::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, whitePointY));
         break;
     case Attributes::ColorPointRX::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, colorPointRX));
         break;
     case Attributes::ColorPointRY::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, colorPointRY));
         break;
     case Attributes::ColorPointRIntensity::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, colorPointRIntensity));
         break;
     case Attributes::ColorPointGX::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, colorPointGX));
         break;
     case Attributes::ColorPointGY::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, colorPointGY));
         break;
     case Attributes::ColorPointGIntensity::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, colorPointGIntensity));
         break;
     case Attributes::ColorPointBX::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, colorPointBX));
         break;
     case Attributes::ColorPointBY::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, colorPointBY));
         break;
     case Attributes::ColorPointBIntensity::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, colorPointBIntensity));
         break;
     case Attributes::EnhancedCurrentHue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, enhancedCurrentHue));
         break;
     case Attributes::EnhancedColorMode::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(enhancedColorMode));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, enhancedColorMode));
         break;
     case Attributes::ColorLoopActive::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, colorLoopActive));
         break;
     case Attributes::ColorLoopDirection::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, colorLoopDirection));
         break;
     case Attributes::ColorLoopTime::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, colorLoopTime));
         break;
     case Attributes::ColorLoopStartEnhancedHue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, colorLoopStartEnhancedHue));
         break;
     case Attributes::ColorLoopStoredEnhancedHue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, colorLoopStoredEnhancedHue));
         break;
     case Attributes::ColorCapabilities::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, colorCapabilities));
         break;
     case Attributes::ColorTempPhysicalMinMireds::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, colorTempPhysicalMinMireds));
         break;
     case Attributes::ColorTempPhysicalMaxMireds::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, colorTempPhysicalMaxMireds));
         break;
     case Attributes::CoupleColorTempToLevelMinMireds::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, coupleColorTempToLevelMinMireds));
         break;
     case Attributes::StartUpColorTemperatureMireds::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, startUpColorTemperatureMireds));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -17022,14 +19809,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace ColorControl
 namespace BallastConfiguration {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -17037,66 +19822,108 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::PhysicalMinLevel::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, physicalMinLevel));
         break;
     case Attributes::PhysicalMaxLevel::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, physicalMaxLevel));
         break;
     case Attributes::BallastStatus::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, ballastStatus));
         break;
     case Attributes::MinLevel::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minLevel));
         break;
     case Attributes::MaxLevel::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxLevel));
         break;
     case Attributes::PowerOnLevel::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, powerOnLevel));
         break;
     case Attributes::PowerOnFadeTime::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, powerOnFadeTime));
         break;
     case Attributes::IntrinsicBallastFactor::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, intrinsicBallastFactor));
         break;
     case Attributes::BallastFactorAdjustment::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, ballastFactorAdjustment));
         break;
     case Attributes::LampQuality::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, lampQuality));
         break;
     case Attributes::LampType::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, lampType));
         break;
     case Attributes::LampManufacturer::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, lampManufacturer));
         break;
     case Attributes::LampRatedHours::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, lampRatedHours));
         break;
     case Attributes::LampBurnHours::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, lampBurnHours));
         break;
     case Attributes::LampAlarmMode::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, lampAlarmMode));
         break;
     case Attributes::LampBurnHoursTripPoint::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, lampBurnHoursTripPoint));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -17107,14 +19934,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace BallastConfiguration
 namespace IlluminanceMeasurement {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -17122,33 +19947,54 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredValue));
         break;
     case Attributes::MinMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minMeasuredValue));
         break;
     case Attributes::MaxMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxMeasuredValue));
         break;
     case Attributes::Tolerance::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, tolerance));
         break;
     case Attributes::LightSensorType::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(lightSensorType));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, lightSensorType));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -17159,14 +20005,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace IlluminanceMeasurement
 namespace TemperatureMeasurement {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -17174,30 +20018,48 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredValue));
         break;
     case Attributes::MinMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minMeasuredValue));
         break;
     case Attributes::MaxMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxMeasuredValue));
         break;
     case Attributes::Tolerance::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, tolerance));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -17208,14 +20070,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace TemperatureMeasurement
 namespace PressureMeasurement {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -17223,45 +20083,73 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredValue));
         break;
     case Attributes::MinMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minMeasuredValue));
         break;
     case Attributes::MaxMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxMeasuredValue));
         break;
     case Attributes::Tolerance::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, tolerance));
         break;
     case Attributes::ScaledValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, scaledValue));
         break;
     case Attributes::MinScaledValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minScaledValue));
         break;
     case Attributes::MaxScaledValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxScaledValue));
         break;
     case Attributes::ScaledTolerance::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, scaledTolerance));
         break;
     case Attributes::Scale::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, scale));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -17272,14 +20160,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace PressureMeasurement
 namespace FlowMeasurement {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -17287,30 +20173,48 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredValue));
         break;
     case Attributes::MinMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minMeasuredValue));
         break;
     case Attributes::MaxMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxMeasuredValue));
         break;
     case Attributes::Tolerance::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, tolerance));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -17321,14 +20225,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace FlowMeasurement
 namespace RelativeHumidityMeasurement {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -17336,30 +20238,48 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredValue));
         break;
     case Attributes::MinMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minMeasuredValue));
         break;
     case Attributes::MaxMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxMeasuredValue));
         break;
     case Attributes::Tolerance::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, tolerance));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -17370,14 +20290,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace RelativeHumidityMeasurement
 namespace OccupancySensing {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -17385,54 +20303,89 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::Occupancy::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, occupancy));
         break;
     case Attributes::OccupancySensorType::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(occupancySensorType));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, occupancySensorType));
         break;
     case Attributes::OccupancySensorTypeBitmap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, occupancySensorTypeBitmap));
         break;
     case Attributes::PirOccupiedToUnoccupiedDelay::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, pirOccupiedToUnoccupiedDelay));
         break;
     case Attributes::PirUnoccupiedToOccupiedDelay::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, pirUnoccupiedToOccupiedDelay));
         break;
     case Attributes::PirUnoccupiedToOccupiedThreshold::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, pirUnoccupiedToOccupiedThreshold));
         break;
     case Attributes::UltrasonicOccupiedToUnoccupiedDelay::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, ultrasonicOccupiedToUnoccupiedDelay));
         break;
     case Attributes::UltrasonicUnoccupiedToOccupiedDelay::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, ultrasonicUnoccupiedToOccupiedDelay));
         break;
     case Attributes::UltrasonicUnoccupiedToOccupiedThreshold::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, ultrasonicUnoccupiedToOccupiedThreshold));
         break;
     case Attributes::PhysicalContactOccupiedToUnoccupiedDelay::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, physicalContactOccupiedToUnoccupiedDelay));
         break;
     case Attributes::PhysicalContactUnoccupiedToOccupiedDelay::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, physicalContactUnoccupiedToOccupiedDelay));
         break;
     case Attributes::PhysicalContactUnoccupiedToOccupiedThreshold::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, physicalContactUnoccupiedToOccupiedThreshold));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -17443,14 +20396,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace OccupancySensing
 namespace CarbonMonoxideConcentrationMeasurement {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -17458,30 +20409,48 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredValue));
         break;
     case Attributes::MinMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minMeasuredValue));
         break;
     case Attributes::MaxMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxMeasuredValue));
         break;
     case Attributes::Tolerance::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, tolerance));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -17492,14 +20461,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace CarbonMonoxideConcentrationMeasurement
 namespace CarbonDioxideConcentrationMeasurement {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -17507,30 +20474,48 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredValue));
         break;
     case Attributes::MinMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minMeasuredValue));
         break;
     case Attributes::MaxMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxMeasuredValue));
         break;
     case Attributes::Tolerance::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, tolerance));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -17541,14 +20526,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace CarbonDioxideConcentrationMeasurement
 namespace EthyleneConcentrationMeasurement {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -17556,30 +20539,48 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredValue));
         break;
     case Attributes::MinMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minMeasuredValue));
         break;
     case Attributes::MaxMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxMeasuredValue));
         break;
     case Attributes::Tolerance::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, tolerance));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -17590,14 +20591,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace EthyleneConcentrationMeasurement
 namespace EthyleneOxideConcentrationMeasurement {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -17605,30 +20604,48 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredValue));
         break;
     case Attributes::MinMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minMeasuredValue));
         break;
     case Attributes::MaxMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxMeasuredValue));
         break;
     case Attributes::Tolerance::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, tolerance));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -17639,14 +20656,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace EthyleneOxideConcentrationMeasurement
 namespace HydrogenConcentrationMeasurement {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -17654,30 +20669,48 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredValue));
         break;
     case Attributes::MinMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minMeasuredValue));
         break;
     case Attributes::MaxMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxMeasuredValue));
         break;
     case Attributes::Tolerance::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, tolerance));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -17688,14 +20721,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace HydrogenConcentrationMeasurement
 namespace HydrogenSulphideConcentrationMeasurement {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -17703,30 +20734,48 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredValue));
         break;
     case Attributes::MinMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minMeasuredValue));
         break;
     case Attributes::MaxMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxMeasuredValue));
         break;
     case Attributes::Tolerance::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, tolerance));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -17737,14 +20786,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace HydrogenSulphideConcentrationMeasurement
 namespace NitricOxideConcentrationMeasurement {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -17752,30 +20799,48 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredValue));
         break;
     case Attributes::MinMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minMeasuredValue));
         break;
     case Attributes::MaxMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxMeasuredValue));
         break;
     case Attributes::Tolerance::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, tolerance));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -17786,14 +20851,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace NitricOxideConcentrationMeasurement
 namespace NitrogenDioxideConcentrationMeasurement {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -17801,30 +20864,48 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredValue));
         break;
     case Attributes::MinMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minMeasuredValue));
         break;
     case Attributes::MaxMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxMeasuredValue));
         break;
     case Attributes::Tolerance::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, tolerance));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -17835,14 +20916,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace NitrogenDioxideConcentrationMeasurement
 namespace OxygenConcentrationMeasurement {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -17850,30 +20929,48 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredValue));
         break;
     case Attributes::MinMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minMeasuredValue));
         break;
     case Attributes::MaxMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxMeasuredValue));
         break;
     case Attributes::Tolerance::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, tolerance));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -17884,14 +20981,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace OxygenConcentrationMeasurement
 namespace OzoneConcentrationMeasurement {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -17899,30 +20994,48 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredValue));
         break;
     case Attributes::MinMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minMeasuredValue));
         break;
     case Attributes::MaxMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxMeasuredValue));
         break;
     case Attributes::Tolerance::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, tolerance));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -17933,14 +21046,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace OzoneConcentrationMeasurement
 namespace SulfurDioxideConcentrationMeasurement {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -17948,30 +21059,48 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredValue));
         break;
     case Attributes::MinMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minMeasuredValue));
         break;
     case Attributes::MaxMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxMeasuredValue));
         break;
     case Attributes::Tolerance::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, tolerance));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -17982,14 +21111,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace SulfurDioxideConcentrationMeasurement
 namespace DissolvedOxygenConcentrationMeasurement {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -17997,30 +21124,48 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredValue));
         break;
     case Attributes::MinMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minMeasuredValue));
         break;
     case Attributes::MaxMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxMeasuredValue));
         break;
     case Attributes::Tolerance::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, tolerance));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -18031,14 +21176,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace DissolvedOxygenConcentrationMeasurement
 namespace BromateConcentrationMeasurement {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -18046,30 +21189,48 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredValue));
         break;
     case Attributes::MinMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minMeasuredValue));
         break;
     case Attributes::MaxMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxMeasuredValue));
         break;
     case Attributes::Tolerance::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, tolerance));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -18080,14 +21241,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace BromateConcentrationMeasurement
 namespace ChloraminesConcentrationMeasurement {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -18095,30 +21254,48 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredValue));
         break;
     case Attributes::MinMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minMeasuredValue));
         break;
     case Attributes::MaxMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxMeasuredValue));
         break;
     case Attributes::Tolerance::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, tolerance));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -18129,14 +21306,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace ChloraminesConcentrationMeasurement
 namespace ChlorineConcentrationMeasurement {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -18144,30 +21319,48 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredValue));
         break;
     case Attributes::MinMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minMeasuredValue));
         break;
     case Attributes::MaxMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxMeasuredValue));
         break;
     case Attributes::Tolerance::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, tolerance));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -18178,14 +21371,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace ChlorineConcentrationMeasurement
 namespace FecalColiformAndEColiConcentrationMeasurement {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -18193,30 +21384,48 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredValue));
         break;
     case Attributes::MinMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minMeasuredValue));
         break;
     case Attributes::MaxMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxMeasuredValue));
         break;
     case Attributes::Tolerance::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, tolerance));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -18227,14 +21436,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace FecalColiformAndEColiConcentrationMeasurement
 namespace FluorideConcentrationMeasurement {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -18242,30 +21449,48 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredValue));
         break;
     case Attributes::MinMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minMeasuredValue));
         break;
     case Attributes::MaxMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxMeasuredValue));
         break;
     case Attributes::Tolerance::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, tolerance));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -18276,14 +21501,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace FluorideConcentrationMeasurement
 namespace HaloaceticAcidsConcentrationMeasurement {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -18291,30 +21514,48 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredValue));
         break;
     case Attributes::MinMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minMeasuredValue));
         break;
     case Attributes::MaxMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxMeasuredValue));
         break;
     case Attributes::Tolerance::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, tolerance));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -18325,14 +21566,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace HaloaceticAcidsConcentrationMeasurement
 namespace TotalTrihalomethanesConcentrationMeasurement {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -18340,30 +21579,48 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredValue));
         break;
     case Attributes::MinMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minMeasuredValue));
         break;
     case Attributes::MaxMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxMeasuredValue));
         break;
     case Attributes::Tolerance::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, tolerance));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -18374,14 +21631,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace TotalTrihalomethanesConcentrationMeasurement
 namespace TotalColiformBacteriaConcentrationMeasurement {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -18389,30 +21644,48 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredValue));
         break;
     case Attributes::MinMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minMeasuredValue));
         break;
     case Attributes::MaxMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxMeasuredValue));
         break;
     case Attributes::Tolerance::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, tolerance));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -18423,14 +21696,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace TotalColiformBacteriaConcentrationMeasurement
 namespace TurbidityConcentrationMeasurement {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -18438,30 +21709,48 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredValue));
         break;
     case Attributes::MinMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minMeasuredValue));
         break;
     case Attributes::MaxMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxMeasuredValue));
         break;
     case Attributes::Tolerance::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, tolerance));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -18472,14 +21761,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace TurbidityConcentrationMeasurement
 namespace CopperConcentrationMeasurement {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -18487,30 +21774,48 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredValue));
         break;
     case Attributes::MinMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minMeasuredValue));
         break;
     case Attributes::MaxMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxMeasuredValue));
         break;
     case Attributes::Tolerance::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, tolerance));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -18521,14 +21826,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace CopperConcentrationMeasurement
 namespace LeadConcentrationMeasurement {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -18536,30 +21839,48 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredValue));
         break;
     case Attributes::MinMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minMeasuredValue));
         break;
     case Attributes::MaxMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxMeasuredValue));
         break;
     case Attributes::Tolerance::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, tolerance));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -18570,14 +21891,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace LeadConcentrationMeasurement
 namespace ManganeseConcentrationMeasurement {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -18585,30 +21904,48 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredValue));
         break;
     case Attributes::MinMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minMeasuredValue));
         break;
     case Attributes::MaxMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxMeasuredValue));
         break;
     case Attributes::Tolerance::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, tolerance));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -18619,14 +21956,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace ManganeseConcentrationMeasurement
 namespace SulfateConcentrationMeasurement {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -18634,30 +21969,48 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredValue));
         break;
     case Attributes::MinMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minMeasuredValue));
         break;
     case Attributes::MaxMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxMeasuredValue));
         break;
     case Attributes::Tolerance::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, tolerance));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -18668,14 +22021,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace SulfateConcentrationMeasurement
 namespace BromodichloromethaneConcentrationMeasurement {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -18683,30 +22034,48 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredValue));
         break;
     case Attributes::MinMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minMeasuredValue));
         break;
     case Attributes::MaxMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxMeasuredValue));
         break;
     case Attributes::Tolerance::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, tolerance));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -18717,14 +22086,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace BromodichloromethaneConcentrationMeasurement
 namespace BromoformConcentrationMeasurement {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -18732,30 +22099,48 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredValue));
         break;
     case Attributes::MinMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minMeasuredValue));
         break;
     case Attributes::MaxMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxMeasuredValue));
         break;
     case Attributes::Tolerance::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, tolerance));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -18766,14 +22151,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace BromoformConcentrationMeasurement
 namespace ChlorodibromomethaneConcentrationMeasurement {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -18781,30 +22164,48 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredValue));
         break;
     case Attributes::MinMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minMeasuredValue));
         break;
     case Attributes::MaxMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxMeasuredValue));
         break;
     case Attributes::Tolerance::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, tolerance));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -18815,14 +22216,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace ChlorodibromomethaneConcentrationMeasurement
 namespace ChloroformConcentrationMeasurement {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -18830,30 +22229,48 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredValue));
         break;
     case Attributes::MinMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minMeasuredValue));
         break;
     case Attributes::MaxMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxMeasuredValue));
         break;
     case Attributes::Tolerance::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, tolerance));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -18864,14 +22281,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace ChloroformConcentrationMeasurement
 namespace SodiumConcentrationMeasurement {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -18879,30 +22294,48 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredValue));
         break;
     case Attributes::MinMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, minMeasuredValue));
         break;
     case Attributes::MaxMeasuredValue::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, maxMeasuredValue));
         break;
     case Attributes::Tolerance::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, tolerance));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -18913,14 +22346,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace SodiumConcentrationMeasurement
 namespace WakeOnLan {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -18928,21 +22359,33 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MACAddress::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, MACAddress));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -18953,8 +22396,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace WakeOnLan
 namespace Channel {
@@ -19095,6 +22537,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kMatch):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, match));
             break;
         default:
@@ -19133,9 +22577,14 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kStatus):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckChannelStatusEnum(status));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, status));
             break;
         case to_underlying(Fields::kData):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, data));
             break;
         default:
@@ -19174,9 +22623,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kMajorNumber):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, majorNumber));
             break;
         case to_underlying(Fields::kMinorNumber):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, minorNumber));
             break;
         default:
@@ -19214,6 +22667,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kCount):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, count));
             break;
         default:
@@ -19234,27 +22689,43 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::ChannelList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, channelList));
         break;
     case Attributes::Lineup::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, lineup));
         break;
     case Attributes::CurrentChannel::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, currentChannel));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -19265,8 +22736,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace Channel
 namespace TargetNavigator {
@@ -19344,9 +22814,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kTarget):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, target));
             break;
         case to_underlying(Fields::kData):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, data));
             break;
         default:
@@ -19385,9 +22859,14 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kStatus):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckTargetNavigatorStatusEnum(status));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, status));
             break;
         case to_underlying(Fields::kData):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, data));
             break;
         default:
@@ -19408,24 +22887,38 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::TargetList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, targetList));
         break;
     case Attributes::CurrentTarget::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, currentTarget));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -19436,8 +22929,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace TargetNavigator
 namespace MediaPlayback {
@@ -19779,6 +23271,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kDeltaPositionMilliseconds):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, deltaPositionMilliseconds));
             break;
         default:
@@ -19817,6 +23311,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kDeltaPositionMilliseconds):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, deltaPositionMilliseconds));
             break;
         default:
@@ -19855,9 +23351,14 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kStatus):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckMediaPlaybackStatusEnum(status));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, status));
             break;
         case to_underlying(Fields::kData):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, data));
             break;
         default:
@@ -19895,6 +23396,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kPosition):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, position));
             break;
         default:
@@ -19915,39 +23418,64 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::CurrentState::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(CheckPlaybackStateEnum(currentState));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, currentState));
         break;
     case Attributes::StartTime::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, startTime));
         break;
     case Attributes::Duration::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, duration));
         break;
     case Attributes::SampledPosition::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, sampledPosition));
         break;
     case Attributes::PlaybackSpeed::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, playbackSpeed));
         break;
     case Attributes::SeekRangeEnd::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, seekRangeEnd));
         break;
     case Attributes::SeekRangeStart::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, seekRangeStart));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -19958,8 +23486,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace MediaPlayback
 namespace MediaInput {
@@ -20044,6 +23571,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, index));
             break;
         default:
@@ -20148,9 +23677,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, index));
             break;
         case to_underlying(Fields::kName):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, name));
             break;
         default:
@@ -20171,24 +23704,38 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::InputList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, inputList));
         break;
     case Attributes::CurrentInput::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, currentInput));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -20199,8 +23746,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace MediaInput
 namespace LowPower {
@@ -20247,18 +23793,28 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -20269,8 +23825,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace LowPower
 namespace KeypadInput {
@@ -20301,6 +23856,9 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kKeyCode):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckCecKeyCode(keyCode));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, keyCode));
             break;
         default:
@@ -20338,6 +23896,9 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kStatus):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckKeypadInputStatusEnum(status));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, status));
             break;
         default:
@@ -20358,18 +23919,28 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -20380,8 +23951,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace KeypadInput
 namespace ContentLauncher {
@@ -20704,12 +24274,18 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kSearch):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, search));
             break;
         case to_underlying(Fields::kAutoPlay):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, autoPlay));
             break;
         case to_underlying(Fields::kData):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, data));
             break;
         default:
@@ -20750,12 +24326,18 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kContentURL):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, contentURL));
             break;
         case to_underlying(Fields::kDisplayString):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, displayString));
             break;
         case to_underlying(Fields::kBrandingInformation):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, brandingInformation));
             break;
         default:
@@ -20794,9 +24376,14 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kStatus):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckContentLaunchStatusEnum(status));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, status));
             break;
         case to_underlying(Fields::kData):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, data));
             break;
         default:
@@ -20817,24 +24404,38 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::AcceptHeader::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptHeader));
         break;
     case Attributes::SupportedStreamingProtocols::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, supportedStreamingProtocols));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -20845,8 +24446,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace ContentLauncher
 namespace AudioOutput {
@@ -20927,6 +24527,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, index));
             break;
         default:
@@ -20965,9 +24567,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kIndex):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, index));
             break;
         case to_underlying(Fields::kName):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, name));
             break;
         default:
@@ -20988,24 +24594,38 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::OutputList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, outputList));
         break;
     case Attributes::CurrentOutput::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, currentOutput));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -21016,8 +24636,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace AudioOutput
 namespace ApplicationLauncher {
@@ -21139,9 +24758,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kApplication):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, application));
             break;
         case to_underlying(Fields::kData):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, data));
             break;
         default:
@@ -21179,6 +24802,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kApplication):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, application));
             break;
         default:
@@ -21216,6 +24841,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kApplication):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, application));
             break;
         default:
@@ -21254,9 +24881,14 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kStatus):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckApplicationLauncherStatusEnum(status));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, status));
             break;
         case to_underlying(Fields::kData):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, data));
             break;
         default:
@@ -21277,24 +24909,38 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::CatalogList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, catalogList));
         break;
     case Attributes::CurrentApp::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, currentApp));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -21305,8 +24951,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace ApplicationLauncher
 namespace ApplicationBasic {
@@ -21357,8 +25002,7 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
 } // namespace ApplicationBasicApplication
 } // namespace Structs
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -21366,42 +25010,69 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::VendorName::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, vendorName));
         break;
     case Attributes::VendorID::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, vendorID));
         break;
     case Attributes::ApplicationName::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, applicationName));
         break;
     case Attributes::ProductID::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, productID));
         break;
     case Attributes::Application::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, application));
         break;
     case Attributes::Status::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(CheckApplicationStatusEnum(status));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, status));
         break;
     case Attributes::ApplicationVersion::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, applicationVersion));
         break;
     case Attributes::AllowedVendorList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, allowedVendorList));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -21412,8 +25083,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace ApplicationBasic
 namespace AccountLogin {
@@ -21445,6 +25115,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kTempAccountIdentifier):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, tempAccountIdentifier));
             break;
         default:
@@ -21482,6 +25154,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kSetupPIN):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, setupPIN));
             break;
         default:
@@ -21521,9 +25195,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kTempAccountIdentifier):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, tempAccountIdentifier));
             break;
         case to_underlying(Fields::kSetupPIN):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, setupPIN));
             break;
         default:
@@ -21577,18 +25255,28 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -21599,8 +25287,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace AccountLogin
 namespace Messaging {
@@ -21637,21 +25324,33 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kMessageId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, messageId));
             break;
         case to_underlying(Fields::kMessageControl):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, messageControl));
             break;
         case to_underlying(Fields::kStartTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, startTime));
             break;
         case to_underlying(Fields::kDurationInMinutes):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, durationInMinutes));
             break;
         case to_underlying(Fields::kMessage):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, message));
             break;
         case to_underlying(Fields::kOptionalExtendedMessageControl):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionalExtendedMessageControl));
             break;
         default:
@@ -21723,9 +25422,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kMessageId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, messageId));
             break;
         case to_underlying(Fields::kMessageControl):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, messageControl));
             break;
         default:
@@ -21767,15 +25470,23 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kMessageId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, messageId));
             break;
         case to_underlying(Fields::kConfirmationTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, confirmationTime));
             break;
         case to_underlying(Fields::kMessageConfirmationControl):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, messageConfirmationControl));
             break;
         case to_underlying(Fields::kMessageResponse):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, messageResponse));
             break;
         default:
@@ -21819,21 +25530,33 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kMessageId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, messageId));
             break;
         case to_underlying(Fields::kMessageControl):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, messageControl));
             break;
         case to_underlying(Fields::kStartTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, startTime));
             break;
         case to_underlying(Fields::kDurationInMinutes):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, durationInMinutes));
             break;
         case to_underlying(Fields::kMessage):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, message));
             break;
         case to_underlying(Fields::kOptionalExtendedMessageControl):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionalExtendedMessageControl));
             break;
         default:
@@ -21872,6 +25595,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kEarliestImplementationTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, earliestImplementationTime));
             break;
         default:
@@ -21910,6 +25635,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kImplementationDateTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, implementationDateTime));
             break;
         default:
@@ -21930,18 +25657,28 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -21952,14 +25689,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace Messaging
 namespace ApplianceIdentification {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -21967,54 +25702,88 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::BasicIdentification::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, basicIdentification));
         break;
     case Attributes::CompanyName::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, companyName));
         break;
     case Attributes::CompanyId::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, companyId));
         break;
     case Attributes::BrandName::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, brandName));
         break;
     case Attributes::BrandId::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, brandId));
         break;
     case Attributes::Model::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, model));
         break;
     case Attributes::PartNumber::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, partNumber));
         break;
     case Attributes::ProductRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, productRevision));
         break;
     case Attributes::SoftwareRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, softwareRevision));
         break;
     case Attributes::ProductTypeName::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, productTypeName));
         break;
     case Attributes::ProductTypeId::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, productTypeId));
         break;
     case Attributes::CecedSpecificationVersion::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, cecedSpecificationVersion));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -22025,14 +25794,12 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace ApplianceIdentification
 namespace MeterIdentification {
 
-namespace Commands {
-} // namespace Commands
+namespace Commands {} // namespace Commands
 
 namespace Attributes {
 CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const ConcreteAttributePath & path)
@@ -22040,54 +25807,88 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::CompanyName::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, companyName));
         break;
     case Attributes::MeterTypeId::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, meterTypeId));
         break;
     case Attributes::DataQualityId::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, dataQualityId));
         break;
     case Attributes::CustomerName::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, customerName));
         break;
     case Attributes::Model::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, model));
         break;
     case Attributes::PartNumber::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, partNumber));
         break;
     case Attributes::ProductRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, productRevision));
         break;
     case Attributes::SoftwareRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, softwareRevision));
         break;
     case Attributes::UtilityName::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, utilityName));
         break;
     case Attributes::Pod::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, pod));
         break;
     case Attributes::AvailablePower::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, availablePower));
         break;
     case Attributes::PowerThreshold::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, powerThreshold));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -22098,8 +25899,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace MeterIdentification
 namespace ApplianceEventsAndAlert {
@@ -22164,9 +25964,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kAlertsCount):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, alertsCount));
             break;
         case to_underlying(Fields::kAlertStructures):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, alertStructures));
             break;
         default:
@@ -22205,9 +26009,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kAlertsCount):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, alertsCount));
             break;
         case to_underlying(Fields::kAlertStructures):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, alertStructures));
             break;
         default:
@@ -22246,9 +26054,14 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kEventHeader):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, eventHeader));
             break;
         case to_underlying(Fields::kEventId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckEventIdentification(eventId));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, eventId));
             break;
         default:
@@ -22269,18 +26082,28 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -22291,8 +26114,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace ApplianceEventsAndAlert
 namespace ApplianceStatistics {
@@ -22326,15 +26148,23 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kTimeStamp):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, timeStamp));
             break;
         case to_underlying(Fields::kLogId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, logId));
             break;
         case to_underlying(Fields::kLogLength):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, logLength));
             break;
         case to_underlying(Fields::kLogPayload):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, logPayload));
             break;
         default:
@@ -22372,6 +26202,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kLogId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, logId));
             break;
         default:
@@ -22412,15 +26244,23 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kTimeStamp):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, timeStamp));
             break;
         case to_underlying(Fields::kLogId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, logId));
             break;
         case to_underlying(Fields::kLogLength):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, logLength));
             break;
         case to_underlying(Fields::kLogPayload):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, logPayload));
             break;
         default:
@@ -22492,9 +26332,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kLogQueueSize):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, logQueueSize));
             break;
         case to_underlying(Fields::kLogIds):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, logIds));
             break;
         default:
@@ -22533,9 +26377,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kLogQueueSize):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, logQueueSize));
             break;
         case to_underlying(Fields::kLogIds):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, logIds));
             break;
         default:
@@ -22556,24 +26404,38 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::LogMaxSize::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, logMaxSize));
         break;
     case Attributes::LogQueueMaxSize::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, logQueueMaxSize));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -22584,8 +26446,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace ApplianceStatistics
 namespace ElectricalMeasurement {
@@ -22621,15 +26482,23 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kProfileCount):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, profileCount));
             break;
         case to_underlying(Fields::kProfileIntervalPeriod):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, profileIntervalPeriod));
             break;
         case to_underlying(Fields::kMaxNumberOfIntervals):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, maxNumberOfIntervals));
             break;
         case to_underlying(Fields::kListOfAttributes):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, listOfAttributes));
             break;
         default:
@@ -22707,21 +26576,33 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kStartTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, startTime));
             break;
         case to_underlying(Fields::kStatus):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, status));
             break;
         case to_underlying(Fields::kProfileIntervalPeriod):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, profileIntervalPeriod));
             break;
         case to_underlying(Fields::kNumberOfIntervalsDelivered):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, numberOfIntervalsDelivered));
             break;
         case to_underlying(Fields::kAttributeId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, attributeId));
             break;
         case to_underlying(Fields::kIntervals):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, intervals));
             break;
         default:
@@ -22761,12 +26642,18 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kAttributeId):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, attributeId));
             break;
         case to_underlying(Fields::kStartTime):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, startTime));
             break;
         case to_underlying(Fields::kNumberOfIntervals):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, numberOfIntervals));
             break;
         default:
@@ -22787,402 +26674,668 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::MeasurementType::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measurementType));
         break;
     case Attributes::DcVoltage::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, dcVoltage));
         break;
     case Attributes::DcVoltageMin::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, dcVoltageMin));
         break;
     case Attributes::DcVoltageMax::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, dcVoltageMax));
         break;
     case Attributes::DcCurrent::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, dcCurrent));
         break;
     case Attributes::DcCurrentMin::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, dcCurrentMin));
         break;
     case Attributes::DcCurrentMax::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, dcCurrentMax));
         break;
     case Attributes::DcPower::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, dcPower));
         break;
     case Attributes::DcPowerMin::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, dcPowerMin));
         break;
     case Attributes::DcPowerMax::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, dcPowerMax));
         break;
     case Attributes::DcVoltageMultiplier::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, dcVoltageMultiplier));
         break;
     case Attributes::DcVoltageDivisor::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, dcVoltageDivisor));
         break;
     case Attributes::DcCurrentMultiplier::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, dcCurrentMultiplier));
         break;
     case Attributes::DcCurrentDivisor::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, dcCurrentDivisor));
         break;
     case Attributes::DcPowerMultiplier::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, dcPowerMultiplier));
         break;
     case Attributes::DcPowerDivisor::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, dcPowerDivisor));
         break;
     case Attributes::AcFrequency::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acFrequency));
         break;
     case Attributes::AcFrequencyMin::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acFrequencyMin));
         break;
     case Attributes::AcFrequencyMax::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acFrequencyMax));
         break;
     case Attributes::NeutralCurrent::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, neutralCurrent));
         break;
     case Attributes::TotalActivePower::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, totalActivePower));
         break;
     case Attributes::TotalReactivePower::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, totalReactivePower));
         break;
     case Attributes::TotalApparentPower::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, totalApparentPower));
         break;
     case Attributes::Measured1stHarmonicCurrent::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measured1stHarmonicCurrent));
         break;
     case Attributes::Measured3rdHarmonicCurrent::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measured3rdHarmonicCurrent));
         break;
     case Attributes::Measured5thHarmonicCurrent::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measured5thHarmonicCurrent));
         break;
     case Attributes::Measured7thHarmonicCurrent::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measured7thHarmonicCurrent));
         break;
     case Attributes::Measured9thHarmonicCurrent::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measured9thHarmonicCurrent));
         break;
     case Attributes::Measured11thHarmonicCurrent::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measured11thHarmonicCurrent));
         break;
     case Attributes::MeasuredPhase1stHarmonicCurrent::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredPhase1stHarmonicCurrent));
         break;
     case Attributes::MeasuredPhase3rdHarmonicCurrent::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredPhase3rdHarmonicCurrent));
         break;
     case Attributes::MeasuredPhase5thHarmonicCurrent::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredPhase5thHarmonicCurrent));
         break;
     case Attributes::MeasuredPhase7thHarmonicCurrent::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredPhase7thHarmonicCurrent));
         break;
     case Attributes::MeasuredPhase9thHarmonicCurrent::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredPhase9thHarmonicCurrent));
         break;
     case Attributes::MeasuredPhase11thHarmonicCurrent::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, measuredPhase11thHarmonicCurrent));
         break;
     case Attributes::AcFrequencyMultiplier::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acFrequencyMultiplier));
         break;
     case Attributes::AcFrequencyDivisor::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acFrequencyDivisor));
         break;
     case Attributes::PowerMultiplier::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, powerMultiplier));
         break;
     case Attributes::PowerDivisor::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, powerDivisor));
         break;
     case Attributes::HarmonicCurrentMultiplier::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, harmonicCurrentMultiplier));
         break;
     case Attributes::PhaseHarmonicCurrentMultiplier::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, phaseHarmonicCurrentMultiplier));
         break;
     case Attributes::InstantaneousVoltage::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, instantaneousVoltage));
         break;
     case Attributes::InstantaneousLineCurrent::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, instantaneousLineCurrent));
         break;
     case Attributes::InstantaneousActiveCurrent::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, instantaneousActiveCurrent));
         break;
     case Attributes::InstantaneousReactiveCurrent::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, instantaneousReactiveCurrent));
         break;
     case Attributes::InstantaneousPower::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, instantaneousPower));
         break;
     case Attributes::RmsVoltage::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rmsVoltage));
         break;
     case Attributes::RmsVoltageMin::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rmsVoltageMin));
         break;
     case Attributes::RmsVoltageMax::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rmsVoltageMax));
         break;
     case Attributes::RmsCurrent::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rmsCurrent));
         break;
     case Attributes::RmsCurrentMin::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rmsCurrentMin));
         break;
     case Attributes::RmsCurrentMax::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rmsCurrentMax));
         break;
     case Attributes::ActivePower::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, activePower));
         break;
     case Attributes::ActivePowerMin::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, activePowerMin));
         break;
     case Attributes::ActivePowerMax::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, activePowerMax));
         break;
     case Attributes::ReactivePower::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, reactivePower));
         break;
     case Attributes::ApparentPower::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, apparentPower));
         break;
     case Attributes::PowerFactor::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, powerFactor));
         break;
     case Attributes::AverageRmsVoltageMeasurementPeriod::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, averageRmsVoltageMeasurementPeriod));
         break;
     case Attributes::AverageRmsUnderVoltageCounter::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, averageRmsUnderVoltageCounter));
         break;
     case Attributes::RmsExtremeOverVoltagePeriod::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rmsExtremeOverVoltagePeriod));
         break;
     case Attributes::RmsExtremeUnderVoltagePeriod::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rmsExtremeUnderVoltagePeriod));
         break;
     case Attributes::RmsVoltageSagPeriod::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rmsVoltageSagPeriod));
         break;
     case Attributes::RmsVoltageSwellPeriod::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rmsVoltageSwellPeriod));
         break;
     case Attributes::AcVoltageMultiplier::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acVoltageMultiplier));
         break;
     case Attributes::AcVoltageDivisor::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acVoltageDivisor));
         break;
     case Attributes::AcCurrentMultiplier::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acCurrentMultiplier));
         break;
     case Attributes::AcCurrentDivisor::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acCurrentDivisor));
         break;
     case Attributes::AcPowerMultiplier::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acPowerMultiplier));
         break;
     case Attributes::AcPowerDivisor::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acPowerDivisor));
         break;
     case Attributes::OverloadAlarmsMask::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, overloadAlarmsMask));
         break;
     case Attributes::VoltageOverload::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, voltageOverload));
         break;
     case Attributes::CurrentOverload::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, currentOverload));
         break;
     case Attributes::AcOverloadAlarmsMask::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acOverloadAlarmsMask));
         break;
     case Attributes::AcVoltageOverload::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acVoltageOverload));
         break;
     case Attributes::AcCurrentOverload::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acCurrentOverload));
         break;
     case Attributes::AcActivePowerOverload::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acActivePowerOverload));
         break;
     case Attributes::AcReactivePowerOverload::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acReactivePowerOverload));
         break;
     case Attributes::AverageRmsOverVoltage::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, averageRmsOverVoltage));
         break;
     case Attributes::AverageRmsUnderVoltage::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, averageRmsUnderVoltage));
         break;
     case Attributes::RmsExtremeOverVoltage::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rmsExtremeOverVoltage));
         break;
     case Attributes::RmsExtremeUnderVoltage::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rmsExtremeUnderVoltage));
         break;
     case Attributes::RmsVoltageSag::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rmsVoltageSag));
         break;
     case Attributes::RmsVoltageSwell::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rmsVoltageSwell));
         break;
     case Attributes::LineCurrentPhaseB::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, lineCurrentPhaseB));
         break;
     case Attributes::ActiveCurrentPhaseB::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, activeCurrentPhaseB));
         break;
     case Attributes::ReactiveCurrentPhaseB::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, reactiveCurrentPhaseB));
         break;
     case Attributes::RmsVoltagePhaseB::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rmsVoltagePhaseB));
         break;
     case Attributes::RmsVoltageMinPhaseB::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rmsVoltageMinPhaseB));
         break;
     case Attributes::RmsVoltageMaxPhaseB::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rmsVoltageMaxPhaseB));
         break;
     case Attributes::RmsCurrentPhaseB::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rmsCurrentPhaseB));
         break;
     case Attributes::RmsCurrentMinPhaseB::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rmsCurrentMinPhaseB));
         break;
     case Attributes::RmsCurrentMaxPhaseB::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rmsCurrentMaxPhaseB));
         break;
     case Attributes::ActivePowerPhaseB::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, activePowerPhaseB));
         break;
     case Attributes::ActivePowerMinPhaseB::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, activePowerMinPhaseB));
         break;
     case Attributes::ActivePowerMaxPhaseB::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, activePowerMaxPhaseB));
         break;
     case Attributes::ReactivePowerPhaseB::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, reactivePowerPhaseB));
         break;
     case Attributes::ApparentPowerPhaseB::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, apparentPowerPhaseB));
         break;
     case Attributes::PowerFactorPhaseB::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, powerFactorPhaseB));
         break;
     case Attributes::AverageRmsVoltageMeasurementPeriodPhaseB::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, averageRmsVoltageMeasurementPeriodPhaseB));
         break;
     case Attributes::AverageRmsOverVoltageCounterPhaseB::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, averageRmsOverVoltageCounterPhaseB));
         break;
     case Attributes::AverageRmsUnderVoltageCounterPhaseB::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, averageRmsUnderVoltageCounterPhaseB));
         break;
     case Attributes::RmsExtremeOverVoltagePeriodPhaseB::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rmsExtremeOverVoltagePeriodPhaseB));
         break;
     case Attributes::RmsExtremeUnderVoltagePeriodPhaseB::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rmsExtremeUnderVoltagePeriodPhaseB));
         break;
     case Attributes::RmsVoltageSagPeriodPhaseB::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rmsVoltageSagPeriodPhaseB));
         break;
     case Attributes::RmsVoltageSwellPeriodPhaseB::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rmsVoltageSwellPeriodPhaseB));
         break;
     case Attributes::LineCurrentPhaseC::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, lineCurrentPhaseC));
         break;
     case Attributes::ActiveCurrentPhaseC::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, activeCurrentPhaseC));
         break;
     case Attributes::ReactiveCurrentPhaseC::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, reactiveCurrentPhaseC));
         break;
     case Attributes::RmsVoltagePhaseC::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rmsVoltagePhaseC));
         break;
     case Attributes::RmsVoltageMinPhaseC::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rmsVoltageMinPhaseC));
         break;
     case Attributes::RmsVoltageMaxPhaseC::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rmsVoltageMaxPhaseC));
         break;
     case Attributes::RmsCurrentPhaseC::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rmsCurrentPhaseC));
         break;
     case Attributes::RmsCurrentMinPhaseC::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rmsCurrentMinPhaseC));
         break;
     case Attributes::RmsCurrentMaxPhaseC::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rmsCurrentMaxPhaseC));
         break;
     case Attributes::ActivePowerPhaseC::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, activePowerPhaseC));
         break;
     case Attributes::ActivePowerMinPhaseC::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, activePowerMinPhaseC));
         break;
     case Attributes::ActivePowerMaxPhaseC::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, activePowerMaxPhaseC));
         break;
     case Attributes::ReactivePowerPhaseC::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, reactivePowerPhaseC));
         break;
     case Attributes::ApparentPowerPhaseC::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, apparentPowerPhaseC));
         break;
     case Attributes::PowerFactorPhaseC::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, powerFactorPhaseC));
         break;
     case Attributes::AverageRmsVoltageMeasurementPeriodPhaseC::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, averageRmsVoltageMeasurementPeriodPhaseC));
         break;
     case Attributes::AverageRmsOverVoltageCounterPhaseC::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, averageRmsOverVoltageCounterPhaseC));
         break;
     case Attributes::AverageRmsUnderVoltageCounterPhaseC::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, averageRmsUnderVoltageCounterPhaseC));
         break;
     case Attributes::RmsExtremeOverVoltagePeriodPhaseC::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rmsExtremeOverVoltagePeriodPhaseC));
         break;
     case Attributes::RmsExtremeUnderVoltagePeriodPhaseC::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rmsExtremeUnderVoltagePeriodPhaseC));
         break;
     case Attributes::RmsVoltageSagPeriodPhaseC::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rmsVoltageSagPeriodPhaseC));
         break;
     case Attributes::RmsVoltageSwellPeriodPhaseC::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rmsVoltageSwellPeriodPhaseC));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:
@@ -23193,8 +27346,7 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
 }
 } // namespace Attributes
 
-namespace Events {
-} // namespace Events
+namespace Events {} // namespace Events
 
 } // namespace ElectricalMeasurement
 namespace TestCluster {
@@ -23723,6 +27875,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kReturnValue):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, returnValue));
             break;
         default:
@@ -23793,6 +27947,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kReturnValue):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, returnValue));
             break;
         default:
@@ -23863,6 +28019,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kReturnValue):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, returnValue));
             break;
         default:
@@ -23938,21 +28096,35 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kArg1):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, arg1));
             break;
         case to_underlying(Fields::kArg2):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, arg2));
             break;
         case to_underlying(Fields::kArg3):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckSimpleEnum(arg3));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, arg3));
             break;
         case to_underlying(Fields::kArg4):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, arg4));
             break;
         case to_underlying(Fields::kArg5):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckSimpleEnum(arg5));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, arg5));
             break;
         case to_underlying(Fields::kArg6):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, arg6));
             break;
         default:
@@ -23991,9 +28163,13 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kArg1):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, arg1));
             break;
         case to_underlying(Fields::kArg2):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, arg2));
             break;
         default:
@@ -24031,6 +28207,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kArg1):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, arg1));
             break;
         default:
@@ -24068,6 +28246,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kArg1):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, arg1));
             break;
         default:
@@ -24106,9 +28286,14 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kArg1):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, arg1));
             break;
         case to_underlying(Fields::kArg2):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckSimpleEnum(arg2));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, arg2));
             break;
         default:
@@ -24151,21 +28336,35 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kArg1):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, arg1));
             break;
         case to_underlying(Fields::kArg2):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, arg2));
             break;
         case to_underlying(Fields::kArg3):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckSimpleEnum(arg3));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, arg3));
             break;
         case to_underlying(Fields::kArg4):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, arg4));
             break;
         case to_underlying(Fields::kArg5):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckSimpleEnum(arg5));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, arg5));
             break;
         case to_underlying(Fields::kArg6):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, arg6));
             break;
         default:
@@ -24206,15 +28405,23 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kWasPresent):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, wasPresent));
             break;
         case to_underlying(Fields::kWasNull):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, wasNull));
             break;
         case to_underlying(Fields::kValue):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, value));
             break;
         case to_underlying(Fields::kOriginalValue):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, originalValue));
             break;
         default:
@@ -24252,6 +28459,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kArg1):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, arg1));
             break;
         default:
@@ -24340,87 +28549,146 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kNullableIntWasNull):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, nullableIntWasNull));
             break;
         case to_underlying(Fields::kNullableIntValue):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, nullableIntValue));
             break;
         case to_underlying(Fields::kOptionalIntWasPresent):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionalIntWasPresent));
             break;
         case to_underlying(Fields::kOptionalIntValue):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionalIntValue));
             break;
         case to_underlying(Fields::kNullableOptionalIntWasPresent):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, nullableOptionalIntWasPresent));
             break;
         case to_underlying(Fields::kNullableOptionalIntWasNull):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, nullableOptionalIntWasNull));
             break;
         case to_underlying(Fields::kNullableOptionalIntValue):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, nullableOptionalIntValue));
             break;
         case to_underlying(Fields::kNullableStringWasNull):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, nullableStringWasNull));
             break;
         case to_underlying(Fields::kNullableStringValue):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, nullableStringValue));
             break;
         case to_underlying(Fields::kOptionalStringWasPresent):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionalStringWasPresent));
             break;
         case to_underlying(Fields::kOptionalStringValue):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionalStringValue));
             break;
         case to_underlying(Fields::kNullableOptionalStringWasPresent):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, nullableOptionalStringWasPresent));
             break;
         case to_underlying(Fields::kNullableOptionalStringWasNull):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, nullableOptionalStringWasNull));
             break;
         case to_underlying(Fields::kNullableOptionalStringValue):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, nullableOptionalStringValue));
             break;
         case to_underlying(Fields::kNullableStructWasNull):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, nullableStructWasNull));
             break;
         case to_underlying(Fields::kNullableStructValue):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, nullableStructValue));
             break;
         case to_underlying(Fields::kOptionalStructWasPresent):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionalStructWasPresent));
             break;
         case to_underlying(Fields::kOptionalStructValue):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionalStructValue));
             break;
         case to_underlying(Fields::kNullableOptionalStructWasPresent):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, nullableOptionalStructWasPresent));
             break;
         case to_underlying(Fields::kNullableOptionalStructWasNull):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, nullableOptionalStructWasNull));
             break;
         case to_underlying(Fields::kNullableOptionalStructValue):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, nullableOptionalStructValue));
             break;
         case to_underlying(Fields::kNullableListWasNull):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, nullableListWasNull));
             break;
         case to_underlying(Fields::kNullableListValue):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckSimpleEnum(nullableListValue));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, nullableListValue));
             break;
         case to_underlying(Fields::kOptionalListWasPresent):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionalListWasPresent));
             break;
         case to_underlying(Fields::kOptionalListValue):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckSimpleEnum(optionalListValue));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionalListValue));
             break;
         case to_underlying(Fields::kNullableOptionalListWasPresent):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, nullableOptionalListWasPresent));
             break;
         case to_underlying(Fields::kNullableOptionalListWasNull):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, nullableOptionalListWasNull));
             break;
         case to_underlying(Fields::kNullableOptionalListValue):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckSimpleEnum(nullableOptionalListValue));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, nullableOptionalListValue));
             break;
         default:
@@ -24458,6 +28726,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kArg1):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, arg1));
             break;
         default:
@@ -24495,6 +28765,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kValue):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, value));
             break;
         default:
@@ -24532,6 +28804,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kArg1):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, arg1));
             break;
         default:
@@ -24569,6 +28843,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kArg1):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, arg1));
             break;
         default:
@@ -24606,6 +28882,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kArg1):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, arg1));
             break;
         default:
@@ -24643,6 +28921,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kValue):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, value));
             break;
         default:
@@ -24680,6 +28960,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kArg1):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, arg1));
             break;
         default:
@@ -24717,6 +28999,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kValue):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, value));
             break;
         default:
@@ -24754,6 +29038,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kArg1):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, arg1));
             break;
         default:
@@ -24791,6 +29077,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kArg1):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, arg1));
             break;
         default:
@@ -24829,9 +29117,14 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kArg1):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, arg1));
             break;
         case to_underlying(Fields::kArg2):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckSimpleEnum(arg2));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, arg2));
             break;
         default:
@@ -24869,6 +29162,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kArg1):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, arg1));
             break;
         default:
@@ -24921,39 +29216,66 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kNullableInt):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, nullableInt));
             break;
         case to_underlying(Fields::kOptionalInt):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionalInt));
             break;
         case to_underlying(Fields::kNullableOptionalInt):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, nullableOptionalInt));
             break;
         case to_underlying(Fields::kNullableString):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, nullableString));
             break;
         case to_underlying(Fields::kOptionalString):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionalString));
             break;
         case to_underlying(Fields::kNullableOptionalString):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, nullableOptionalString));
             break;
         case to_underlying(Fields::kNullableStruct):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, nullableStruct));
             break;
         case to_underlying(Fields::kOptionalStruct):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionalStruct));
             break;
         case to_underlying(Fields::kNullableOptionalStruct):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, nullableOptionalStruct));
             break;
         case to_underlying(Fields::kNullableList):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckSimpleEnum(nullableList));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, nullableList));
             break;
         case to_underlying(Fields::kOptionalList):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckSimpleEnum(optionalList));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, optionalList));
             break;
         case to_underlying(Fields::kNullableOptionalList):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckSimpleEnum(nullableOptionalList));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, nullableOptionalList));
             break;
         default:
@@ -24991,6 +29313,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kArg1):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, arg1));
             break;
         default:
@@ -25061,6 +29385,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kArg1):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, arg1));
             break;
         default:
@@ -25100,12 +29426,19 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kArg1):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, arg1));
             break;
         case to_underlying(Fields::kArg2):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+            ReturnErrorOnFailure(CheckSimpleEnum(arg2));
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, arg2));
             break;
         case to_underlying(Fields::kArg3):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, arg3));
             break;
         default:
@@ -25143,6 +29476,8 @@ CHIP_ERROR DecodableType::Decode(TLV::TLVReader & reader)
         switch (TLV::TagNumFromTag(reader.GetTag()))
         {
         case to_underlying(Fields::kArg1):
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
             ReturnErrorOnFailure(DataModel::Decode(reader, arg1));
             break;
         default:
@@ -25163,261 +29498,439 @@ CHIP_ERROR TypeInfo::DecodableType::Decode(TLV::TLVReader & reader, const Concre
     switch (path.mAttributeId)
     {
     case Attributes::Boolean::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, boolean));
         break;
     case Attributes::Bitmap8::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, bitmap8));
         break;
     case Attributes::Bitmap16::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, bitmap16));
         break;
     case Attributes::Bitmap32::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, bitmap32));
         break;
     case Attributes::Bitmap64::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, bitmap64));
         break;
     case Attributes::Int8u::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, int8u));
         break;
     case Attributes::Int16u::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, int16u));
         break;
     case Attributes::Int24u::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, int24u));
         break;
     case Attributes::Int32u::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, int32u));
         break;
     case Attributes::Int40u::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, int40u));
         break;
     case Attributes::Int48u::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, int48u));
         break;
     case Attributes::Int56u::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, int56u));
         break;
     case Attributes::Int64u::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, int64u));
         break;
     case Attributes::Int8s::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, int8s));
         break;
     case Attributes::Int16s::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, int16s));
         break;
     case Attributes::Int24s::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, int24s));
         break;
     case Attributes::Int32s::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, int32s));
         break;
     case Attributes::Int40s::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, int40s));
         break;
     case Attributes::Int48s::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, int48s));
         break;
     case Attributes::Int56s::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, int56s));
         break;
     case Attributes::Int64s::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, int64s));
         break;
     case Attributes::Enum8::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(enum8));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, enum8));
         break;
     case Attributes::Enum16::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum16(enum16));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, enum16));
         break;
     case Attributes::FloatSingle::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, floatSingle));
         break;
     case Attributes::FloatDouble::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, floatDouble));
         break;
     case Attributes::OctetString::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, octetString));
         break;
     case Attributes::ListInt8u::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, listInt8u));
         break;
     case Attributes::ListOctetString::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, listOctetString));
         break;
     case Attributes::ListStructOctetString::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, listStructOctetString));
         break;
     case Attributes::LongOctetString::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, longOctetString));
         break;
     case Attributes::CharString::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, charString));
         break;
     case Attributes::LongCharString::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, longCharString));
         break;
     case Attributes::EpochUs::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, epochUs));
         break;
     case Attributes::EpochS::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, epochS));
         break;
     case Attributes::VendorId::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, vendorId));
         break;
     case Attributes::ListNullablesAndOptionalsStruct::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, listNullablesAndOptionalsStruct));
         break;
     case Attributes::EnumAttr::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(CheckSimpleEnum(enumAttr));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, enumAttr));
         break;
     case Attributes::StructAttr::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, structAttr));
         break;
     case Attributes::RangeRestrictedInt8u::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rangeRestrictedInt8u));
         break;
     case Attributes::RangeRestrictedInt8s::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rangeRestrictedInt8s));
         break;
     case Attributes::RangeRestrictedInt16u::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rangeRestrictedInt16u));
         break;
     case Attributes::RangeRestrictedInt16s::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, rangeRestrictedInt16s));
         break;
     case Attributes::ListLongOctetString::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, listLongOctetString));
         break;
     case Attributes::ListFabricScoped::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, listFabricScoped));
         break;
     case Attributes::TimedWriteBoolean::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, timedWriteBoolean));
         break;
     case Attributes::GeneralErrorBoolean::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generalErrorBoolean));
         break;
     case Attributes::ClusterErrorBoolean::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterErrorBoolean));
         break;
     case Attributes::Unsupported::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, unsupported));
         break;
     case Attributes::NullableBoolean::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, nullableBoolean));
         break;
     case Attributes::NullableBitmap8::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, nullableBitmap8));
         break;
     case Attributes::NullableBitmap16::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, nullableBitmap16));
         break;
     case Attributes::NullableBitmap32::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, nullableBitmap32));
         break;
     case Attributes::NullableBitmap64::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, nullableBitmap64));
         break;
     case Attributes::NullableInt8u::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, nullableInt8u));
         break;
     case Attributes::NullableInt16u::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, nullableInt16u));
         break;
     case Attributes::NullableInt24u::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, nullableInt24u));
         break;
     case Attributes::NullableInt32u::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, nullableInt32u));
         break;
     case Attributes::NullableInt40u::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, nullableInt40u));
         break;
     case Attributes::NullableInt48u::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, nullableInt48u));
         break;
     case Attributes::NullableInt56u::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, nullableInt56u));
         break;
     case Attributes::NullableInt64u::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, nullableInt64u));
         break;
     case Attributes::NullableInt8s::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, nullableInt8s));
         break;
     case Attributes::NullableInt16s::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, nullableInt16s));
         break;
     case Attributes::NullableInt24s::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, nullableInt24s));
         break;
     case Attributes::NullableInt32s::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, nullableInt32s));
         break;
     case Attributes::NullableInt40s::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, nullableInt40s));
         break;
     case Attributes::NullableInt48s::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, nullableInt48s));
         break;
     case Attributes::NullableInt56s::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, nullableInt56s));
         break;
     case Attributes::NullableInt64s::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, nullableInt64s));
         break;
     case Attributes::NullableEnum8::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum8(nullableEnum8));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, nullableEnum8));
         break;
     case Attributes::NullableEnum16::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(Checkenum16(nullableEnum16));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, nullableEnum16));
         break;
     case Attributes::NullableFloatSingle::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, nullableFloatSingle));
         break;
     case Attributes::NullableFloatDouble::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, nullableFloatDouble));
         break;
     case Attributes::NullableOctetString::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, nullableOctetString));
         break;
     case Attributes::NullableCharString::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, nullableCharString));
         break;
     case Attributes::NullableEnumAttr::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+        ReturnErrorOnFailure(CheckSimpleEnum(nullableEnumAttr));
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, nullableEnumAttr));
         break;
     case Attributes::NullableStruct::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, nullableStruct));
         break;
     case Attributes::NullableRangeRestrictedInt8u::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, nullableRangeRestrictedInt8u));
         break;
     case Attributes::NullableRangeRestrictedInt8s::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, nullableRangeRestrictedInt8s));
         break;
     case Attributes::NullableRangeRestrictedInt16u::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, nullableRangeRestrictedInt16u));
         break;
     case Attributes::NullableRangeRestrictedInt16s::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, nullableRangeRestrictedInt16s));
         break;
     case Attributes::GeneratedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, generatedCommandList));
         break;
     case Attributes::AcceptedCommandList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, acceptedCommandList));
         break;
     case Attributes::AttributeList::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, attributeList));
         break;
     case Attributes::FeatureMap::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, featureMap));
         break;
     case Attributes::ClusterRevision::TypeInfo::GetAttributeId():
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+#endif
         ReturnErrorOnFailure(DataModel::Decode(reader, clusterRevision));
         break;
     default:

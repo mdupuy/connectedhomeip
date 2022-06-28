@@ -1,0 +1,44 @@
+{{> header}}
+
+#pragma once
+
+#include <stdint.h>
+
+#include <app-common/zap-generated/cluster-enums.h>
+
+namespace chip {
+namespace app {
+namespace Clusters {
+
+{{#zcl_clusters}}
+namespace {{asUpperCamelCase name}} {
+{{#zcl_enums}}
+
+{{#if (isWeaklyTypedEnum label)}}
+// Need to convert consumers to using the new enum classes, so we
+// don't just have casts all over.
+#ifdef CHIP_USE_ENUM_CLASS_FOR_IM_ENUM
+{{/if}}
+CHIP_ERROR Check{{asType label}}({{asType label}} val)
+{
+    switch (val)
+    {
+    {{#zcl_enum_items}}
+    case {{parent.label}}::k{{asUpperCamelCase label}}:
+    {{/zcl_enum_items}}
+        return CHIP_NO_ERROR;
+    default:
+        return CHIP_ERROR_UNKNOWN_ENUM;
+    }
+};
+
+{{#if (isWeaklyTypedEnum label)}}
+#endif
+{{/if}}
+{{/zcl_enums}}
+} // namespace {{asUpperCamelCase name}}
+
+{{/zcl_clusters}}
+} // namespace Clusters
+} // namespace app
+} // namespace chip
