@@ -209,7 +209,7 @@ void InitApp(intptr_t args)
     CHIP_ERROR err = LockMgr().Init(state, maxCredentialsPerUser, numberOfSupportedUsers);
     if (err != CHIP_NO_ERROR)
     {
-       ChipLogError(Zcl, "LockMgr().Init() failed");
+        ChipLogError(Zcl, "LockMgr().Init() failed");
     }
 
     LockMgr().SetCallbacks(ActionInitiated, ActionCompleted);
