@@ -458,7 +458,18 @@ CHIP_ERROR WriteClient::OnMessageReceived(Messaging::ExchangeContext * apExchang
 
     if (mState == State::AwaitingTimedStatus)
     {
-        err = HandleTimedStatus(aPayloadHeader, std::move(aPayload));
+        if (aPayloadHeader.HasMessageType(Protocols::InteractionModel::MsgType::StatusResponse))
+        {
+            CHIP_ERROR statusError = CHIP_NO_ERROR;
+            SuccessOrExit(err = StatusResponse::ProcessStatusResponse(std::move(aPayload), statusError));
+            suppressErrorStatusResponse = true;
+            SuccessOrExit(err = statusError);
+            err = SendWriteRequest();
+        }
+        else
+        {
+            err = CHIP_ERROR_INVALID_MESSAGE_TYPE;
+        }
         // Skip all other processing here (which is for the response to the
         // write request), no matter whether err is success or not.
         goto exit;
@@ -476,9 +487,10 @@ CHIP_ERROR WriteClient::OnMessageReceived(Messaging::ExchangeContext * apExchang
     }
     else if (aPayloadHeader.HasMessageType(Protocols::InteractionModel::MsgType::StatusResponse))
     {
+        CHIP_ERROR statusError = CHIP_NO_ERROR;
+        SuccessOrExit(err = StatusResponse::ProcessStatusResponse(std::move(aPayload), statusError));
         suppressErrorStatusResponse = true;
-        err                         = StatusResponse::ProcessStatusResponse(std::move(aPayload));
-        SuccessOrExit(err);
+        SuccessOrExit(err = statusError);
     }
     else
     {
@@ -486,10 +498,10 @@ CHIP_ERROR WriteClient::OnMessageReceived(Messaging::ExchangeContext * apExchang
     }
 
 exit:
-    return NotifyResult(err, apExchangeContext, suppressErrorStatusResponse);
+    return ResponseMessageHandled(err, apExchangeContext, suppressErrorStatusResponse);
 }
 
-CHIP_ERROR WriteClient::NotifyResult(CHIP_ERROR aError, Messaging::ExchangeContext * apExchangeContext,
+CHIP_ERROR WriteClient::ResponseMessageHandled(CHIP_ERROR aError, Messaging::ExchangeContext * apExchangeContext,
                                      bool aSuppressErrorStatusResponse)
 {
     CHIP_ERROR err = aError;
@@ -499,6 +511,10 @@ CHIP_ERROR WriteClient::NotifyResult(CHIP_ERROR aError, Messaging::ExchangeConte
         {
             err = StatusResponse::Send(Protocols::InteractionModel::Status::InvalidAction, apExchangeContext,
                                        false /*aExpectResponse*/);
+            if (err == CHIP_NO_ERROR)
+            {
+                mpExchangeCtx = nullptr;
+            }
         }
 
         if (mpCallback != nullptr)
@@ -507,7 +523,7 @@ CHIP_ERROR WriteClient::NotifyResult(CHIP_ERROR aError, Messaging::ExchangeConte
         }
     }
 
-    if (mState != State::AwaitingResponse || aError != CHIP_NO_ERROR)
+    if (mState != State::AwaitingResponse)
     {
         Close();
     }
@@ -561,13 +577,6 @@ CHIP_ERROR WriteClient::ProcessAttributeStatusIB(AttributeStatusIB::Parser & aAt
 
 exit:
     return err;
-}
-
-CHIP_ERROR WriteClient::HandleTimedStatus(const PayloadHeader & aPayloadHeader, System::PacketBufferHandle && aPayload)
-{
-    ReturnErrorOnFailure(TimedRequest::HandleResponse(aPayloadHeader, std::move(aPayload)));
-
-    return SendWriteRequest();
 }
 
 } // namespace app

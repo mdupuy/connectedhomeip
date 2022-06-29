@@ -33,6 +33,9 @@ extern bool emberAfContainsAttribute(chip::EndpointId endpoint, chip::ClusterId 
 
 namespace chip {
 namespace app {
+
+using Protocols::InteractionModel::Status;
+
 InteractionModelEngine sInteractionModelEngine;
 
 InteractionModelEngine::InteractionModelEngine() {}
@@ -160,30 +163,6 @@ uint32_t InteractionModelEngine::GetNumActiveReadHandlers(ReadHandler::Interacti
     return count;
 }
 
-CommandHandler * InteractionModelEngine::ActiveCommandHandlerAt(unsigned int aIndex)
-{
-    if (aIndex >= mCommandHandlerObjs.Allocated())
-    {
-        return nullptr;
-    }
-
-    unsigned int i       = 0;
-    CommandHandler * ret = nullptr;
-
-    mCommandHandlerObjs.ForEachActiveObject([aIndex, &i, &ret](CommandHandler * handler) {
-        if (i == aIndex)
-        {
-            ret = handler;
-            return Loop::Break;
-        }
-
-        i++;
-        return Loop::Continue;
-    });
-
-    return ret;
-}
-
 ReadHandler * InteractionModelEngine::ActiveHandlerAt(unsigned int aIndex)
 {
     if (aIndex >= mReadHandlers.Allocated())
@@ -286,7 +265,7 @@ void InteractionModelEngine::OnDone(ReadHandler & apReadObj)
     mReadHandlers.ReleaseObject(&apReadObj);
 }
 
-Protocols::InteractionModel::Status InteractionModelEngine::OnInvokeCommandRequest(Messaging::ExchangeContext * apExchangeContext,
+Status InteractionModelEngine::OnInvokeCommandRequest(Messaging::ExchangeContext * apExchangeContext,
                                                                                    const PayloadHeader & aPayloadHeader,
                                                                                    System::PacketBufferHandle && aPayload,
                                                                                    bool aIsTimedInvoke)
@@ -295,13 +274,13 @@ Protocols::InteractionModel::Status InteractionModelEngine::OnInvokeCommandReque
     if (commandHandler == nullptr)
     {
         ChipLogProgress(InteractionModel, "no resource for Invoke interaction");
-        return Protocols::InteractionModel::Status::Busy;
+        return Status::Busy;
     }
 
     return commandHandler->OnInvokeCommandRequest(apExchangeContext, aPayloadHeader, std::move(aPayload), aIsTimedInvoke);
 }
 
-Protocols::InteractionModel::Status InteractionModelEngine::OnReadInitialRequest(Messaging::ExchangeContext * apExchangeContext,
+Status InteractionModelEngine::OnReadInitialRequest(Messaging::ExchangeContext * apExchangeContext,
                                                                                  const PayloadHeader & aPayloadHeader,
                                                                                  System::PacketBufferHandle && aPayload,
                                                                                  ReadHandler::InteractionType aInteractionType)
@@ -474,7 +453,7 @@ Protocols::InteractionModel::Status InteractionModelEngine::OnReadInitialRequest
     return StatusIB(err).mStatus;
 }
 
-Protocols::InteractionModel::Status InteractionModelEngine::OnWriteRequest(Messaging::ExchangeContext * apExchangeContext,
+Status InteractionModelEngine::OnWriteRequest(Messaging::ExchangeContext * apExchangeContext,
                                                                            const PayloadHeader & aPayloadHeader,
                                                                            System::PacketBufferHandle && aPayload,
                                                                            bool aIsTimedWrite)
@@ -495,7 +474,7 @@ Protocols::InteractionModel::Status InteractionModelEngine::OnWriteRequest(Messa
 
 CHIP_ERROR InteractionModelEngine::OnTimedRequest(Messaging::ExchangeContext * apExchangeContext,
                                                   const PayloadHeader & aPayloadHeader, System::PacketBufferHandle && aPayload,
-                                                  Protocols::InteractionModel::Status & aStatus)
+                                                  Status & aStatus)
 {
     TimedHandler * handler = mTimedHandlers.CreateObject();
     if (handler == nullptr)
@@ -558,7 +537,7 @@ CHIP_ERROR InteractionModelEngine::OnMessageReceived(Messaging::ExchangeContext 
 {
     using namespace Protocols::InteractionModel;
 
-    Protocols::InteractionModel::Status status = Status::Failure;
+    Status status = Status::Failure;
 
     // Group Message can only be an InvokeCommandRequest or WriteRequest
     if (apExchangeContext->IsGroupExchangeContext() &&
@@ -595,14 +574,10 @@ CHIP_ERROR InteractionModelEngine::OnMessageReceived(Messaging::ExchangeContext 
     {
         OnTimedRequest(apExchangeContext, aPayloadHeader, std::move(aPayload), status);
     }
-    else if (aPayloadHeader.HasMessageType(MsgType::StatusResponse))
-    {
-        return StatusResponse::ProcessStatusResponse(std::move(aPayload));
-    }
     else
     {
         ChipLogProgress(InteractionModel, "Msg type %d not supported", aPayloadHeader.GetMessageType());
-        status = Protocols::InteractionModel::Status::InvalidAction;
+        status = Status::InvalidAction;
     }
 
     if (status != Status::Success && !apExchangeContext->IsGroupExchangeContext())
@@ -880,7 +855,7 @@ bool InteractionModelEngine::TrimFabricForRead(FabricIndex aFabricIndex)
     return false;
 }
 
-Protocols::InteractionModel::Status InteractionModelEngine::EnsureResourceForRead(FabricIndex aFabricIndex,
+Status InteractionModelEngine::EnsureResourceForRead(FabricIndex aFabricIndex,
                                                                                   size_t aRequestedAttributePathCount,
                                                                                   size_t aRequestedEventPathCount)
 {
@@ -1248,7 +1223,7 @@ void InteractionModelEngine::DispatchCommand(CommandHandler & apCommandObj, cons
     DispatchSingleClusterCommand(aCommandPath, apPayload, &apCommandObj);
 }
 
-Protocols::InteractionModel::Status InteractionModelEngine::CommandExists(const ConcreteCommandPath & aCommandPath)
+Status InteractionModelEngine::CommandExists(const ConcreteCommandPath & aCommandPath)
 {
     return ServerClusterCommandExists(aCommandPath);
 }
@@ -1358,11 +1333,7 @@ void InteractionModelEngine::OnTimedInvoke(TimedHandler * apTimedHandler, Messag
     VerifyOrDie(aPayloadHeader.HasMessageType(MsgType::InvokeCommandRequest));
     VerifyOrDie(!apExchangeContext->IsGroupExchangeContext());
 
-    Status status = OnInvokeCommandRequest(apExchangeContext, aPayloadHeader, std::move(aPayload), /* aIsTimedInvoke = */ true);
-    if (status != Status::Success)
-    {
-        StatusResponse::Send(status, apExchangeContext, /* aExpectResponse = */ false);
-    }
+    OnInvokeCommandRequest(apExchangeContext, aPayloadHeader, std::move(aPayload), /* aIsTimedInvoke = */ true);
 }
 
 void InteractionModelEngine::OnTimedWrite(TimedHandler * apTimedHandler, Messaging::ExchangeContext * apExchangeContext,
