@@ -502,7 +502,7 @@ exit:
 }
 
 CHIP_ERROR WriteClient::ResponseMessageHandled(CHIP_ERROR aError, Messaging::ExchangeContext * apExchangeContext,
-                                     bool aSuppressErrorStatusResponse)
+                                               bool aSuppressErrorStatusResponse)
 {
     CHIP_ERROR err = aError;
     if (err != CHIP_NO_ERROR)

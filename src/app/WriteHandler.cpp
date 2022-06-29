@@ -31,7 +31,7 @@ namespace chip {
 namespace app {
 
 using namespace Protocols::InteractionModel;
-using Status = Protocols::InteractionModel::Status;
+using Status                         = Protocols::InteractionModel::Status;
 constexpr uint8_t kListAttributeType = 0x48;
 
 CHIP_ERROR WriteHandler::Init()
@@ -144,8 +144,7 @@ CHIP_ERROR WriteHandler::OnMessageReceived(Messaging::ExchangeContext * apExchan
         ChipLogDetail(DataManagement, "Unexpected message type %d", aPayloadHeader.GetMessageType());
         if (!aPayloadHeader.HasMessageType(Protocols::InteractionModel::MsgType::StatusResponse))
         {
-            err = StatusResponse::Send(Status::InvalidAction, apExchangeContext,
-                                       false /*aExpectResponse*/);
+            err = StatusResponse::Send(Status::InvalidAction, apExchangeContext, false /*aExpectResponse*/);
         }
         Close();
         return err;
@@ -169,7 +168,6 @@ CHIP_ERROR WriteHandler::OnMessageReceived(Messaging::ExchangeContext * apExchan
             mpExchangeCtx = nullptr;
         }
         Close();
-
     }
     return err;
 }

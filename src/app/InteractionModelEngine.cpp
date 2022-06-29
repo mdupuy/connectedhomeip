@@ -266,9 +266,8 @@ void InteractionModelEngine::OnDone(ReadHandler & apReadObj)
 }
 
 Status InteractionModelEngine::OnInvokeCommandRequest(Messaging::ExchangeContext * apExchangeContext,
-                                                                                   const PayloadHeader & aPayloadHeader,
-                                                                                   System::PacketBufferHandle && aPayload,
-                                                                                   bool aIsTimedInvoke)
+                                                      const PayloadHeader & aPayloadHeader, System::PacketBufferHandle && aPayload,
+                                                      bool aIsTimedInvoke)
 {
     CommandHandler * commandHandler = mCommandHandlerObjs.CreateObject(this);
     if (commandHandler == nullptr)
@@ -281,9 +280,8 @@ Status InteractionModelEngine::OnInvokeCommandRequest(Messaging::ExchangeContext
 }
 
 Status InteractionModelEngine::OnReadInitialRequest(Messaging::ExchangeContext * apExchangeContext,
-                                                                                 const PayloadHeader & aPayloadHeader,
-                                                                                 System::PacketBufferHandle && aPayload,
-                                                                                 ReadHandler::InteractionType aInteractionType)
+                                                    const PayloadHeader & aPayloadHeader, System::PacketBufferHandle && aPayload,
+                                                    ReadHandler::InteractionType aInteractionType)
 {
     ChipLogDetail(InteractionModel, "Received %s request",
                   aInteractionType == ReadHandler::InteractionType::Subscribe ? "Subscribe" : "Read");
@@ -453,10 +451,8 @@ Status InteractionModelEngine::OnReadInitialRequest(Messaging::ExchangeContext *
     return StatusIB(err).mStatus;
 }
 
-Status InteractionModelEngine::OnWriteRequest(Messaging::ExchangeContext * apExchangeContext,
-                                                                           const PayloadHeader & aPayloadHeader,
-                                                                           System::PacketBufferHandle && aPayload,
-                                                                           bool aIsTimedWrite)
+Status InteractionModelEngine::OnWriteRequest(Messaging::ExchangeContext * apExchangeContext, const PayloadHeader & aPayloadHeader,
+                                              System::PacketBufferHandle && aPayload, bool aIsTimedWrite)
 {
     ChipLogDetail(InteractionModel, "Received Write request");
 
@@ -855,9 +851,8 @@ bool InteractionModelEngine::TrimFabricForRead(FabricIndex aFabricIndex)
     return false;
 }
 
-Status InteractionModelEngine::EnsureResourceForRead(FabricIndex aFabricIndex,
-                                                                                  size_t aRequestedAttributePathCount,
-                                                                                  size_t aRequestedEventPathCount)
+Status InteractionModelEngine::EnsureResourceForRead(FabricIndex aFabricIndex, size_t aRequestedAttributePathCount,
+                                                     size_t aRequestedEventPathCount)
 {
 #if CHIP_SYSTEM_CONFIG_POOL_USE_HEAP && !CHIP_CONFIG_IM_FORCE_FABRIC_QUOTA_CHECK
 #if CONFIG_BUILD_FOR_HOST_UNIT_TEST

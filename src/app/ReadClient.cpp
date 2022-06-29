@@ -430,15 +430,14 @@ exit:
 }
 
 CHIP_ERROR ReadClient::ResponseMessageHandled(CHIP_ERROR aError, Messaging::ExchangeContext * apExchangeContext,
-                                    bool aSuppressErrorStatusResponse)
+                                              bool aSuppressErrorStatusResponse)
 {
     CHIP_ERROR err = aError;
     if (aError != CHIP_NO_ERROR)
     {
         if (!aSuppressErrorStatusResponse)
         {
-            err = StatusResponse::Send(Status::InvalidAction, apExchangeContext,
-                                       false /*aExpectResponse*/);
+            err = StatusResponse::Send(Status::InvalidAction, apExchangeContext, false /*aExpectResponse*/);
             if (err == CHIP_NO_ERROR)
             {
                 mpExchangeCtx = nullptr;
@@ -607,9 +606,7 @@ exit:
     if (!suppressResponse)
     {
         bool noResponseExpected = IsSubscriptionActive() && !mPendingMoreChunks;
-        err                     = StatusResponse::Send(err == CHIP_NO_ERROR ? Status::Success
-                                                        : Status::Failure,
-                                   mpExchangeCtx, !noResponseExpected);
+        err = StatusResponse::Send(err == CHIP_NO_ERROR ? Status::Success : Status::Failure, mpExchangeCtx, !noResponseExpected);
 
         if (noResponseExpected || (err != CHIP_NO_ERROR))
         {

@@ -580,7 +580,7 @@ void TestWriteInteraction::TestWriteInvalidMessage1(nlTestSuite * apSuite, void 
     NL_TEST_ASSERT(apSuite, err == CHIP_NO_ERROR);
     writeClient.MoveToState(WriteClient::State::ResponseReceived);
 
-    char PAYLOAD[] = "Hello!";
+    char PAYLOAD[]       = "Hello!";
     uint16_t payload_len = sizeof(PAYLOAD);
     PayloadHeader payloadHeader;
     payloadHeader.SetExchangeID(0);

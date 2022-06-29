@@ -26,6 +26,7 @@
 
 #include <app/AppBuildConfig.h>
 #include <app/InteractionModelEngine.h>
+#include <app/InteractionModelHelper.h>
 #include <app/data-model/Encode.h>
 #include <app/tests/AppTestContext.h>
 #include <lib/core/CHIPCore.h>
@@ -38,12 +39,11 @@
 #include <messaging/ExchangeContext.h>
 #include <messaging/ExchangeMgr.h>
 #include <messaging/Flags.h>
+#include <nlunit-test.h>
 #include <platform/CHIPDeviceLayer.h>
 #include <protocols/interaction_model/Constants.h>
 #include <system/SystemPacketBuffer.h>
 #include <system/TLVPacketBufferBackingStore.h>
-#include <app/InteractionModelHelper.h>
-#include <nlunit-test.h>
 
 using TestContext = chip::Test::AppContext;
 using namespace chip::Protocols;
@@ -693,7 +693,7 @@ void TestCommandInteraction::TestCommandInvalidMessage2(nlTestSuite * apSuite, v
     err = request.Init(&writer);
     err = writer.Finalize(&msgBuf);
     err = commandSender.mpExchangeCtx->SendMessage(Protocols::InteractionModel::MsgType::WriteRequest, std::move(msgBuf),
-                                                Messaging::SendFlags(Messaging::SendMessageFlags::kExpectResponse));
+                                                   Messaging::SendFlags(Messaging::SendMessageFlags::kExpectResponse));
     ctx.DrainAndServiceIO();
 
     asyncCommandHandle = nullptr;
