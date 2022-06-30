@@ -103,6 +103,8 @@ jobs:
             #          /tmp/bloat_reports/
             - name: upload-light
               uses: actions/upload-artifact@master
+              run: |
+                  find . -type f -name "lighting-app"
               with:
                     name: lighting-app
                     #path: ${{ github.workspace }}/out/linux-arm64-lighting-app/lighting-app
