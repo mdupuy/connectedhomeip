@@ -78,29 +78,29 @@ jobs:
                         #--target linux-arm64-thermostat-no-ble \
                         build \
                      "
-            - name: Bloat report - chip-tool
-              timeout-minutes: 5
-              run: |
-                  .environment/pigweed-venv/bin/python3 scripts/tools/memory/gh_sizes.py \
-                    #linux arm64 chip-tool-no-interactive-ipv6only \
-                    #out/linux-arm64-chip-tool-no-interactive-ipv6only/chip-tool \
-                    linux arm64 chip-tool \
-                    out/linux-arm64-chip-tool/chip-tool \
-                    /tmp/bloat_reports/
-            - name: Bloat report - lighting-app
-              timeout-minutes: 5
-              run: |
-                  .environment/pigweed-venv/bin/python3 scripts/tools/memory/gh_sizes.py \
-                    linux arm64 lighting-app \
-                    out/linux-arm64-lighting-app/lighting-app \
-                    /tmp/bloat_reports/
-            - name: Uploading Size Reports
-              uses: actions/upload-artifact@v2
-              if: ${{ !env.ACT }}
-              with:
-                  name: Size,Linux-Examples,${{ env.GH_EVENT_PR }},${{ env.GH_EVENT_HASH }},${{ env.GH_EVENT_PARENT }},${{ github.event_name }}
-                  path: |
-                      /tmp/bloat_reports/
+            #- name: Bloat report - chip-tool
+            #  timeout-minutes: 5
+            #  run: |
+            #      .environment/pigweed-venv/bin/python3 scripts/tools/memory/gh_sizes.py \
+            #        #linux arm64 chip-tool-no-interactive-ipv6only \
+            #        #out/linux-arm64-chip-tool-no-interactive-ipv6only/chip-tool \
+            #        linux arm64 chip-tool \
+            #        out/linux-arm64-chip-tool/chip-tool \
+            #        /tmp/bloat_reports/
+            #- name: Bloat report - lighting-app
+            #  timeout-minutes: 5
+            #  run: |
+            #      .environment/pigweed-venv/bin/python3 scripts/tools/memory/gh_sizes.py \
+            #        linux arm64 lighting-app \
+            #        out/linux-arm64-lighting-app/lighting-app \
+            #        /tmp/bloat_reports/
+            #- name: Uploading Size Reports
+            #  uses: actions/upload-artifact@v2
+            #  if: ${{ !env.ACT }}
+            #  with:
+            #      name: Size,Linux-Examples,${{ env.GH_EVENT_PR }},${{ env.GH_EVENT_HASH }},${{ env.GH_EVENT_PARENT }},${{ github.event_name }}
+            #      path: |
+            #          /tmp/bloat_reports/
             - name: upload-light
               uses: actions/upload-artifact@master
               with:
@@ -133,3 +133,9 @@ jobs:
               cp ${{ github.workspace }}/virtual-device-test.py ${{ github.workspace }}/avh-api/python/examples/async/.
               cd avh-api/python
               make examples/async/virtual-device-test.py
+            env:
+              API_TOKEN: ${{ secrets.API_TOKEN }} 
+              ENDPOINT: ${{ secrets.ENDPOINT }} 
+              INSTANCE1: ${{ secrets.INSTANCE1 }} 
+              INSTANCE2: ${{ secrets.INSTANCE2 }} 
+              

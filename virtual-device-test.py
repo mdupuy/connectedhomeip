@@ -21,11 +21,12 @@ ctx = ssl.create_default_context()
 ctx.check_hostname = False
 ctx.verify_mode = ssl.CERT_NONE
 
-apiEndpoint = "https://app.avh.arm.com/api"
-apiToken = "51f6cc92c0c4c08072a0.93da8450ac6e901a6fa2c95b4f044926623bd92eda46c2cdb54caf97f79851c147a3a900e22e7be50363d2c47d857351fd0faec319b58411895a1fe1819392ce"
+apiEndpoint = os.environment['ENDPOINT']
+apiToken = os.environment['API_TOKEN']
 fw = "chip-tool"
 flavor = "rpi4b"
-vmName = 'chip-tool'
+vmName = os.environment['INSTANCE1']
+vmName2 = os.environment['INSTANCE2']
 
 async def waitForState(instance, state):
   global api_instance
