@@ -123,16 +123,16 @@ jobs:
           #- name: pull libs
           #  run: |
           #    git clone https://github.com/ARM-software/avh-api.git
-          - name: download-light
-            uses: actions/download-artifact@master
-            with:
-              name: chip-lighting-app
-              path: ${{ github.workspace }}/avh-api/python/examples/assets
-          - name: download-chip-tool
-            uses: actions/download-artifact@master
-            with:
-              name: chip-tool
-              path: ${{ github.workspace }}/avh-api/python/examples/assets              
+          #- name: download-light
+          #  uses: actions/download-artifact@master
+          #  with:
+          #    name: chip-lighting-app
+          #    path: ${{ github.workspace }}/avh-api/python/examples/assets
+          #- name: download-chip-tool
+          #  uses: actions/download-artifact@master
+          #  with:
+          #    name: chip-tool
+          #    path: ${{ github.workspace }}/avh-api/python/examples/assets              
           - name: test
             run: |
               #pip3 install websockets six python-dateutil urllib3 aiohttp
