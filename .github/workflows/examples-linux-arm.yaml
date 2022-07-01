@@ -69,19 +69,15 @@ jobs:
               run: |
                   ./scripts/run_in_build_env.sh \
                      "./scripts/build/build_examples.py \
-                        --target linux-arm64-light \
-                        --target linux-arm64-chip-tool-no-interactive \                        
+                        --target linux-arm64-light \                     
                         build \
-                     "                                    
-                  #./scripts/run_in_build_env.sh \
-                  #   "./scripts/build/build_examples.py \
-                  #      --target linux-arm64-all-clusters \
-                  #      --target linux-arm64-chip-tool-no-interactive-ipv6only \
-                  #      --target linux-arm64-lock \
-                  #      --target linux-arm64-minmdns \
-                  #      --target linux-arm64-thermostat-no-ble \
-                  #      build \
-                  #   "                     
+                     "
+                  #      --target linux-arm64-chip-tool-no-interactive \                     
+                  #cd examples/lighting-app/linux; gn gen out/debug; ninja -C out/debug; \
+                  #cd ../../..; \
+                  #cd examples/chip-tool; gn gen out/debug; ninja -C out/debug
+                  #examples/chip-tool/out/debug/chip-tool
+                  #examples/lighting-app/linux/out/debug/chip-lighting-app                                                   
             #- name: Find apps
             #  run: |
             #      find . -type f -name "lighting-app"
@@ -112,11 +108,11 @@ jobs:
                     name: lighting-app
                     #path: ${{ github.workspace }}/out/linux-arm64-lighting-app/lighting-app
                     path: out/linux-arm64-light/chip-lighting-app
-            - name: upload-tool
-              uses: actions/upload-artifact@master
-              with:
-                    name: chip-tool
-                    path: out/linux-arm64-chip-tool-no-interactive/chip-tool
+            #- name: upload-tool
+            #  uses: actions/upload-artifact@master
+            #  with:
+            #        name: chip-tool
+            #        path: out/linux-arm64-chip-tool-no-interactive/chip-tool
     virtual-device-test:
         runs-on: ubuntu-latest
         needs: arm_crosscompile
