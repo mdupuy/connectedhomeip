@@ -116,7 +116,7 @@ jobs:
                     path: ${{ github.workspace }}/out/linux-arm64-chip-tool-no-interactive/chip-tool
     virtual-device-test:
         runs-on: ubuntu-latest
-        needs: bulid
+        needs: arm_crosscompile
         steps:
           - name: pull tests
             uses: actions/checkout@v2
