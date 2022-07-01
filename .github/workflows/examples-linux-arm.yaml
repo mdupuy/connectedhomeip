@@ -107,13 +107,13 @@ jobs:
               uses: actions/upload-artifact@master
               with:
                     name: lighting-app
-                    #path: ${{ github.workspace }}/out/linux-arm64-lighting-app/lighting-app
-                    path: out/linux-arm64-light/chip-lighting-app
-            #- name: upload-tool
-            #  uses: actions/upload-artifact@master
-            #  with:
-            #        name: chip-tool
-            #        path: out/linux-arm64-chip-tool-no-interactive/chip-tool
+                    path: ${{ github.workspace }}/out/linux-arm64-light/chip-lighting-app
+                    #path: out/linux-arm64-light/chip-lighting-app
+            - name: upload-tool
+              uses: actions/upload-artifact@master
+              with:
+                    name: chip-tool
+                    path: ${{ github.workspace }}/out/linux-arm64-chip-tool-no-interactive/chip-tool
     virtual-device-test:
         runs-on: ubuntu-latest
         needs: arm_crosscompile
@@ -128,6 +128,11 @@ jobs:
             with:
               name: chip-lighting-app
               path: ${{ github.workspace }}/avh-api/python/examples/assets
+          - name: download-chip-tool
+            uses: actions/download-artifact@master
+            with:
+              name: chip-tool
+              path: ${{ github.workspace }}/avh-api/python/examples/assets              
           - name: test
             run: |
               pip3 install websockets six python-dateutil urllib3 aiohttp
