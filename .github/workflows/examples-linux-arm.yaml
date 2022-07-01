@@ -69,29 +69,35 @@ jobs:
               run: |
                   ./scripts/run_in_build_env.sh \
                      "./scripts/build/build_examples.py \
-                        --target linux-arm64-chip-tool-no-interactive-ipv6only \
-                        --target linux-arm64-chip-tool \
-                        --target linux-arm64-lighting-app \
+                        --target linux-arm64-light \
+                        --target linux-arm64-chip-tool-no-interactive \                        
                         build \
-                     "
-            - name: Find apps
-              run: |
-                  find . -type f -name "lighting-app"
+                     "                                    
+                  #./scripts/run_in_build_env.sh \
+                  #   "./scripts/build/build_examples.py \
+                  #      --target linux-arm64-all-clusters \
+                  #      --target linux-arm64-chip-tool-no-interactive-ipv6only \
+                  #      --target linux-arm64-lock \
+                  #      --target linux-arm64-minmdns \
+                  #      --target linux-arm64-thermostat-no-ble \
+                  #      build \
+                  #   "                     
+            #- name: Find apps
+            #  run: |
+            #      find . -type f -name "lighting-app"
             #- name: Bloat report - chip-tool
             #  timeout-minutes: 5
             #  run: |
             #      .environment/pigweed-venv/bin/python3 scripts/tools/memory/gh_sizes.py \
-            #        #linux arm64 chip-tool-no-interactive-ipv6only \
-            #        #out/linux-arm64-chip-tool-no-interactive-ipv6only/chip-tool \
             #        linux arm64 chip-tool \
-            #        out/linux-arm64-chip-tool/chip-tool \
+            #        out/linux-arm64-chip-tool-no-interactive \
             #        /tmp/bloat_reports/
-            #- name: Bloat report - lighting-app
+            #- name: Bloat report - light
             #  timeout-minutes: 5
             #  run: |
             #      .environment/pigweed-venv/bin/python3 scripts/tools/memory/gh_sizes.py \
-            #        linux arm64 lighting-app \
-            #        out/linux-arm64-lighting-app/lighting-app \
+            #        linux arm64 light \
+            #        out/linux-arm64-light/chip-lighting-app
             #        /tmp/bloat_reports/
             #- name: Uploading Size Reports
             #  uses: actions/upload-artifact@v2
@@ -105,12 +111,12 @@ jobs:
               with:
                     name: lighting-app
                     #path: ${{ github.workspace }}/out/linux-arm64-lighting-app/lighting-app
-                    path: out/linux-arm64-lighting-app/lighting-app
+                    path: out/linux-arm64-light/chip-lighting-app
             - name: upload-tool
               uses: actions/upload-artifact@master
               with:
                     name: chip-tool
-                    path: out/linux-arm64-chip-tool/chip-tool
+                    path: out/linux-arm64-chip-tool-no-interactive/chip-tool
     virtual-device-test:
         runs-on: ubuntu-latest
         needs: arm_crosscompile
@@ -123,7 +129,7 @@ jobs:
           - name: download-light
             uses: actions/download-artifact@master
             with:
-              name: lighting-app
+              name: chip-lighting-app
               path: ${{ github.workspace }}/avh-api/python/examples/assets
           - name: test
             run: |
