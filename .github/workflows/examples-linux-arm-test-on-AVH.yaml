@@ -1,0 +1,142 @@
+# Copyright (c) 2020 Project CHIP Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+name: Build example - Linux ARM
+
+on:
+    push:
+    pull_request:
+
+concurrency:
+    group: ${{ github.ref }}-${{ github.workflow }}-${{ (github.event_name == 'pull_request' && github.event.number) || (github.event_name == 'workflow_dispatch' && github.run_number) || github.sha }}
+    cancel-in-progress: true
+
+jobs:
+    # arm_crosscompile:
+    #     name: Linux ARM Cross compile
+    #     timeout-minutes: 70
+
+    #     runs-on: ubuntu-latest
+    #     if: github.actor != 'restyled-io[bot]'
+
+    #     # container:
+    #     #     image: connectedhomeip/chip-build-crosscompile:0.5.79
+    #     #     volumes:
+    #     #         - "/tmp/bloat_reports:/tmp/bloat_reports"
+
+    #     # steps:
+    #     #     - uses: Wandalen/wretry.action@v1.0.15
+    #     #       name: Checkout
+    #     #       with:
+    #     #           action: actions/checkout@v3
+    #     #           with: |
+    #     #               token: ${{ github.token }}
+    #     #           attempt_limit: 3
+    #     #           attempt_delay: 2000
+    #     #     - name: Checkout submodules
+    #     #       run: scripts/checkout_submodules.py --shallow --platform linux
+
+    #     #     - name: Set up environment for size reports
+    #     #       if: ${{ !env.ACT }}
+    #     #       env:
+    #     #           GH_CONTEXT: ${{ toJson(github) }}
+    #     #       run: scripts/tools/memory/gh_sizes_environment.py "${GH_CONTEXT}"
+
+    #     #     - name: Bootstrap
+    #     #       timeout-minutes: 10
+    #     #       run: scripts/build/gn_bootstrap.sh
+    #     #     - name: Uploading bootstrap logs
+    #     #       uses: actions/upload-artifact@v2
+    #     #       if: ${{ always() }} && ${{ !env.ACT }}
+    #     #       with:
+    #     #           name: bootstrap-logs
+    #     #           path: |
+    #     #               .environment/gn_out/.ninja_log
+    #     #               .environment/pigweed-venv/*.log
+    #     #     - name: Build Some samples
+    #     #       timeout-minutes: 45
+    #     #       run: |
+    #     #           ./scripts/run_in_build_env.sh \
+    #     #              "./scripts/build/build_examples.py \
+    #     #                 --target linux-arm64-chip-tool-no-interactive \
+    #     #                 --target linux-arm64-light \
+    #     #                 build \
+    #     #              "              
+    #     #           #      --target linux-arm64-chip-tool-no-interactive \                                                                      
+    #     #     - name: upload-light
+    #     #       uses: actions/upload-artifact@master
+    #     #       with:
+    #     #             name: lighting-app
+    #     #             path: ${{ github.workspace }}/out/linux-arm64-light/chip-lighting-app
+    #     #             #path: out/linux-arm64-light/chip-lighting-app
+    #     #     - name: upload-tool
+    #     #       uses: actions/upload-artifact@master
+    #     #       with:
+    #     #             name: chip-tool
+    #     #             path: ${{ github.workspace }}/out/linux-arm64-chip-tool-no-interactive/chip-tool
+    virtual-device-test:
+        runs-on: ubuntu-latest
+        steps:
+          - name: pull tests
+            uses: actions/checkout@v2
+          - name: Get OpenVPN
+            run: |
+                sudo apt install netcat openvpn -y; mkdir -p /dev/net; mknod /dev/net/tun c 10 200; chmod 600 /dev/net/tun; /etc/init.d/openvpn restart
+          - name: pull avh api util
+            run: |
+              git clone https://github.com/mdupuy/avhcli.git; ls avhcli
+          - name: Create light INSTANCE2
+            run: |
+              avhcli/avhcli.sh -t env.API_TOKEN -n env.INSTANCE2 -m rpi4b create
+            env:
+              API_TOKEN: ${{ secrets.API_TOKEN }} 
+              INSTANCE2: ${{ secrets.INSTANCE2 }}
+          - name: Create chip-tool INSTANCE1
+            run: |
+              avhcli/avhcli.sh -t env.API_TOKEN -n env.INSTANCE1 -m rpi4b create
+            env:
+              API_TOKEN: ${{ secrets.API_TOKEN }}
+              INSTANCE1: ${{ secrets.INSTANCE1 }}        
+          - name: connect to AVH OpenVPN
+            run: |
+              sudo openvpn avh.ovpn       
+          #see if you can scp the binaries over
+          - name: scp to chip-tool INSTANCE1
+            run: |
+              ping $(cat avhcli/env.INSTANCE1_ip.txt)
+              #scp pi@$(cat avhcli/env.INSTANCE1_ip.txt) 
+            env:
+              INSTANCE1: ${{ secrets.INSTANCE1 }}  
+
+          # - name: Console on INSTANCE1
+          #   run: |
+          #     nc $(cat avhcli/env.INSTANCE1_ip.txt) 2000
+          #   env:
+          #     INSTANCE1: ${{ secrets.INSTANCE1 }}  
+
+          # - name: test
+          #   run: |
+          #     #pip3 install websockets six python-dateutil urllib3 aiohttp
+          #     pip3 install avh-api avh-api-async websockets python-dateutil aiohttp six urllib3
+          #     #npm install @openapitools/openapi-generator-cli -g
+          #     #cp ${{ github.workspace }}/virtual-device-test.py ${{ github.workspace }}/avh-api/python/examples/async/.
+          #     #cd avh-api/python
+          #     #make examples/async/virtual-device-test.py
+          #     python3 avh-raspi.py #https://app.avh.arm.com/api 1ce5a351d8851ae708c1.16a1e32a12c16092fb9cdac297052ac5a1fedac2d80f77eeefe993bba338da95b758441ffc871145683182bbc8d50a1f228bfb39acdbf3b6330a76682db304c4
+          #   env:
+          #     API_TOKEN: ${{ secrets.API_TOKEN }} 
+          #     ENDPOINT: ${{ secrets.ENDPOINT }} 
+          #     INSTANCE1: ${{ secrets.INSTANCE1 }} 
+          #     INSTANCE2: ${{ secrets.INSTANCE2 }} 
+              
