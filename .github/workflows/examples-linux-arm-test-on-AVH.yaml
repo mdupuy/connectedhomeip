@@ -92,7 +92,7 @@ jobs:
             uses: actions/checkout@v2
           - name: Get OpenVPN
             run: |
-                sudo apt install netcat openvpn -y; mkdir -p /dev/net; mknod /dev/net/tun c 10 200; chmod 600 /dev/net/tun; /etc/init.d/openvpn restart
+                sudo apt install netcat openvpn -y; #mkdir -p /dev/net; mknod /dev/net/tun c 10 200; chmod 600 /dev/net/tun; /etc/init.d/openvpn restart
           - name: pull avh api util
             run: |
               git clone https://github.com/mdupuy/avhcli.git; ls avhcli
