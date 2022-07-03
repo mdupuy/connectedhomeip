@@ -146,7 +146,7 @@ async def main():
         chosenSoftware = software
         break
 
-    print('Creating a chip-test instance...')
+    print('Creating a chip-test instance 1...')
     api_response = await api_instance.v1_create_instance({
       "name": vmName,
       "project": projectId,
@@ -154,9 +154,9 @@ async def main():
       "os": chosenSoftware.version,
       "osbuild": chosenSoftware.buildid
     })
-    instance = api_response
+    instance1 = api_response
 
-    print('Creating a instance...')
+    print('Creating a instance 2...')
     api_response = await api_instance.v1_create_instance({
       "name": vmName2,
       "project": projectId,
@@ -166,13 +166,24 @@ async def main():
     })
     instance2 = api_response
 
+    print('Getting VPN Config...')
+    api_response = await api_instance.v1_projects_vpnconfig({
+      "project": projectId,
+      "format": ovpn
+    })
+    #instance2 = api_response
+
     error = None
     try:
       print('Waiting for VMs to create...')
-      await waitForState(instance, 'on')
+      await waitForState(instance1, 'on')
       await waitForState(instance2, 'on')
 
       print('Setting the VM to use the bsp test software')
+
+    #curl -s -X GET "$AVH_URL/projects/$PROJECT/vpnconfig/ovpn" \
+    #-H "Accept: application/json" \
+    #-H "Authorization: Bearer $BEARER" > $BASEDIR/avh.ovp
       #api_response = await api_instance.v1_create_image('fwbinary', 'plain', 
       #  name="IOT_HTTP_WebServer.elf",
       #  instance=instance.id,

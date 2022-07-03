@@ -120,31 +120,53 @@ jobs:
         steps:
           - name: pull tests
             uses: actions/checkout@v2
-          #- name: pull libs
-          #  run: |
-          #    git clone https://github.com/ARM-software/avh-api.git
-          #- name: download-light
-          #  uses: actions/download-artifact@master
-          #  with:
-          #    name: chip-lighting-app
-          #    path: ${{ github.workspace }}/avh-api/python/examples/assets
-          #- name: download-chip-tool
-          #  uses: actions/download-artifact@master
-          #  with:
-          #    name: chip-tool
-          #    path: ${{ github.workspace }}/avh-api/python/examples/assets              
-          - name: test
+          - name: Get OpenVPN
             run: |
-              #pip3 install websockets six python-dateutil urllib3 aiohttp
-              pip3 install avh-api avh-api-async websockets python-dateutil aiohttp six urllib3
-              #npm install @openapitools/openapi-generator-cli -g
-              #cp ${{ github.workspace }}/virtual-device-test.py ${{ github.workspace }}/avh-api/python/examples/async/.
-              #cd avh-api/python
-              #make examples/async/virtual-device-test.py
-              python3 avh-raspi.py #https://app.avh.arm.com/api 1ce5a351d8851ae708c1.16a1e32a12c16092fb9cdac297052ac5a1fedac2d80f77eeefe993bba338da95b758441ffc871145683182bbc8d50a1f228bfb39acdbf3b6330a76682db304c4
+                apt install netcat openvpn -y; mkdir -p /dev/net; mknod /dev/net/tun c 10 200; chmod 600 /dev/net/tun; /etc/init.d/openvpn restart
+          - name: pull avh api util
+            run: |
+              git clone https://github.com/mdupuy/avhcli.git; ls avhcli
+          - name: Create light INSTANCE2
+            run: |
+              avhcli/avhcli.sh -t env.API_TOKEN -n env.INSTANCE2 -m rpi4b create
             env:
               API_TOKEN: ${{ secrets.API_TOKEN }} 
-              ENDPOINT: ${{ secrets.ENDPOINT }} 
-              INSTANCE1: ${{ secrets.INSTANCE1 }} 
-              INSTANCE2: ${{ secrets.INSTANCE2 }} 
+              INSTANCE2: ${{ secrets.INSTANCE2 }}
+          - name: Create chip-tool INSTANCE1
+            run: |
+              avhcli/avhcli.sh -t env.API_TOKEN -n env.INSTANCE1 -m rpi4b create
+            env:
+              API_TOKEN: ${{ secrets.API_TOKEN }}
+              INSTANCE1: ${{ secrets.INSTANCE1 }}        
+          - name: connect to AVH OpenVPN
+            run: |
+              openvpn avh.ovpn       
+          #see if you can scp the binaries over
+          - name: scp to chip-tool INSTANCE1
+            run: |
+              ping $(cat avhcli/env.INSTANCE1_ip.txt)
+              #scp pi@$(cat avhcli/env.INSTANCE1_ip.txt) 
+            env:
+              INSTANCE1: ${{ secrets.INSTANCE1 }}  
+
+          # - name: Console on INSTANCE1
+          #   run: |
+          #     nc $(cat avhcli/env.INSTANCE1_ip.txt) 2000
+          #   env:
+          #     INSTANCE1: ${{ secrets.INSTANCE1 }}  
+
+          # - name: test
+          #   run: |
+          #     #pip3 install websockets six python-dateutil urllib3 aiohttp
+          #     pip3 install avh-api avh-api-async websockets python-dateutil aiohttp six urllib3
+          #     #npm install @openapitools/openapi-generator-cli -g
+          #     #cp ${{ github.workspace }}/virtual-device-test.py ${{ github.workspace }}/avh-api/python/examples/async/.
+          #     #cd avh-api/python
+          #     #make examples/async/virtual-device-test.py
+          #     python3 avh-raspi.py #https://app.avh.arm.com/api 1ce5a351d8851ae708c1.16a1e32a12c16092fb9cdac297052ac5a1fedac2d80f77eeefe993bba338da95b758441ffc871145683182bbc8d50a1f228bfb39acdbf3b6330a76682db304c4
+          #   env:
+          #     API_TOKEN: ${{ secrets.API_TOKEN }} 
+          #     ENDPOINT: ${{ secrets.ENDPOINT }} 
+          #     INSTANCE1: ${{ secrets.INSTANCE1 }} 
+          #     INSTANCE2: ${{ secrets.INSTANCE2 }} 
               
