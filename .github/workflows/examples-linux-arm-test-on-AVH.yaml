@@ -110,7 +110,7 @@ jobs:
               INSTANCE1: ${{ secrets.INSTANCE1 }}        
           - name: connect to AVH OpenVPN
             run: |
-              sudo openvpn avh.ovpn       
+              sudo openvpn avhcli/avh.ovpn       
           #see if you can scp the binaries over
           - name: scp to chip-tool INSTANCE1
             run: |
