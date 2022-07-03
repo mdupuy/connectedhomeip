@@ -92,19 +92,19 @@ jobs:
             uses: actions/checkout@v2
           - name: Get OpenVPN
             run: |
-                sudo apt install netcat openvpn -y; #mkdir -p /dev/net; mknod /dev/net/tun c 10 200; chmod 600 /dev/net/tun; /etc/init.d/openvpn restart
+                sudo apt install netcat openvpn -y
           - name: pull avh api util
             run: |
               git clone https://github.com/mdupuy/avhcli.git; ls avhcli
           - name: Create light INSTANCE2
             run: |
-              avhcli/avhcli.sh -t env.API_TOKEN -n env.INSTANCE2 -m rpi4b create
+              avhcli/avhcli.sh -t $API_TOKEN -n $INSTANCE2 -m rpi4b create
             env:
               API_TOKEN: ${{ secrets.API_TOKEN }} 
               INSTANCE2: ${{ secrets.INSTANCE2 }}
           - name: Create chip-tool INSTANCE1
             run: |
-              avhcli/avhcli.sh -t env.API_TOKEN -n env.INSTANCE1 -m rpi4b create
+              avhcli/avhcli.sh -t $API_TOKEN -n $INSTANCE1 -m rpi4b create
             env:
               API_TOKEN: ${{ secrets.API_TOKEN }}
               INSTANCE1: ${{ secrets.INSTANCE1 }}        
