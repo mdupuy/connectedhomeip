@@ -114,7 +114,7 @@ jobs:
    
           - name: Ping chip-tool INSTANCE1
             run: |
-              cat "./avhcli/$INSTANCE1_ip.txt";
+              cat "./avhcli/chip-tool_ip.txt";
             # env:
             #   INSTANCE1: ${{ secrets.INSTANCE1 }}   
 
