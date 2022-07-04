@@ -115,7 +115,7 @@ jobs:
           #see if you can scp the binaries over
           - name: scp to chip-tool INSTANCE1
             run: |
-              ping $(cat avhcli/env.INSTANCE1_ip.txt)
+              ping $(cat avhcli/$INSTANCE1_ip.txt)
               #scp pi@$(cat avhcli/env.INSTANCE1_ip.txt) 
             env:
               INSTANCE1: ${{ secrets.INSTANCE1 }}  
