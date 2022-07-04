@@ -114,7 +114,7 @@ jobs:
    
           - name: Ping $INSTANCE1
             run: |
-              # cat "./avhcli/$INSTANCE1_ip.txt";
+              cat "./avhcli/$INSTANCE1_ip.txt"; 
               cat "./avhcli/lighting-app_ip.txt";
               # ls "./avhcli/.avh/"
               # cat ./avhcli/.avh/$INSTANCE1.txt
@@ -129,7 +129,7 @@ jobs:
               echo $INSTANCE1;
               #cat "./avhcli/$INSTANCE1_ip.txt";
               #cat "./avhcli/chip-tool_ip.txt";
-              ping $(cat "./avhcli/chip-tool_ip.txt")
+              ping -c 3 $(cat "./avhcli/chip-tool_ip.txt")
               #scp pi@$(cat avhcli/env.INSTANCE1_ip.txt) 
             #env:
               #INSTANCE1: ${{ secrets.INSTANCE1 }}  
@@ -168,5 +168,5 @@ jobs:
           #   run: |
           #     sudo pkill openvpn
         env:
-              INSTANCE1: chip-tool
-              INSTANCE2: lighting-app            
+          INSTANCE1: chip-tool
+          INSTANCE2: lighting-app            
