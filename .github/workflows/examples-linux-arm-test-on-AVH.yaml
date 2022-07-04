@@ -88,8 +88,8 @@ jobs:
     virtual-device-test:
         runs-on: ubuntu-latest
         steps:
-          - name: pull tests
-            uses: actions/checkout@v2
+          # - name: pull tests
+          #   uses: actions/checkout@v2
           - name: Get OpenVPN
             run: |
                 sudo apt install netcat openvpn -y
@@ -115,6 +115,7 @@ jobs:
           #see if you can scp the binaries over
           - name: scp to chip-tool INSTANCE1
             run: |
+             ls ./avhcli/;
               cat "./avhcli/$INSTANCE1_ip.txt";
               ping $(cat "./avhcli/$INSTANCE1_ip.txt")
               #scp pi@$(cat avhcli/env.INSTANCE1_ip.txt) 
@@ -129,8 +130,8 @@ jobs:
 
           # - name: Create chip-tool INSTANCE1
           #   run: |
-          #     avhcli/avhcli.sh -t $API_TOKEN -n $INSTANCE1 -m rpi4b delete; \
-          #     avhcli/avhcli.sh -t $API_TOKEN -n $INSTANCE2 -m rpi4b delete
+          #     avhcli/avhcli.sh -t $API_TOKEN -n $INSTANCE1 -m rpi4b delete; 
+          #     #avhcli/avhcli.sh -t $API_TOKEN -n $INSTANCE2 -m rpi4b delete
           #   env:
           #     API_TOKEN: ${{ secrets.API_TOKEN }}
           #     INSTANCE1: ${{ secrets.INSTANCE1 }} 
