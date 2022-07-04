@@ -118,7 +118,7 @@ jobs:
                     retention-days: 5
     virtual-device-test:
         runs-on: ubuntu-latest
-        env:
+        env: 
           INSTANCE1: chip-tool
           INSTANCE2: lighting-app          
         steps:
