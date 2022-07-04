@@ -112,9 +112,10 @@ jobs:
             run: |
               sudo openvpn --config avhcli/avh.ovpn --daemon
    
-          - name: Ping $INSTANCE1
+          - name: Ping INSTANCE1
             run: |
-              cat "./avhcli/$INSTANCE1_ip.txt"; 
+              cat ./avhcli/$INSTANCE1_ip.txt; 
+              cat "./avhcli/lighting-app_ip.txt";
               cat "./avhcli/lighting-app_ip.txt";
               # ls "./avhcli/.avh/"
               # cat ./avhcli/.avh/$INSTANCE1.txt
