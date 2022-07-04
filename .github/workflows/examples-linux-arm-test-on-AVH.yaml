@@ -110,7 +110,8 @@ jobs:
               INSTANCE1: ${{ secrets.INSTANCE1 }}        
           - name: connect to AVH OpenVPN
             run: |
-              sudo openvpn avhcli/avh.ovpn       
+              sudo openvpn avhcli/avh.ovpn --daemon
+   
           #see if you can scp the binaries over
           - name: scp to chip-tool INSTANCE1
             run: |
@@ -125,7 +126,16 @@ jobs:
           #   env:
           #     INSTANCE1: ${{ secrets.INSTANCE1 }}  
 
-          # - name: test
+          # - name: Create chip-tool INSTANCE1
+          #   run: |
+          #     avhcli/avhcli.sh -t $API_TOKEN -n $INSTANCE1 -m rpi4b delete; \
+          #     avhcli/avhcli.sh -t $API_TOKEN -n $INSTANCE2 -m rpi4b delete
+          #   env:
+          #     API_TOKEN: ${{ secrets.API_TOKEN }}
+          #     INSTANCE1: ${{ secrets.INSTANCE1 }} 
+          #     INSTANCE2: ${{ secrets.INSTANCE1 }}  
+
+          # - name: python based test
           #   run: |
           #     #pip3 install websockets six python-dateutil urllib3 aiohttp
           #     pip3 install avh-api avh-api-async websockets python-dateutil aiohttp six urllib3
