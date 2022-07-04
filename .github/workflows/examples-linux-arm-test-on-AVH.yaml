@@ -117,8 +117,8 @@ jobs:
               ls ./avhcli/*.txt; \
               echo $INSTANCE1; \
               cat "./avhcli/chip-tool_ip.txt";
-            env:
-              INSTANCE1: ${{ secrets.INSTANCE1 }}   
+            # env:
+            #   INSTANCE1: ${{ secrets.INSTANCE1 }}   
 
           #see if you can scp the binaries over
           - name: scp to chip-tool INSTANCE1
