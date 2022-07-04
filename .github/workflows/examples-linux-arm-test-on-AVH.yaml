@@ -131,7 +131,7 @@ jobs:
               #cat "./avhcli/chip-tool_ip.txt";
               ping $(cat "./avhcli/$INSTANCE1_ip.txt")
               #scp pi@$(cat avhcli/env.INSTANCE1_ip.txt) 
-            env:
+            #env:
               #INSTANCE1: ${{ secrets.INSTANCE1 }}  
 
           # - name: Console on INSTANCE1
