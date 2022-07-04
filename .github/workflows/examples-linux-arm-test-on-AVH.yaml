@@ -117,6 +117,8 @@ jobs:
               cat "./avhcli/chip-tool_ip.txt";
               cat "./avhcli/lighting-app_ip.txt";
               ls "./avhcli/.avh/"
+              cat ./avhcli/.avh/chip-tool.txt
+              cat ./avhcli/.avh/lighting-app.txt              
             # env:
             #   INSTANCE1: ${{ secrets.INSTANCE1 }}   
 
