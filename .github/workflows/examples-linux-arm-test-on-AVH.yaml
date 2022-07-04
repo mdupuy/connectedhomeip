@@ -112,18 +112,18 @@ jobs:
             run: |
               sudo openvpn --config avhcli/avh.ovpn --daemon
    
-          - name: Ping chip-tool INSTANCE1
+          - name: Ping $INSTANCE1
             run: |
-              cat "./avhcli/chip-tool_ip.txt";
+              cat "./avhcli/$INSTANCE1_ip.txt";
               cat "./avhcli/lighting-app_ip.txt";
               ls "./avhcli/.avh/"
-              cat ./avhcli/.avh/chip-tool.txt
-              cat ./avhcli/.avh/lighting-app.txt              
+              cat ./avhcli/.avh/$INSTANCE1.txt
+              cat ./avhcli/.avh/$INSTANCE2.txt              
             # env:
             #   INSTANCE1: ${{ secrets.INSTANCE1 }}   
 
           #see if you can scp the binaries over
-          - name: scp to chip-tool INSTANCE1
+          - name: scp to $INSTANCE1
             run: |
               ls ./avhcli/*.txt;
               echo $INSTANCE1;
