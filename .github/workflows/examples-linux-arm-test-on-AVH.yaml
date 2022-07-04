@@ -89,7 +89,7 @@ jobs:
         runs-on: ubuntu-latest
         env:
           INSTANCE1: chip-tool
-          INSTANCE2: chip-lighting-app          
+          INSTANCE2: lighting-app          
         steps:
           # - name: pull tests
           #   uses: actions/checkout@v2
