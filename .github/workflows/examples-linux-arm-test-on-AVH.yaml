@@ -101,13 +101,15 @@ jobs:
               avhcli/avhcli.sh -t $API_TOKEN -n $INSTANCE2 -m rpi4b create
             env:
               API_TOKEN: ${{ secrets.API_TOKEN }} 
-              INSTANCE2: ${{ secrets.INSTANCE2 }}
+              #INSTANCE2: ${{ secrets.INSTANCE2 }}
           - name: Create chip-tool INSTANCE1
             run: |
+              INSTANCE1=chip-tool
+              INSTANCE2=lighting-app
               avhcli/avhcli.sh -t $API_TOKEN -n $INSTANCE1 -m rpi4b create
             env:
               API_TOKEN: ${{ secrets.API_TOKEN }}
-              INSTANCE1: ${{ secrets.INSTANCE1 }}        
+              #INSTANCE1: ${{ secrets.INSTANCE1 }}        
           - name: connect to AVH OpenVPN
             run: |
               sudo openvpn --config avhcli/avh.ovpn --daemon
@@ -130,7 +132,7 @@ jobs:
               ping $(cat "./avhcli/$INSTANCE1_ip.txt")
               #scp pi@$(cat avhcli/env.INSTANCE1_ip.txt) 
             env:
-              INSTANCE1: ${{ secrets.INSTANCE1 }}  
+              #INSTANCE1: ${{ secrets.INSTANCE1 }}  
 
           # - name: Console on INSTANCE1
           #   run: |
