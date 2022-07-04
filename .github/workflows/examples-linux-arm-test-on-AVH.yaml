@@ -87,6 +87,9 @@ jobs:
     #     #             path: ${{ github.workspace }}/out/linux-arm64-chip-tool-no-interactive/chip-tool
     virtual-device-test:
         runs-on: ubuntu-latest
+        env:
+          INSTANCE1: chip-tool
+          INSTANCE2: lighting-app           
         steps:
           # - name: pull tests
           #   uses: actions/checkout@v2
@@ -96,13 +99,13 @@ jobs:
           - name: pull avh api util
             run: |
               git clone https://github.com/mdupuy/avhcli.git; ls avhcli
-          - name: Create light INSTANCE2
+          - name: Create light ${{ env.INSTANCE2 }}
             run: |             
               avhcli/avhcli.sh -t $API_TOKEN -n $INSTANCE2 -m rpi4b create
             env:
               API_TOKEN: ${{ secrets.API_TOKEN }} 
             #  INSTANCE2: ${{ secrets.INSTANCE2 }}
-          - name: Create chip-tool INSTANCE1
+          - name: Create chip-tool ${{ env.INSTANCE1 }}
             run: |
               avhcli/avhcli.sh -t $API_TOKEN -n $INSTANCE1 -m rpi4b create
             env:
@@ -168,6 +171,6 @@ jobs:
           # - name: closing VPN conncections
           #   run: |
           #     sudo pkill openvpn
-        env:
-          INSTANCE1: chip-tool
-          INSTANCE2: lighting-app            
+        # env:
+        #   INSTANCE1: chip-tool
+        #   INSTANCE2: lighting-app            
