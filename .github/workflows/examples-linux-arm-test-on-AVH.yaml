@@ -116,7 +116,8 @@ jobs:
           - name: scp to chip-tool INSTANCE1
             run: |
              ls ./avhcli/;
-              cat "./avhcli/$INSTANCE1_ip.txt";
+              #cat "./avhcli/$INSTANCE1_ip.txt";
+              cat "./avhcli/chip-tool_ip.txt";
               ping $(cat "./avhcli/$INSTANCE1_ip.txt")
               #scp pi@$(cat avhcli/env.INSTANCE1_ip.txt) 
             env:
