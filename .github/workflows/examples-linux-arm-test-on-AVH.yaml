@@ -89,10 +89,20 @@ jobs:
         runs-on: ubuntu-latest
         env:
           INSTANCE1: chip-tool
-          INSTANCE2: lighting-app           
+          INSTANCE2: chip-lighting-app          
         steps:
           # - name: pull tests
           #   uses: actions/checkout@v2
+          - name: download ${{ env.INSTANCE1 }}
+            uses: actions/download-artifact@master
+            with:
+              name: ${{ env.INSTANCE1 }}
+              path: ${{ github.workspace }}/        
+          - name: download ${{ env.INSTANCE2 }}
+            uses: actions/download-artifact@master
+            with:
+              name: ${{ env.INSTANCE2 }}
+              path: ${{ github.workspace }}/                   
           - name: Get OpenVPN
             run: |
                 sudo apt install openvpn -y #netcat
@@ -113,28 +123,12 @@ jobs:
               #INSTANCE1: ${{ secrets.INSTANCE1 }}        
           - name: connect to AVH OpenVPN
             run: |
-              sudo openvpn --config avhcli/avh.ovpn --daemon
-   
-          - name: Ping INSTANCE1
-            run: |
-              cat ./avhcli/${{ env.INSTANCE1 }}_ip.txt; 
-              cat "./avhcli/lighting-app_ip.txt";
-              cat "./avhcli/lighting-app_ip.txt";
-              # ls "./avhcli/.avh/"
-              # cat ./avhcli/.avh/$INSTANCE1.txt
-              # cat ./avhcli/.avh/$INSTANCE2.txt              
-            # env:
-            #   INSTANCE1: ${{ secrets.INSTANCE1 }}   
-
+              sudo openvpn --config avhcli/avh.ovpn --daemon 
           #see if you can scp the binaries over
-          - name: scp to $INSTANCE1
+          - name: scp to ${{ env.INSTANCE1 }}
             run: |
-              ls ./avhcli/*.txt;
-              echo $INSTANCE1;
-              #cat "./avhcli/$INSTANCE1_ip.txt";
-              #cat "./avhcli/chip-tool_ip.txt";
-              ping -c 3 $(cat "./avhcli/chip-tool_ip.txt")
-              #scp pi@$(cat avhcli/env.INSTANCE1_ip.txt) 
+              ping -c 3 $(cat "./avhcli/${{ env.INSTANCE1 }}_ip.txt")
+              #scp pi@$(cat avhcli/${{ env.INSTANCE1 }}_ip.txt) 
             #env:
               #INSTANCE1: ${{ secrets.INSTANCE1 }}  
 
