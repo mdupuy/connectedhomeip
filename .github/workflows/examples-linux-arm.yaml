@@ -108,12 +108,14 @@ jobs:
               with:
                     name: lighting-app
                     path: ${{ github.workspace }}/out/linux-arm64-light/chip-lighting-app
+                    retention-days: 5
                     #path: out/linux-arm64-light/chip-lighting-app
             - name: upload-tool
               uses: actions/upload-artifact@master
               with:
                     name: chip-tool
                     path: ${{ github.workspace }}/out/linux-arm64-chip-tool-no-interactive/chip-tool
+                    retention-days: 5
     # virtual-device-test:
     #     runs-on: ubuntu-latest
     #     needs: arm_crosscompile
