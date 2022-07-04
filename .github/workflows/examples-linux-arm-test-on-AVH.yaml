@@ -97,9 +97,7 @@ jobs:
             run: |
               git clone https://github.com/mdupuy/avhcli.git; ls avhcli
           - name: Create light INSTANCE2
-            run: |
-              INSTANCE1=chip-tool
-              INSTANCE2=lighting-app              
+            run: |             
               avhcli/avhcli.sh -t $API_TOKEN -n $INSTANCE2 -m rpi4b create
             env:
               API_TOKEN: ${{ secrets.API_TOKEN }} 
@@ -167,3 +165,6 @@ jobs:
           # - name: closing VPN conncections
           #   run: |
           #     sudo pkill openvpn
+        env:
+              INSTANCE1: chip-tool
+              INSTANCE2: lighting-app            
