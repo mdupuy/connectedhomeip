@@ -92,7 +92,7 @@ jobs:
           #   uses: actions/checkout@v2
           - name: Get OpenVPN
             run: |
-                sudo apt install netcat openvpn -y
+                sudo apt install openvpn -y #netcat
           - name: pull avh api util
             run: |
               git clone https://github.com/mdupuy/avhcli.git; ls avhcli
@@ -112,11 +112,18 @@ jobs:
             run: |
               sudo openvpn --config avhcli/avh.ovpn --daemon
    
+          - name: Ping chip-tool INSTANCE1
+            run: |
+              ls ./avhcli/*.txt;
+              cat "./avhcli/chip-tool_ip.txt"
+            env:
+              INSTANCE1: ${{ secrets.INSTANCE1 }}   
+
           #see if you can scp the binaries over
           - name: scp to chip-tool INSTANCE1
             run: |
               ls ./avhcli/*.txt;
-              echo $$INSTANCE1;
+              echo $INSTANCE1;
               #cat "./avhcli/$INSTANCE1_ip.txt";
               cat "./avhcli/chip-tool_ip.txt";
               ping $(cat "./avhcli/$INSTANCE1_ip.txt")
