@@ -126,7 +126,7 @@ jobs:
               ls ./avhcli/*.txt;
               echo $INSTANCE1;
               #cat "./avhcli/$INSTANCE1_ip.txt";
-              cat "./avhcli/chip-tool_ip.txt";
+              #cat "./avhcli/chip-tool_ip.txt";
               ping $(cat "./avhcli/$INSTANCE1_ip.txt")
               #scp pi@$(cat avhcli/env.INSTANCE1_ip.txt) 
             env:
@@ -162,3 +162,6 @@ jobs:
           #     INSTANCE1: ${{ secrets.INSTANCE1 }} 
           #     INSTANCE2: ${{ secrets.INSTANCE2 }} 
               
+          # - name: closing VPN conncections
+          #   run: |
+          #     sudo pkill openvpn
