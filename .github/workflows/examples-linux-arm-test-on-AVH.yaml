@@ -117,7 +117,8 @@ jobs:
               path: ${{ github.workspace }}                                      
           - name: Get OpenVPN
             run: |
-                sudo apt install openvpn -y #netcat
+                sudo apt install openvpn netcat -y
+                npm i websocat
           - name: pull avh api util
             run: |
               git clone https://github.com/mdupuy/avhcli.git; ls avhcli
@@ -140,6 +141,7 @@ jobs:
           - name: scp to ${{ env.INSTANCE1 }}
             run: |
               ping -c 3 $(cat "./avhcli/${{ env.INSTANCE1 }}_ip.txt")
+              ls 
               #scp pi@$(cat avhcli/${{ env.INSTANCE1 }}_ip.txt) 
             #env:
               #INSTANCE1: ${{ secrets.INSTANCE1 }}  
