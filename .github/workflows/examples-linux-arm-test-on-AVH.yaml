@@ -93,16 +93,28 @@ jobs:
         steps:
           # - name: pull tests
           #   uses: actions/checkout@v2
-          - name: download ${{ env.INSTANCE1 }}
-            uses: actions/download-artifact@master
+          # - name: download ${{ env.INSTANCE1 }}
+          #   uses: actions/download-artifact@master
+          #   with:
+          #     name: ${{ env.INSTANCE1 }}
+          #     path: ${{ github.workspace }}/        
+          # - name: download ${{ env.INSTANCE2 }}
+          #   uses: actions/download-artifact@master
+          #   with:
+          #     name: ${{ env.INSTANCE2 }}
+          #     path: ${{ github.workspace }}/      
+          - name: Download artifact ${{ env.INSTANCE1 }}
+            uses: dawidd6/action-download-artifact@v2
             with:
+              workflow: examples-linux-arm.yaml
               name: ${{ env.INSTANCE1 }}
-              path: ${{ github.workspace }}/        
-          - name: download ${{ env.INSTANCE2 }}
-            uses: actions/download-artifact@master
+              path: ${{ github.workspace }}
+          - name: Download artifact ${{ env.INSTANCE2 }}
+            uses: dawidd6/action-download-artifact@v2
             with:
+              workflow: examples-linux-arm.yaml
               name: ${{ env.INSTANCE2 }}
-              path: ${{ github.workspace }}/                   
+              path: ${{ github.workspace }}                                      
           - name: Get OpenVPN
             run: |
                 sudo apt install openvpn -y #netcat
