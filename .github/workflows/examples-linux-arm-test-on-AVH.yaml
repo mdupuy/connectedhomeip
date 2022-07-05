@@ -89,7 +89,9 @@ jobs:
         runs-on: ubuntu-latest
         env:
           INSTANCE1: chip-tool
-          INSTANCE2: lighting-app          
+          INSTANCE2: lighting-app
+          ENDPOINT: https://app.avh.arm.com/api   
+          API_TOKEN: ${{ secrets.API_TOKEN }}   
         steps:
           # - name: pull tests
           #   uses: actions/checkout@v2
@@ -125,15 +127,9 @@ jobs:
           - name: Create ${{ env.INSTANCE2 }}
             run: |             
               avhcli/avhcli.sh -t $API_TOKEN -n $INSTANCE2 -m rpi4b create
-            env:
-              API_TOKEN: ${{ secrets.API_TOKEN }} 
-            #  INSTANCE2: ${{ secrets.INSTANCE2 }}
           - name: Create ${{ env.INSTANCE1 }}
             run: |
-              avhcli/avhcli.sh -t $API_TOKEN -n $INSTANCE1 -m rpi4b create
-            env:
-              API_TOKEN: ${{ secrets.API_TOKEN }}
-              #INSTANCE1: ${{ secrets.INSTANCE1 }}        
+              avhcli/avhcli.sh -t $API_TOKEN -n $INSTANCE1 -m rpi4b create      
           - name: connect to AVH OpenVPN
             run: |
               sudo openvpn --config avhcli/avh.ovpn --daemon 
@@ -141,12 +137,13 @@ jobs:
           - name: scp to ${{ env.INSTANCE1 }}
             run: |
               ln -s node_modules/websocat/websocat_amd64-linux-static websocat
-              #echo Logging into ${{ env.INSTANCE2 }}
-              #echo pi | nc $(cat "./avhcli/${{ env.INSTANCE2 }}_ip.txt") 2000
-              #echo raspberry | nc $(cat "./avhcli/${{ env.INSTANCE2 }}_ip.txt") 2000
+              echo Logging into ${{ env.INSTANCE2 }}
+              echo pi | nc $(cat -q 0 "./avhcli/${{ env.INSTANCE2 }}_ip.txt") 2000
+              echo raspberry | nc -q 0 $(cat "./avhcli/${{ env.INSTANCE2 }}_ip.txt") 2000
               echo Logging into ${{ env.INSTANCE1 }}
               echo pi | ./websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt")
               echo raspberry | ./websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt")
+              #python3 web_socket_test.py ${{ env.ENDPOINT }} $API_TOKEN
               #ping -c 3 $(cat "./avhcli/${{ env.INSTANCE1 }}_ip.txt")
               #scp pi@$(cat avhcli/${{ env.INSTANCE1 }}_ip.txt) 
             #env:
