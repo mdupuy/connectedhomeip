@@ -119,8 +119,8 @@ jobs:
               path: ${{ github.workspace }}                                      
           - name: Get OpenVPN
             run: |
-                sudo apt install openvpn -y #netcat
-                npm i websocat
+                sudo apt install openvpn sshpass -y #netcat
+                #npm i websocat
           - name: pull avh api util
             run: |
               git clone https://github.com/mdupuy/avhcli.git; ls avhcli
@@ -136,16 +136,15 @@ jobs:
           #see if you can scp the binaries over
           - name: scp to ${{ env.INSTANCE1 }}
             run: |
-              ln -s node_modules/websocat/websocat_amd64-linux-static websocat
-              echo Logging into ${{ env.INSTANCE1 }}
-              echo pi | ./websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt")
-              echo raspberry | ./websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt")  
-              echo Logging into ${{ env.INSTANCE2 }}
-              echo pi | ./websocat $(cat "./avhcli/${{ env.INSTANCE2 }}_console.txt")
-              echo raspberry | ./websocat $(cat "./avhcli/${{ env.INSTANCE2 }}_console.txt")             
+                sshpass -p raspberry ssh pi@$(cat "./avhcli/${{ env.INSTANCE1 }}_ip.txt") ls
+              # ln -s node_modules/websocat/websocat_amd64-linux-static websocat
+              # echo Logging into ${{ env.INSTANCE1 }}
+              # echo pi | ./websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt")
+              # echo raspberry | ./websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt")  
+              # echo Logging into ${{ env.INSTANCE2 }}
+              # echo pi | ./websocat $(cat "./avhcli/${{ env.INSTANCE2 }}_console.txt")
+              # echo raspberry | ./websocat $(cat "./avhcli/${{ env.INSTANCE2 }}_console.txt")             
               
-              echo "ls -a"| ./websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt")
-
               # ws.py $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt") pi n
               # ws.py $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt") raspberry n
               # echo pi | nc -q 0 $(cat "./avhcli/${{ env.INSTANCE2 }}_ip.txt") 2000
