@@ -150,7 +150,8 @@ jobs:
               sshpass -p raspberry scp -o StrictHostKeyChecking=no ${{ env.INSTANCE2 }} pi@$(cat "./avhcli/${{ env.INSTANCE2 }}_lan_ip.txt"):~/
               sshpass -p raspberry ssh -o StrictHostKeyChecking=no pi@$(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt") chmod 755 ${{ env.INSTANCE1 }}
 
-              echo Logging into consoles
+              ln -s node_modules/websocat/websocat_amd64-linux-static websocat
+              echo Logging into consoles via web sockets
               echo pi | ./websocat $(cat "./avhcli/${{ env.INSTANCE2 }}_console.txt")
               echo raspberry | ./websocat $(cat "./avhcli/${{ env.INSTANCE2 }}_console.txt")
               echo pi | ./websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt")
