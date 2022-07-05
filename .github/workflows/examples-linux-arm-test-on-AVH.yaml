@@ -119,7 +119,7 @@ jobs:
               path: ${{ github.workspace }}                                      
           - name: Get OpenVPN
             run: |
-                sudo apt install openvpn sshpass nmap -y #netcat
+                sudo apt install openvpn sshpass -y #netcat
                 #npm i websocat
           - name: pull avh api util
             run: |
@@ -136,9 +136,9 @@ jobs:
           #see if you can scp the binaries over
           - name: scp to ${{ env.INSTANCE1 }}
             run: |
-              ping -c 4 $(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt")
-              cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt"
-              sudo nmap -sS $(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt")
+              ping -c 10 $(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt")
+              #cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt"
+              #sudo nmap -sS $(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt")
 
               sshpass -p raspberry ssh pi@$(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt") ls
               #sshpass -p raspberry scp -r pi@$(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt") ${{ env.INSTANCE1 }}
