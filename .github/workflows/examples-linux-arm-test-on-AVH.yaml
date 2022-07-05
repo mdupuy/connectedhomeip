@@ -138,9 +138,8 @@ jobs:
             run: |
 
               #sshpass -p raspberry ssh -o StrictHostKeyChecking=no pi@$(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt") ls
-              sshpass -p raspberry scp -o StrictHostKeyChecking=no pi@$(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt") ${{ env.INSTANCE1 }}
-              sshpass -p raspberry scp -o StrictHostKeyChecking=no pi@$(cat "./avhcli/${{ env.INSTANCE2 }}_lan_ip.txt") ${{ env.INSTANCE2 }}
-
+              sshpass -p raspberry scp -o StrictHostKeyChecking=no ${{ env.INSTANCE1 }} pi@$(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt"):~/
+              sshpass -p raspberry scp -o StrictHostKeyChecking=no ${{ env.INSTANCE2 }} pi@$(cat "./avhcli/${{ env.INSTANCE2 }}_lan_ip.txt"):~/
               # ping -c 3 $(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt")
               # ssh-keygen -f ./key -t ed25519 -q -N ""
               # ln -s node_modules/websocat/websocat_amd64-linux-static websocat
