@@ -136,15 +136,24 @@ jobs:
           #see if you can scp the binaries over
           - name: scp to ${{ env.INSTANCE1 }}
             run: |
-                sshpass -p raspberry ssh pi@$(cat "./avhcli/${{ env.INSTANCE1 }}_ip.txt") ls
+              sshpass -p raspberry ssh pi@$(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt") ls
+              sshpass -p "raspberry" scp -r pi@$(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt") ${{ env.INSTANCE1 }}
+              sshpass -p "raspberry" scp -r pi@$(cat "./avhcli/${{ env.INSTANCE2 }}_lan_ip.txt") ${{ env.INSTANCE2 }}
+
+              # ping -c 3 $(cat "./avhcli/${{ env.INSTANCE1 }}_ip.txt")
+              # ssh-keygen -f ./key -t ed25519 -q -N ""
               # ln -s node_modules/websocat/websocat_amd64-linux-static websocat
               # echo Logging into ${{ env.INSTANCE1 }}
               # echo pi | ./websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt")
-              # echo raspberry | ./websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt")  
+              # echo raspberry | ./websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt") 
+              # echo "mkdir .ssh"| ./websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt") 
+              # echo "echo $(cat key.pub) > .ssh/authorized_keys" |websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt")
+               
               # echo Logging into ${{ env.INSTANCE2 }}
               # echo pi | ./websocat $(cat "./avhcli/${{ env.INSTANCE2 }}_console.txt")
               # echo raspberry | ./websocat $(cat "./avhcli/${{ env.INSTANCE2 }}_console.txt")             
               
+              # sshpass -p raspberry ssh pi@$(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt") ls
               # ws.py $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt") pi n
               # ws.py $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt") raspberry n
               # echo pi | nc -q 0 $(cat "./avhcli/${{ env.INSTANCE2 }}_ip.txt") 2000
