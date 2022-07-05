@@ -138,17 +138,20 @@ jobs:
             run: |
               ln -s node_modules/websocat/websocat_amd64-linux-static websocat
               echo Logging into ${{ env.INSTANCE1 }}
+              echo pi | ./websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt")
+              echo raspberry | ./websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt")  
+              echo Logging into ${{ env.INSTANCE2 }}
+              echo pi | ./websocat $(cat "./avhcli/${{ env.INSTANCE2 }}_console.txt")
+              echo raspberry | ./websocat $(cat "./avhcli/${{ env.INSTANCE2 }}_console.txt")             
               
+              echo "ls -a"| ./websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt")
+
               # ws.py $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt") pi n
               # ws.py $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt") raspberry n
               # echo pi | nc -q 0 $(cat "./avhcli/${{ env.INSTANCE2 }}_ip.txt") 2000
               # echo raspberry | nc -q 0 $(cat "./avhcli/${{ env.INSTANCE2 }}_ip.txt") 2000
-              # echo Logging into ${{ env.INSTANCE1 }}
-              echo pi | ./websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt")
-              echo raspberry | ./websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt")
-              #python3 web_socket_test.py ${{ env.ENDPOINT }} $API_TOKEN
-
-              #ping -c 3 $(cat "./avhcli/${{ env.INSTANCE1 }}_ip.txt")
+              # python3 web_socket_test.py ${{ env.ENDPOINT }} $API_TOKEN
+              # ping -c 3 $(cat "./avhcli/${{ env.INSTANCE1 }}_ip.txt")
               #scp pi@$(cat avhcli/${{ env.INSTANCE1 }}_ip.txt) 
             #env:
               #INSTANCE1: ${{ secrets.INSTANCE1 }}  
