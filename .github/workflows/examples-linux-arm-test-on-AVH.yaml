@@ -136,13 +136,10 @@ jobs:
           #see if you can scp the binaries over
           - name: scp to ${{ env.INSTANCE1 }}
             run: |
-              ping -c 10 $(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt")
-              #cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt"
-              #sudo nmap -sS $(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt")
 
-              sshpass -p raspberry ssh -o StrictHostKeyChecking=no pi@$(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt") ls
-              #sshpass -p raspberry scp -r pi@$(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt") ${{ env.INSTANCE1 }}
-              #sshpass -p raspberry scp -r pi@$(cat "./avhcli/${{ env.INSTANCE2 }}_lan_ip.txt") ${{ env.INSTANCE2 }}
+              #sshpass -p raspberry ssh -o StrictHostKeyChecking=no pi@$(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt") ls
+              sshpass -p raspberry scp -o StrictHostKeyChecking=no pi@$(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt") ${{ env.INSTANCE1 }}
+              sshpass -p raspberry scp -o StrictHostKeyChecking=no pi@$(cat "./avhcli/${{ env.INSTANCE2 }}_lan_ip.txt") ${{ env.INSTANCE2 }}
 
               # ping -c 3 $(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt")
               # ssh-keygen -f ./key -t ed25519 -q -N ""
