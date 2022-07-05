@@ -138,6 +138,7 @@ jobs:
             run: |
               ln -s node_modules/websocat/websocat_amd64-linux-static websocat
               echo Logging into ${{ env.INSTANCE2 }}
+              nc 10.11.1.4 2000
               echo pi | nc -q 0 $(cat "./avhcli/${{ env.INSTANCE2 }}_ip.txt") 2000
               echo "No Password"
               echo raspberry | nc -q 0 $(cat "./avhcli/${{ env.INSTANCE2 }}_ip.txt") 2000
