@@ -138,7 +138,7 @@ jobs:
             run: |
               ln -s node_modules/websocat/websocat_amd64-linux-static websocat
               echo Logging into ${{ env.INSTANCE2 }}
-              echo pi | nc $(cat -q 0 "./avhcli/${{ env.INSTANCE2 }}_ip.txt") 2000
+              echo pi | nc -q 0 $(cat "./avhcli/${{ env.INSTANCE2 }}_ip.txt") 2000
               echo raspberry | nc -q 0 $(cat "./avhcli/${{ env.INSTANCE2 }}_ip.txt") 2000
               echo Logging into ${{ env.INSTANCE1 }}
               echo pi | ./websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt")
