@@ -140,8 +140,15 @@ jobs:
           #see if you can scp the binaries over
           - name: scp to ${{ env.INSTANCE1 }}
             run: |
-              ping -c 3 $(cat "./avhcli/${{ env.INSTANCE1 }}_ip.txt")
-              ls 
+              #ping -c 3 $(cat "./avhcli/${{ env.INSTANCE1 }}_ip.txt")
+              ln -s node_modules/websocat/websocat_amd64-linux-static websocat
+              echo Logging into ${{ env.INSTANCE2 }}
+              echo pi | nc $(cat "./avhcli/${{ env.INSTANCE2 }}_ip.txt") 2000
+              echo raspberry | nc $(cat "./avhcli/${{ env.INSTANCE2 }}_ip.txt") 2000
+              echo Logging into ${{ env.INSTANCE1 }}
+              echo pi | websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt"
+              echo raspberry | websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt"
+
               #scp pi@$(cat avhcli/${{ env.INSTANCE1 }}_ip.txt) 
             #env:
               #INSTANCE1: ${{ secrets.INSTANCE1 }}  
