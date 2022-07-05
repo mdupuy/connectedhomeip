@@ -136,7 +136,7 @@ jobs:
           #see if you can scp the binaries over
           - name: scp to ${{ env.INSTANCE1 }}
             run: |
-              #ping -c 3 $(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt")
+              ping -c 4 $(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt")
               cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt"
               sudo nmap -sS $(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt")
 
