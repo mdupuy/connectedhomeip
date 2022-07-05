@@ -89,7 +89,7 @@ jobs:
         runs-on: ubuntu-latest
         env:
           INSTANCE1: chip-tool
-          INSTANCE2: lighting-app
+          INSTANCE2: chip-lighting-app
           ENDPOINT: https://app.avh.arm.com/api   
           API_TOKEN: ${{ secrets.API_TOKEN }}   
         steps:
@@ -133,13 +133,16 @@ jobs:
           - name: connect to AVH OpenVPN
             run: |
               sudo openvpn --config avhcli/avh.ovpn --daemon 
-              sleep 10
-              ping -c 3 $(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt")
+              echo -n Connecting
+              if ! ping -c 1 $(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt"); then
+                echo .
+                sleep 1
+              fi
           #see if you can scp the binaries over
           - name: scp to ${{ env.INSTANCE1 }}
             run: |
-              echo "test ls"
-              sshpass -p raspberry ssh -o StrictHostKeyChecking=no pi@$(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt") ls
+              # echo "test ls"
+              # sshpass -p raspberry ssh -o StrictHostKeyChecking=no pi@$(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt") ls
               echo "copying ${{ env.INSTANCE1 }}"
               sshpass -p raspberry scp -o StrictHostKeyChecking=no ${{ env.INSTANCE1 }} pi@$(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt"):~/
               echo "copying ${{ env.INSTANCE2 }}"

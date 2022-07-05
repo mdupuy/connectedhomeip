@@ -106,7 +106,7 @@ jobs:
             - name: upload-light
               uses: actions/upload-artifact@master
               with:
-                    name: lighting-app
+                    name: chip-lighting-app
                     path: ${{ github.workspace }}/out/linux-arm64-light/chip-lighting-app
                     retention-days: 5
                     #path: out/linux-arm64-light/chip-lighting-app
