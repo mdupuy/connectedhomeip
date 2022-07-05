@@ -145,8 +145,8 @@ jobs:
               #echo pi | nc $(cat "./avhcli/${{ env.INSTANCE2 }}_ip.txt") 2000
               #echo raspberry | nc $(cat "./avhcli/${{ env.INSTANCE2 }}_ip.txt") 2000
               echo Logging into ${{ env.INSTANCE1 }}
-              echo pi | websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt")
-              echo raspberry | websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt")
+              echo pi | ./websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt")
+              echo raspberry | ./websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt")
               #ping -c 3 $(cat "./avhcli/${{ env.INSTANCE1 }}_ip.txt")
               #scp pi@$(cat avhcli/${{ env.INSTANCE1 }}_ip.txt) 
             #env:
