@@ -120,7 +120,7 @@ jobs:
           - name: Get OpenVPN
             run: |
                 sudo apt install openvpn -y #netcat
-                #npm i websocat
+                npm i websocat
           - name: pull avh api util
             run: |
               git clone https://github.com/mdupuy/avhcli.git; ls avhcli
@@ -136,19 +136,18 @@ jobs:
           #see if you can scp the binaries over
           - name: scp to ${{ env.INSTANCE1 }}
             run: |
+              ln -s node_modules/websocat/websocat_amd64-linux-static websocat
               echo Logging into ${{ env.INSTANCE1 }}
-              ws.py $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt") pi n
-              ws.py $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt") raspberry n
               
-              #nc 10.11.1.4 2000
+              # ws.py $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt") pi n
+              # ws.py $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt") raspberry n
               # echo pi | nc -q 0 $(cat "./avhcli/${{ env.INSTANCE2 }}_ip.txt") 2000
-              # echo "No Password"
               # echo raspberry | nc -q 0 $(cat "./avhcli/${{ env.INSTANCE2 }}_ip.txt") 2000
               # echo Logging into ${{ env.INSTANCE1 }}
-              # echo pi | ./websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt")
-              # echo raspberry | ./websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt")
+              echo pi | ./websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt")
+              echo raspberry | ./websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt")
               #python3 web_socket_test.py ${{ env.ENDPOINT }} $API_TOKEN
-              #ln -s node_modules/websocat/websocat_amd64-linux-static websocat
+
               #ping -c 3 $(cat "./avhcli/${{ env.INSTANCE1 }}_ip.txt")
               #scp pi@$(cat avhcli/${{ env.INSTANCE1 }}_ip.txt) 
             #env:
