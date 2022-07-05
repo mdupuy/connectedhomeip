@@ -124,10 +124,10 @@ jobs:
           - name: pull avh api util
             run: |
               git clone https://github.com/mdupuy/avhcli.git; ls avhcli
-          - name: Create ${{ env.INSTANCE2 }}
+          - name: Create ${{ env.INSTANCE2 }} instance on AVH
             run: |             
               avhcli/avhcli.sh -t $API_TOKEN -n $INSTANCE2 -m rpi4b create
-          - name: Create ${{ env.INSTANCE1 }}
+          - name: Create ${{ env.INSTANCE1 }} instance on AVH
             run: |
               avhcli/avhcli.sh -t $API_TOKEN -n $INSTANCE1 -m rpi4b create      
           - name: connect to AVH OpenVPN
@@ -142,7 +142,7 @@ jobs:
               sshpass -p raspberry scp -o StrictHostKeyChecking=no ${{ env.INSTANCE1 }} pi@$(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt"):~/
               echo "copying ${{ env.INSTANCE2 }}"
               sshpass -p raspberry scp -o StrictHostKeyChecking=no ${{ env.INSTANCE2 }} pi@$(cat "./avhcli/${{ env.INSTANCE2 }}_lan_ip.txt"):~/
-              
+
               # ping -c 3 $(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt")
               # ssh-keygen -f ./key -t ed25519 -q -N ""
               # ln -s node_modules/websocat/websocat_amd64-linux-static websocat
