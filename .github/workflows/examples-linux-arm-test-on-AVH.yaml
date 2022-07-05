@@ -140,7 +140,7 @@ jobs:
               #cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt"
               #sudo nmap -sS $(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt")
 
-              sshpass -p raspberry ssh pi@$(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt") ls
+              sshpass -p raspberry ssh -o StrictHostKeyChecking=no pi@$(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt") ls
               #sshpass -p raspberry scp -r pi@$(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt") ${{ env.INSTANCE1 }}
               #sshpass -p raspberry scp -r pi@$(cat "./avhcli/${{ env.INSTANCE2 }}_lan_ip.txt") ${{ env.INSTANCE2 }}
 
