@@ -153,12 +153,16 @@ jobs:
             run: |
               chmod 755 ws.py
               chmod 755 web_socket_light_test.py
+              chmod 755 web_socket_chip_tool_test.py
 
               #Async websocket script that logs in and watches for command line feedback
               echo Starting light
               ./web_socket_light_test.py $(cat "./avhcli/${{ env.INSTANCE2 }}_console.txt")
 
-              echo Logging into instances
+              # echo Provisioning and power cycling
+              # ./web_socket_chip_tool_test.py $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt")
+
+              echo Logging into instances ${{ env.INSTANCE1 }}
               ./ws.py $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt") pi n
               ./ws.py $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt") raspberry n
               sleep 5
@@ -171,6 +175,7 @@ jobs:
               sleep 20
               echo Light off
               ./ws.py $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt") "./chip-tool onoff off 0x11 1" n
+              sleep 20
 
               #---------------------------------------------------------------------------------------------------
               # ln -s node_modules/websocat/websocat_amd64-linux-static websocat
@@ -222,8 +227,10 @@ jobs:
           - name: Deleting ${{ env.INSTANCE1 }} and ${{ env.INSTANCE2 }} 
             run: | 
               echo deleting...
+              avhcli/avhcli.sh -t $API_TOKEN -n $INSTANCE1 -m rpi4b stop
+              avhcli/avhcli.sh -t $API_TOKEN -n $INSTANCE2 -m rpi4b stop
               #avhcli/avhcli.sh -t $API_TOKEN -n $INSTANCE1 -m rpi4b delete
-              #avhcli/avhcli.sh -t $API_TOKEN -n $INSTANCE2 -m rpi4b delete
+              #avhcli/avhcli.sh -t $API_TOKEN -n $INSTANCE2 -m rpi4b delete              
           # - name: Console on INSTANCE1
           #   run: |
           #     nc $(cat avhcli/env.INSTANCE1_ip.txt) 2000

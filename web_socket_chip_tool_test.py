@@ -39,12 +39,22 @@ async def configureInstance():
         return True
     elif stage == 2:
       # Ensure network is connected, then kick off package installations
-      match = re.match(r'(?:.*(pi\@raspberrypi:~\$))', text)
+      match = re.match(r'(?:.*(pi\@raspberrypi:~\$)|.*(CHIP task running).*(pi\@raspberrypi:~\$))', text)
       if (match):
         if (match[1]):
-          await asyncio.sleep(1)
-          await console.send('./chip-lighting-app\n')
-          stage += 1
+          await asyncio.sleep(10)
+          print("Provisioning (note sometime this command needs to be run twice)")
+          await console.send('./chip-tool pairing onnetwork-long 0x11 20202021 3840\n')
+        elif match[2]:
+            await asyncio.sleep(5)
+        elif match[3]:
+            print("Turning light on")
+            await console.send('./chip-tool onoff on 0x11 1\n')
+            await asyncio.sleep(20)
+            print("Turning light off")
+            await console.send('./chip-tool onoff off 0x11 1\n')            
+            stage += 1
+        return True
     else:
         done = True
     return False
