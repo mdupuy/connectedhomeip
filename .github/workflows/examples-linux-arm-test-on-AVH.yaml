@@ -162,7 +162,7 @@ jobs:
               ./ws.py $(cat "./avhcli/${{ env.INSTANCE2 }}_console.txt") "./chip-lighting-app" n
               sleep 2
 
-              echo Provisioning (note sometime this command needs to be run twice) with ${{ env.INSTANCE1 }}
+              echo "Provisioning (note sometime this command needs to be run twice) with ${{ env.INSTANCE1 }}""
               ./ws.py $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt") "./chip-tool pairing onnetwork-long 0x11 20202021 3840" n
               sleep 4
               echo Light on
