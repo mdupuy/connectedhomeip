@@ -152,22 +152,23 @@ jobs:
           - name: Test ${{ env.INSTANCE1 }} and ${{ env.INSTANCE2 }} with WebSocket to console
             run: |
               chmod 755 ws.py
+              chmod 755 web_socket_light_test.py
+
+              #Async websocket script that logs in and watches for command line feedback
+              echo Starting light
+              ./web_socket_light_test.p $(cat "./avhcli/${{ env.INSTANCE2 }}_console.txt")
+
               echo Logging into instances
               ./ws.py $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt") pi n
-              ./ws.py $(cat "./avhcli/${{ env.INSTANCE2 }}_console.txt") pi n
               ./ws.py $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt") raspberry n
-              ./ws.py $(cat "./avhcli/${{ env.INSTANCE2 }}_console.txt") raspberry n
-
-              echo activating light in ${{ env.INSTANCE2 }}
-              ./ws.py $(cat "./avhcli/${{ env.INSTANCE2 }}_console.txt") "./chip-lighting-app" n
               sleep 5
 
               echo "Provisioning (note sometime this command needs to be run twice) with ${{ env.INSTANCE1 }}"
               ./ws.py $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt") "./chip-tool pairing onnetwork-long 0x11 20202021 3840" n
-              sleep 10
+              sleep 20
               echo Light on
               ./ws.py $(cat "./avhcli/${{ env.INSTANCE1  }}_console.txt") "./chip-tool onoff on 0x11 1" n
-              sleep 10
+              sleep 20
               echo Light off
               ./ws.py $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt") "./chip-tool onoff off 0x11 1" n
 
