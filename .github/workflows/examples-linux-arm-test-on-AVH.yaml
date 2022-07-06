@@ -146,27 +146,27 @@ jobs:
               sshpass -p raspberry ssh -o StrictHostKeyChecking=no pi@$(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt") chmod 755 ${{ env.INSTANCE1 }}              
               echo "copying ${{ env.INSTANCE2 }}"
               sshpass -p raspberry scp -o StrictHostKeyChecking=no ${{ env.INSTANCE2 }} pi@$(cat "./avhcli/${{ env.INSTANCE2 }}_lan_ip.txt"):~/
-              sshpass -p raspberry ssh -o StrictHostKeyChecking=no pi@$(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt") chmod 755 ${{ env.INSTANCE1 }}
+              sshpass -p raspberry ssh -o StrictHostKeyChecking=no pi@$(cat "./avhcli/${{ env.INSTANCE2 }}_lan_ip.txt") chmod 755 ${{ env.INSTANCE2 }}
 
               ln -s node_modules/websocat/websocat_amd64-linux-static websocat
               echo Logging into consoles via web sockets
               echo pi | ./websocat $(cat "./avhcli/${{ env.INSTANCE2 }}_console.txt")
-              echo raspberry | ./websocat $(cat "./avhcli/${{ env.INSTANCE2 }}_console.txt")
               echo pi | ./websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt")
-              echo raspberry | ./websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt")     
-                                             
+              echo raspberry | ./websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt") 
+              echo raspberry | ./websocat $(cat "./avhcli/${{ env.INSTANCE2 }}_console.txt")    
+
               echo Activating ${{ env.INSTANCE2 }} light
               echo ./chip-lighting-app | ./websocat $(cat "./avhcli/${{ env.INSTANCE2 }}_console.txt")
 
               echo Provisioning (note sometime this command needs to be run twice) 
-              echo "./chip-tool pairing onnetwork-long 0x11 202020213840" | ./websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt")    
+              echo "./chip-tool pairing onnetwork-long 0x11 20202021 3840" | ./websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt")    
               echo Light on
               echo "./chip-tool onoff on 0x11 1"| ./websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt")
               echo Light off
               echo "./chip-tool onoff off 0x11 1"| ./websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt")
 
               # echo Provisioning (note sometime this command needs to be run twice)
-              # sshpass -p raspberry ssh -o StrictHostKeyChecking=no pi@$(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt") ./chip-tool pairing onnetwork-long 0x11 202020213840
+              # sshpass -p raspberry ssh -o StrictHostKeyChecking=no pi@$(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt") ./chip-tool pairing onnetwork-long 0x11 20202021 3840
               # echo Light on
               # sshpass -p raspberry ssh -o StrictHostKeyChecking=no pi@$(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt") ./chip-tool onoff on 0x11 1
               # echo Light off
