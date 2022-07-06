@@ -128,9 +128,11 @@ jobs:
           - name: Create ${{ env.INSTANCE2 }} instance on AVH
             run: |             
               avhcli/avhcli.sh -t $API_TOKEN -n $INSTANCE2 -m rpi4b create
+              avhcli/avhcli.sh -t $API_TOKEN -n $INSTANCE2 -m rpi4b start
           - name: Create ${{ env.INSTANCE1 }} instance on AVH
             run: |
-              avhcli/avhcli.sh -t $API_TOKEN -n $INSTANCE1 -m rpi4b create      
+              avhcli/avhcli.sh -t $API_TOKEN -n $INSTANCE1 -m rpi4b create
+              avhcli/avhcli.sh -t $API_TOKEN -n $INSTANCE1 -m rpi4b start      
           - name: connect to AVH OpenVPN
             run: |
               sudo openvpn --config avhcli/avh.ovpn --daemon 
