@@ -117,10 +117,11 @@ jobs:
               workflow: examples-linux-arm.yaml
               name: ${{ env.INSTANCE2 }}
               path: ${{ github.workspace }}                                      
-          - name: Get OpenVPN
+          - name: Get OpenVPN and websockets
             run: |
                 sudo apt install openvpn sshpass -y #netcat
-                npm i websocat
+                #npm i websocat
+                pip install websockets asyncio
           - name: pull avh api util
             run: |
               git clone https://github.com/mdupuy/avhcli.git; ls avhcli
@@ -139,7 +140,7 @@ jobs:
                 sleep 1
               done
           #see if you can scp the binaries over
-          - name: scp to ${{ env.INSTANCE1 }}
+          - name: scp to ${{ env.INSTANCE1 }} and ${{ env.INSTANCE2 }}
             run: |
               echo "copying ${{ env.INSTANCE1 }}"
               sshpass -p raspberry scp -o StrictHostKeyChecking=no ${{ env.INSTANCE1 }} pi@$(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt"):~/
@@ -148,6 +149,8 @@ jobs:
               sshpass -p raspberry scp -o StrictHostKeyChecking=no ${{ env.INSTANCE2 }} pi@$(cat "./avhcli/${{ env.INSTANCE2 }}_lan_ip.txt"):~/
               sshpass -p raspberry ssh -o StrictHostKeyChecking=no pi@$(cat "./avhcli/${{ env.INSTANCE2 }}_lan_ip.txt") chmod 755 ${{ env.INSTANCE2 }}
 
+          - name: Test ${{ env.INSTANCE1 }} and ${{ env.INSTANCE2 }} with WebSocket to console
+            run: |
               chmod 755 ws.py
               ./ws.py $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt") pi n
               ./ws.py $(cat "./avhcli/${{ env.INSTANCE2 }}_console.txt") pi n
