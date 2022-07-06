@@ -134,15 +134,13 @@ jobs:
             run: |
               sudo openvpn --config avhcli/avh.ovpn --daemon 
               echo -n Connecting
-              if ! ping -c 1 $(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt"); then
+              while ! ping -c 1 $(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt"); do
                 echo .
                 sleep 1
-              fi
+              done
           #see if you can scp the binaries over
           - name: scp to ${{ env.INSTANCE1 }}
             run: |
-              # echo "test ls"
-              # sshpass -p raspberry ssh -o StrictHostKeyChecking=no pi@$(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt") ls
               echo "copying ${{ env.INSTANCE1 }}"
               sshpass -p raspberry scp -o StrictHostKeyChecking=no ${{ env.INSTANCE1 }} pi@$(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt"):~/
               sshpass -p raspberry ssh -o StrictHostKeyChecking=no pi@$(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt") chmod 755 ${{ env.INSTANCE1 }}              
@@ -155,7 +153,8 @@ jobs:
               echo pi | ./websocat $(cat "./avhcli/${{ env.INSTANCE2 }}_console.txt")
               echo raspberry | ./websocat $(cat "./avhcli/${{ env.INSTANCE2 }}_console.txt")
               echo pi | ./websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt")
-              echo raspberry | ./websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt")                                    
+              echo raspberry | ./websocat $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt")     
+                                             
               echo Activating ${{ env.INSTANCE2 }} light
               echo ./chip-lighting-app | ./websocat $(cat "./avhcli/${{ env.INSTANCE2 }}_console.txt")
 
@@ -173,6 +172,8 @@ jobs:
               # echo Light off
               # sshpass -p raspberry ssh -o StrictHostKeyChecking=no pi@$(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt") ./chip-tool onoff off 0x11 1
 
+              # echo "test ls"
+              # sshpass -p raspberry ssh -o StrictHostKeyChecking=no pi@$(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt") ls
               # ping -c 3 $(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt")
               # ssh-keygen -f ./key -t ed25519 -q -N ""
               # ln -s node_modules/websocat/websocat_amd64-linux-static websocat
