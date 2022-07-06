@@ -171,7 +171,7 @@ jobs:
 
               echo "Provisioning (note sometime this command needs to be run twice) with ${{ env.INSTANCE1 }}"
               ./ws.py $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt") "./chip-tool pairing onnetwork-long 0x11 20202021 3840" n
-              sleep 20
+              sleep 30
               echo Light on
               ./ws.py $(cat "./avhcli/${{ env.INSTANCE1  }}_console.txt") "./chip-tool onoff on 0x11 1" n
               sleep 20
