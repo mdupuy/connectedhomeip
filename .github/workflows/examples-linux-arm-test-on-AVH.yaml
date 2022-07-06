@@ -156,7 +156,7 @@ jobs:
 
               #Async websocket script that logs in and watches for command line feedback
               echo Starting light
-              ./web_socket_light_test.p $(cat "./avhcli/${{ env.INSTANCE2 }}_console.txt")
+              ./web_socket_light_test.py $(cat "./avhcli/${{ env.INSTANCE2 }}_console.txt")
 
               echo Logging into instances
               ./ws.py $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt") pi n
