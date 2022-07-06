@@ -93,8 +93,8 @@ jobs:
           ENDPOINT: https://app.avh.arm.com/api   
           API_TOKEN: ${{ secrets.API_TOKEN }}   
         steps:
-          # - name: pull tests
-          #   uses: actions/checkout@v2
+          - name: pull tests
+            uses: actions/checkout@v2
           # - name: download ${{ env.INSTANCE1 }}
           #   uses: actions/download-artifact@master
           #   with:
