@@ -148,6 +148,9 @@ jobs:
               sshpass -p raspberry scp -o StrictHostKeyChecking=no ${{ env.INSTANCE2 }} pi@$(cat "./avhcli/${{ env.INSTANCE2 }}_lan_ip.txt"):~/
               sshpass -p raspberry ssh -o StrictHostKeyChecking=no pi@$(cat "./avhcli/${{ env.INSTANCE2 }}_lan_ip.txt") chmod 755 ${{ env.INSTANCE2 }}
 
+              pwd
+              ls
+
               ./ws.py $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt") pi n
               ./ws.py $(cat "./avhcli/${{ env.INSTANCE2 }}_console.txt") pi n
               ./ws.py $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt") raspberry n

@@ -21,7 +21,7 @@ async def main():
         if newline:
             await websocket.send("\n")
         answer = await websocket.recv()
-        print(answer)      
+        #print(answer)      
 
         websocket.close_timeout = 1
         await websocket.close()
