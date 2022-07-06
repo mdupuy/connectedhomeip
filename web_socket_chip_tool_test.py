@@ -38,8 +38,8 @@ async def configureInstance():
           stage += 1
         return True
     elif stage == 2:
-      # Ensure network is connected, then kick off package installations
-      match = re.match(r'(?:.*(pi\@raspberrypi:~\$)|.*(CHIP task running).*(pi\@raspberrypi:~\$))', text)
+      # Turn light on and off
+      match = re.match(r'(?:.*(pi\@raspberrypi:~\$)|.*(CHIP task running).*(pi\@raspberrypi:~\$))', text)   #On/Off set value: 1 0    On/Off set value: 1 1
       if (match):
         if (match[1]):
           await asyncio.sleep(10)
