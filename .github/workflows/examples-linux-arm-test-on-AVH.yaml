@@ -166,7 +166,7 @@ jobs:
               ./ws.py $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt") "./chip-tool pairing onnetwork-long 0x11 20202021 3840" n
               sleep 4
               echo Light on
-              ./ws.py $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt") "./chip-tool onoff on 0x11 1" n
+              ./ws.py $(cat "./avhcli/${{ env.INSTANCE1  }}_console.txt") "./chip-tool onoff on 0x11 1" n
               sleep 4
               echo Light off
               ./ws.py $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt") "./chip-tool onoff off 0x11 1" n
