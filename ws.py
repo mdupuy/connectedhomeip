@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 import asyncio
-#from websockets import client as ws
 import sys
 import websockets
 from pprint import pprint
 
+#Example to log into the default account on a raspberry pi:
+# ws.py pi n; ws.py raspberry n
 
 url = sys.argv[1]
 cmd = sys.argv[2]
