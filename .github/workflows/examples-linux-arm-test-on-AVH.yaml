@@ -136,11 +136,16 @@ jobs:
           - name: connect to AVH OpenVPN
             run: |
               sudo openvpn --config avhcli/avh.ovpn --daemon 
-              echo -n Connecting
+              echo Connecting and ping-ing instances...
+              while ! ping -c 1 $(cat "./avhcli/${{ env.INSTANCE2 }}_lan_ip.txt"); do
+                echo .
+                sleep 1
+              done
               while ! ping -c 1 $(cat "./avhcli/${{ env.INSTANCE1 }}_lan_ip.txt"); do
                 echo .
                 sleep 1
               done
+              echo Connected
           #see if you can scp the binaries over
           - name: scp to ${{ env.INSTANCE1 }} and ${{ env.INSTANCE2 }}
             run: |
