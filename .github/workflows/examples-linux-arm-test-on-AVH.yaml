@@ -175,8 +175,9 @@ jobs:
               sleep 5
 
               echo "Provisioning (note sometime this command needs to be run twice) with ${{ env.INSTANCE1 }}"
+              # To Be Finished: ./web_socket_chip_tool_test.py to run all of this interacivly and validate responses
               ./ws.py $(cat "./avhcli/${{ env.INSTANCE1 }}_console.txt") "./chip-tool pairing onnetwork-long 0x11 20202021 3840" n
-              sleep 35
+              sleep 38
               echo Light on
               ./ws.py $(cat "./avhcli/${{ env.INSTANCE1  }}_console.txt") "./chip-tool onoff on 0x11 1" n
               sleep 18
@@ -231,46 +232,12 @@ jobs:
             #env:
               #INSTANCE1: ${{ secrets.INSTANCE1 }}  
 
-          - name: Deleting ${{ env.INSTANCE1 }} and ${{ env.INSTANCE2 }} 
+          - name: Stopping/Deleting ${{ env.INSTANCE1 }} and ${{ env.INSTANCE2 }} 
             run: | 
-              echo deleting...
+              sudo killall openvpn
+              echo Stopping...
               avhcli/avhcli.sh -t $API_TOKEN -n $INSTANCE1 -m rpi4b stop
               avhcli/avhcli.sh -t $API_TOKEN -n $INSTANCE2 -m rpi4b stop
               #avhcli/avhcli.sh -t $API_TOKEN -n $INSTANCE1 -m rpi4b delete
               #avhcli/avhcli.sh -t $API_TOKEN -n $INSTANCE2 -m rpi4b delete              
-          # - name: Console on INSTANCE1
-          #   run: |
-          #     nc $(cat avhcli/env.INSTANCE1_ip.txt) 2000
-          #   env:
-          #     INSTANCE1: ${{ secrets.INSTANCE1 }}  
-
-          # - name: Create chip-tool INSTANCE1
-          #   run: |
-          #     avhcli/avhcli.sh -t $API_TOKEN -n $INSTANCE1 -m rpi4b delete; 
-          #     #avhcli/avhcli.sh -t $API_TOKEN -n $INSTANCE2 -m rpi4b delete
-          #   env:
-          #     API_TOKEN: ${{ secrets.API_TOKEN }}
-          #     INSTANCE1: ${{ secrets.INSTANCE1 }} 
-          #     INSTANCE2: ${{ secrets.INSTANCE1 }}  
-
-          # - name: python based test
-          #   run: |
-          #     #pip3 install websockets six python-dateutil urllib3 aiohttp
-          #     pip3 install avh-api avh-api-async websockets python-dateutil aiohttp six urllib3
-          #     #npm install @openapitools/openapi-generator-cli -g
-          #     #cp ${{ github.workspace }}/virtual-device-test.py ${{ github.workspace }}/avh-api/python/examples/async/.
-          #     #cd avh-api/python
-          #     #make examples/async/virtual-device-test.py
-          #     python3 avh-raspi.py #https://app.avh.arm.com/api 1ce5a351d8851ae708c1.16a1e32a12c16092fb9cdac297052ac5a1fedac2d80f77eeefe993bba338da95b758441ffc871145683182bbc8d50a1f228bfb39acdbf3b6330a76682db304c4
-          #   env:
-          #     API_TOKEN: ${{ secrets.API_TOKEN }} 
-          #     ENDPOINT: ${{ secrets.ENDPOINT }} 
-          #     INSTANCE1: ${{ secrets.INSTANCE1 }} 
-          #     INSTANCE2: ${{ secrets.INSTANCE2 }} 
-              
-          # - name: closing VPN conncections
-          #   run: |
-          #     sudo pkill openvpn
-        # env:
-        #   INSTANCE1: chip-tool
-        #   INSTANCE2: lighting-app            
+   
